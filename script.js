@@ -501,7 +501,6 @@ document.addEventListener('DOMContentLoaded', function() {
     U: "𝕦⃟", V: "𝕧⃟", W: "𝕨⃟", X: "𝕩⃟", Y: "𝕪⃟", Z: "𝕫⃟"
   });
 
-  
   // ============ GAMER STYLES ============
   addStyle('gamer', 'gamer_bold_sans_serif', '', '', {
     a: "𝙖", b: "𝙗", c: "𝙘", d: "𝙙", e: "𝙚", f: "𝙛", g: "𝙜", h: "𝙝", i: "𝙞", j: "𝙟",
@@ -541,9 +540,7 @@ document.addEventListener('DOMContentLoaded', function() {
     K: "𝘒", L: "𝘓", M: "𝘔", N: "𝘕", O: "𝘖", P: "𝘗", Q: "𝘘", R: "𝘙", S: "𝘚", T: "𝘛",
     U: "𝘜", V: "𝘝", W: "𝘞", X: "𝘟", Y: "𝘠", Z: "𝘡"
   });
-
   // ... yahan baaki ke 110 styles add karo ...
-
   // Optional success message
   // showToast("All styles loaded successfully!");
   
