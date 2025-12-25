@@ -72,6 +72,11 @@ let symbolsData = {
     { symbol: "░", name: "Light Shade" },
     { symbol: "▒", name: "Medium Shade" }
   ],
+  nature: [
+        { symbol: "🌿", name: "Leaf" },
+        { symbol: "🌻", name: "Sunflower" },
+        { symbol: "⛰️", name: "Mountain" }
+    ],
   cute: [
     { symbol: "☺︎", name: "Smiley" },
     { symbol: "☃︎", name: "Snowman" }
