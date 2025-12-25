@@ -594,10 +594,6 @@ document.addEventListener('DOMContentLoaded', function() {
     K: "ᴷ", L: "ᴸ", M: "ᴹ", N: "ᴺ", O: "ᴼ", P: "ᴾ", Q: "ᵠ", R: "ᴿ", S: "ˢ", T: "ᵀ",
     U: "ᵁ", V: "ⱽ", W: "ᵂ", X: "ˣ", Y: "ʸ", Z: "ᶻ"
   });
-  // Optional success message
-  // showToast("All love styles added successfully!");
-    // Initial load
-  // ============ NEW FANCY STYLES ============
   
   // Style 1: Greek with Flower Decoration
   addStyle('fancy', 'fancy_greek_flower', '𐙚✿', '𐙚✿.࿐', {
