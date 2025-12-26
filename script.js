@@ -2772,103 +2772,154 @@ addStyle('gamer', 'gamer_box_squared_letters', '░', '░', {
   u: "🅄", v: "🅅", w: "🅆", x: "🅇", y: "🅈", z: "🅉"
 });
 
-  // Love ke multiple suggestions ek saath
-addMultipleSuggestions('love', [
-  '❤️M̷y̷ Q̷u̷e̷e̷n̷❤️',
-  '💗L̷o̷v̷e̷r̷ B̷o̷y̷💗',
-  '🌸B̷e̷l̷o̷v̷e̷d̷🌸',
-  '🌹R̷o̷m̷a̷n̷t̷i̷c̷🌹',
-  '💕S̷o̷u̷l̷m̷a̷t̷e̷💕'
-]);
+// Style 51: Xi Negative Circle
+addStyle('gamer', 'gamer_xi_negative_circle', 'Ξ', 'Ξ ✔', {
+  A: "🅰", B: "🅱", C: "🅲", D: "🅳", E: "🅴", F: "🅵", G: "🅶", H: "🅷", I: "🅸", J: "🅹",
+  K: "🅺", L: "🅻", M: "🅼", N: "🅽", O: "🅾", P: "🅿", Q: "🆀", R: "🆁", S: "🆂", T: "🆃",
+  U: "🆄", V: "🆅", W: "🆆", X: "🆇", Y: "🆈", Z: "🆉",
+  a: "🅰", b: "🅱", c: "🅲", d: "🅳", e: "🅴", f: "🅵", g: "🅶", h: "🅷", i: "🅸", j: "🅹",
+  k: "🅺", l: "🅻", m: "🅼", n: "🅽", o: "🅾", p: "🅿", q: "🆀", r: "🆁", s: "🆂", t: "🆃",
+  u: "🆄", v: "🆅", w: "🆆", x: "🆇", y: "🆈", z: "🆉"
+});
 
-// Gamer ke multiple suggestions ek saath
-addMultipleSuggestions('gamer', [
-  '🎮P̷r̷o̷ P̷l̷a̷y̷e̷r̷🎮',
-  '⚔️G̷a̷m̷e̷ C̷h̷a̷m̷p̷⚔️',
-  '👾N̷o̷o̷b̷ S̷l̷a̷y̷e̷r̷👾',
-  '🕹️G̷a̷m̷i̷n̷g̷ L̷e̷g̷e̷n̷d̷🕹️',
-  '🎯A̷i̷m̷ B̷o̷t̷🎯'
-]);
-  
-  // Frame Symbols - All 
-  addMultipleSymbols('frames', [
-    {symbol: '❮', name: 'Left Angle'},
-    {symbol: '❯', name: 'Right Angle'},
-    {symbol: '︻', name: 'Left Gun'},
-    {symbol: '︼', name: 'Right Gun'},
-    {symbol: '⫷', name: 'Left Triple'},
-    {symbol: '⫸', name: 'Right Triple'},
-    {symbol: '《', name: 'Left Book'},
-    {symbol: '》', name: 'Right Book'},
-    {symbol: '«', name: 'Left Double'},
-    {symbol: '»', name: 'Right Double'},
-    {symbol: '【', name: 'Left Bracket'},
-    {symbol: '】', name: 'Right Bracket'},
-    {symbol: '〖', name: 'Left White Bracket'},
-    {symbol: '〗', name: 'Right White Bracket'},
-    {symbol: '『', name: 'Left Corner'},
-    {symbol: '』', name: 'Right Corner'},
-    {symbol: '❰', name: 'Heavy Left'},
-    {symbol: '❱', name: 'Heavy Right'},
-    {symbol: '⟦', name: 'Double Left'},
-    {symbol: '⟧', name: 'Double Right'},
-    {symbol: '⟬', name: 'White Left'},
-    {symbol: '⟭', name: 'White Right'},
-    {symbol: '⪻', name: 'Small Left'},
-    {symbol: '⪼', name: 'Small Right'},
-    {symbol: '⧼', name: 'Angle Left'},
-    {symbol: '⧽', name: 'Angle Right'},
-    {symbol: '═', name: 'Double Line'},
-    {symbol: '▌', name: 'Left Half Block'},
-    {symbol: '▐', name: 'Right Half Block'},
-    {symbol: '╚', name: 'Bottom Left Corner'},
-    {symbol: '╝', name: 'Bottom Right Corner'},
-    {symbol: '⎛', name: 'Top Left Parenthesis'},
-    {symbol: '⎞', name: 'Top Right Parenthesis'},
-    {symbol: '⎜', name: 'Left Parenthesis'},
-    {symbol: '⎟', name: 'Right Parenthesis'},
-    {symbol: '⎝', name: 'Bottom Left Parenthesis'},
-    {symbol: '⎠', name: 'Bottom Right Parenthesis'},
-    {symbol: '⩸', name: 'Circle Left'},
-    {symbol: '⩹', name: 'Circle Right'},
-    {symbol: '⟊', name: 'Diamond Left'},
-    {symbol: '⟉', name: 'Diamond Right'},
-    {symbol: '✦', name: 'Black Star'},
-    {symbol: '✧', name: 'White Star'},
-    {symbol: '✩', name: 'Outline Star'},
-    {symbol: '✪', name: 'Circle Star'},
-    {symbol: '✫', name: 'Open Star'},
-    {symbol: '✬', name: 'Black Center Star'},
-    {symbol: '❂', name: 'Circled Star'},
-    {symbol: '❃', name: 'Heavy Star'},
-    {symbol: '✹', name: 'Four Star'},
-    {symbol: '✸', name: 'Heavy Asterisk'},
-    {symbol: '✺', name: 'Six Point Star'},
-    {symbol: '✻', name: 'Eight Point Star'},
-    {symbol: '✼', name: 'Sparkle Star'},
-    {symbol: '✽', name: 'Heavy Sparkle'},
-    {symbol: '☌', name: 'Conjunction'},
-    {symbol: '☍', name: 'Opposition'},
-    {symbol: '☽', name: 'Waxing Moon'},
-    {symbol: '☾', name: 'Waning Moon'},
-    {symbol: '𐌗', name: 'Old X'},
-    {symbol: '𐌘', name: 'Old Phi'},
-    {symbol: '〔', name: 'Tortoise Shell Left'},
-    {symbol: '〕', name: 'Tortoise Shell Right'},
-    {symbol: '⦃', name: 'White Curly Left'},
-    {symbol: '⦄', name: 'White Curly Right'},
-    {symbol: '⦇', name: 'White Parenthesis Left'},
-    {symbol: '⦈', name: 'White Parenthesis Right'},
-    {symbol: '⧈', name: 'Square with X'},
-    {symbol: '⧉', name: 'Square with Dot'},
-    {symbol: '⋖', name: 'Less Than with Dot'},
-    {symbol: '⋗', name: 'Greater Than with Dot'},
-    {symbol: '⧘', name: 'Left Wiggly'},
-    {symbol: '⧙', name: 'Right Wiggly'},
-    {symbol: '⪢', name: 'Double Greater Than'},
-    {symbol: '⪡', name: 'Double Less Than'},
-    {symbol: '⥊', name: 'Left Fish Tail'},
-    {symbol: '⥋', name: 'Right Fish Tail'}
-  ]);
+// Style 52: Queen Small Caps
+addStyle('gamer', 'gamer_queen_small_caps', 'q͢n͢ ♕メ◯', '◯メ✓', {
+  A: "ᴀ", B: "ʙ", C: "ᴄ", D: "ᴅ", E: "ᴇ", F: "ꜰ", G: "ɢ", H: "ʜ", I: "ɪ", J: "ᴊ",
+  K: "ᴋ", L: "ʟ", M: "ᴍ", N: "ɴ", O: "ᴏ", P: "ᴘ", Q: "ǫ", R: "ʀ", S: "ꜱ", T: "ᴛ",
+  U: "ᴜ", V: "ᴠ", W: "ᴡ", X: "x", Y: "ʏ", Z: "ᴢ",
+  a: "ᴀ", b: "ʙ", c: "ᴄ", d: "ᴅ", e: "ᴇ", f: "ꜰ", g: "ɢ", h: "ʜ", i: "ɪ", j: "ᴊ",
+  k: "ᴋ", l: "ʟ", m: "ᴍ", n: "ɴ", o: "ᴏ", p: "ᴘ", q: "ǫ", r: "ʀ", s: "ꜱ", t: "ᴛ",
+  u: "ᴜ", v: "ᴠ", w: "ᴡ", x: "x", y: "ʏ", z: "ᴢ"
+});
+
+// Style 53: Sparkle Dot Small Caps
+addStyle('gamer', 'gamer_sparkle_dot_small_caps', '｡°✩', '·✩°｡࿐', {
+  A: "ᴀ·", B: "ʙ·", C: "ᴄ·", D: "ᴅ·", E: "ᴇ·", F: "ꜰ·", G: "ɢ·", H: "ʜ·", I: "ɪ·", J: "ᴊ·",
+  K: "ᴋ·", L: "ʟ·", M: "ᴍ·", N: "ɴ·", O: "ᴏ·", P: "ᴘ·", Q: "ǫ·", R: "ʀ·", S: "ꜱ·", T: "ᴛ·",
+  U: "ᴜ·", V: "ᴠ·", W: "ᴡ·", X: "x·", Y: "ʏ·", Z: "ᴢ·",
+  a: "ᴀ·", b: "ʙ·", c: "ᴄ·", d: "ᴅ·", e: "ᴇ·", f: "ꜰ·", g: "ɢ·", h: "ʜ·", i: "ɪ·", j: "ᴊ·",
+  k: "ᴋ·", l: "ʟ·", m: "ᴍ·", n: "ɴ·", o: "ᴏ·", p: "ᴘ·", q: "ǫ·", r: "ʀ·", s: "ꜱ·", t: "ᴛ·",
+  u: "ᴜ·", v: "ᴠ·", w: "ᴡ·", x: "x·", y: "ʏ·", z: "ᴢ·"
+});
+
+// Style 54: Pro Circled
+addStyle('gamer', 'gamer_pro_circled', 'ᴘʀᴏΞ', '♡࿐', {
+  A: "Ⓐ", B: "Ⓑ", C: "Ⓒ", D: "Ⓓ", E: "Ⓔ", F: "Ⓕ", G: "Ⓖ", H: "Ⓗ", I: "Ⓘ", J: "Ⓙ",
+  K: "Ⓚ", L: "Ⓛ", M: "Ⓜ", N: "Ⓝ", O: "Ⓞ", P: "Ⓟ", Q: "Ⓠ", R: "Ⓡ", S: "Ⓢ", T: "Ⓣ",
+  U: "Ⓤ", V: "Ⓥ", W: "Ⓦ", X: "Ⓧ", Y: "Ⓨ", Z: "Ⓩ",
+  a: "ⓐ", b: "ⓑ", c: "ⓒ", d: "ⓓ", e: "ⓔ", f: "ⓕ", g: "ⓖ", h: "ⓗ", i: "ⓘ", j: "ⓙ",
+  k: "ⓚ", l: "ⓛ", m: "ⓜ", n: "ⓝ", o: "ⓞ", p: "ⓟ", q: "ⓠ", r: "ⓡ", s: "ⓢ", t: "ⓣ",
+  u: "ⓤ", v: "ⓥ", w: "ⓦ", x: "ⓧ", y: "ⓨ", z: "ⓩ"
+});
+
+// Style 55: X Sans Serif
+addStyle('gamer', 'gamer_x_sans_serif', 'xX_', '_Xx ☠࿐', {
+  A: "𝘈", B: "𝘉", C: "𝘊", D: "𝘋", E: "𝘌", F: "𝘍", G: "𝘎", H: "𝘏", I: "𝘐", J: "𝘑",
+  K: "𝘒", L: "𝘓", M: "𝘔", N: "𝘕", O: "𝘖", P: "𝘗", Q: "𝘘", R: "𝘙", S: "𝘚", T: "𝘛",
+  U: "𝘜", V: "𝘝", W: "𝘞", X: "𝘟", Y: "𝘠", Z: "𝘡",
+  a: "𝘢", b: "𝘣", c: "𝘤̆̈", d: "𝘥", e: "𝘦", f: "𝘧", g: "𝘨", h: "𝘩", i: "𝘪", j: "𝘫",
+  k: "𝘬", l: "𝘭", m: "𝘮", n: "𝘯", o: "𝘰", p: "𝘱", q: "𝘲", r: "𝘳", s: "𝘴", t: "𝘵",
+  u: "𝘶", v: "𝘷", w: "𝘸", x: "𝘹", y: "𝘺", z: "𝘻"
+});
+
+// Style 56: Cross Triangle Accent
+addStyle('gamer', 'gamer_cross_triangle_accent', '༺✗', '✗༻ᵒᵖ', {
+  A: "A̸▵", B: "B̸▵", C: "C̸▵", D: "D̸▵", E: "E̸▵", F: "F̸▵", G: "G̸▵", H: "H̸▵", I: "I̸▵", J: "J̸▵",
+  K: "K̸▵", L: "L̸▵", M: "M̸▵", N: "N̸▵", O: "O̸▵", P: "P̸▵", Q: "Q̸▵", R: "R̸▵", S: "S̸▵", T: "T̸▵",
+  U: "U̸▵", V: "V̸▵", W: "W̸▵", X: "X̸▵", Y: "Y̸▵", Z: "Z̸▵",
+  a: "a̸▵", b: "b̸▵", c: "c̸▵", d: "d̸▵", e: "e̸▵", f: "f̸▵", g: "g̸▵", h: "h̸▵", i: "i̸▵", j: "j̸▵",
+  k: "k̸▵", l: "l̸▵", m: "m̸▵", n: "n̸▵", o: "o̸▵", p: "p̸▵", q: "q̸▵", r: "r̸▵", s: "s̸▵", t: "t̸▵",
+  u: "u̸▵", v: "v̸▵", w: "w̸▵", x: "x̸▵", y: "y̸▵", z: "z̸▵"
+});
+
+// Style 57: Yin Yang Circle Accent
+addStyle('gamer', 'gamer_yin_yang_circle_accent', '꧁☯', '☯꧂', {
+  A: "A̸◉", B: "B̸◉", C: "C̸◉", D: "D̸◉", E: "E̸◉", F: "F̸◉", G: "G̸◉", H: "H̸◉", I: "I̸◉", J: "J̸◉",
+  K: "K̸◉", L: "L̸◉", M: "M̸◉", N: "N̸◉", O: "O̸◉", P: "P̸◉", Q: "Q̸◉", R: "R̸◉", S: "S̸◉", T: "T̸◉",
+  U: "U̸◉", V: "V̸◉", W: "W̸◉", X: "X̸◉", Y: "Y̸◉", Z: "Z̸◉",
+  a: "a̸◉", b: "b̸◉", c: "c̸◉", d: "d̸◉", e: "e̸◉", f: "f̸◉", g: "g̸◉", h: "h̸◉", i: "i̸◉", j: "j̸◉",
+  k: "k̸◉", l: "l̸◉", m: "m̸◉", n: "n̸◉", o: "o̸◉", p: "p̸◉", q: "q̸◉", r: "r̸◉", s: "s̸◉", t: "t̸◉",
+  u: "u̸◉", v: "v̸◉", w: "w̸◉", x: "x̸◉", y: "y̸◉", z: "z̸◉"
+});
+
+// Style 58: Star Greek
+addStyle('gamer', 'gamer_star_greek', '—͟͞͞✰', '⋆✰࿐', {
+  A: "Λ", B: "Β", C: "Ͻ", D: "Ɗ", E: "Ξ", F: "Ƒ", G: "Ɠ", H: "H", I: "Ι", J: "Ј",
+  K: "Κ", L: "ᒪ", M: "Μ", N: "Ν", O: "Ø", P: "Ρ", Q: "Ԛ", R: "Я", S: "Ѕ", T: "Τ",
+  U: "U", V: "V", W: "Ω", X: "Χ", Y: "Υ", Z: "Ζ",
+  a: "λ", b: "β", c: "Ͻ", d: "ɗ", e: "ξ", f: "ƒ", g: "ɠ", h: "h", i: "ι", j: "ј",
+  k: "κ", l: "ℓ", m: "μ", n: "η", o: "ø", p: "ρ", q: "զ", r: "я", s: "ѕ", t: "τ",
+  u: "υ", v: "ν", w: "ω", x: "χ", y: "υ", z: "ƶ"
+});
+
+// Style 59: Simple Small Caps with YT
+addStyle('gamer', 'gamer_simple_small_caps_yt', '', '_ʏᴛ', {
+  A: "ᴀ", B: "ʙ", C: "ᴄ", D: "ᴅ", E: "ᴇ", F: "ꜰ", G: "ɢ", H: "ʜ", I: "ɪ", J: "ᴊ",
+  K: "ᴋ", L: "ʟ", M: "ᴍ", N: "ɴ", O: "ᴏ", P: "ᴘ", Q: "ǫ", R: "ʀ", S: "ꜱ", T: "ᴛ",
+  U: "ᴜ", V: "ᴠ", W: "ᴡ", X: "x", Y: "ʏ", Z: "ᴢ",
+  a: "ᴀ", b: "ʙ", c: "ᴄ", d: "ᴅ", e: "ᴇ", f: "ꜰ", g: "ɢ", h: "ʜ", i: "ɪ", j: "ᴊ",
+  k: "ᴋ", l: "ʟ", m: "ᴍ", n: "ɴ", o: "ᴏ", p: "ᴘ", q: "ǫ", r: "ʀ", s: "ꜱ", t: "ᴛ",
+  u: "ᴜ", v: "ᴠ", w: "ᴡ", x: "x", y: "ʏ", z: "ᴢ"
+});
+
+// Style 60: Simple Xi Accent
+addStyle('gamer', 'gamer_simple_xi_accent', '', ' ✔', {
+  A: "A͢", B: "B͢", C: "C͢", D: "D͢", E: "E͢", F: "F͢", G: "G͢", H: "H͢", I: "I͢", J: "J͢",
+  K: "K͢", L: "L͢", M: "M͢", N: "N͢", O: "O͢", P: "P͢", Q: "Q͢", R: "R͢", S: "S͢", T: "T͢",
+  U: "U͢", V: "V͢", W: "W͢", X: "X͢", Y: "Y͢", Z: "Z͢",
+  a: "a͢", b: "b͢", c: "c͢", d: "d͢", e: "e͢", f: "f͢", g: "g͢", h: "h͢", i: "i͢", j: "j͢",
+  k: "k͢", l: "l͢", m: "m͢", n: "n͢", o: "o͢", p: "p͢", q: "q͢", r: "r͢", s: "s͢", t: "t͢",
+  u: "u͢", v: "v͢", w: "w͢", x: "x͢", y: "y͢", z: "z͢"
+});
+
+// Style 61: Egyptian Star Double Struck
+addStyle('gamer', 'gamer_egyptian_star_double_struck', '𓄀⋆乂', '乂⋆࿐', {
+  A: "𝔸", B: "𝔹", C: "ℂ", D: "𝔻", E: "𝔼", F: "𝔽", G: "𝔾", H: "ℍ", I: "𝕀", J: "𝕁",
+  K: "𝕂", L: "𝕃", M: "𝕄", N: "ℕ", O: "𝕆", P: "ℙ", Q: "ℚ", R: "ℝ", S: "𝕊", T: "𝕋",
+  U: "𝕌", V: "𝕍", W: "𝕎", X: "𝕏", Y: "𝕐", Z: "ℤ",
+  a: "𝕒", b: "𝕓", c: "𝕔", d: "𝕕", e: "𝕖", f: "𝕗", g: "𝕘", h: "𝕙", i: "𝕚", j: "𝕛",
+  k: "𝕜", l: "𝕝", m: "𝕞", n: "𝕟", o: "𝕠", p: "𝕡", q: "𝕢", r: "𝕣", s: "𝕤", t: "𝕥",
+  u: "𝕦", v: "𝕧", w: "𝕨", x: "𝕩", y: "𝕪", z: "𝕫"
+});
+
+// Style 62: Khanda Italic
+addStyle('gamer', 'gamer_khanda_italic', '『☬', '☬』ʸᵗ', {
+  A: "𝘼", B: "𝘽", C: "𝘾", D: "𝘿", E: "𝙀", F: "𝙁", G: "𝙂", H: "𝙃", I: "𝙄", J: "𝙅",
+  K: "𝙆", L: "𝙇", M: "𝙈", N: "𝙉", O: "𝙊", P: "𝙋", Q: "𝙌", R: "𝙍", S: "𝙎", T: "𝙏",
+  U: "𝙐", V: "𝙑", W: "𝙒", X: "𝙓", Y: "𝙔", Z: "𝙕",
+  a: "𝙖", b: "𝙗", c: "𝙘", d: "𝙙", e: "𝙚", f: "𝙛", g: "𝙜", h: "𝙝", i: "𝙞", j: "𝙟",
+  k: "𝙠", l: "𝙡", m: "𝙢", n: "𝙣", o: "𝙤", p: "𝙥", q: "𝙦", r: "𝙧", s: "𝙨", t: "𝙩",
+  u: "𝙪", v: "𝙫", w: "𝙬", x: "𝙭", y: "𝙮", z: "𝙯"
+});
+
+// Style 63: Currency Style
+addStyle('gamer', 'gamer_currency_style', '꧁༺', '⁰⁷༻꧂', {
+  A: "₳", B: "₲", C: "₵", D: "Đ", E: "₳", F: "₣", G: "₲", H: "Ⱨ", I: "ł", J: "₲",
+  K: "₭", L: "Ⱡ", M: "₥", N: "₦", O: "Ø", P: "₱", Q: "Ꝗ", R: "Ɽ", S: "₴", T: "₮",
+  U: "Ṳ", V: "ᐯ", W: "₩", X: "Ӿ", Y: "Ɏ", Z: "ℤ",
+  a: "₳", b: "₲", c: "₵", d: "đ", e: "₳", f: "₣", g: "₲", h: "Ⱨ", i: "ł", j: "₲",
+  k: "₭", l: "Ⱡ", m: "₥", n: "₦", o: "ø", p: "₱", q: "Ꝗ", r: "Ɽ", s: "₴", t: "₮",
+  u: "Ṳ", v: "ᐯ", w: "₩", x: "Ӿ", y: "Ɏ", z: "ƶ"
+});
+
+// Style 64: Xi Accent with Numbers
+addStyle('gamer', 'gamer_xi_accent_numbers', '乂', '乂 ⓿❸', {
+  A: "A͢", B: "B͢", C: "C͢", D: "D͢", E: "E͢", F: "F͢", G: "G͢", H: "H͢", I: "I͢", J: "J͢",
+  K: "K͢", L: "L͢", M: "M͢", N: "N͢", O: "O͢", P: "P͢", Q: "Q͢", R: "R͢", S: "S͢", T: "T͢",
+  U: "U͢", V: "V͢", W: "W͢", X: "X͢", Y: "Y͢", Z: "Z͢",
+  a: "a͢", b: "b͢", c: "c͢", d: "d͢", e: "e͢", f: "f͢", g: "g͢", h: "h͢", i: "i͢", j: "j͢",
+  k: "k͢", l: "l͢", m: "m͢", n: "n͢", o: "o͢", p: "p͢", q: "q͢", r: "r͢", s: "s͢", t: "t͢",
+  u: "u͢", v: "v͢", w: "w͢", x: "x͢", y: "y͢", z: "z͢"
+});
+
+// Style 65: Japanese Bracket Italic Math
+addStyle('gamer', 'gamer_japanese_bracket_italic', '亗⸝⸝⸝『', '』⸝⸝⸝⁹⁹⁹', {
+  A: "𝐴", B: "𝐵", C: "𝐶", D: "𝐷", E: "𝐸", F: "𝐹", G: "𝐺", H: "𝐻", I: "𝐼", J: "𝐽",
+  K: "𝐾", L: "𝐿", M: "𝑀", N: "𝑁", O: "𝑂", P: "𝑃", Q: "𝑄", R: "𝑅", S: "𝑆", T: "𝑇",
+  U: "𝑈", V: "𝑉", W: "𝑊", X: "𝑋", Y: "𝑌", Z: "𝑍",
+  a: "𝑎", b: "𝑏", c: "𝑐", d: "𝑑", e: "𝑒", f: "𝑓", g: "𝑔", h: "𝘩", i: "𝑖", j: "𝑗",
+  k: "𝑘", l: "𝑙", m: "𝑚", n: "𝑛", o: "𝑜", p: "𝑝", q: "𝑞", r: "𝑟", s: "𝑠", t: "𝑡",
+  u: "𝑢", v: "𝑣", w: "𝑤", x: "𝑥", y: "𝑦", z: "𝑧"
+});
   
 }); // ← BILKUL LAST LINE
