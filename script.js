@@ -2762,6 +2762,24 @@ addStyle('gamer', 'gamer_box_squared_letters', '░', '░', {
   k: "🄺", l: "🄻", m: "🄼", n: "🄽", o: "🄾", p: "🄿", q: "🅀", r: "🅁", s: "🅂", t: "🅃",
   u: "🅄", v: "🅅", w: "🅆", x: "🅇", y: "🅈", z: "🅉"
 });
+
+  // Love ke multiple suggestions ek saath
+addMultipleSuggestions('love', [
+  '❤️M̷y̷ Q̷u̷e̷e̷n̷❤️',
+  '💗L̷o̷v̷e̷r̷ B̷o̷y̷💗',
+  '🌸B̷e̷l̷o̷v̷e̷d̷🌸',
+  '🌹R̷o̷m̷a̷n̷t̷i̷c̷🌹',
+  '💕S̷o̷u̷l̷m̷a̷t̷e̷💕'
+]);
+
+// Gamer ke multiple suggestions ek saath
+addMultipleSuggestions('gamer', [
+  '🎮P̷r̷o̷ P̷l̷a̷y̷e̷r̷🎮',
+  '⚔️G̷a̷m̷e̷ C̷h̷a̷m̷p̷⚔️',
+  '👾N̷o̷o̷b̷ S̷l̷a̷y̷e̷r̷👾',
+  '🕹️G̷a̷m̷i̷n̷g̷ L̷e̷g̷e̷n̷d̷🕹️',
+  '🎯A̷i̷m̷ B̷o̷t̷🎯'
+]);
   
   // Frame Symbols - All 
   addMultipleSymbols('frames', [
