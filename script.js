@@ -11233,7 +11233,7 @@ addStyle('gamer', 'gamer_Lord_star', 'ℓ♔ʀᴅ ⋆˙𓍊₊', '₊˙𓍊⋆ �
 });
 
 // Gamer Style 12
-addStyle('gamer', 'gamer_Thai_prefix', '๖ۣۜ', ' 𖧷 Ɠмʀ', {
+addStyle('gamer', 'gamer_Thai_prefix', '.', ' 𖧷 Ɠмʀ', {
   a: "α", b: "b", c: "ċ", d: "d", e: "ᥱ", f: "ƒ", g: "g", h: "h̶", i: "!", j: "נ",
   k: "k", l: "ℓ", m: "m", n: "ᥒ", o: "𖹭", p: "p", q: "q", r: "r", s: "s", t: "t",
   u: "ᴜ", v: "v", w: "w", x: "ꪎ", y: "ʏ", z: "ƶ",
