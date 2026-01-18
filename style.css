@@ -874,3 +874,18 @@ input::placeholder {
   margin: 0 auto;
   padding: 10px 15px 0;
 }
+
+.seo-info {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 15px;
+  font-size: 13px;
+  line-height: 1.6;
+  color: #666;
+}
+
+.seo-info h2 {
+  font-size: 16px;
+  margin-bottom: 8px;
+  color: #444;
+  }
