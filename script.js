@@ -1402,6 +1402,86 @@ window.addSymbols = function(symbolCategory, symbol, name) {
 
 // ==================== CORE FUNCTIONS ====================
 
+// ===== PREMIUM FEATURES =====
+
+// Razorpay key (apni actual key yahan dalo)
+const RAZORPAY_KEY = "rzp_live_YOUR_KEY_HERE";
+
+// Payment modal control
+function showPayment() {
+    document.getElementById('paymentModal').classList.add('show');
+}
+
+function closePaymentModal() {
+    document.getElementById('paymentModal').classList.remove('show');
+}
+
+// Razorpay payment init
+function initRazorpay() {
+    var options = {
+        key: RAZORPAY_KEY,
+        amount: 9900, // ₹99
+        currency: "INR",
+        name: "stylename.in",
+        description: "Premium Features - Lifetime Access",
+        image: "favicon.png",
+        handler: function(response) {
+            // Payment success
+            localStorage.setItem("premium_access", "true");
+            localStorage.setItem("premium_payment_id", response.razorpay_payment_id);
+            
+            // Hide premium overlay and show content
+            unlockPremiumFeatures();
+            closePaymentModal();
+            showToast("✅ Premium unlocked! Enjoy exclusive features!");
+        },
+        prefill: {
+            name: "Gamer",
+            email: "user@example.com"
+        },
+        theme: {
+            color: "#4f46e5"
+        }
+    };
+    
+    var rzp = new Razorpay(options);
+    rzp.open();
+}
+
+// Unlock premium features
+function unlockPremiumFeatures() {
+    // Hide all premium overlays
+    document.querySelectorAll('.premium-overlay').forEach(overlay => {
+        overlay.style.display = 'none';
+    });
+    
+    // Remove blur from preview
+    document.querySelectorAll('.premium-preview').forEach(preview => {
+        preview.style.opacity = '1';
+        preview.style.filter = 'none';
+        preview.style.pointerEvents = 'auto';
+    });
+    
+    // Show actual premium content
+    document.getElementById('premiumSymbols')?.classList.add('show');
+    document.getElementById('premiumStyles')?.classList.add('show');
+    document.getElementById('premiumSuggestions')?.classList.add('show');
+}
+
+// Check premium status on page load
+function checkPremiumStatus() {
+    const hasAccess = localStorage.getItem("premium_access");
+    
+    if (hasAccess === "true") {
+        unlockPremiumFeatures();
+    }
+}
+
+// Call on page load
+document.addEventListener('DOMContentLoaded', function() {
+    checkPremiumStatus();
+});
+
 function convert(name, map) {
   return name.split("").map(ch => {
     if (map[ch] !== undefined) {
