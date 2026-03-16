@@ -98,6 +98,94 @@
           <i class="fas fa-times"></i>
         </button>
       </div>
+
+      <!-- ===== PREMIUM SECTION ===== -->
+<div class="premium-container">
+    <!-- Premium Header -->
+    <div class="premium-header">
+        <i class="fas fa-crown"></i>
+        <h2>Premium Collection</h2>
+        <span class="premium-badge">✨ Exclusive</span>
+    </div>
+    
+    <!-- Premium Symbols Preview (Locked) -->
+    <div class="premium-category">
+        <h3><i class="fas fa-lock"></i> Premium Symbols (150+ Rare Symbols)</h3>
+        <div class="premium-preview">
+            <span class="locked-symbol">꧁༺</span>
+            <span class="locked-symbol">༻꧂</span>
+            <span class="locked-symbol">𖤍</span>
+            <span class="locked-symbol">⚜️</span>
+            <span class="locked-symbol">🔒</span>
+            <span class="locked-symbol">🔐</span>
+            <span class="locked-symbol">🔑</span>
+            <span class="locked-symbol">👑</span>
+        </div>
+        <div class="premium-overlay">
+            <i class="fas fa-lock fa-3x"></i>
+            <p>Premium Exclusive</p>
+            <button class="unlock-btn" onclick="showPayment()">
+                <i class="fas fa-unlock-alt"></i> Unlock for ₹99
+            </button>
+        </div>
+    </div>
+    
+    <!-- Premium Styles Preview (Locked) -->
+    <div class="premium-category">
+        <h3><i class="fas fa-lock"></i> Premium Name Styles (500+ Exclusive)</h3>
+        <div class="premium-preview">
+            <div class="locked-style">👑 𝕽𝖔𝖞𝖆𝖑 𝕰𝖉𝖎𝖙𝖎𝖔𝖓 👑</div>
+            <div class="locked-style">💎 𝗣𝗿𝗲𝗺𝗶𝘂𝗺 𝗚𝗼𝗹𝗱 💎</div>
+            <div class="locked-style">⚜️ 𝕱𝖔𝖗𝖙𝖚𝖓𝖆𝖙𝖊 𝕾𝖔𝖚𝖑 ⚜️</div>
+        </div>
+        <div class="premium-overlay">
+            <i class="fas fa-lock fa-3x"></i>
+            <p>Premium Exclusive</p>
+            <button class="unlock-btn" onclick="showPayment()">
+                <i class="fas fa-unlock-alt"></i> Unlock for ₹99
+            </button>
+        </div>
+    </div>
+    
+    <!-- Premium Suggestions Preview (Locked) -->
+    <div class="premium-category">
+        <h3><i class="fas fa-lock"></i> Premium Name Suggestions (1000+ Ideas)</h3>
+        <div class="premium-preview">
+            <div class="locked-suggestion">✨ ꧁༺𝕻𝖗𝖊𝖒𝖎𝖚𝖒༻꧂ ✨</div>
+            <div class="locked-suggestion">🔥 𝗘𝘅𝗰𝗹𝘂𝘀𝗶𝘃𝗲 𝗚𝗮𝗺𝗲𝗿 𝗧𝗮𝗴 🔥</div>
+        </div>
+        <div class="premium-overlay">
+            <i class="fas fa-lock fa-3x"></i>
+            <p>Premium Exclusive</p>
+            <button class="unlock-btn" onclick="showPayment()">
+                <i class="fas fa-unlock-alt"></i> Unlock for ₹99
+            </button>
+        </div>
+    </div>
+</div>
+
+<!-- Payment Modal (Popup) -->
+<div id="paymentModal" class="payment-modal">
+    <div class="payment-modal-content">
+        <span class="close-modal" onclick="closePaymentModal()">&times;</span>
+        <i class="fas fa-crown" style="font-size: 3rem; color: gold; margin-bottom: 15px;"></i>
+        <h2>Unlock Premium Features</h2>
+        <p class="price-tag">✨ Just ₹99 for Lifetime Access ✨</p>
+        
+        <div class="payment-options">
+            <button class="razorpay-btn" onclick="initRazorpay()">
+                <i class="fas fa-credit-card"></i> Pay with Razorpay
+            </button>
+            
+            <div class="upi-option">
+                <p>OR</p>
+                <img src="upi-qr-code.png" alt="UPI QR Code" class="qr-code">
+                <p class="upi-id">UPI ID: stylenamein@okhdfcbank</p>
+                <p class="note">After payment, send screenshot to: <strong>@stylename_support</strong> (Telegram)</p>
+            </div>
+        </div>
+    </div>
+</div>
       
       <div class="modal-tabs" id="modalTabs">
         <!-- Tabs will be loaded dynamically -->
