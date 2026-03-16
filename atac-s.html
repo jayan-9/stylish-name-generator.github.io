@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>✨ Attach Symbol Generator</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 10px;
+            font-size: 2.5em;
+        }
+
+        .subtitle {
+            text-align: center;
+            color: #666;
+            margin-bottom: 30px;
+            font-size: 1.1em;
+        }
+
+        .input-section {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 15px;
+            margin-bottom: 30px;
+        }
+
+        .input-group {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 15px;
+            flex-wrap: wrap;
+        }
+
+        .input-group input {
+            flex: 1;
+            padding: 12px 15px;
+            border: 2px solid #e0e0e0;
+            border-radius: 10px;
+            font-size: 16px;
+            transition: all 0.3s;
+        }
+
+        .input-group input:focus {
+            outline: none;
+            border-color: #764ba2;
+        }
+
+        .input-group select {
+            padding: 12px 15px;
+            border: 2px solid #e0e0e0;
+            border-radius: 10px;
+            font-size: 16px;
+            background: white;
+            cursor: pointer;
+        }
+
+        .repeat-buttons {
+            display: flex;
+            gap: 10px;
+            margin: 15px 0;
+            flex-wrap: wrap;
+        }
+
+        .repeat-btn {
+            padding: 10px 20px;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            background: white;
+            cursor: pointer;
+            font-size: 16px;
+            transition: all 0.3s;
+            flex: 1;
+            min-width: 60px;
+        }
+
+        .repeat-btn.active {
+            background: #764ba2;
+            color: white;
+            border-color: #764ba2;
+        }
+
+        .preview-box {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            border: 2px solid #e0e0e0;
+            margin: 20px 0;
+            text-align: center;
+            font-size: 32px;
+            word-break: break-all;
+            min-height: 80px;
+        }
+
+        .copy-btn {
+            background: #764ba2;
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 10px;
+            font-size: 18px;
+            cursor: pointer;
+            width: 100%;
+            transition: all 0.3s;
+            font-weight: bold;
+        }
+
+        .copy-btn:hover {
+            background: #5a3d7a;
+            transform: translateY(-2px);
+        }
+
+        .symbol-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+            gap: 15px;
+            margin: 30px 0;
+        }
+
+        .symbol-card {
+            background: #f8f9fa;
+            border-radius: 10px;
+            padding: 15px;
+            text-align: center;
+            border: 2px solid #e0e0e0;
+            transition: all 0.3s;
+        }
+
+        .symbol-card:hover {
+            transform: translateY(-5px);
+            border-color: #764ba2;
+        }
+
+        .symbol {
+            font-size: 30px;
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        .symbol-name {
+            font-size: 12px;
+            color: #666;
+            margin-bottom: 10px;
+            background: #e0e0e0;
+            padding: 3px 8px;
+            border-radius: 5px;
+            display: inline-block;
+        }
+
+        .copy-symbol-btn {
+            background: white;
+            border: 2px solid #764ba2;
+            color: #764ba2;
+            padding: 8px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 14px;
+            transition: all 0.3s;
+            width: 100%;
+        }
+
+        .copy-symbol-btn:hover {
+            background: #764ba2;
+            color: white;
+        }
+
+        .section-title {
+            font-size: 1.5em;
+            color: #333;
+            margin: 30px 0 15px 0;
+            padding-bottom: 10px;
+            border-bottom: 3px solid #764ba2;
+        }
+
+        .alert {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: #4CAF50;
+            color: white;
+            padding: 15px 25px;
+            border-radius: 10px;
+            animation: slideIn 0.3s;
+            z-index: 1000;
+        }
+
+        @keyframes slideIn {
+            from { transform: translateX(100%); opacity: 0; }
+            to { transform: translateX(0); opacity: 1; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>✨ Attach Symbol Generator</h1>
+        <p class="subtitle">Copy symbols aur lagao kisi bhi letter/emoji ke saath!</p>
+
+        <!-- Generator Section -->
+        <div class="input-section">
+            <h3 style="margin-bottom: 15px;">🎨 Live Generator</h3>
+            <div class="input-group">
+                <input type="text" id="inputText" placeholder="Text likho (jaise: Jack, 💗, A)" value="Jack">
+                <select id="symbolSelect">
+                    <option value="᪲">🌸 Flower (᪲)</option>
+                    <option value="͙">⭐ Tiny Star (͙)</option>
+                    <option value="˚">⭕ Ring (˚)</option>
+                    <option value="ꕤ">🌼 Small Flower (ꕤ)</option>
+                    <option value="༙">⚪ Circle Dot (༙)</option>
+                    <option value="𖤐">✨ Star (𖤐)</option>
+                    <option value="͢">💗 Heart Trail (͢)</option>
+                    <option value="༄">🍃 Wind (༄)</option>
+                    <option value="ꨄ">💕 Tiny Heart (ꨄ)</option>
+                    <option value="̶">➖ Cut Line (̶)</option>
+                    <option value="̈">◌ Double Dot (̈)</option>
+                    <option value="̲">➡️ Underline (̲)</option>
+                </select>
+            </div>
+
+            <div class="repeat-buttons">
+                <button class="repeat-btn active" onclick="setRepeat(1)">1x</button>
+                <button class="repeat-btn" onclick="setRepeat(2)">2x</button>
+                <button class="repeat-btn" onclick="setRepeat(3)">3x</button>
+                <button class="repeat-btn" onclick="setRepeat(4)">4x</button>
+                <button class="repeat-btn" onclick="setRepeat(5)">5x</button>
+            </div>
+
+            <div class="preview-box" id="preview">
+                J̶̶̶a̶̶̶c̶̶̶k̶̶̶
+            </div>
+
+            <button class="copy-btn" onclick="copyResult()">📋 Copy Result</button>
+        </div>
+
+        <!-- All Symbols Section -->
+        <h2 class="section-title">🌸 Flower Style</h2>
+        <div class="symbol-grid">
+            <div class="symbol-card">
+                <div class="symbol">᪲</div>
+                <span class="symbol-name">Flower 1</span>
+                <button class="copy-symbol-btn" onclick="copySymbol('᪲')">📋 Copy</button>
+                <div style="margin-top: 8px; font-size: 12px; color: #666;">A᪲᪲᪲</div>
+            </div>
+            <div class="symbol-card">
+                <div class="symbol">᪳</div>
+                <span class="symbol-name">Flower 2</span>
+                <button class="copy-symbol-btn" onclick="copySymbol('᪳')">📋 Copy</button>
+                <div style="margin-top: 8px; font-size: 12px; color: #666;">A᪳᪳᪳</div>
+            </div>
+            <div class="symbol-card">
+                <div class="symbol">᪴</div>
+                <span class="symbol-name">Flower 3</span>
+                <button class="copy-symbol-btn" onclick="copySymbol('᪴')">📋 Copy</button>
+                <div style="margin-top: 8px; font-size: 12px; color: #666;">A᪴᪴᪴</div>
+            </div>
+            <div class="symbol-card">
+                <div class="symbol">ꕤ</div>
+                <span class="symbol-name">Small Flower</span>
+                <button class="copy-symbol-btn" onclick="copySymbol('ꕤ')">📋 Copy</button>
+                <div style="margin-top: 8px; font-size: 12px; color: #666;">Aꕤꕤꕤ</div>
+            </div>
+            <div class="symbol-card">
+                <div class="symbol">𑁍</div>
+                <span class="symbol-name">Lotus</span>
+                <button class="copy-symbol-btn" onclick="copySymbol('𑁍')">📋 Copy</button>
+                <div style="margin-top: 8px; font-size: 12px; color: #666;">A𑁍𑁍𑁍</div>
+            </div>
+        </div>
+
+        <h2 class="section-title">⭐ Star Style</h2>
+        <div class="symbol-grid">
+            <div class="symbol-card">
+                <div class="symbol">͙</div>
+                <span class="symbol-name">Tiny Star</span>
+                <button class="copy-symbol-btn" onclick="copySymbol('͙')">📋 Copy</button>
+                <div style="margin-top: 8px; font-size: 12px; color: #666;">A͙͙͙</div>
+            </div>
+            <div class="symbol-card">
+                <div class="symbol">𖤐</div>
+                <span class="symbol-name">Star</span>
+                <button class="copy-symbol-btn" onclick="copySymbol('𖤐')">📋 Copy</button>
+                <div style="margin-top: 8px; font-size: 12px; color: #666;">A𖤐𖤐𖤐</div>
+            </div>
+            <div class="symbol-card">
+                <div class="symbol">˚</div>
+                <span class="symbol-name">Ring</span>
+                <button class="copy-symbol-btn" onclick="copySymbol('˚')">📋 Copy</button>
+                <div style="margin-top: 8px; font-size: 12px; color: #666;">A˚˚˚</div>
+            </div>
+            <div class="symbol-card">
+                <div class="symbol">༙</div>
+                <span class="symbol-name">Circle Dot</span>
+                <button class="copy-symbol-btn" onclick="copySymbol('༙')">📋 Copy</button>
+                <div style="margin-top: 8px; font-size: 12px; color: #666;">A༙༙༙</div>
+            </div>
+        </div>
+
+        <h2 class="section-title">💗 Heart Style</h2>
+        <div class="symbol-grid">
+            <div class="symbol-card">
+                <div class="symbol">͢</div>
+                <span class="symbol-name">Heart Trail</span>
+                <button class="copy-symbol-btn" onclick="copySymbol('͢')">📋 Copy</button>
+                <div style="margin-top: 8px; font-size: 12px; color: #666;">A͢͢͢</div>
+            </div>
+            <div class="symbol-card">
+                <div class="symbol">ꨄ</div>
+                <span class="symbol-name">Tiny Heart</span>
+                <button class="copy-symbol-btn" onclick="copySymbol('ꨄ')">📋 Copy</button>
+                <div style="margin-top: 8px; font-size: 12px; color: #666;">Aꨄꨄꨄ</div>
+            </div>
+        </div>
+
+        <h2 class="section-title">🍃 Nature Style</h2>
+        <div class="symbol-grid">
+            <div class="symbol-card">
+                <div class="symbol">༄</div>
+                <span class="symbol-name">Wind</span>
+                <button class="copy-symbol-btn" onclick="copySymbol('༄')">📋 Copy</button>
+                <div style="margin-top: 8px; font-size: 12px; color: #666;">A༄༄༄</div>
+            </div>
+            <div class="symbol-card">
+                <div class="symbol">𓆭</div>
+                <span class="symbol-name">Lotus</span>
+                <button class="copy-symbol-btn" onclick="copySymbol('𓆭')">📋 Copy</button>
+                <div style="margin-top: 8px; font-size: 12px; color: #666;">A𓆭𓆭𓆭</div>
+            </div>
+        </div>
+
+        <h2 class="section-title">➖ Line Style</h2>
+        <div class="symbol-grid">
+            <div class="symbol-card">
+                <div class="symbol">̶</div>
+                <span class="symbol-name">Cut Line</span>
+                <button class="copy-symbol-btn" onclick="copySymbol('̶')">📋 Copy</button>
+                <div style="margin-top: 8px; font-size: 12px; color: #666;">A̶̶̶</div>
+            </div>
+            <div class="symbol-card">
+                <div class="symbol">̲</div>
+                <span class="symbol-name">Underline</span>
+                <button class="copy-symbol-btn" onclick="copySymbol('̲')">📋 Copy</button>
+                <div style="margin-top: 8px; font-size: 12px; color: #666;">A̲̲̲</div>
+            </div>
+            <div class="symbol-card">
+                <div class="symbol">̅</div>
+                <span class="symbol-name">Overline</span>
+                <button class="copy-symbol-btn" onclick="copySymbol('̅')">📋 Copy</button>
+                <div style="margin-top: 8px; font-size: 12px; color: #666;">A̅̅̅</div>
+            </div>
+            <div class="symbol-card">
+                <div class="symbol">̈</div>
+                <span class="symbol-name">Double Dot</span>
+                <button class="copy-symbol-btn" onclick="copySymbol('̈')">📋 Copy</button>
+                <div style="margin-top: 8px; font-size: 12px; color: #666;">Ä̈̈</div>
+            </div>
+            <div class="symbol-card">
+                <div class="symbol">̇</div>
+                <span class="symbol-name">Single Dot</span>
+                <button class="copy-symbol-btn" onclick="copySymbol('̇')">📋 Copy</button>
+                <div style="margin-top: 8px; font-size: 12px; color: #666;">Ȧ̇̇</div>
+            </div>
+        </div>
+
+        <h2 class="section-title">🔥 Popular Combinations</h2>
+        <div class="symbol-grid">
+            <div class="symbol-card">
+                <div class="symbol">J᪲᪲᪲</div>
+                <button class="copy-symbol-btn" onclick="copySymbol('J᪲᪲᪲')">📋 Copy</button>
+            </div>
+            <div class="symbol-card">
+                <div class="symbol">💗͙͙͙</div>
+                <button class="copy-symbol-btn" onclick="copySymbol('💗͙͙͙')">📋 Copy</button>
+            </div>
+            <div class="symbol-card">
+                <div class="symbol">✨˚˚˚</div>
+                <button class="copy-symbol-btn" onclick="copySymbol('✨˚˚˚')">📋 Copy</button>
+            </div>
+            <div class="symbol-card">
+                <div class="symbol">L̶̶̶</div>
+                <button class="copy-symbol-btn" onclick="copySymbol('L̶̶̶')">📋 Copy</button>
+            </div>
+            <div class="symbol-card">
+                <div class="symbol">O͢͢͢</div>
+                <button class="copy-symbol-btn" onclick="copySymbol('O͢͢͢')">📋 Copy</button>
+            </div>
+            <div class="symbol-card">
+                <div class="symbol">Vꕤꕤꕤ</div>
+                <button class="copy-symbol-btn" onclick="copySymbol('Vꕤꕤꕤ')">📋 Copy</button>
+            </div>
+            <div class="symbol-card">
+                <div class="symbol">E༙༙༙</div>
+                <button class="copy-symbol-btn" onclick="copySymbol('E༙༙༙')">📋 Copy</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let currentRepeat = 1;
+        let currentSymbol = '̶';
+
+        function setRepeat(times) {
+            currentRepeat = times;
+            document.querySelectorAll('.repeat-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            event.target.classList.add('active');
+            updatePreview();
+        }
+
+        function updatePreview() {
+            const text = document.getElementById('inputText').value || 'Jack';
+            const symbol = document.getElementById('symbolSelect').value;
+            currentSymbol = symbol;
+            
+            let result = '';
+            for(let char of text) {
+                result += char + symbol.repeat(currentRepeat);
+            }
+            
+            document.getElementById('preview').textContent = result;
+        }
+
+        function copyResult() {
+            const text = document.getElementById('preview').textContent;
+            navigator.clipboard.writeText(text).then(() => {
+                showAlert('✅ Copied!');
+            });
+        }
+
+        function copySymbol(symbol) {
+            navigator.clipboard.writeText(symbol).then(() => {
+                showAlert(`✅ Copied: ${symbol}`);
+            });
+        }
+
+        function showAlert(message) {
+            const alert = document.createElement('div');
+            alert.className = 'alert';
+            alert.textContent = message;
+            document.body.appendChild(alert);
+            
+            setTimeout(() => {
+                alert.remove();
+            }, 2000);
+        }
+
+        // Event listeners
+        document.getElementById('inputText').addEventListener('input', updatePreview);
+        document.getElementById('symbolSelect').addEventListener('change', updatePreview);
+
+        // Initial preview
+        updatePreview();
+    </script>
+</body>
+</html>
