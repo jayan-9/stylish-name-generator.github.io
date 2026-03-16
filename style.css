@@ -889,3 +889,263 @@ input::placeholder {
   margin-bottom: 8px;
   color: #444;
   }
+
+/* ===== PREMIUM SECTION STYLES ===== */
+.premium-container {
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+    border-radius: 20px;
+    padding: 30px;
+    margin: 40px 0;
+    color: white;
+    position: relative;
+}
+
+.premium-header {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 30px;
+    padding-bottom: 15px;
+    border-bottom: 2px solid gold;
+}
+
+.premium-header i {
+    font-size: 2rem;
+    color: gold;
+}
+
+.premium-header h2 {
+    font-size: 2rem;
+    margin: 0;
+    color: white;
+}
+
+.premium-badge {
+    background: gold;
+    color: #1a1a2e;
+    padding: 5px 15px;
+    border-radius: 30px;
+    font-weight: bold;
+    font-size: 0.9rem;
+    margin-left: auto;
+}
+
+.premium-category {
+    background: rgba(255,255,255,0.05);
+    border-radius: 16px;
+    padding: 25px;
+    margin-bottom: 30px;
+    position: relative;
+    min-height: 200px;
+    border: 1px solid rgba(255,215,0,0.3);
+}
+
+.premium-category h3 {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: gold;
+    margin-bottom: 20px;
+}
+
+.premium-category h3 i {
+    color: gold;
+}
+
+.premium-preview {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    opacity: 0.3;
+    filter: blur(2px);
+    pointer-events: none;
+    user-select: none;
+}
+
+.locked-symbol {
+    font-size: 2rem;
+    background: rgba(255,255,255,0.1);
+    padding: 10px 15px;
+    border-radius: 8px;
+    border: 1px solid rgba(255,215,0,0.2);
+}
+
+.locked-style, .locked-suggestion {
+    background: rgba(255,255,255,0.1);
+    padding: 12px 20px;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    border: 1px solid rgba(255,215,0,0.2);
+    width: 100%;
+}
+
+.premium-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0,0,0,0.7);
+    border-radius: 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    backdrop-filter: blur(3px);
+}
+
+.premium-overlay i {
+    color: gold;
+    margin-bottom: 10px;
+}
+
+.premium-overlay p {
+    color: white;
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+}
+
+.unlock-btn {
+    background: gold;
+    color: #1a1a2e;
+    border: none;
+    padding: 12px 30px;
+    border-radius: 50px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.unlock-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(255,215,0,0.3);
+}
+
+/* Payment Modal */
+.payment-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.8);
+    z-index: 2000;
+    align-items: center;
+    justify-content: center;
+}
+
+.payment-modal.show {
+    display: flex;
+}
+
+.payment-modal-content {
+    background: white;
+    border-radius: 20px;
+    padding: 40px;
+    max-width: 500px;
+    width: 90%;
+    text-align: center;
+    position: relative;
+    animation: modalPop 0.3s ease;
+}
+
+@keyframes modalPop {
+    from { transform: scale(0.8); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
+
+.close-modal {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 2rem;
+    cursor: pointer;
+    color: #666;
+}
+
+.close-modal:hover {
+    color: #333;
+}
+
+.price-tag {
+    font-size: 1.3rem;
+    color: gold;
+    font-weight: bold;
+    margin: 15px 0;
+    background: #1a1a2e;
+    padding: 10px;
+    border-radius: 50px;
+    display: inline-block;
+}
+
+.razorpay-btn {
+    background: #4f46e5;
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    border-radius: 50px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    margin: 20px 0;
+    width: 100%;
+    transition: all 0.3s;
+}
+
+.razorpay-btn:hover {
+    background: #4338ca;
+    transform: translateY(-3px);
+}
+
+.upi-option {
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid #ddd;
+}
+
+.qr-code {
+    width: 200px;
+    height: 200px;
+    margin: 15px auto;
+    border: 2px solid #ddd;
+    border-radius: 10px;
+}
+
+.upi-id {
+    background: #f0f0f0;
+    padding: 10px;
+    border-radius: 8px;
+    font-family: monospace;
+    font-size: 1.1rem;
+}
+
+.note {
+    color: #666;
+    font-size: 0.9rem;
+    margin-top: 15px;
+}
+
+/* Premium Unlocked Content */
+.premium-unlocked {
+    display: none;
+}
+
+.premium-unlocked.show {
+    display: block;
+}
+
+.unlocked-badge {
+    background: gold;
+    color: #1a1a2e;
+    padding: 5px 15px;
+    border-radius: 30px;
+    font-size: 0.9rem;
+    font-weight: bold;
+    display: inline-block;
+    margin-bottom: 20px;
+}
