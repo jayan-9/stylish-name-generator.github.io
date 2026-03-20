@@ -2131,4 +2131,47 @@
         };
     </script>
 </body>
+    <!-- Add this before closing </body> tag -->
+<button onclick="window.scrollTo({top: 0, behavior: 'smooth'})" class="scroll-top-btn" title="Go to top">↑</button>
+
+<style>
+.scroll-top-btn {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    width: 45px;
+    height: 45px;
+    background: #FFD700;
+    color: #000;
+    border: none;
+    border-radius: 50%;
+    font-size: 24px;
+    font-weight: bold;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    z-index: 999;
+}
+.scroll-top-btn:hover {
+    background: #FFA500;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 16px rgba(0,0,0,0.3);
+}
+</style>
+
+<script>
+// Optional: Show only when scrolled down
+window.addEventListener('scroll', function() {
+    const btn = document.querySelector('.scroll-top-btn');
+    if (window.scrollY > 300) {
+        btn.style.display = 'flex';
+    } else {
+        btn.style.display = 'none';
+    }
+});
+document.querySelector('.scroll-top-btn').style.display = 'none';
+</script>
 </html>
