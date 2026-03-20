@@ -560,30 +560,81 @@
             color: #FFD700;
         }
         
-/* Font Chips Row */
-.font-chips {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
+/* Font Chips - Horizontal Scroll */
+.font-chips-wrapper {
     margin: 15px 0;
-    justify-content: center;
+    position: relative;
 }
+
+.font-chips-scroll {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    gap: 10px;
+    padding: 8px 4px;
+    scrollbar-width: thin;
+    -webkit-overflow-scrolling: touch;
+}
+
+.font-chips-scroll::-webkit-scrollbar {
+    height: 4px;
+}
+
+.font-chips-scroll::-webkit-scrollbar-track {
+    background: #333;
+    border-radius: 10px;
+}
+
+.font-chips-scroll::-webkit-scrollbar-thumb {
+    background: #FFD700;
+    border-radius: 10px;
+}
+
 .font-chip {
     background: #1e1e1e;
     border: 1px solid #FFD700;
     color: #FFD700;
-    padding: 6px 15px;
+    padding: 6px 16px;
     border-radius: 30px;
     font-size: 0.9rem;
     cursor: pointer;
     transition: all 0.2s;
-    display: inline-block;
+    white-space: nowrap;
+    flex-shrink: 0;
 }
+
 .font-chip:hover {
     background: #FFD700;
     color: #000;
     transform: translateY(-2px);
     box-shadow: 0 2px 8px rgba(255,215,0,0.4);
+}
+        
+        /* Optional: Add gradient fade on edges to hint scroll */
+.font-chips-wrapper {
+    position: relative;
+}
+
+.font-chips-wrapper::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 40px;
+    height: 100%;
+    background: linear-gradient(to right, transparent, #1e1e1e);
+    pointer-events: none;
+}
+
+.font-chips-wrapper::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 40px;
+    height: 100%;
+    background: linear-gradient(to left, transparent, #1e1e1e);
+    pointer-events: none;
 }
         
         @media (max-width: 768px) {
@@ -606,29 +657,31 @@
             <strong>🔒 Privacy Note:</strong> Your suggestions are stored locally in your browser. We don't collect any personal data. All suggestions are visible only to you unless you share them.
         </div>
         
-        <!-- Font Preview Chips -->
-<div class="font-chips">
-    <span class="font-chip" data-font="cursive">𝓝𝓪𝓶𝓮</span>
-    <span class="font-chip" data-font="fraktur">𝕹𝕬𝕸𝕰</span>
-    <span class="font-chip" data-font="doublestruck">ℕ𝕒𝕞𝕖</span>
-    <span class="font-chip" data-font="bold">𝙉𝙖𝙢𝙚</span>
-    <span class="font-chip" data-font="italic">𝑁𝑎𝑚𝑒</span>
-    <span class="font-chip" data-font="square">🄽🄰🄼🄴</span>
-    <span class="font-chip" data-font="sans">𝘕𝘈𝘔𝘌</span>
-    <span class="font-chip" data-font="encircle">🅝🅐🅜🅔</span>
-    <span class="font-chip" data-font="circled">Ⓝⓐⓜⓔ</span>
-    <span class="font-chip" data-font="script">𝑵𝑨𝑴𝑬</span>
-    <span class="font-chip" data-font="bubble">🅽🅰🅼🅴</span>
-    <span class="font-chip" data-font="canadian">ᑎᗩᗰᗴ</span>
-    <span class="font-chip" data-font="greek">ПΔMΣ</span>
-    <span class="font-chip" data-font="upside">Nɐɯǝ</span>
-    <span class="font-chip" data-font="fullwidth">Ｎａｍｅ</span>
-    <span class="font-chip" data-font="smallcaps">ɴᴀᴍᴇ</span>
-    <span class="font-chip" data-font="monospace">𝙽𝚊𝚖𝚎</span>
-    <span class="font-chip" data-font="viking">ΝΛΜΞ</span>
-    <span class="font-chip" data-font="thai">ภค๓є</span>
-    <span class="font-chip" data-font="wide">Ｎａｍｅ</span>
-    <span class="font-chip" data-font="japanese">几卂爪乇</span>
+<!-- Font Preview Chips - Horizontal Scroll -->
+<div class="font-chips-wrapper">
+    <div class="font-chips-scroll">
+        <span class="font-chip" data-font="cursive">𝓝𝓪𝓶𝓮</span>
+        <span class="font-chip" data-font="fraktur">𝕹𝕬𝕸𝕰</span>
+        <span class="font-chip" data-font="doublestruck">ℕ𝕒𝕞𝕖</span>
+        <span class="font-chip" data-font="bold">𝙉𝙖𝙢𝙚</span>
+        <span class="font-chip" data-font="italic">𝑁𝑎𝑚𝑒</span>
+        <span class="font-chip" data-font="square">🄽🄰🄼🄴</span>
+        <span class="font-chip" data-font="sans">𝘕𝘈𝘔𝘌</span>
+        <span class="font-chip" data-font="encircle">🅝🅐🅜🅔</span>
+        <span class="font-chip" data-font="circled">Ⓝⓐⓜⓔ</span>
+        <span class="font-chip" data-font="script">𝑵𝑨𝑴𝑬</span>
+        <span class="font-chip" data-font="bubble">🅽🅰🅼🅴</span>
+        <span class="font-chip" data-font="canadian">ᑎᗩᗰᗴ</span>
+        <span class="font-chip" data-font="greek">ПΔMΣ</span>
+        <span class="font-chip" data-font="upside">Nɐɯǝ</span>
+        <span class="font-chip" data-font="fullwidth">Ｎａｍｅ</span>
+        <span class="font-chip" data-font="smallcaps">ɴᴀᴍᴇ</span>
+        <span class="font-chip" data-font="monospace">𝙽𝚊𝚖𝚎</span>
+        <span class="font-chip" data-font="viking">ΝΛΜΞ</span>
+        <span class="font-chip" data-font="thai">ภค๓є</span>
+        <span class="font-chip" data-font="wide">Ｎａｍｅ</span>
+        <span class="font-chip" data-font="japanese">几卂爪乇</span>
+    </div>
 </div>
 
         <!-- Normal Input Section (No Sticky) -->
