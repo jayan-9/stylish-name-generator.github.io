@@ -655,6 +655,14 @@
     <option value="︍">✨ Vertical Form 6 (︍)</option>
     <option value="︎">📝 Text Style (︎)</option>
     <option value="️">🎨 Emoji Style (️)</option>
+    <option value="︠">🔗 Ligature Left (︠)</option>
+    <option value="︡">🔗 Ligature Right (︡)</option>
+    <option value="︢">〰️ Double Tilde Left (︢)</option>
+    <option value="︣">〰️ Double Tilde Right (︣)</option>
+    <option value="︤">📏 Macron Left (︤)</option>
+    <option value="︥">📏 Macron Right (︥)</option>
+    <option value="︦">📏 Conjoined Macron (︦)</option>
+    <option value="﻿">⚡ Zero Width Space (﻿)</option>
                 </select>
             </div>
 
@@ -748,6 +756,85 @@
                 <button class="copy-symbol-btn" style="margin-top:5px; background:#FFD700; color:#000;" onclick="event.stopPropagation(); attachSymbol('𑁍')">🔗 Attach Now</button>
             </div>
         </div>
+    <div class="symbol-card" onclick="selectSymbol('︠')">
+        <span class="attach-badge">✅ Attaches</span>
+        <div class="symbol">︠</div>
+        <span class="symbol-name">Ligature Left</span>
+        <div style="color:#aaa; font-size:12px;">A︠</div>
+        <button class="copy-symbol-btn" onclick="event.stopPropagation(); copySymbol('︠')">📋 Copy Symbol</button>
+        <button class="copy-symbol-btn" style="margin-top:5px; background:#FFD700; color:#000;" onclick="event.stopPropagation(); attachSymbol('︠')">🔗 Attach Now</button>
+    </div>
+    
+    <!-- Ligature Right Half -->
+    <div class="symbol-card" onclick="selectSymbol('︡')">
+        <span class="attach-badge">✅ Attaches</span>
+        <div class="symbol">︡</div>
+        <span class="symbol-name">Ligature Right</span>
+        <div style="color:#aaa; font-size:12px;">A︡</div>
+        <button class="copy-symbol-btn" onclick="event.stopPropagation(); copySymbol('︡')">📋 Copy Symbol</button>
+        <button class="copy-symbol-btn" style="margin-top:5px; background:#FFD700; color:#000;" onclick="event.stopPropagation(); attachSymbol('︡')">🔗 Attach Now</button>
+    </div>
+    
+    <!-- Double Tilde Left Half -->
+    <div class="symbol-card" onclick="selectSymbol('︢')">
+        <span class="attach-badge">✅ Attaches</span>
+        <div class="symbol">︢</div>
+        <span class="symbol-name">Double Tilde Left</span>
+        <div style="color:#aaa; font-size:12px;">A︢</div>
+        <button class="copy-symbol-btn" onclick="event.stopPropagation(); copySymbol('︢')">📋 Copy Symbol</button>
+        <button class="copy-symbol-btn" style="margin-top:5px; background:#FFD700; color:#000;" onclick="event.stopPropagation(); attachSymbol('︢')">🔗 Attach Now</button>
+    </div>
+    
+    <!-- Double Tilde Right Half -->
+    <div class="symbol-card" onclick="selectSymbol('︣')">
+        <span class="attach-badge">✅ Attaches</span>
+        <div class="symbol">︣</div>
+        <span class="symbol-name">Double Tilde Right</span>
+        <div style="color:#aaa; font-size:12px;">A︣</div>
+        <button class="copy-symbol-btn" onclick="event.stopPropagation(); copySymbol('︣')">📋 Copy Symbol</button>
+        <button class="copy-symbol-btn" style="margin-top:5px; background:#FFD700; color:#000;" onclick="event.stopPropagation(); attachSymbol('︣')">🔗 Attach Now</button>
+    </div>
+    
+    <!-- Macron Left Half -->
+    <div class="symbol-card" onclick="selectSymbol('︤')">
+        <span class="attach-badge">✅ Attaches</span>
+        <div class="symbol">︤</div>
+        <span class="symbol-name">Macron Left</span>
+        <div style="color:#aaa; font-size:12px;">A︤</div>
+        <button class="copy-symbol-btn" onclick="event.stopPropagation(); copySymbol('︤')">📋 Copy Symbol</button>
+        <button class="copy-symbol-btn" style="margin-top:5px; background:#FFD700; color:#000;" onclick="event.stopPropagation(); attachSymbol('︤')">🔗 Attach Now</button>
+    </div>
+    
+    <!-- Macron Right Half -->
+    <div class="symbol-card" onclick="selectSymbol('︥')">
+        <span class="attach-badge">✅ Attaches</span>
+        <div class="symbol">︥</div>
+        <span class="symbol-name">Macron Right</span>
+        <div style="color:#aaa; font-size:12px;">A︥</div>
+        <button class="copy-symbol-btn" onclick="event.stopPropagation(); copySymbol('︥')">📋 Copy Symbol</button>
+        <button class="copy-symbol-btn" style="margin-top:5px; background:#FFD700; color:#000;" onclick="event.stopPropagation(); attachSymbol('︥')">🔗 Attach Now</button>
+    </div>
+    
+    <!-- Conjoined Macron -->
+    <div class="symbol-card" onclick="selectSymbol('︦')">
+        <span class="attach-badge">✅ Attaches</span>
+        <div class="symbol">︦</div>
+        <span class="symbol-name">Conjoined Macron</span>
+        <div style="color:#aaa; font-size:12px;">A︦</div>
+        <button class="copy-symbol-btn" onclick="event.stopPropagation(); copySymbol('︦')">📋 Copy Symbol</button>
+        <button class="copy-symbol-btn" style="margin-top:5px; background:#FFD700; color:#000;" onclick="event.stopPropagation(); attachSymbol('︦')">🔗 Attach Now</button>
+    </div>
+    
+    <!-- Zero Width Space (BOM) -->
+    <div class="symbol-card" onclick="selectSymbol('﻿')">
+        <span class="attach-badge">✅ Invisible</span>
+        <div class="symbol">﻿</div>
+        <span class="symbol-name">Zero Width Space</span>
+        <div style="color:#aaa; font-size:12px;">A﻿</div>
+        <button class="copy-symbol-btn" onclick="event.stopPropagation(); copySymbol('﻿')">📋 Copy Symbol</button>
+        <button class="copy-symbol-btn" style="margin-top:5px; background:#FFD700; color:#000;" onclick="event.stopPropagation(); attachSymbol('﻿')">🔗 Attach Now</button>
+    </div>
+</div>
          
     <!-- Circle Enclose -->
     <div class="symbol-card" onclick="selectSymbol('⃝')">
@@ -1382,6 +1469,14 @@
     { text: "B̺i̺r̺d̺", addedBy: "System" },
     { text: "B̻o̻x̻", addedBy: "System" },
     { text: "W̼a̼v̼e̼", addedBy: "System" },
+    { text: "A︠n︠n︠a︠", addedBy: "System" },
+    { text: "J︡a︡c︡k︡", addedBy: "System" },
+    { text: "S︢u︢n︢", addedBy: "System" },
+    { text: "M︣o︣o︣n︣", addedBy: "System" },
+    { text: "R︤o︤c︤k︤", addedBy: "System" },
+    { text: "B︥i︥r︥d︥", addedBy: "System" },
+    { text: "W︦a︦v︦e︦", addedBy: "System" },
+    { text: "H﻿e﻿l﻿l﻿o", addedBy: "System" },
             { text: "G̲o̲d̲", addedBy: "System" }
         ];
 
