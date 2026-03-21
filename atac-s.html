@@ -2,2928 +2,745 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>✨ Premium Attach Symbol Generator ✨</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>✨ GOLDEN ATTACH – Premium Symbol Studio ✨</title>
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Segoe UI', 'Poppins', system-ui, sans-serif;
         }
 
         body {
-            background: linear-gradient(135deg, #1a1a1a 0%, #2c2c2c 100%);
+            background: radial-gradient(circle at 20% 30%, #0a0a0a, #030303);
             min-height: 100vh;
             padding: 20px;
         }
 
+        .ticker-wrap {
+            background: rgba(0,0,0,0.6);
+            backdrop-filter: blur(10px);
+            border-radius: 60px;
+            margin-bottom: 20px;
+            border: 1px solid rgba(255,215,0,0.4);
+            overflow: hidden;
+            white-space: nowrap;
+            padding: 10px 0;
+        }
+        .ticker {
+            display: inline-block;
+            animation: scrollTicker 25s linear infinite;
+            font-weight: 600;
+            color: #FFD966;
+        }
+        .ticker span {
+            margin: 0 30px;
+            font-size: 1rem;
+        }
+        @keyframes scrollTicker {
+            0% { transform: translateX(0%); }
+            100% { transform: translateX(-50%); }
+        }
+
         .special-badge {
-            background: linear-gradient(135deg, #FFD700, #FFA500);
-            color: #000;
+            background: linear-gradient(145deg, #FFD700, #FFB347);
+            color: #1e1e1e;
             text-align: center;
             padding: 12px;
             font-size: 1.2rem;
             font-weight: bold;
             border-radius: 50px;
-            max-width: 300px;
+            max-width: 320px;
             margin: 0 auto 20px auto;
-            box-shadow: 0 4px 15px rgba(255,215,0,0.4);
-            border: 1px solid #fff3;
-            text-transform: uppercase;
-            letter-spacing: 2px;
+            box-shadow: 0 0 20px rgba(255,215,0,0.8);
+            animation: goldPulse 2s infinite;
+        }
+        @keyframes goldPulse {
+            0% { box-shadow: 0 0 0 0 rgba(255,215,0,0.4); }
+            70% { box-shadow: 0 0 0 12px rgba(255,215,0,0); }
+            100% { box-shadow: 0 0 0 0 rgba(255,215,0,0); }
         }
 
         .container {
-            max-width: 1200px;
+            max-width: 1400px;
             margin: 0 auto;
-            background: rgba(30,30,30,0.95);
-            backdrop-filter: blur(10px);
-            border-radius: 30px;
+            background: rgba(20,20,24,0.92);
+            backdrop-filter: blur(12px);
+            border-radius: 40px;
             padding: 30px;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.5), 0 0 0 2px #FFD700 inset;
-            border: 1px solid #FFD70088;
+            box-shadow: 0 30px 50px rgba(0,0,0,0.6), 0 0 0 2px #FFD70088 inset;
+            border: 1px solid rgba(255,215,0,0.5);
         }
 
         h1 {
             text-align: center;
-            color: #FFD700;
+            background: linear-gradient(135deg, #FFE484, #FFB347);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
             margin-bottom: 10px;
             font-size: 2.8em;
-            text-shadow: 0 2px 10px #FFD70055;
-            letter-spacing: 2px;
         }
 
         .subtitle {
             text-align: center;
-            color: #ddd;
-            margin-bottom: 30px;
-            font-size: 1.1em;
-        }
-
-        /* Normal Input Section - No Sticky */
-        .input-section {
-            background: #252525;
-            padding: 25px;
-            border-radius: 20px;
-            margin-bottom: 30px;
-            border: 1px solid #FFD70044;
-            box-shadow: 0 10px 20px rgba(0,0,0,0.3);
-        }
-
-        .input-group {
-            display: flex;
-            gap: 10px;
-            margin-bottom: 15px;
-            flex-wrap: wrap;
-        }
-
-
-        .input-group input, .input-group select {
-            padding: 14px 18px;
-            border: 2px solid #444;
-            border-radius: 12px;
-            font-size: 16px;
-            background: #1e1e1e;
-            color: #fff;
-            transition: all 0.3s;
-        }
-
-        .input-group input:focus, .input-group select:focus {
-            outline: none;
-            border-color: #FFD700;
-            box-shadow: 0 0 10px #FFD70055;
-        }
-
-        .input-group input {
-            flex: 1;
-        }
-
-        .input-group select {
-            min-width: 200px;
-            cursor: pointer;
+            color: #f0e6c5;
+            margin-bottom: 25px;
         }
 
         .repeat-buttons {
             display: flex;
+            flex-wrap: nowrap;
+            overflow-x: auto;
             gap: 8px;
             margin: 15px 0;
-            flex-wrap: wrap;
-            justify-content: center;
+            padding-bottom: 8px;
         }
-
+        .repeat-buttons::-webkit-scrollbar { height: 4px; }
         .repeat-btn {
             padding: 10px 18px;
-            border: 2px solid #444;
-            border-radius: 30px;
+            border: 2px solid #FFD70077;
+            border-radius: 50px;
             background: #1e1e1e;
-            color: #fff;
+            color: #FFD700;
             cursor: pointer;
-            font-size: 15px;
-            transition: all 0.3s;
-            flex: 0 1 auto;
-            min-width: 60px;
+            flex-shrink: 0;
         }
-
         .repeat-btn.active {
             background: linear-gradient(135deg, #FFD700, #FFA500);
             color: #000;
-            border-color: #FFD700;
-            font-weight: bold;
-            box-shadow: 0 0 15px #FFD700;
+            box-shadow: 0 0 12px gold;
         }
 
-        .repeat-btn:hover {
-            border-color: #FFD700;
-        }
-
-        .preview-box {
-            background: #1e1e1e;
+        .input-section {
+            background: #1e1e24cc;
             padding: 25px;
-            border-radius: 15px;
+            border-radius: 28px;
+            margin-bottom: 30px;
+            border: 1px solid #FFD700;
+        }
+        .input-group {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+        .input-group input, .input-group select {
+            flex: 1;
+            padding: 14px 18px;
+            background: #0f0f12;
+            border: 2px solid #FFD70088;
+            border-radius: 40px;
+            color: white;
+            font-size: 1rem;
+        }
+        .preview-box {
+            background: #0a0a0c;
+            padding: 20px;
+            border-radius: 32px;
             border: 2px solid #FFD700;
             margin: 20px 0;
             text-align: center;
             font-size: 38px;
-            word-break: break-all;
-            min-height: 120px;
-            color: #fff;
-            box-shadow: 0 0 20px #FFD70022;
+            min-height: 110px;
+            color: #FFE7A3;
         }
-
         .copy-btn {
             background: linear-gradient(135deg, #FFD700, #FFA500);
-            color: #000;
             border: none;
-            padding: 16px 30px;
+            padding: 14px;
             border-radius: 50px;
-            font-size: 20px;
+            font-weight: bold;
+            font-size: 1.2rem;
             cursor: pointer;
             width: 100%;
-            transition: all 0.3s;
-            font-weight: bold;
-            letter-spacing: 1px;
         }
-
-        .copy-btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 25px #FFD70077;
-        }
-
-        .section-title {
-            font-size: 2em;
-            color: #FFD700;
-            margin: 50px 0 20px 0;
-            padding-bottom: 10px;
-            border-bottom: 3px solid #FFD700;
-            text-shadow: 0 2px 5px #000;
-        }
-
-        .symbol-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(110px, 1fr));
-    gap: 12px;
-    margin: 20px 0;
-}
-
-.symbol-card {
-    background: #252525;
-    border-radius: 12px;
-    padding: 12px 8px;
-    text-align: center;
-    border: 1px solid #FFD70044;
-    transition: all 0.2s;
-    cursor: pointer;
-}
-
-.symbol-card:hover {
-    transform: translateY(-3px);
-    border-color: #FFD700;
-    box-shadow: 0 5px 12px #FFD70033;
-}
-
-.attach-badge {
-    background: linear-gradient(135deg, #FFD700, #FFA500);
-    color: #000;
-    font-size: 9px;
-    padding: 3px 8px;
-    border-radius: 20px;
-    display: inline-block;
-    margin-bottom: 6px;
-    font-weight: bold;
-}
-
-.symbol {
-    font-size: 28px;
-    margin-bottom: 6px;
-    color: #fff;
-}
-
-.symbol-name {
-    font-size: 10px;
-    color: #aaa;
-    background: #333;
-    padding: 3px 6px;
-    border-radius: 15px;
-    display: inline-block;
-    margin-bottom: 6px;
-}
-
-.copy-symbol-btn {
-    background: #333;
-    border: 1px solid #FFD700;
-    color: #FFD700;
-    padding: 5px 8px;
-    border-radius: 20px;
-    cursor: pointer;
-    font-size: 10px;
-    transition: all 0.2s;
-    width: 100%;
-    margin-top: 5px;
-}
-
-.copy-symbol-btn:hover {
-    background: #FFD700;
-    color: #000;
-}
-        .premium-note {
-            background: #1e1e1e;
-            padding: 20px;
-            border-radius: 20px;
-            border: 2px dashed #FFD700;
-            margin: 30px 0;
-        }
-
-        .premium-note h3 {
-            color: #FFD700;
-            margin-bottom: 15px;
-            font-size: 1.8em;
-        }
-
-        .premium-note textarea {
-            width: 100%;
-            height: 120px;
-            padding: 15px;
-            border-radius: 15px;
-            border: 2px solid #444;
-            background: #252525;
-            color: #fff;
-            font-size: 16px;
-            resize: vertical;
-        }
-
-        .premium-note textarea:focus {
-            border-color: #FFD700;
-            outline: none;
-        }
-
-        .suggestions-header {
+        .stats-box {
             display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 15px;
+            justify-content: center;
+            gap: 30px;
+            margin: 35px 0;
             flex-wrap: wrap;
-            gap: 10px;
+        }
+        .stat-item {
+            background: #1f1f28;
+            padding: 20px;
+            border-radius: 28px;
+            text-align: center;
+            border: 1px solid gold;
         }
 
-        .suggestions-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-            gap: 15px;
-            margin: 20px 0;
+        .symbol-category {
+            margin-bottom: 45px;
         }
-
-        .suggestion-item {
-            background: #252525;
-            border: 1px solid #FFD70033;
-            border-radius: 12px;
-            padding: 15px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .suggestion-item > div {
-            flex: 1;
-        }
-
-        .suggestion-text {
+        .symbol-category h2 {
             color: #FFD700;
-            font-size: 1.1rem;
-            word-break: break-word;
+            font-size: 1.8rem;
+            margin: 20px 0 15px;
+            border-left: 6px solid #FFD700;
+            padding-left: 18px;
         }
-
-        .suggestion-author {
-            color: #aaa;
-            font-size: 0.7rem;
-            margin-top: 3px;
+        .symbol-grid {
+            display: flex;
+            flex-wrap: nowrap;
+            overflow-x: auto;
+            gap: 14px;
+            padding: 12px 6px 20px;
         }
-
-        .suggestion-item button {
+        .symbol-grid::-webkit-scrollbar { height: 5px; }
+        .symbol-card {
+            background: #252525dd;
+            border-radius: 24px;
+            padding: 12px 10px;
+            text-align: center;
+            border: 1px solid #FFD70077;
+            min-width: 135px;
+            flex-shrink: 0;
+        }
+        .symbol-card:hover {
+            transform: translateY(-5px);
+            border-color: #FFD700;
+            box-shadow: 0 12px 20px rgba(255,215,0,0.3);
+        }
+        .attach-badge {
+            background: linear-gradient(135deg, #FFD700, #FFA500);
+            color: #000;
+            font-size: 9px;
+            padding: 3px 8px;
+            border-radius: 30px;
+            display: inline-block;
+        }
+        .symbol {
+            font-size: 32px;
+            margin: 6px 0;
+            color: #fff;
+        }
+        .symbol-name {
+            font-size: 10px;
+            background: #333;
+            padding: 3px 8px;
+            border-radius: 30px;
+            display: inline-block;
+            color: #FFD700;
+        }
+        .example-preview {
+            font-size: 12px;
+            background: #1a1a1a;
+            margin: 6px 0;
+            padding: 4px;
+            border-radius: 20px;
+            color: #FFD966;
+        }
+        .copy-symbol-btn {
             background: #333;
             border: 1px solid #FFD700;
             color: #FFD700;
-            padding: 5px 12px;
-            border-radius: 30px;
+            padding: 5px 8px;
+            border-radius: 40px;
             cursor: pointer;
-            margin-left: 10px;
-            white-space: nowrap;
+            font-size: 10px;
+            margin-top: 5px;
+            width: 90%;
         }
-
-        .suggestion-item button:hover {
+        .copy-symbol-btn:hover {
             background: #FFD700;
             color: #000;
         }
 
-        .see-all-btn {
-            text-align: center;
+        .vip-collection-wrapper {
+            margin: 40px 0;
+            background: linear-gradient(145deg, #0f0f12, #070708);
+            border-radius: 32px;
+            border: 2px solid #FFD700;
+            padding: 20px;
+        }
+        .vip-scroll {
+            display: flex;
+            overflow-x: auto;
+            gap: 12px;
+            padding: 12px 4px;
+        }
+        .vip-item {
+            background: #252525;
+            padding: 8px 18px;
+            border-radius: 40px;
+            white-space: nowrap;
+            cursor: pointer;
+            border: 1px solid gold;
+            color: #FFD700;
+            flex-shrink: 0;
+        }
+        .vip-item:hover {
+            background: #FFD700;
+            color: black;
+        }
+
+        .tips-section {
+            background: #101015dd;
+            border-radius: 28px;
+            padding: 20px;
+            margin: 30px 0;
+            border: 1px solid #FFD70088;
+        }
+        .tips-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
             margin-top: 15px;
         }
-
-        .see-all-btn button {
-            background: transparent;
-            border: 1px solid #FFD700;
+        .tip-card {
+            background: #1e1e24;
+            padding: 10px 15px;
+            border-radius: 40px;
             color: #FFD700;
-            padding: 8px 25px;
-            border-radius: 50px;
+            border: 1px solid #FFD70066;
             cursor: pointer;
-            transition: all 0.3s;
         }
-
-        .see-all-btn button:hover {
+        .tip-card:hover {
             background: #FFD700;
-            color: #000;
+            color: black;
         }
 
-        .stats-box {
+        .suggestions-scroll {
             display: flex;
-            justify-content: space-around;
-            text-align: center;
-            margin: 40px 0;
-            flex-wrap: wrap;
-            gap: 20px;
+            overflow-x: auto;
+            gap: 15px;
+            padding: 15px 5px;
         }
-
-        .stat-item {
-            background: linear-gradient(145deg, #252525, #1a1a1a);
-            color: #FFD700;
-            padding: 25px 20px;
-            border-radius: 20px;
-            min-width: 140px;
-            border: 1px solid #FFD70044;
-        }
-
-        .stat-number {
-            font-size: 2.2em;
-            font-weight: bold;
-        }
-
-        .stat-label {
-            font-size: 1em;
-            color: #ccc;
-        }
-
-        .idea-badge {
-            background: #FFD70022;
-            color: #FFD700;
-            padding: 4px 10px;
-            border-radius: 30px;
-            font-size: 11px;
-            display: inline-block;
-            margin-right: 5px;
-            border: 1px solid #FFD70044;
-        }
-
-        .faq-item {
-            background: #252525;
-            padding: 15px 20px;
-            border-radius: 15px;
-            margin-bottom: 10px;
-            border: 1px solid #444;
-        }
-
-        .faq-item h4 {
-            color: #FFD700;
-            cursor: pointer;
+        .suggestion-item {
+            background: #252525dd;
+            border-radius: 28px;
+            padding: 12px 20px;
+            min-width: 220px;
+            flex-shrink: 0;
             display: flex;
             justify-content: space-between;
             align-items: center;
+            border: 1px solid #FFD70088;
+        }
+        .suggestion-text {
+            color: #FFD700;
+            font-weight: 500;
+        }
+        .suggestion-meta {
+            font-size: 10px;
+            color: #aaa;
         }
 
-        .faq-item p {
-            color: #ccc;
-            margin-top: 10px;
-            line-height: 1.6;
-            display: none;
-        }
-
-        .faq-item.active p {
-            display: block;
-        }
-
-        .alert {
+        .alert-custom {
             position: fixed;
-            top: 20px;
-            right: 20px;
+            top: 25px;
+            right: 25px;
             background: linear-gradient(135deg, #FFD700, #FFA500);
-            color: #000;
-            padding: 18px 30px;
-            border-radius: 50px;
-            font-size: 1.2rem;
+            color: #1e1e1e;
+            padding: 14px 28px;
+            border-radius: 60px;
             font-weight: bold;
-            box-shadow: 0 5px 25px #FFD700;
-            z-index: 2000;
-            animation: slideInGold 0.3s;
+            z-index: 9999;
+            animation: slideIn 0.3s ease;
         }
-
-        @keyframes slideInGold {
+        @keyframes slideIn {
             from { transform: translateX(100%); opacity: 0; }
             to { transform: translateX(0); opacity: 1; }
         }
 
-        /* Modal Styles */
-        #suggestionModal {
-            display: none;
+        .scroll-top-btn {
             position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0,0,0,0.8);
-            z-index: 2000;
-            align-items: center;
-            justify-content: center;
-            animation: fadeIn 0.3s;
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
-
-        .modal-content {
-            background: #1e1e1e;
-            padding: 30px;
-            border-radius: 20px;
-            max-width: 400px;
-            width: 90%;
-            border: 2px solid #FFD700;
-            animation: slideUp 0.3s;
-        }
-
-        @keyframes slideUp {
-            from { transform: translateY(50px); opacity: 0; }
-            to { transform: translateY(0); opacity: 1; }
-        }
-
-        .modal-content h3 {
-            color: #FFD700;
-            margin-bottom: 20px;
-        }
-
-        .modal-content label {
-            color: #fff;
-            display: block;
-            margin-bottom: 8px;
-        }
-
-        .modal-content input {
-            width: 100%;
-            padding: 12px;
-            background: #252525;
-            border: 1px solid #444;
-            border-radius: 10px;
-            color: #fff;
-            margin-bottom: 20px;
-        }
-
-        .modal-content input:focus {
-            border-color: #FFD700;
-            outline: none;
-        }
-
-        .modal-actions {
-            display: flex;
-            gap: 10px;
-        }
-
-        .modal-actions button {
-            flex: 1;
-            padding: 12px;
-            border-radius: 10px;
-            cursor: pointer;
-            font-weight: bold;
-        }
-
-        .save-btn {
-            background: linear-gradient(135deg, #FFD700, #FFA500);
+            bottom: 25px;
+            right: 25px;
+            width: 55px;
+            height: 55px;
+            background: radial-gradient(circle, #FFD700, #FF8800);
             color: #000;
             border: none;
+            border-radius: 30px;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+            box-shadow: 0 0 18px gold;
+            transition: 0.2s;
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
-
-        .cancel-btn {
-            background: #333;
-            color: #fff;
-            border: none;
+        .scroll-top-btn:hover {
+            transform: translateY(-3px);
+            background: radial-gradient(circle, #FFE55C, #FFAA33);
         }
 
         .footer {
             margin-top: 50px;
-            padding: 30px 0 10px;
-            border-top: 2px solid #FFD70033;
             text-align: center;
-            color: #aaa;
-        }
-
-        .footer a {
-            color: #FFD700;
-            text-decoration: none;
-            margin: 0 10px;
-        }
-
-        .footer a:hover {
-            text-decoration: underline;
-        }
-
-        .privacy-note {
-            background: #1e1e1e;
-            padding: 15px;
-            border-radius: 10px;
-            border-left: 4px solid #FFD700;
-            margin: 20px 0;
+            border-top: 1px solid #FFD70055;
+            padding: 30px 10px;
             color: #ccc;
-            font-size: 0.9rem;
         }
-
-        .privacy-note strong {
-            color: #FFD700;
-        }
-        
-/* Font Chips - Horizontal Scroll */
-.font-chips-wrapper {
-    margin: 15px 0;
-    position: relative;
-}
-
-.font-chips-scroll {
-    display: flex;
-    flex-wrap: nowrap;
-    overflow-x: auto;
-    gap: 10px;
-    padding: 8px 4px;
-    scrollbar-width: thin;
-    -webkit-overflow-scrolling: touch;
-}
-
-.font-chips-scroll::-webkit-scrollbar {
-    height: 4px;
-}
-
-.font-chips-scroll::-webkit-scrollbar-track {
-    background: #333;
-    border-radius: 10px;
-}
-
-.font-chips-scroll::-webkit-scrollbar-thumb {
-    background: #FFD700;
-    border-radius: 10px;
-}
-
-.font-chip {
-    background: #1e1e1e;
-    border: 1px solid #FFD700;
-    color: #FFD700;
-    padding: 6px 16px;
-    border-radius: 30px;
-    font-size: 0.9rem;
-    cursor: pointer;
-    transition: all 0.2s;
-    white-space: nowrap;
-    flex-shrink: 0;
-}
-
-.font-chip:hover {
-    background: #FFD700;
-    color: #000;
-    transform: translateY(-2px);
-    box-shadow: 0 2px 8px rgba(255,215,0,0.4);
-}
-        
-        /* Optional: Add gradient fade on edges to hint scroll */
-.font-chips-wrapper {
-    position: relative;
-}
-
-.font-chips-wrapper::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 40px;
-    height: 100%;
-    background: linear-gradient(to right, transparent, #1e1e1e);
-    pointer-events: none;
-}
-
-.font-chips-wrapper::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 40px;
-    height: 100%;
-    background: linear-gradient(to left, transparent, #1e1e1e);
-    pointer-events: none;
-}
-
-      /* VIP Collection - Horizontal Scroll (Like Font Chips) */
-.vip-collection-wrapper {
-    margin: 40px 0;
-    padding: 20px;
-    background: linear-gradient(145deg, #1a1a1a, #0f0f0f);
-    border-radius: 24px;
-    border: 2px solid #FFD700;
-    box-shadow: 0 10px 30px rgba(255,215,0,0.2);
-    position: relative;
-}
-
-/* Optional: Gradient fade on edges to hint scroll (same as font chips) */
-.vip-collection-wrapper::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 50px;
-    height: 100%;
-    background: linear-gradient(to right, transparent, #1a1a1a);
-    pointer-events: none;
-    border-radius: 0 24px 24px 0;
-}
-
-.vip-collection-wrapper::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 50px;
-    height: 100%;
-    background: linear-gradient(to left, transparent, #1a1a1a);
-    pointer-events: none;
-    border-radius: 24px 0 0 24px;
-}
-
-.vip-header {
-    text-align: center;
-    margin-bottom: 25px;
-    position: relative;
-    z-index: 2;
-}
-
-.vip-badge {
-    display: inline-block;
-    background: linear-gradient(135deg, #FFD700, #FFA500);
-    color: #000;
-    padding: 5px 15px;
-    border-radius: 50px;
-    font-size: 0.8rem;
-    font-weight: bold;
-    margin-bottom: 10px;
-}
-
-.vip-title {
-    font-size: 1.8rem;
-    color: #FFD700;
-    margin-bottom: 5px;
-}
-
-.vip-subtitle {
-    color: #aaa;
-    font-size: 0.85rem;
-}
-
-.vip-scroll {
-    display: flex;
-    flex-wrap: nowrap;
-    overflow-x: auto;
-    gap: 10px;
-    padding: 8px 4px 15px 4px;
-    scrollbar-width: thin;
-    -webkit-overflow-scrolling: touch;
-    position: relative;
-    z-index: 2;
-}
-
-/* Custom Scrollbar */
-.vip-scroll::-webkit-scrollbar {
-    height: 5px;
-}
-
-.vip-scroll::-webkit-scrollbar-track {
-    background: #333;
-    border-radius: 10px;
-}
-
-.vip-scroll::-webkit-scrollbar-thumb {
-    background: #FFD700;
-    border-radius: 10px;
-}
-
-.vip-scroll::-webkit-scrollbar-thumb:hover {
-    background: #FFA500;
-}
-
-.vip-item {
-    background: #252525;
-    border: 1px solid #FFD70033;
-    border-radius: 30px;
-    padding: 8px 18px;
-    text-align: center;
-    font-size: 0.9rem;
-    color: #FFD700;
-    cursor: pointer;
-    transition: all 0.2s;
-    white-space: nowrap;
-    flex-shrink: 0;
-}
-
-.vip-item:hover {
-    background: #FFD700;
-    color: #000;
-    transform: translateY(-2px);
-    border-color: #FFD700;
-    box-shadow: 0 3px 10px rgba(255,215,0,0.3);
-}
-
-/* Dark theme adjustment */
-.dark-theme .vip-collection-wrapper::before,
-.dark-theme .vip-collection-wrapper::after {
-    background: linear-gradient(to left, #1a1a1a, transparent);
-}
-
-.dark-theme .vip-collection-wrapper::after {
-    background: linear-gradient(to right, transparent, #1a1a1a);
-}
-
-/* Optional: Remove gradient fade on mobile (cleaner look) */
-@media (max-width: 768px) {
-    .vip-collection-wrapper::before,
-    .vip-collection-wrapper::after {
-        display: none;
-    }
-    
-    .vip-title {
-        font-size: 1.4rem;
-    }
-    
-    .vip-item {
-        font-size: 0.8rem;
-        padding: 6px 12px;
-    }
-}
-        
-        @media (max-width: 768px) {
-            .container { padding: 20px; }
-            h1 { font-size: 2em; }
-            .input-group { flex-direction: column; }
-            .input-group select { width: 100%; }
-            .suggestions-header { flex-direction: column; }
+        @media (max-width: 760px) {
+            .container { padding: 18px; }
+            .symbol-card { min-width: 115px; }
         }
     </style>
 </head>
 <body>
-    <div class="special-badge">✨ PREMIUM USER ✨</div>
-    <div class="container">
-        <h1>✨ Premium Attach Symbol Generator ✨</h1>
-        <p class="subtitle">Copy symbols and attach them to any letter or emoji. Over 35+ attaching symbols with community suggestions.</p>
 
-        <!-- Privacy Note -->
-        <div class="privacy-note">
-            <strong>🔒 Privacy Note:</strong> Your suggestions are stored locally in your browser. We don't collect any personal data. All suggestions are visible only to you unless you share them.
+<div class="ticker-wrap">
+    <div class="ticker">
+        <span>✨ YOU ARE THE FULL CONTROLLER ✨</span>
+        <span>⚡ PREMIUM SYMBOL MASTER ⚡</span>
+        <span>💎 UNLIMITED CREATIVITY 💎</span>
+        <span>👑 GOLDEN ATTACH ENGINE 👑</span>
+        <span>✨ YOU ARE THE FULL CONTROLLER ✨</span>
+    </div>
+</div>
+
+<div class="special-badge">✨ PREMIUM GOLDEN EDITION ✨</div>
+
+<div class="container">
+    <h1>✨ GOLDEN ATTACH STUDIO ✨</h1>
+    <p class="subtitle">Unlimited combining symbols • 1‑click attach • VIP scrolls</p>
+
+    <div class="input-section">
+        <div class="input-group">
+            <input type="text" id="inputText" placeholder="Your text" value="GOLD">
+            <select id="symbolSelect"></select>
         </div>
-        
-<!-- Font Preview Chips - Horizontal Scroll -->
-<div class="font-chips-wrapper">
-    <div class="font-chips-scroll">
-        <span class="font-chip" data-font="cursive">𝓝𝓪𝓶𝓮</span>
-        <span class="font-chip" data-font="fraktur">𝕹𝕬𝕸𝕰</span>
-        <span class="font-chip" data-font="doublestruck">ℕ𝕒𝕞𝕖</span>
-        <span class="font-chip" data-font="bold">𝙉𝙖𝙢𝙚</span>
-        <span class="font-chip" data-font="italic">𝑁𝑎𝑚𝑒</span>
-        <span class="font-chip" data-font="square">🄽🄰🄼🄴</span>
-        <span class="font-chip" data-font="sans">𝘕𝘈𝘔𝘌</span>
-        <span class="font-chip" data-font="encircle">🅝🅐🅜🅔</span>
-        <span class="font-chip" data-font="circled">Ⓝⓐⓜⓔ</span>
-        <span class="font-chip" data-font="script">𝑵𝑨𝑴𝑬</span>
-        <span class="font-chip" data-font="bubble">🅽🅰🅼🅴</span>
-        <span class="font-chip" data-font="canadian">ᑎᗩᗰᗴ</span>
-        <span class="font-chip" data-font="greek">ПΔMΣ</span>
-        <span class="font-chip" data-font="upside">Nɐɯǝ</span>
-        <span class="font-chip" data-font="fullwidth">Ｎａｍｅ</span>
-        <span class="font-chip" data-font="smallcaps">ɴᴀᴍᴇ</span>
-        <span class="font-chip" data-font="monospace">𝙽𝚊𝚖𝚎</span>
-        <span class="font-chip" data-font="viking">ΝΛΜΞ</span>
-        <span class="font-chip" data-font="thai">ภค๓є</span>
-        <span class="font-chip" data-font="wide">Ｎａｍｅ</span>
-        <span class="font-chip" data-font="japanese">几卂爪乇</span>
+        <div class="repeat-buttons" id="repeatButtons"></div>
+        <div class="preview-box" id="preview">G̶O̶L̶D̶</div>
+        <button class="copy-btn" onclick="copyResult()">📋 COPY GOLDEN RESULT</button>
+        <button class="copy-btn" style="margin-top:10px; background:#2a2a2a; color:#FFD700;" onclick="randomCombo()">✨ RANDOM VIP COMBO ✨</button>
+    </div>
+
+    <div class="stats-box">
+        <div class="stat-item"><span class="stat-number">350+</span><div>Attach Symbols</div></div>
+        <div class="stat-item"><span class="stat-number">∞</span><div>Combinations</div></div>
+        <div class="stat-item"><span class="stat-number">VIP</span><div>Scroll Ready</div></div>
+    </div>
+
+    <div id="symbolCategoriesContainer"></div>
+
+    <div class="tips-section">
+        <h3 style="color:#FFD700;">✨ QUICK TIPS – COPY & USE ✨</h3>
+        <div class="tips-grid" id="tipsGrid"></div>
+    </div>
+
+    <div class="vip-collection-wrapper">
+        <div style="text-align:center"><span style="background:gold;color:black;padding:5px 15px;border-radius:50px;">⭐ VIP EXCLUSIVE ⭐</span><h3 style="color:gold;margin-top:10px;">Click any – instant copy</h3></div>
+        <div class="vip-scroll" id="vipScroll"></div>
+    </div>
+
+    <h2 style="color:#FFD700;">💎 PREMIUM COMMUNITY VAULT</h2>
+    <div style="display:flex; justify-content:space-between; margin-bottom:15px;">
+        <p style="color:#ddd;">🔥 Real suggestions from global creators</p>
+        <button onclick="openAddSuggestionModal()" style="background:linear-gradient(135deg,#FFD700,#FFA500); border:none; padding:8px 24px; border-radius:40px; font-weight:bold; cursor:pointer;">+ ADD YOUR IDEA</button>
+    </div>
+    <div id="suggestionsContainer" class="suggestions-scroll"></div>
+    <div id="seeAllBtnContainer"></div>
+
+    <div style="background:#101015; border:2px dashed gold; border-radius:28px; padding:20px; margin:30px 0;">
+        <h3 style="color:gold">📝 PREMIUM VAULT NOTES</h3>
+        <textarea placeholder="Save your masterpiece combinations here..." style="width:100%; background:#1e1e24; color:white; border-radius:20px; padding:12px;"></textarea>
+    </div>
+
+    <div class="footer">
+        <p>© 2026 GOLDEN ATTACH STUDIO | <a href="#" style="color:gold">Privacy Vault</a> | <a href="#" style="color:gold">Terms of Gold</a></p>
     </div>
 </div>
 
-        <!-- Normal Input Section (No Sticky) -->
-        <div class="input-section">
-            <h3 style="color:#FFD700; margin-bottom:15px;">🎨 Live Generator – Gold Edition</h3>
-            <div class="input-group">
-                <input type="text" id="inputText" placeholder="Enter text (e.g., Jack, 💗, Love)" value="Jack">
-                <select id="symbolSelect">
-    <option value="᪲">💗᪲ Flower 1 (᪲)</option>
-    <option value="᪳">A᪳ Flower 2 (᪳)</option>
-    <option value="᪴">A᪴ Flower 3 (᪴)</option>
-    <option value="ꕤ">Aꕤ Small Flower (ꕤ)</option>
-    <option value="𑁍">A𑁍 Lotus (𑁍)</option>
-    <option value="͙">A͙ Tiny Star (͙)</option>
-    <option value="𖤐">A𖤐 Star (𖤐)</option>
-    <option value="˚">A˚ Ring (˚)</option>
-    <option value="༙">A༙ Circle Dot (༙)</option>
-    <option value="͢">👿͢͢͢͢͢͢͢ Heart Trail (͢)</option>
-    <option value="ꨄ">Aꨄ Tiny Heart (ꨄ)</option>
-    <option value="༄">A༄ Wind (༄)</option>
-    <option value="𓆭">A𓆭 Lotus (𓆭)</option>
-    <option value="̶">A̶ Cut Line (̶)</option>
-    <option value="̲">A̲ Underline (̲)</option>
-    <option value="̅">A̅ Overline (̅)</option>
-    <option value="̈">Ä Double Dot (̈)</option>
-    <option value="̇">Ȧ Single Dot (̇)</option>
-    <option value="̣">Ạ Dot Bottom (̣)</option>
-    <option value="̧">A̧ Cedilla (̧)</option>
-    <option value="̆">Ă Breve (̆)</option>
-    <option value="̊">Å Circle Top (̊)</option>
-    <option value="̂">Â Circumflex (̂)</option>
-    <option value="̄">Ā Macron (̄)</option>
-    <option value="̐">A̐ Curve (̐)</option>
-    <option value="̌">Ǎ Caron (̌)</option>
-    <option value="̋">A̋ Double Acute (̋)</option>
-    <option value="⃯">A⃯ Triple Dot (⃯)</option>
-    <option value="ꤪꤨꤪ">Aꤪꤨꤪ Rejang Decor (ꤪꤨꤪ)</option>
-    <option value="̤̮">A̤̮ Double Breve (̤̮)</option>
-    <option value="̝">A̝ Up Tack (̝)</option>
-    <option value="̞">A̞ Down Tack (̞)</option>
-    <option value="̬">A̬ Caron Below (̬)</option>
-    <option value="̭">A̭ Circumflex Below (̭)</option>
-    <option value="̯">A̯ Inverted Breve Below (̯)</option>
-    <option value="̺">A̺ Inverted Bridge (̺)</option>
-    <option value="̻">A̻ Square Below (̻)</option>
-    <option value="̼">A̼ Seagull Below (̼)</option>
-    <option value="⃝">A⃝ Circle Enclose (⃝)</option>
-    <option value="̥">Ḁ Ring Below (̥)</option>
-    <option value="͘">A͘ Dot Right Half (͘)</option>
-    <option value="̹">A̹ Right Half Ring Below (̹)</option>
-    <option value="̜">A̜ Left Half Ring Below (̜)</option>
-    <option value="⃞">A⃞ Enclosing Square (⃞)</option>
-    <option value="⃟">A⃟ Enclosing Diamond (⃟)</option>
-    <option value="̠">A̠ Minus Below (̠)</option>
-    <option value="͢">A͢ Double Arrow Below (͢)</option>
-    <option value="̤">A̤ Double Dot Below (̤)</option>
-    <option value="︈">A︈ Vertical Form 1 (︈)</option>
-    <option value="︉">A︉ Vertical Form 2 (︉)</option>
-    <option value="︊">A︊ Vertical Form 3 (︊)</option>
-    <option value="︋">A︋ Vertical Form 4 (︋)</option>
-    <option value="︌">A︌ Vertical Form 5 (︌)</option>
-    <option value="︍">A︍ Vertical Form 6 (︍)</option>
-    <option value="︎">A︎ Text Style (︎)</option>
-    <option value="️">A️ Emoji Style (️)</option>
-    <option value="︠">A︠ Ligature Left (︠)</option>
-    <option value="︡">A︡ Ligature Right (︡)</option>
-    <option value="︢">A︢ Double Tilde Left (︢)</option>
-    <option value="︣">A︣ Double Tilde Right (︣)</option>
-    <option value="︤">A︤ Macron Left (︤)</option>
-    <option value="︥">A︥ Macron Right (︥)</option>
-    <option value="︦">A︦ Conjoined Macron (︦)</option>
-    <option value="﻿">A﻿ Zero Width Space (﻿)</option>
-    <option value="⃜">A⃜ Four Dots Above (⃜)</option>
-    <option value="⃠">A⃠ Circle with Backslash (⃠)</option>
-    <option value="⃡">A⃡ Left Right Arrow Above (⃡)</option>
-    <option value="⃢">A⃢ Enclosing Screen (⃢)</option>
-    <option value="᪻">A᪻ Double Parenthesis Above (᪻)</option>
-    <option value="᪼">A᪼ Double Parenthesis Below (᪼)</option>
-    <option value="᪽">A᪽ Parenthesis Above (᪽)</option>
-    <option value="᪾">A᪾ Parenthesis Below (᪾)</option>
-    <option value="⃨">A⃨ Triple Underdot (⃨)</option>
-    <option value="⃩">A⃩ Wide Bridge Above (⃩)</option>
-    <option value="⃪">A⃪ Left Arrow Above (⃪)</option>
-    <option value="⃫">A⃫ Right Arrow Above (⃫)</option>
-    <option value="᪰">A᪰ Double Circumflex Above (᪰)</option>
-    <option value="᪱">A᪱ Double Circumflex Below (᪱)</option>
-    <option value="᪲">A᪲ Double Ring Above (᪲)</option>
-    <option value="᪳">A᪳ Double Ring Below (᪳)</option>
-    <option value="᪴">A᪴ Double Overline (᪴)</option>
-    <option value="᪵">A᪵ Double Underline (᪵)</option>
-    <option value="᪶">A᪶ Double Wavy Above (᪶)</option>
-    <option value="᪷">A᪷ Double Wavy Below (᪷)</option>
-    <option value="ᷲ">Aᷲ Double Tilde Left (ᷲ)</option>
-    <option value="ᷳ">Aᷳ Double Tilde Right (ᷳ)</option>
-    <option value="ᷴ">Aᷴ Double Macron Left (ᷴ)</option>
-    <option value="᷵">A᷵ Double Macron Right (᷵)</option>
-</select>
-            </div>
-
-            <div class="repeat-buttons" id="repeatButtons">
-                <button class="repeat-btn active" onclick="setRepeat(1)">1x</button>
-                <button class="repeat-btn" onclick="setRepeat(2)">2x</button>
-                <button class="repeat-btn" onclick="setRepeat(3)">3x</button>
-                <button class="repeat-btn" onclick="setRepeat(4)">4x</button>
-                <button class="repeat-btn" onclick="setRepeat(5)">5x</button>
-                <button class="repeat-btn" onclick="setRepeat(6)">6x</button>
-                <button class="repeat-btn" onclick="setRepeat(7)">7x</button>
-                <button class="repeat-btn" onclick="setRepeat(8)">8x</button>
-                <button class="repeat-btn" onclick="setRepeat(9)">9x</button>
-                <button class="repeat-btn" onclick="setRepeat(10)">10x</button>
-            </div>
-
-            <div class="preview-box" id="preview">J̶̶̶a̶̶̶c̶̶̶k̶̶̶</div>
-            <button class="copy-btn" onclick="copyResult()">📋 Copy Result</button>
-        </div>
-
-        <!-- Premium Stats -->
-        <div class="stats-box">
-            <div class="stat-item"><span class="stat-number">35+</span><div class="stat-label">Attach Symbols</div></div>
-            <div class="stat-item"><span class="stat-number">10x</span><div class="stat-label">Repeat Options</div></div>
-            <div class="stat-item"><span class="stat-number">∞</span><div class="stat-label">Combinations</div></div>
-        </div>
-
-        <!-- Premium Notes Area -->
-        <div class="premium-note">
-            <h3>📝 Premium Notes</h3>
-            <textarea placeholder="Jot down your favorite symbol combinations or ideas..."></textarea>
-        </div>
-
-        <!-- Community Suggestions Section -->
-        <h2 class="section-title">💎 Community Suggestions</h2>
-        
-        <div class="suggestions-header">
-            <p style="color: #aaa;">✨ Real suggestions from users like you</p>
-            <button onclick="openAddSuggestionModal()" style="background: linear-gradient(135deg, #FFD700, #FFA500); color: #000; border: none; padding: 8px 20px; border-radius: 50px; font-weight: bold; cursor: pointer;">
-                + Add Your Own
-            </button>
-        </div>
-
-        <div id="suggestionsGrid" class="suggestions-grid">
-            <!-- Suggestions will load here -->
-        </div>
-
-        <div class="see-all-btn" id="seeAllBtnContainer"></div>
-
-        <!-- All Symbols Sections -->
-        <h2 class="section-title">🌸 Flower Style Symbols</h2>
-        <div class="symbol-grid">
-            <div class="symbol-card" onclick="selectSymbol('᪲')">
-                <span class="attach-badge">✅ Attaches</span>
-                <div class="symbol">᪲</div>
-                <span class="symbol-name">Flower 1</span>
-                <div style="color:#aaa; font-size:12px;">A᪲᪲᪲</div>
-                <button class="copy-symbol-btn" onclick="event.stopPropagation(); copySymbol('᪲')">📋 Copy Symbol</button>
-                <button class="copy-symbol-btn" style="margin-top:5px; background:#FFD700; color:#000;" onclick="event.stopPropagation(); attachSymbol('᪲')">🔗 Attach Now</button>
-            </div>
-            <div class="symbol-card" onclick="selectSymbol('᪳')">
-                <span class="attach-badge">✅ Attaches</span>
-                <div class="symbol">᪳</div>
-                <span class="symbol-name">Flower 2</span>
-                <div style="color:#aaa; font-size:12px;">A᪳᪳᪳</div>
-                <button class="copy-symbol-btn" onclick="event.stopPropagation(); copySymbol('᪳')">📋 Copy Symbol</button>
-                <button class="copy-symbol-btn" style="margin-top:5px; background:#FFD700; color:#000;" onclick="event.stopPropagation(); attachSymbol('᪳')">🔗 Attach Now</button>
-            </div>
-            <div class="symbol-card" onclick="selectSymbol('᪴')">
-                <span class="attach-badge">✅ Attaches</span>
-                <div class="symbol">᪴</div>
-                <span class="symbol-name">Flower 3</span>
-                <div style="color:#aaa; font-size:12px;">A᪴᪴᪴</div>
-                <button class="copy-symbol-btn" onclick="event.stopPropagation(); copySymbol('᪴')">📋 Copy Symbol</button>
-                <button class="copy-symbol-btn" style="margin-top:5px; background:#FFD700; color:#000;" onclick="event.stopPropagation(); attachSymbol('᪴')">🔗 Attach Now</button>
-            </div>
-            <div class="symbol-card" onclick="selectSymbol('ꕤ')">
-                <span class="attach-badge">✅ Attaches</span>
-                <div class="symbol">ꕤ</div>
-                <span class="symbol-name">Small Flower</span>
-                <div style="color:#aaa; font-size:12px;">Aꕤꕤꕤ</div>
-                <button class="copy-symbol-btn" onclick="event.stopPropagation(); copySymbol('ꕤ')">📋 Copy Symbol</button>
-                <button class="copy-symbol-btn" style="margin-top:5px; background:#FFD700; color:#000;" onclick="event.stopPropagation(); attachSymbol('ꕤ')">🔗 Attach Now</button>
-            </div>
-            <div class="symbol-card" onclick="selectSymbol('𑁍')">
-                <span class="attach-badge">✅ Attaches</span>
-                <div class="symbol">𑁍</div>
-                <span class="symbol-name">Lotus</span>
-                <div style="color:#aaa; font-size:12px;">A𑁍𑁍𑁍</div>
-                <button class="copy-symbol-btn" onclick="event.stopPropagation(); copySymbol('𑁍')">📋 Copy Symbol</button>
-                <button class="copy-symbol-btn" style="margin-top:5px; background:#FFD700; color:#000;" onclick="event.stopPropagation(); attachSymbol('𑁍')">🔗 Attach Now</button>
-            </div>
-    <div class="symbol-card" onclick="selectSymbol('︠')">
-        <span class="attach-badge">✅ Attaches</span>
-        <div class="symbol">︠</div>
-        <span class="symbol-name">Ligature Left</span>
-        <div style="color:#aaa; font-size:12px;">A︠</div>
-        <button class="copy-symbol-btn" onclick="event.stopPropagation(); copySymbol('︠')">📋 Copy Symbol</button>
-        <button class="copy-symbol-btn" style="margin-top:5px; background:#FFD700; color:#000;" onclick="event.stopPropagation(); attachSymbol('︠')">🔗 Attach Now</button>
-    </div>
-    
-    <!-- Ligature Right Half -->
-    <div class="symbol-card" onclick="selectSymbol('︡')">
-        <span class="attach-badge">✅ Attaches</span>
-        <div class="symbol">︡</div>
-        <span class="symbol-name">Ligature Right</span>
-        <div style="color:#aaa; font-size:12px;">A︡</div>
-        <button class="copy-symbol-btn" onclick="event.stopPropagation(); copySymbol('︡')">📋 Copy Symbol</button>
-        <button class="copy-symbol-btn" style="margin-top:5px; background:#FFD700; color:#000;" onclick="event.stopPropagation(); attachSymbol('︡')">🔗 Attach Now</button>
-    </div>
-    
-    <!-- Double Tilde Left Half -->
-    <div class="symbol-card" onclick="selectSymbol('︢')">
-        <span class="attach-badge">✅ Attaches</span>
-        <div class="symbol">︢</div>
-        <span class="symbol-name">Double Tilde Left</span>
-        <div style="color:#aaa; font-size:12px;">A︢</div>
-        <button class="copy-symbol-btn" onclick="event.stopPropagation(); copySymbol('︢')">📋 Copy Symbol</button>
-        <button class="copy-symbol-btn" style="margin-top:5px; background:#FFD700; color:#000;" onclick="event.stopPropagation(); attachSymbol('︢')">🔗 Attach Now</button>
-    </div>
-    
-    <!-- Double Tilde Right Half -->
-    <div class="symbol-card" onclick="selectSymbol('︣')">
-        <span class="attach-badge">✅ Attaches</span>
-        <div class="symbol">︣</div>
-        <span class="symbol-name">Double Tilde Right</span>
-        <div style="color:#aaa; font-size:12px;">A︣</div>
-        <button class="copy-symbol-btn" onclick="event.stopPropagation(); copySymbol('︣')">📋 Copy Symbol</button>
-        <button class="copy-symbol-btn" style="margin-top:5px; background:#FFD700; color:#000;" onclick="event.stopPropagation(); attachSymbol('︣')">🔗 Attach Now</button>
-    </div>
-    
-    <!-- Macron Left Half -->
-    <div class="symbol-card" onclick="selectSymbol('︤')">
-        <span class="attach-badge">✅ Attaches</span>
-        <div class="symbol">︤</div>
-        <span class="symbol-name">Macron Left</span>
-        <div style="color:#aaa; font-size:12px;">A︤</div>
-        <button class="copy-symbol-btn" onclick="event.stopPropagation(); copySymbol('︤')">📋 Copy Symbol</button>
-        <button class="copy-symbol-btn" style="margin-top:5px; background:#FFD700; color:#000;" onclick="event.stopPropagation(); attachSymbol('︤')">🔗 Attach Now</button>
-    </div>
-    
-    <!-- Macron Right Half -->
-    <div class="symbol-card" onclick="selectSymbol('︥')">
-        <span class="attach-badge">✅ Attaches</span>
-        <div class="symbol">︥</div>
-        <span class="symbol-name">Macron Right</span>
-        <div style="color:#aaa; font-size:12px;">A︥</div>
-        <button class="copy-symbol-btn" onclick="event.stopPropagation(); copySymbol('︥')">📋 Copy Symbol</button>
-        <button class="copy-symbol-btn" style="margin-top:5px; background:#FFD700; color:#000;" onclick="event.stopPropagation(); attachSymbol('︥')">🔗 Attach Now</button>
-    </div>
-    
-    <!-- Conjoined Macron -->
-    <div class="symbol-card" onclick="selectSymbol('︦')">
-        <span class="attach-badge">✅ Attaches</span>
-        <div class="symbol">︦</div>
-        <span class="symbol-name">Conjoined Macron</span>
-        <div style="color:#aaa; font-size:12px;">A︦</div>
-        <button class="copy-symbol-btn" onclick="event.stopPropagation(); copySymbol('︦')">📋 Copy Symbol</button>
-        <button class="copy-symbol-btn" style="margin-top:5px; background:#FFD700; color:#000;" onclick="event.stopPropagation(); attachSymbol('︦')">🔗 Attach Now</button>
-    </div>
-    
-    <!-- Zero Width Space (BOM) -->
-    <div class="symbol-card" onclick="selectSymbol('﻿')">
-        <span class="attach-badge">✅ Invisible</span>
-        <div class="symbol">﻿</div>
-        <span class="symbol-name">Zero Width Space</span>
-        <div style="color:#aaa; font-size:12px;">A﻿</div>
-        <button class="copy-symbol-btn" onclick="event.stopPropagation(); copySymbol('﻿')">📋 Copy Symbol</button>
-        <button class="copy-symbol-btn" style="margin-top:5px; background:#FFD700; color:#000;" onclick="event.stopPropagation(); attachSymbol('﻿')">🔗 Attach Now</button>
-    </div>
-         
-    <!-- Circle Enclose -->
-    <div class="symbol-card" onclick="selectSymbol('⃝')">
-        <span class="attach-badge">✅ Attaches</span>
-        <div class="symbol">⃝</div>
-        <span class="symbol-name">Circle Enclose</span>
-        <div style="color:#aaa; font-size:12px;">A⃝</div>
-        <button class="copy-symbol-btn" onclick="event.stopPropagation(); copySymbol('⃝')">📋 Copy Symbol</button>
-        <button class="copy-symbol-btn" style="margin-top:5px; background:#FFD700; color:#000;" onclick="event.stopPropagation(); attachSymbol('⃝')">🔗 Attach Now</button>
-    </div>
-    
-    <!-- Ring Above -->
-    <div class="symbol-card" onclick="selectSymbol('̊')">
-        <span class="attach-badge">✅ Attaches</span>
-        <div class="symbol">̊</div>
-        <span class="symbol-name">Ring Above</span>
-        <div style="color:#aaa; font-size:12px;">Å</div>
-        <button class="copy-symbol-btn" onclick="event.stopPropagation(); copySymbol('̊')">📋 Copy Symbol</button>
-        <button class="copy-symbol-btn" style="margin-top:5px; background:#FFD700; color:#000;" onclick="event.stopPropagation(); attachSymbol('̊')">🔗 Attach Now</button>
-    </div>
-    
-    <!-- Ring Below -->
-    <div class="symbol-card" onclick="selectSymbol('̥')">
-        <span class="attach-badge">✅ Attaches</span>
-        <div class="symbol">̥</div>
-        <span class="symbol-name">Ring Below</span>
-        <div style="color:#aaa; font-size:12px;">Ḁ</div>
-        <button class="copy-symbol-btn" onclick="event.stopPropagation(); copySymbol('̥')">📋 Copy Symbol</button>
-        <button class="copy-symbol-btn" style="margin-top:5px; background:#FFD700; color:#000;" onclick="event.stopPropagation(); attachSymbol('̥')">🔗 Attach Now</button>
-    </div>
-    
-    <!-- Dot Above -->
-    <div class="symbol-card" onclick="selectSymbol('̇')">
-        <span class="attach-badge">✅ Attaches</span>
-        <div class="symbol">̇</div>
-        <span class="symbol-name">Dot Above</span>
-        <div style="color:#aaa; font-size:12px;">Ȧ</div>
-        <button class="copy-symbol-btn" onclick="event.stopPropagation(); copySymbol('̇')">📋 Copy Symbol</button>
-        <button class="copy-symbol-btn" style="margin-top:5px; background:#FFD700; color:#000;" onclick="event.stopPropagation(); attachSymbol('̇')">🔗 Attach Now</button>
-    </div>
-    
-    <!-- Dot Below -->
-    <div class="symbol-card" onclick="selectSymbol('̣')">
-        <span class="attach-badge">✅ Attaches</span>
-        <div class="symbol">̣</div>
-        <span class="symbol-name">Dot Below</span>
-        <div style="color:#aaa; font-size:12px;">Ạ</div>
-        <button class="copy-symbol-btn" onclick="event.stopPropagation(); copySymbol('̣')">📋 Copy Symbol</button>
-        <button class="copy-symbol-btn" style="margin-top:5px; background:#FFD700; color:#000;" onclick="event.stopPropagation(); attachSymbol('̣')">🔗 Attach Now</button>
-    </div>
-    
-    <!-- Dot Right Half -->
-    <div class="symbol-card" onclick="selectSymbol('͘')">
-        <span class="attach-badge">✅ Attaches</span>
-        <div class="symbol">͘</div>
-        <span class="symbol-name">Dot Right Half</span>
-        <div style="color:#aaa; font-size:12px;">A͘</div>
-        <button class="copy-symbol-btn" onclick="event.stopPropagation(); copySymbol('͘')">📋 Copy Symbol</button>
-        <button class="copy-symbol-btn" style="margin-top:5px; background:#FFD700; color:#000;" onclick="event.stopPropagation(); attachSymbol('͘')">🔗 Attach Now</button>
-    </div>
-    
-    <!-- Four Dots Above -->
-    <div class="symbol-card" onclick="selectSymbol('⃜')">
-        <span class="attach-badge">✅ Attaches</span>
-        <div class="symbol">⃜</div>
-        <span class="symbol-name">Four Dots Above</span>
-        <div style="color:#aaa; font-size:12px;">A⃜</div>
-        <button class="copy-symbol-btn" onclick="event.stopPropagation(); copySymbol('⃜')">📋 Copy Symbol</button>
-        <button class="copy-symbol-btn" style="margin-top:5px; background:#FFD700; color:#000;" onclick="event.stopPropagation(); attachSymbol('⃜')">🔗 Attach Now</button>
-    </div>
-    
-    <!-- Enclosing Circle -->
-    <div class="symbol-card" onclick="selectSymbol('⃝')">
-        <span class="attach-badge">✅ Attaches</span>
-        <div class="symbol">⃝</div>
-        <span class="symbol-name">Enclosing Circle</span>
-        <div style="color:#aaa; font-size:12px;">A⃝</div>
-        <button class="copy-symbol-btn" onclick="event.stopPropagation(); copySymbol('⃝')">📋 Copy Symbol</button>
-        <button class="copy-symbol-btn" style="margin-top:5px; background:#FFD700; color:#000;" onclick="event.stopPropagation(); attachSymbol('⃝')">🔗 Attach Now</button>
-    </div>
-    
-    <!-- Enclosing Square -->
-    <div class="symbol-card" onclick="selectSymbol('⃞')">
-        <span class="attach-badge">✅ Attaches</span>
-        <div class="symbol">⃞</div>
-        <span class="symbol-name">Enclosing Square</span>
-        <div style="color:#aaa; font-size:12px;">A⃞</div>
-        <button class="copy-symbol-btn" onclick="event.stopPropagation(); copySymbol('⃞')">📋 Copy Symbol</button>
-        <button class="copy-symbol-btn" style="margin-top:5px; background:#FFD700; color:#000;" onclick="event.stopPropagation(); attachSymbol('⃞')">🔗 Attach Now</button>
-    </div>
-    
-    <!-- Enclosing Diamond -->
-    <div class="symbol-card" onclick="selectSymbol('⃟')">
-        <span class="attach-badge">✅ Attaches</span>
-        <div class="symbol">⃟</div>
-        <span class="symbol-name">Enclosing Diamond</span>
-        <div style="color:#aaa; font-size:12px;">A⃟</div>
-        <button class="copy-symbol-btn" onclick="event.stopPropagation(); copySymbol('⃟')">📋 Copy Symbol</button>
-        <button class="copy-symbol-btn" style="margin-top:5px; background:#FFD700; color:#000;" onclick="event.stopPropagation(); attachSymbol('⃟')">🔗 Attach Now</button>
-    </div>
-    
-    <!-- Enclosing Circle Backslash -->
-    <div class="symbol-card" onclick="selectSymbol('⃠')">
-        <span class="attach-badge">✅ Attaches</span>
-        <div class="symbol">⃠</div>
-        <span class="symbol-name">Circle Backslash</span>
-        <div style="color:#aaa; font-size:12px;">A⃠</div>
-        <button class="copy-symbol-btn" onclick="event.stopPropagation(); copySymbol('⃠')">📋 Copy Symbol</button>
-        <button class="copy-symbol-btn" style="margin-top:5px; background:#FFD700; color:#000;" onclick="event.stopPropagation(); attachSymbol('⃠')">🔗 Attach Now</button>
-    </div>
-    
-    <!-- Left Right Arrow Above -->
-    <div class="symbol-card" onclick="selectSymbol('⃡')">
-        <span class="attach-badge">✅ Attaches</span>
-        <div class="symbol">⃡</div>
-        <span class="symbol-name">Left Right Arrow Above</span>
-        <div style="color:#aaa; font-size:12px;">A⃡</div>
-        <button class="copy-symbol-btn" onclick="event.stopPropagation(); copySymbol('⃡')">📋 Copy Symbol</button>
-        <button class="copy-symbol-btn" style="margin-top:5px; background:#FFD700; color:#000;" onclick="event.stopPropagation(); attachSymbol('⃡')">🔗 Attach Now</button>
-    </div>
-    
-    <!-- Enclosing Screen -->
-    <div class="symbol-card" onclick="selectSymbol('⃢')">
-        <span class="attach-badge">✅ Attaches</span>
-        <div class="symbol">⃢</div>
-        <span class="symbol-name">Enclosing Screen</span>
-        <div style="color:#aaa; font-size:12px;">A⃢</div>
-        <button class="copy-symbol-btn" onclick="event.stopPropagation(); copySymbol('⃢')">📋 Copy Symbol</button>
-        <button class="copy-symbol-btn" style="margin-top:5px; background:#FFD700; color:#000;" onclick="event.stopPropagation(); attachSymbol('⃢')">🔗 Attach Now</button>
-    </div>
-    
-    <!-- Asterisk Below -->
-    <div class="symbol-card" onclick="selectSymbol('͙')">
-        <span class="attach-badge">✅ Attaches</span>
-        <div class="symbol">͙</div>
-        <span class="symbol-name">Asterisk Below</span>
-        <div style="color:#aaa; font-size:12px;">A͙</div>
-        <button class="copy-symbol-btn" onclick="event.stopPropagation(); copySymbol('͙')">📋 Copy Symbol</button>
-        <button class="copy-symbol-btn" style="margin-top:5px; background:#FFD700; color:#000;" onclick="event.stopPropagation(); attachSymbol('͙')">🔗 Attach Now</button>
-    </div>
-    
-    <!-- Double Ring Below -->
-    <div class="symbol-card" onclick="selectSymbol('͚')">
-        <span class="attach-badge">✅ Attaches</span>
-        <div class="symbol">͚</div>
-        <span class="symbol-name">Double Ring Below</span>
-        <div style="color:#aaa; font-size:12px;">A͚</div>
-        <button class="copy-symbol-btn" onclick="event.stopPropagation(); copySymbol('͚')">📋 Copy Symbol</button>
-        <button class="copy-symbol-btn" style="margin-top:5px; background:#FFD700; color:#000;" onclick="event.stopPropagation(); attachSymbol('͚')">🔗 Attach Now</button>
-    </div>
-</div>
-
-        <h2 class="section-title">⭐ Star & Dot Style</h2>
-        <div class="symbol-grid">
-            <div class="symbol-card" onclick="selectSymbol('͙')">
-                <span class="attach-badge">✅ Attaches</span>
-                <div class="symbol">͙</div>
-                <span class="symbol-name">Tiny Star</span>
-                <div style="color:#aaa; font-size:12px;">A͙͙͙</div>
-                <button class="copy-symbol-btn" onclick="event.stopPropagation(); copySymbol('͙')">📋 Copy Symbol</button>
-                <button class="copy-symbol-btn" style="margin-top:5px; background:#FFD700; color:#000;" onclick="event.stopPropagation(); attachSymbol('͙')">🔗 Attach Now</button>
-            </div>
-            <div class="symbol-card" onclick="selectSymbol('𖤐')">
-                <span class="attach-badge">✅ Attaches</span>
-                <div class="symbol">𖤐</div>
-                <span class="symbol-name">Star</span>
-                <div style="color:#aaa; font-size:12px;">A𖤐𖤐𖤐</div>
-                <button class="copy-symbol-btn" onclick="event.stopPropagation(); copySymbol('𖤐')">📋 Copy Symbol</button>
-                <button class="copy-symbol-btn" style="margin-top:5px; background:#FFD700; color:#000;" onclick="event.stopPropagation(); attachSymbol('𖤐')">🔗 Attach Now</button>
-            </div>
-            <div class="symbol-card" onclick="selectSymbol('˚')">
-                <span class="attach-badge">✅ Attaches</span>
-                <div class="symbol">˚</div>
-                <span class="symbol-name">Ring</span>
-                <div style="color:#aaa; font-size:12px;">A˚˚˚</div>
-                <button class="copy-symbol-btn" onclick="event.stopPropagation(); copySymbol('˚')">📋 Copy Symbol</button>
-                <button class="copy-symbol-btn" style="margin-top:5px; background:#FFD700; color:#000;" onclick="event.stopPropagation(); attachSymbol('˚')">🔗 Attach Now</button>
-            </div>
-            <div class="symbol-card" onclick="selectSymbol('༙')">
-                <span class="attach-badge">✅ Attaches</span>
-                <div class="symbol">༙</div>
-                <span class="symbol-name">Circle Dot</span>
-                <div style="color:#aaa; font-size:12px;">A༙༙༙</div>
-                <button class="copy-symbol-btn" onclick="event.stopPropagation(); copySymbol('༙')">📋 Copy Symbol</button>
-                <button class="copy-symbol-btn" style="margin-top:5px; background:#FFD700; color:#000;" onclick="event.stopPropagation(); attachSymbol('༙')">🔗 Attach Now</button>
-            </div>
-        </div>
-
-        <h2 class="section-title">💗 Heart & Nature Style</h2>
-        <div class="symbol-grid">
-            <div class="symbol-card" onclick="selectSymbol('͢')">
-                <span class="attach-badge">✅ Attaches</span>
-                <div class="symbol">͢</div>
-                <span class="symbol-name">Heart Trail</span>
-                <div style="color:#aaa; font-size:12px;">A͢͢͢</div>
-                <button class="copy-symbol-btn" onclick="event.stopPropagation(); copySymbol('͢')">📋 Copy Symbol</button>
-                <button class="copy-symbol-btn" style="margin-top:5px; background:#FFD700; color:#000;" onclick="event.stopPropagation(); attachSymbol('͢')">🔗 Attach Now</button>
-            </div>
-            <div class="symbol-card" onclick="selectSymbol('ꨄ')">
-                <span class="attach-badge">✅ Attaches</span>
-                <div class="symbol">ꨄ</div>
-                <span class="symbol-name">Tiny Heart</span>
-                <div style="color:#aaa; font-size:12px;">Aꨄꨄꨄ</div>
-                <button class="copy-symbol-btn" onclick="event.stopPropagation(); copySymbol('ꨄ')">📋 Copy Symbol</button>
-                <button class="copy-symbol-btn" style="margin-top:5px; background:#FFD700; color:#000;" onclick="event.stopPropagation(); attachSymbol('ꨄ')">🔗 Attach Now</button>
-            </div>
-            <div class="symbol-card" onclick="selectSymbol('༄')">
-                <span class="attach-badge">✅ Attaches</span>
-                <div class="symbol">༄</div>
-                <span class="symbol-name">Wind</span>
-                <div style="color:#aaa; font-size:12px;">A༄༄༄</div>
-                <button class="copy-symbol-btn" onclick="event.stopPropagation(); copySymbol('༄')">📋 Copy Symbol</button>
-                <button class="copy-symbol-btn" style="margin-top:5px; background:#FFD700; color:#000;" onclick="event.stopPropagation(); attachSymbol('༄')">🔗 Attach Now</button>
-            </div>
-            <div class="symbol-card" onclick="selectSymbol('𓆭')">
-                <span class="attach-badge">✅ Attaches</span>
-                <div class="symbol">𓆭</div>
-                <span class="symbol-name">Lotus</span>
-                <div style="color:#aaa; font-size:12px;">A𓆭𓆭𓆭</div>
-                <button class="copy-symbol-btn" onclick="event.stopPropagation(); copySymbol('𓆭')">📋 Copy Symbol</button>
-                <button class="copy-symbol-btn" style="margin-top:5px; background:#FFD700; color:#000;" onclick="event.stopPropagation(); attachSymbol('𓆭')">🔗 Attach Now</button>
-            </div>
-        </div>
-
-        <h2 class="section-title">➖ Line & Dot Style</h2>
-        <div class="symbol-grid">
-            <div class="symbol-card" onclick="selectSymbol('̶')">
-                <span class="attach-badge">✅ Attaches</span>
-                <div class="symbol">̶</div>
-                <span class="symbol-name">Cut Line</span>
-                <div style="color:#aaa; font-size:12px;">A̶̶̶</div>
-                <button class="copy-symbol-btn" onclick="event.stopPropagation(); copySymbol('̶')">📋 Copy Symbol</button>
-                <button class="copy-symbol-btn" style="margin-top:5px; background:#FFD700; color:#000;" onclick="event.stopPropagation(); attachSymbol('̶')">🔗 Attach Now</button>
-            </div>
-            <div class="symbol-card" onclick="selectSymbol('̲')">
-                <span class="attach-badge">✅ Attaches</span>
-                <div class="symbol">̲</div>
-                <span class="symbol-name">Underline</span>
-                <div style="color:#aaa; font-size:12px;">A̲̲̲</div>
-                <button class="copy-symbol-btn" onclick="event.stopPropagation(); copySymbol('̲')">📋 Copy Symbol</button>
-                <button class="copy-symbol-btn" style="margin-top:5px; background:#FFD700; color:#000;" onclick="event.stopPropagation(); attachSymbol('̲')">🔗 Attach Now</button>
-            </div>
-            <div class="symbol-card" onclick="selectSymbol('̅')">
-                <span class="attach-badge">✅ Attaches</span>
-                <div class="symbol">̅</div>
-                <span class="symbol-name">Overline</span>
-                <div style="color:#aaa; font-size:12px;">A̅̅̅</div>
-                <button class="copy-symbol-btn" onclick="event.stopPropagation(); copySymbol('̅')">📋 Copy Symbol</button>
-                <button class="copy-symbol-btn" style="margin-top:5px; background:#FFD700; color:#000;" onclick="event.stopPropagation(); attachSymbol('̅')">🔗 Attach Now</button>
-            </div>
-            <div class="symbol-card" onclick="selectSymbol('̈')">
-                <span class="attach-badge">✅ Attaches</span>
-                <div class="symbol">̈</div>
-                <span class="symbol-name">Double Dot</span>
-                <div style="color:#aaa; font-size:12px;">Ä̈̈</div>
-                <button class="copy-symbol-btn" onclick="event.stopPropagation(); copySymbol('̈')">📋 Copy Symbol</button>
-                <button class="copy-symbol-btn" style="margin-top:5px; background:#FFD700; color:#000;" onclick="event.stopPropagation(); attachSymbol('̈')">🔗 Attach Now</button>
-            </div>
-            <div class="symbol-card" onclick="selectSymbol('̇')">
-                <span class="attach-badge">✅ Attaches</span>
-                <div class="symbol">̇</div>
-                <span class="symbol-name">Single Dot</span>
-                <div style="color:#aaa; font-size:12px;">Ȧ̇̇</div>
-                <button class="copy-symbol-btn" onclick="event.stopPropagation(); copySymbol('̇')">📋 Copy Symbol</button>
-                <button class="copy-symbol-btn" style="margin-top:5px; background:#FFD700; color:#000;" onclick="event.stopPropagation(); attachSymbol('̇')">🔗 Attach Now</button>
-            </div>
-            <div class="symbol-card" onclick="selectSymbol('̣')">
-                <span class="attach-badge">✅ Attaches</span>
-                <div class="symbol">̣</div>
-                <span class="symbol-name">Dot Bottom</span>
-                <div style="color:#aaa; font-size:12px;">Ạ̣̣</div>
-                <button class="copy-symbol-btn" onclick="event.stopPropagation(); copySymbol('̣')">📋 Copy Symbol</button>
-                <button class="copy-symbol-btn" style="margin-top:5px; background:#FFD700; color:#000;" onclick="event.stopPropagation(); attachSymbol('̣')">🔗 Attach Now</button>
-            </div>
-            <div class="symbol-card" onclick="selectSymbol('̧')">
-                <span class="attach-badge">✅ Attaches</span>
-                <div class="symbol">̧</div>
-                <span class="symbol-name">Cedilla</span>
-                <div style="color:#aaa; font-size:12px;">A̧̧̧</div>
-                <button class="copy-symbol-btn" onclick="event.stopPropagation(); copySymbol('̧')">📋 Copy Symbol</button>
-                <button class="copy-symbol-btn" style="margin-top:5px; background:#FFD700; color:#000;" onclick="event.stopPropagation(); attachSymbol('̧')">🔗 Attach Now</button>
-            </div>
-            <div class="symbol-card" onclick="selectSymbol('̆')">
-                <span class="attach-badge">✅ Attaches</span>
-                <div class="symbol">̆</div>
-                <span class="symbol-name">Breve</span>
-                <div style="color:#aaa; font-size:12px;">Ă̆̆</div>
-                <button class="copy-symbol-btn" onclick="event.stopPropagation(); copySymbol('̆')">📋 Copy Symbol</button>
-                <button class="copy-symbol-btn" style="margin-top:5px; background:#FFD700; color:#000;" onclick="event.stopPropagation(); attachSymbol('̆')">🔗 Attach Now</button>
-            </div>
-            <div class="symbol-card" onclick="selectSymbol('̊')">
-                <span class="attach-badge">✅ Attaches</span>
-                <div class="symbol">̊</div>
-                <span class="symbol-name">Circle Top</span>
-                <div style="color:#aaa; font-size:12px;">Å̊̊</div>
-                <button class="copy-symbol-btn" onclick="event.stopPropagation(); copySymbol('̊')">📋 Copy Symbol</button>
-                <button class="copy-symbol-btn" style="margin-top:5px; background:#FFD700; color:#000;" onclick="event.stopPropagation(); attachSymbol('̊')">🔗 Attach Now</button>
-            </div>
-            <div class="symbol-card" onclick="selectSymbol('̂')">
-                <span class="attach-badge">✅ Attaches</span>
-                <div class="symbol">̂</div>
-                <span class="symbol-name">Circumflex</span>
-                <div style="color:#aaa; font-size:12px;">Â̂̂</div>
-                <button class="copy-symbol-btn" onclick="event.stopPropagation(); copySymbol('̂')">📋 Copy Symbol</button>
-                <button class="copy-symbol-btn" style="margin-top:5px; background:#FFD700; color:#000;" onclick="event.stopPropagation(); attachSymbol('̂')">🔗 Attach Now</button>
-            </div>
-            <div class="symbol-card" onclick="selectSymbol('̄')">
-                <span class="attach-badge">✅ Attaches</span>
-                <div class="symbol">̄</div>
-                <span class="symbol-name">Macron</span>
-                <div style="color:#aaa; font-size:12px;">Ā̄̄</div>
-                <button class="copy-symbol-btn" onclick="event.stopPropagation(); copySymbol('̄')">📋 Copy Symbol</button>
-                <button class="copy-symbol-btn" style="margin-top:5px; background:#FFD700; color:#000;" onclick="event.stopPropagation(); attachSymbol('̄')">🔗 Attach Now</button>
-            </div>
-            <div class="symbol-card" onclick="selectSymbol('̐')">
-                <span class="attach-badge">✅ Attaches</span>
-                <div class="symbol">̐</div>
-                <span class="symbol-name">Curve</span>
-                <div style="color:#aaa; font-size:12px;">A̐̐̐</div>
-                <button class="copy-symbol-btn" onclick="event.stopPropagation(); copySymbol('̐')">📋 Copy Symbol</button>
-                <button class="copy-symbol-btn" style="margin-top:5px; background:#FFD700; color:#000;" onclick="event.stopPropagation(); attachSymbol('̐')">🔗 Attach Now</button>
-            </div>
-            <div class="symbol-card" onclick="selectSymbol('̌')">
-                <span class="attach-badge">✅ Attaches</span>
-                <div class="symbol">̌</div>
-                <span class="symbol-name">Caron</span>
-                <div style="color:#aaa; font-size:12px;">Ǎ̌̌</div>
-                <button class="copy-symbol-btn" onclick="event.stopPropagation(); copySymbol('̌')">📋 Copy Symbol</button>
-                <button class="copy-symbol-btn" style="margin-top:5px; background:#FFD700; color:#000;" onclick="event.stopPropagation(); attachSymbol('̌')">🔗 Attach Now</button>
-            </div>
-            <div class="symbol-card" onclick="selectSymbol('̋')">
-                <span class="attach-badge">✅ Attaches</span>
-                <div class="symbol">̋</div>
-                <span class="symbol-name">Double Acute</span>
-                <div style="color:#aaa; font-size:12px;">A̋̋̋</div>
-                <button class="copy-symbol-btn" onclick="event.stopPropagation(); copySymbol('̋')">📋 Copy Symbol</button>
-                <button class="copy-symbol-btn" style="margin-top:5px; background:#FFD700; color:#000;" onclick="event.stopPropagation(); attachSymbol('̋')">🔗 Attach Now</button>
-            </div>
-            <div class="symbol-card" onclick="selectSymbol('⃯')">
-                <span class="attach-badge">✅ Attaches</span>
-                <div class="symbol">⃯</div>
-                <span class="symbol-name">Triple Dot</span>
-                <div style="color:#aaa; font-size:12px;">A⃯⃯⃯</div>
-                <button class="copy-symbol-btn" onclick="event.stopPropagation(); copySymbol('⃯')">📋 Copy Symbol</button>
-                <button class="copy-symbol-btn" style="margin-top:5px; background:#FFD700; color:#000;" onclick="event.stopPropagation(); attachSymbol('⃯')">🔗 Attach Now</button>
-            </div>
-    <!-- Up Tack -->
-    <div class="symbol-card" onclick="selectSymbol('̝')">
-        <span class="attach-badge">✅ Attaches</span>
-        <div class="symbol">̝</div>
-        <span class="symbol-name">Up Tack</span>
-        <div style="color:#aaa; font-size:12px;">A̝</div>
-        <button class="copy-symbol-btn" onclick="event.stopPropagation(); copySymbol('̝')">📋 Copy Symbol</button>
-        <button class="copy-symbol-btn" style="margin-top:5px; background:#FFD700; color:#000;" onclick="event.stopPropagation(); attachSymbol('̝')">🔗 Attach Now</button>
-    </div>
-    
-    <!-- Down Tack -->
-    <div class="symbol-card" onclick="selectSymbol('̞')">
-        <span class="attach-badge">✅ Attaches</span>
-        <div class="symbol">̞</div>
-        <span class="symbol-name">Down Tack</span>
-        <div style="color:#aaa; font-size:12px;">A̞</div>
-        <button class="copy-symbol-btn" onclick="event.stopPropagation(); copySymbol('̞')">📋 Copy Symbol</button>
-        <button class="copy-symbol-btn" style="margin-top:5px; background:#FFD700; color:#000;" onclick="event.stopPropagation(); attachSymbol('̞')">🔗 Attach Now</button>
-    </div>
-    
-    <!-- Caron Below -->
-    <div class="symbol-card" onclick="selectSymbol('̬')">
-        <span class="attach-badge">✅ Attaches</span>
-        <div class="symbol">̬</div>
-        <span class="symbol-name">Caron Below</span>
-        <div style="color:#aaa; font-size:12px;">A̬</div>
-        <button class="copy-symbol-btn" onclick="event.stopPropagation(); copySymbol('̬')">📋 Copy Symbol</button>
-        <button class="copy-symbol-btn" style="margin-top:5px; background:#FFD700; color:#000;" onclick="event.stopPropagation(); attachSymbol('̬')">🔗 Attach Now</button>
-    </div>
-    
-    <!-- Circumflex Below -->
-    <div class="symbol-card" onclick="selectSymbol('̭')">
-        <span class="attach-badge">✅ Attaches</span>
-        <div class="symbol">̭</div>
-        <span class="symbol-name">Circumflex Below</span>
-        <div style="color:#aaa; font-size:12px;">A̭</div>
-        <button class="copy-symbol-btn" onclick="event.stopPropagation(); copySymbol('̭')">📋 Copy Symbol</button>
-        <button class="copy-symbol-btn" style="margin-top:5px; background:#FFD700; color:#000;" onclick="event.stopPropagation(); attachSymbol('̭')">🔗 Attach Now</button>
-    </div>
-    
-    <!-- Inverted Breve Below -->
-    <div class="symbol-card" onclick="selectSymbol('̯')">
-        <span class="attach-badge">✅ Attaches</span>
-        <div class="symbol">̯</div>
-        <span class="symbol-name">Inv Breve Below</span>
-        <div style="color:#aaa; font-size:12px;">A̯</div>
-        <button class="copy-symbol-btn" onclick="event.stopPropagation(); copySymbol('̯')">📋 Copy Symbol</button>
-        <button class="copy-symbol-btn" style="margin-top:5px; background:#FFD700; color:#000;" onclick="event.stopPropagation(); attachSymbol('̯')">🔗 Attach Now</button>
-    </div>
-    
-    <!-- Inverted Bridge -->
-    <div class="symbol-card" onclick="selectSymbol('̺')">
-        <span class="attach-badge">✅ Attaches</span>
-        <div class="symbol">̺</div>
-        <span class="symbol-name">Inv Bridge</span>
-        <div style="color:#aaa; font-size:12px;">A̺</div>
-        <button class="copy-symbol-btn" onclick="event.stopPropagation(); copySymbol('̺')">📋 Copy Symbol</button>
-        <button class="copy-symbol-btn" style="margin-top:5px; background:#FFD700; color:#000;" onclick="event.stopPropagation(); attachSymbol('̺')">🔗 Attach Now</button>
-    </div>
-    
-    <!-- Square Below -->
-    <div class="symbol-card" onclick="selectSymbol('̻')">
-        <span class="attach-badge">✅ Attaches</span>
-        <div class="symbol">̻</div>
-        <span class="symbol-name">Square Below</span>
-        <div style="color:#aaa; font-size:12px;">A̻</div>
-        <button class="copy-symbol-btn" onclick="event.stopPropagation(); copySymbol('̻')">📋 Copy Symbol</button>
-        <button class="copy-symbol-btn" style="margin-top:5px; background:#FFD700; color:#000;" onclick="event.stopPropagation(); attachSymbol('̻')">🔗 Attach Now</button>
-    </div>
-    
-    <!-- Seagull Below -->
-    <div class="symbol-card" onclick="selectSymbol('̼')">
-        <span class="attach-badge">✅ Attaches</span>
-        <div class="symbol">̼</div>
-        <span class="symbol-name">Seagull Below</span>
-        <div style="color:#aaa; font-size:12px;">A̼</div>
-        <button class="copy-symbol-btn" onclick="event.stopPropagation(); copySymbol('̼')">📋 Copy Symbol</button>
-        <button class="copy-symbol-btn" style="margin-top:5px; background:#FFD700; color:#000;" onclick="event.stopPropagation(); attachSymbol('̼')">🔗 Attach Now</button>
-    </div>
-</div>
-        <!-- Decorative ya Gaming Category mein add karo -->
-<h2 class="section-title">✨ Gaming & Decorative Symbols</h2>
-<div class="symbol-grid">
-    <!-- ... existing symbols ... -->
-    
-    <!-- 👇 YEH CARD ADD KARO -->
-    <div class="symbol-card" onclick="selectSymbol('ꤪꤨꤪ')">
-        <span class="attach-badge">✅ Attaches</span>
-        <div class="symbol">ꤪꤨꤪ</div>
-        <span class="symbol-name">Rejang Decor</span>
-        <div style="color:#aaa; font-size:12px;">Aꤪꤨꤪ</div>
-        <button class="copy-symbol-btn" onclick="event.stopPropagation(); copySymbol('ꤪꤨꤪ')">📋 Copy Symbol</button>
-        <button class="copy-symbol-btn" style="margin-top:5px; background:#FFD700; color:#000;" onclick="event.stopPropagation(); attachSymbol('ꤪꤨꤪ')">🔗 Attach Now</button>
-    </div>
-</div>
-
-    <h2 class="section-title">➖ Line & Dot Style</h2>
-<div class="symbol-grid">
-
-    <div class="symbol-card" onclick="selectSymbol('̝')">
-        <span class="attach-badge">✅ Attaches</span>
-        <div class="symbol">̝</div>
-        <span class="symbol-name">Up Tack</span>
-        <div style="color:#aaa; font-size:12px;">A̝</div>
-        <button class="copy-symbol-btn" onclick="event.stopPropagation(); copySymbol('̝')">📋 Copy Symbol</button>
-        <button class="copy-symbol-btn" style="margin-top:5px; background:#FFD700; color:#000;" onclick="event.stopPropagation(); attachSymbol('̝')">🔗 Attach Now</button>
-    </div>
-    
-    <!-- Down Tack -->
-    <div class="symbol-card" onclick="selectSymbol('̞')">
-        <span class="attach-badge">✅ Attaches</span>
-        <div class="symbol">̞</div>
-        <span class="symbol-name">Down Tack</span>
-        <div style="color:#aaa; font-size:12px;">A̞</div>
-        <button class="copy-symbol-btn" onclick="event.stopPropagation(); copySymbol('̞')">📋 Copy Symbol</button>
-        <button class="copy-symbol-btn" style="margin-top:5px; background:#FFD700; color:#000;" onclick="event.stopPropagation(); attachSymbol('̞')">🔗 Attach Now</button>
-    </div>
-    
-    <!-- Caron Below -->
-    <div class="symbol-card" onclick="selectSymbol('̬')">
-        <span class="attach-badge">✅ Attaches</span>
-        <div class="symbol">̬</div>
-        <span class="symbol-name">Caron Below</span>
-        <div style="color:#aaa; font-size:12px;">A̬</div>
-        <button class="copy-symbol-btn" onclick="event.stopPropagation(); copySymbol('̬')">📋 Copy Symbol</button>
-        <button class="copy-symbol-btn" style="margin-top:5px; background:#FFD700; color:#000;" onclick="event.stopPropagation(); attachSymbol('̬')">🔗 Attach Now</button>
-    </div>
-    
-    <!-- Circumflex Below -->
-    <div class="symbol-card" onclick="selectSymbol('̭')">
-        <span class="attach-badge">✅ Attaches</span>
-        <div class="symbol">̭</div>
-        <span class="symbol-name">Circumflex Below</span>
-        <div style="color:#aaa; font-size:12px;">A̭</div>
-        <button class="copy-symbol-btn" onclick="event.stopPropagation(); copySymbol('̭')">📋 Copy Symbol</button>
-        <button class="copy-symbol-btn" style="margin-top:5px; background:#FFD700; color:#000;" onclick="event.stopPropagation(); attachSymbol('̭')">🔗 Attach Now</button>
-    </div>
-    
-    <!-- Inverted Breve Below -->
-    <div class="symbol-card" onclick="selectSymbol('̯')">
-        <span class="attach-badge">✅ Attaches</span>
-        <div class="symbol">̯</div>
-        <span class="symbol-name">Inverted Breve Below</span>
-        <div style="color:#aaa; font-size:12px;">A̯</div>
-        <button class="copy-symbol-btn" onclick="event.stopPropagation(); copySymbol('̯')">📋 Copy Symbol</button>
-        <button class="copy-symbol-btn" style="margin-top:5px; background:#FFD700; color:#000;" onclick="event.stopPropagation(); attachSymbol('̯')">🔗 Attach Now</button>
-    </div>
-    
-    <!-- Inverted Bridge -->
-    <div class="symbol-card" onclick="selectSymbol('̺')">
-        <span class="attach-badge">✅ Attaches</span>
-        <div class="symbol">̺</div>
-        <span class="symbol-name">Inverted Bridge</span>
-        <div style="color:#aaa; font-size:12px;">A̺</div>
-        <button class="copy-symbol-btn" onclick="event.stopPropagation(); copySymbol('̺')">📋 Copy Symbol</button>
-        <button class="copy-symbol-btn" style="margin-top:5px; background:#FFD700; color:#000;" onclick="event.stopPropagation(); attachSymbol('̺')">🔗 Attach Now</button>
-    </div>
-    
-    <!-- Square Below -->
-    <div class="symbol-card" onclick="selectSymbol('̻')">
-        <span class="attach-badge">✅ Attaches</span>
-        <div class="symbol">̻</div>
-        <span class="symbol-name">Square Below</span>
-        <div style="color:#aaa; font-size:12px;">A̻</div>
-        <button class="copy-symbol-btn" onclick="event.stopPropagation(); copySymbol('̻')">📋 Copy Symbol</button>
-        <button class="copy-symbol-btn" style="margin-top:5px; background:#FFD700; color:#000;" onclick="event.stopPropagation(); attachSymbol('̻')">🔗 Attach Now</button>
-    </div>
-    
-    <!-- Seagull Below -->
-    <div class="symbol-card" onclick="selectSymbol('̼')">
-        <span class="attach-badge">✅ Attaches</span>
-        <div class="symbol">̼</div>
-        <span class="symbol-name">Seagull Below</span>
-        <div style="color:#aaa; font-size:12px;">A̼</div>
-        <button class="copy-symbol-btn" onclick="event.stopPropagation(); copySymbol('̼')">📋 Copy Symbol</button>
-        <button class="copy-symbol-btn" style="margin-top:5px; background:#FFD700; color:#000;" onclick="event.stopPropagation(); attachSymbol('̼')">🔗 Attach Now</button>
-    </div>
-
-        <!-- Double Breve Symbol -->
-<div class="symbol-card" onclick="selectSymbol('̤̮')">
-    <span class="attach-badge">✅ Attaches</span>
-    <div class="symbol">̤̮</div>
-    <span class="symbol-name">Double Breve</span>
-    <div style="color:#aaa; font-size:12px;">A̤̮</div>
-    <button class="copy-symbol-btn" onclick="event.stopPropagation(); copySymbol('̤̮')">📋 Copy Symbol</button>
-    <button class="copy-symbol-btn" style="margin-top:5px; background:#FFD700; color:#000;" onclick="event.stopPropagation(); attachSymbol('̤̮')">🔗 Attach Now</button>
-</div>
-
-    <div class="symbol-card" onclick="selectSymbol('̹')">
-        <span class="attach-badge">✅ Attaches</span>
-        <div class="symbol">̹</div>
-        <span class="symbol-name">Right Half Ring Below</span>
-        <div style="color:#aaa; font-size:12px;">A̹</div>
-        <button class="copy-symbol-btn" onclick="event.stopPropagation(); copySymbol('̹')">📋 Copy Symbol</button>
-        <button class="copy-symbol-btn" style="margin-top:5px; background:#FFD700; color:#000;" onclick="event.stopPropagation(); attachSymbol('̹')">🔗 Attach Now</button>
-    </div>
-    
-    <!-- Left Half Ring Below -->
-    <div class="symbol-card" onclick="selectSymbol('̜')">
-        <span class="attach-badge">✅ Attaches</span>
-        <div class="symbol">̜</div>
-        <span class="symbol-name">Left Half Ring Below</span>
-        <div style="color:#aaa; font-size:12px;">A̜</div>
-        <button class="copy-symbol-btn" onclick="event.stopPropagation(); copySymbol('̜')">📋 Copy Symbol</button>
-        <button class="copy-symbol-btn" style="margin-top:5px; background:#FFD700; color:#000;" onclick="event.stopPropagation(); attachSymbol('̜')">🔗 Attach Now</button>
-    </div>
-    
-    <!-- Enclosing Square -->
-    <div class="symbol-card" onclick="selectSymbol('⃞')">
-        <span class="attach-badge">✅ Attaches</span>
-        <div class="symbol">⃞</div>
-        <span class="symbol-name">Enclosing Square</span>
-        <div style="color:#aaa; font-size:12px;">A⃞</div>
-        <button class="copy-symbol-btn" onclick="event.stopPropagation(); copySymbol('⃞')">📋 Copy Symbol</button>
-        <button class="copy-symbol-btn" style="margin-top:5px; background:#FFD700; color:#000;" onclick="event.stopPropagation(); attachSymbol('⃞')">🔗 Attach Now</button>
-    </div>
-    
-    <!-- Minus Below -->
-    <div class="symbol-card" onclick="selectSymbol('̠')">
-        <span class="attach-badge">✅ Attaches</span>
-        <div class="symbol">̠</div>
-        <span class="symbol-name">Minus Below</span>
-        <div style="color:#aaa; font-size:12px;">A̠</div>
-        <button class="copy-symbol-btn" onclick="event.stopPropagation(); copySymbol('̠')">📋 Copy Symbol</button>
-        <button class="copy-symbol-btn" style="margin-top:5px; background:#FFD700; color:#000;" onclick="event.stopPropagation(); attachSymbol('̠')">🔗 Attach Now</button>
-    </div>
-    
-    <!-- Underline -->
-    <div class="symbol-card" onclick="selectSymbol('̲')">
-        <span class="attach-badge">✅ Attaches</span>
-        <div class="symbol">̲</div>
-        <span class="symbol-name">Underline</span>
-        <div style="color:#aaa; font-size:12px;">A̲</div>
-        <button class="copy-symbol-btn" onclick="event.stopPropagation(); copySymbol('̲')">📋 Copy Symbol</button>
-        <button class="copy-symbol-btn" style="margin-top:5px; background:#FFD700; color:#000;" onclick="event.stopPropagation(); attachSymbol('̲')">🔗 Attach Now</button>
-    </div>
-    
-    <!-- Double Arrow Below -->
-    <div class="symbol-card" onclick="selectSymbol('͢')">
-        <span class="attach-badge">✅ Attaches</span>
-        <div class="symbol">͢</div>
-        <span class="symbol-name">Double Arrow Below</span>
-        <div style="color:#aaa; font-size:12px;">A͢</div>
-        <button class="copy-symbol-btn" onclick="event.stopPropagation(); copySymbol('͢')">📋 Copy Symbol</button>
-        <button class="copy-symbol-btn" style="margin-top:5px; background:#FFD700; color:#000;" onclick="event.stopPropagation(); attachSymbol('͢')">🔗 Attach Now</button>
-    </div>
-    
-    <!-- Diaeresis Below -->
-    <div class="symbol-card" onclick="selectSymbol('̤')">
-        <span class="attach-badge">✅ Attaches</span>
-        <div class="symbol">̤</div>
-        <span class="symbol-name">Diaeresis Below</span>
-        <div style="color:#aaa; font-size:12px;">A̤</div>
-        <button class="copy-symbol-btn" onclick="event.stopPropagation(); copySymbol('̤')">📋 Copy Symbol</button>
-        <button class="copy-symbol-btn" style="margin-top:5px; background:#FFD700; color:#000;" onclick="event.stopPropagation(); attachSymbol('̤')">🔗 Attach Now</button>
-    </div>
-</div>
-        <h2 class="section-title">⧼⧽ Parenthesis & Arrow Symbols</h2>
-<div class="symbol-grid">
-    <!-- 👇 NAYE 8 SYMBOLS YAHAN ADD KARO -->
-    
-    <!-- Double Parenthesis Above -->
-    <div class="symbol-card" onclick="selectSymbol('᪻')">
-        <span class="attach-badge">✅ Attaches</span>
-        <div class="symbol">᪻</div>
-        <span class="symbol-name">Double Parenthesis Above</span>
-        <div style="color:#aaa; font-size:12px;">A᪻</div>
-        <button class="copy-symbol-btn" onclick="event.stopPropagation(); copySymbol('᪻')">📋 Copy Symbol</button>
-        <button class="copy-symbol-btn" style="margin-top:5px; background:#FFD700; color:#000;" onclick="event.stopPropagation(); attachSymbol('᪻')">🔗 Attach Now</button>
-    </div>
-    
-    <!-- Double Parenthesis Below -->
-    <div class="symbol-card" onclick="selectSymbol('᪼')">
-        <span class="attach-badge">✅ Attaches</span>
-        <div class="symbol">᪼</div>
-        <span class="symbol-name">Double Parenthesis Below</span>
-        <div style="color:#aaa; font-size:12px;">A᪼</div>
-        <button class="copy-symbol-btn" onclick="event.stopPropagation(); copySymbol('᪼')">📋 Copy Symbol</button>
-        <button class="copy-symbol-btn" style="margin-top:5px; background:#FFD700; color:#000;" onclick="event.stopPropagation(); attachSymbol('᪼')">🔗 Attach Now</button>
-    </div>
-    
-    <!-- Parenthesis Above -->
-    <div class="symbol-card" onclick="selectSymbol('᪽')">
-        <span class="attach-badge">✅ Attaches</span>
-        <div class="symbol">᪽</div>
-        <span class="symbol-name">Parenthesis Above</span>
-        <div style="color:#aaa; font-size:12px;">A᪽</div>
-        <button class="copy-symbol-btn" onclick="event.stopPropagation(); copySymbol('᪽')">📋 Copy Symbol</button>
-        <button class="copy-symbol-btn" style="margin-top:5px; background:#FFD700; color:#000;" onclick="event.stopPropagation(); attachSymbol('᪽')">🔗 Attach Now</button>
-    </div>
-    
-    <!-- Parenthesis Below -->
-    <div class="symbol-card" onclick="selectSymbol('᪾')">
-        <span class="attach-badge">✅ Attaches</span>
-        <div class="symbol">᪾</div>
-        <span class="symbol-name">Parenthesis Below</span>
-        <div style="color:#aaa; font-size:12px;">A᪾</div>
-        <button class="copy-symbol-btn" onclick="event.stopPropagation(); copySymbol('᪾')">📋 Copy Symbol</button>
-        <button class="copy-symbol-btn" style="margin-top:5px; background:#FFD700; color:#000;" onclick="event.stopPropagation(); attachSymbol('᪾')">🔗 Attach Now</button>
-    </div>
-    
-    <!-- Triple Underdot -->
-    <div class="symbol-card" onclick="selectSymbol('⃨')">
-        <span class="attach-badge">✅ Attaches</span>
-        <div class="symbol">⃨</div>
-        <span class="symbol-name">Triple Underdot</span>
-        <div style="color:#aaa; font-size:12px;">A⃨</div>
-        <button class="copy-symbol-btn" onclick="event.stopPropagation(); copySymbol('⃨')">📋 Copy Symbol</button>
-        <button class="copy-symbol-btn" style="margin-top:5px; background:#FFD700; color:#000;" onclick="event.stopPropagation(); attachSymbol('⃨')">🔗 Attach Now</button>
-    </div>
-    
-    <!-- Wide Bridge Above -->
-    <div class="symbol-card" onclick="selectSymbol('⃩')">
-        <span class="attach-badge">✅ Attaches</span>
-        <div class="symbol">⃩</div>
-        <span class="symbol-name">Wide Bridge Above</span>
-        <div style="color:#aaa; font-size:12px;">A⃩</div>
-        <button class="copy-symbol-btn" onclick="event.stopPropagation(); copySymbol('⃩')">📋 Copy Symbol</button>
-        <button class="copy-symbol-btn" style="margin-top:5px; background:#FFD700; color:#000;" onclick="event.stopPropagation(); attachSymbol('⃩')">🔗 Attach Now</button>
-    </div>
-    
-    <!-- Left Arrow Above -->
-    <div class="symbol-card" onclick="selectSymbol('⃪')">
-        <span class="attach-badge">✅ Attaches</span>
-        <div class="symbol">⃪</div>
-        <span class="symbol-name">Left Arrow Above</span>
-        <div style="color:#aaa; font-size:12px;">A⃪</div>
-        <button class="copy-symbol-btn" onclick="event.stopPropagation(); copySymbol('⃪')">📋 Copy Symbol</button>
-        <button class="copy-symbol-btn" style="margin-top:5px; background:#FFD700; color:#000;" onclick="event.stopPropagation(); attachSymbol('⃪')">🔗 Attach Now</button>
-    </div>
-    
-    <!-- Right Arrow Above -->
-    <div class="symbol-card" onclick="selectSymbol('⃫')">
-        <span class="attach-badge">✅ Attaches</span>
-        <div class="symbol">⃫</div>
-        <span class="symbol-name">Right Arrow Above</span>
-        <div style="color:#aaa; font-size:12px;">A⃫</div>
-        <button class="copy-symbol-btn" onclick="event.stopPropagation(); copySymbol('⃫')">📋 Copy Symbol</button>
-        <button class="copy-symbol-btn" style="margin-top:5px; background:#FFD700; color:#000;" onclick="event.stopPropagation(); attachSymbol('⃫')">🔗 Attach Now</button>
-    </div>
-</div>
-
-        <h2 class="section-title">〰️ Double Line & Wavy Symbols</h2>
-<div class="symbol-grid">
-    <!-- 👇 NAYE 8 SYMBOLS YAHAN ADD KARO -->
-    
-    <!-- Double Circumflex Above -->
-    <div class="symbol-card" onclick="selectSymbol('᪰')">
-        <span class="attach-badge">✅ Attaches</span>
-        <div class="symbol">᪰</div>
-        <span class="symbol-name">Double Circumflex Above</span>
-        <div style="color:#aaa; font-size:12px;">A᪰</div>
-        <button class="copy-symbol-btn" onclick="event.stopPropagation(); copySymbol('᪰')">📋 Copy Symbol</button>
-        <button class="copy-symbol-btn" style="margin-top:5px; background:#FFD700; color:#000;" onclick="event.stopPropagation(); attachSymbol('᪰')">🔗 Attach Now</button>
-    </div>
-    
-    <!-- Double Circumflex Below -->
-    <div class="symbol-card" onclick="selectSymbol('᪱')">
-        <span class="attach-badge">✅ Attaches</span>
-        <div class="symbol">᪱</div>
-        <span class="symbol-name">Double Circumflex Below</span>
-        <div style="color:#aaa; font-size:12px;">A᪱</div>
-        <button class="copy-symbol-btn" onclick="event.stopPropagation(); copySymbol('᪱')">📋 Copy Symbol</button>
-        <button class="copy-symbol-btn" style="margin-top:5px; background:#FFD700; color:#000;" onclick="event.stopPropagation(); attachSymbol('᪱')">🔗 Attach Now</button>
-    </div>
-    
-    <!-- Double Ring Above -->
-    <div class="symbol-card" onclick="selectSymbol('᪲')">
-        <span class="attach-badge">✅ Attaches</span>
-        <div class="symbol">᪲</div>
-        <span class="symbol-name">Double Ring Above</span>
-        <div style="color:#aaa; font-size:12px;">A᪲</div>
-        <button class="copy-symbol-btn" onclick="event.stopPropagation(); copySymbol('᪲')">📋 Copy Symbol</button>
-        <button class="copy-symbol-btn" style="margin-top:5px; background:#FFD700; color:#000;" onclick="event.stopPropagation(); attachSymbol('᪲')">🔗 Attach Now</button>
-    </div>
-    
-    <!-- Double Ring Below -->
-    <div class="symbol-card" onclick="selectSymbol('᪳')">
-        <span class="attach-badge">✅ Attaches</span>
-        <div class="symbol">᪳</div>
-        <span class="symbol-name">Double Ring Below</span>
-        <div style="color:#aaa; font-size:12px;">A᪳</div>
-        <button class="copy-symbol-btn" onclick="event.stopPropagation(); copySymbol('᪳')">📋 Copy Symbol</button>
-        <button class="copy-symbol-btn" style="margin-top:5px; background:#FFD700; color:#000;" onclick="event.stopPropagation(); attachSymbol('᪳')">🔗 Attach Now</button>
-    </div>
-    
-    <!-- Double Overline -->
-    <div class="symbol-card" onclick="selectSymbol('᪴')">
-        <span class="attach-badge">✅ Attaches</span>
-        <div class="symbol">᪴</div>
-        <span class="symbol-name">Double Overline</span>
-        <div style="color:#aaa; font-size:12px;">A᪴</div>
-        <button class="copy-symbol-btn" onclick="event.stopPropagation(); copySymbol('᪴')">📋 Copy Symbol</button>
-        <button class="copy-symbol-btn" style="margin-top:5px; background:#FFD700; color:#000;" onclick="event.stopPropagation(); attachSymbol('᪴')">🔗 Attach Now</button>
-    </div>
-    
-    <!-- Double Underline -->
-    <div class="symbol-card" onclick="selectSymbol('᪵')">
-        <span class="attach-badge">✅ Attaches</span>
-        <div class="symbol">᪵</div>
-        <span class="symbol-name">Double Underline</span>
-        <div style="color:#aaa; font-size:12px;">A᪵</div>
-        <button class="copy-symbol-btn" onclick="event.stopPropagation(); copySymbol('᪵')">📋 Copy Symbol</button>
-        <button class="copy-symbol-btn" style="margin-top:5px; background:#FFD700; color:#000;" onclick="event.stopPropagation(); attachSymbol('᪵')">🔗 Attach Now</button>
-    </div>
-    
-    <!-- Double Wavy Above -->
-    <div class="symbol-card" onclick="selectSymbol('᪶')">
-        <span class="attach-badge">✅ Attaches</span>
-        <div class="symbol">᪶</div>
-        <span class="symbol-name">Double Wavy Above</span>
-        <div style="color:#aaa; font-size:12px;">A᪶</div>
-        <button class="copy-symbol-btn" onclick="event.stopPropagation(); copySymbol('᪶')">📋 Copy Symbol</button>
-        <button class="copy-symbol-btn" style="margin-top:5px; background:#FFD700; color:#000;" onclick="event.stopPropagation(); attachSymbol('᪶')">🔗 Attach Now</button>
-    </div>
-    
-    <!-- Double Wavy Below -->
-    <div class="symbol-card" onclick="selectSymbol('᪷')">
-        <span class="attach-badge">✅ Attaches</span>
-        <div class="symbol">᪷</div>
-        <span class="symbol-name">Double Wavy Below</span>
-        <div style="color:#aaa; font-size:12px;">A᪷</div>
-        <button class="copy-symbol-btn" onclick="event.stopPropagation(); copySymbol('᪷')">📋 Copy Symbol</button>
-        <button class="copy-symbol-btn" style="margin-top:5px; background:#FFD700; color:#000;" onclick="event.stopPropagation(); attachSymbol('᪷')">🔗 Attach Now</button>
-    </div>
-</div>
-
-        <h2 class="section-title">〰️ Double Tilde & Macron Symbols</h2>
-<div class="symbol-grid">
-    <!-- 👇 NAYE 4 SYMBOLS YAHAN ADD KARO -->
-    
-    <!-- Double Tilde Left Half -->
-    <div class="symbol-card" onclick="selectSymbol('ᷲ')">
-        <span class="attach-badge">✅ Attaches</span>
-        <div class="symbol">ᷲ</div>
-        <span class="symbol-name">Double Tilde Left</span>
-        <div style="color:#aaa; font-size:12px;">Aᷲ</div>
-        <button class="copy-symbol-btn" onclick="event.stopPropagation(); copySymbol('ᷲ')">📋 Copy Symbol</button>
-        <button class="copy-symbol-btn" style="margin-top:5px; background:#FFD700; color:#000;" onclick="event.stopPropagation(); attachSymbol('ᷲ')">🔗 Attach Now</button>
-    </div>
-    
-    <!-- Double Tilde Right Half -->
-    <div class="symbol-card" onclick="selectSymbol('ᷳ')">
-        <span class="attach-badge">✅ Attaches</span>
-        <div class="symbol">ᷳ</div>
-        <span class="symbol-name">Double Tilde Right</span>
-        <div style="color:#aaa; font-size:12px;">Aᷳ</div>
-        <button class="copy-symbol-btn" onclick="event.stopPropagation(); copySymbol('ᷳ')">📋 Copy Symbol</button>
-        <button class="copy-symbol-btn" style="margin-top:5px; background:#FFD700; color:#000;" onclick="event.stopPropagation(); attachSymbol('ᷳ')">🔗 Attach Now</button>
-    </div>
-    
-    <!-- Double Macron Left Half -->
-    <div class="symbol-card" onclick="selectSymbol('ᷴ')">
-        <span class="attach-badge">✅ Attaches</span>
-        <div class="symbol">ᷴ</div>
-        <span class="symbol-name">Double Macron Left</span>
-        <div style="color:#aaa; font-size:12px;">Aᷴ</div>
-        <button class="copy-symbol-btn" onclick="event.stopPropagation(); copySymbol('ᷴ')">📋 Copy Symbol</button>
-        <button class="copy-symbol-btn" style="margin-top:5px; background:#FFD700; color:#000;" onclick="event.stopPropagation(); attachSymbol('ᷴ')">🔗 Attach Now</button>
-    </div>
-    
-    <!-- Double Macron Right Half -->
-    <div class="symbol-card" onclick="selectSymbol('᷵')">
-        <span class="attach-badge">✅ Attaches</span>
-        <div class="symbol">᷵</div>
-        <span class="symbol-name">Double Macron Right</span>
-        <div style="color:#aaa; font-size:12px;">A᷵</div>
-        <button class="copy-symbol-btn" onclick="event.stopPropagation(); copySymbol('᷵')">📋 Copy Symbol</button>
-        <button class="copy-symbol-btn" style="margin-top:5px; background:#FFD700; color:#000;" onclick="event.stopPropagation(); attachSymbol('᷵')">🔗 Attach Now</button>
-    </div>
-</div>
-
-        <!-- ===== GROUP 1: DIATONIC & TIE SYMBOLS ===== -->
-<h2 class="section-title">🔗 Diatonic & Tie Symbols</h2>
-<div class="symbol-grid">
-    <div class="symbol-card" onclick="selectSymbol('͝')"><span class="attach-badge">✅ Attaches</span><div class="symbol">͝</div><span class="symbol-name">Double Breve</span><button class="copy-symbol-btn" onclick="event.stopPropagation(); copySymbol('͝')">📋 Copy</button><button class="copy-symbol-btn" style="margin-top:5px; background:#FFD700; color:#000;" onclick="event.stopPropagation(); attachSymbol('͝')">🔗 Attach</button></div>
-    <div class="symbol-card" onclick="selectSymbol('͡')"><span class="attach-badge">✅ Attaches</span><div class="symbol">͡</div><span class="symbol-name">Double Inverted Breve</span><button class="copy-symbol-btn" onclick="event.stopPropagation(); copySymbol('͡')">📋 Copy</button><button class="copy-symbol-btn" style="margin-top:5px; background:#FFD700; color:#000;" onclick="event.stopPropagation(); attachSymbol('͡')">🔗 Attach</button></div>
-    <div class="symbol-card" onclick="selectSymbol('͜')"><span class="attach-badge">✅ Attaches</span><div class="symbol">͜</div><span class="symbol-name">Double Breve Below</span><button class="copy-symbol-btn" onclick="event.stopPropagation(); copySymbol('͜')">📋 Copy</button><button class="copy-symbol-btn" style="margin-top:5px; background:#FFD700; color:#000;" onclick="event.stopPropagation(); attachSymbol('͜')">🔗 Attach</button></div>
-    <div class="symbol-card" onclick="selectSymbol('͞')"><span class="attach-badge">✅ Attaches</span><div class="symbol">͞</div><span class="symbol-name">Double Macron</span><button class="copy-symbol-btn" onclick="event.stopPropagation(); copySymbol('͞')">📋 Copy</button><button class="copy-symbol-btn" style="margin-top:5px; background:#FFD700; color:#000;" onclick="event.stopPropagation(); attachSymbol('͞')">🔗 Attach</button></div>
-    <div class="symbol-card" onclick="selectSymbol('͟')"><span class="attach-badge">✅ Attaches</span><div class="symbol">͟</div><span class="symbol-name">Double Macron Below</span><button class="copy-symbol-btn" onclick="event.stopPropagation(); copySymbol('͟')">📋 Copy</button><button class="copy-symbol-btn" style="margin-top:5px; background:#FFD700; color:#000;" onclick="event.stopPropagation(); attachSymbol('͟')">🔗 Attach</button></div>
-    <div class="symbol-card" onclick="selectSymbol('᷼')"><span class="attach-badge">✅ Attaches</span><div class="symbol">᷼</div><span class="symbol-name">Double Tilde Left</span><button class="copy-symbol-btn" onclick="event.stopPropagation(); copySymbol('᷼')">📋 Copy</button><button class="copy-symbol-btn" style="margin-top:5px; background:#FFD700; color:#000;" onclick="event.stopPropagation(); attachSymbol('᷼')">🔗 Attach</button></div>
-    <div class="symbol-card" onclick="selectSymbol('᷽')"><span class="attach-badge">✅ Attaches</span><div class="symbol">᷽</div><span class="symbol-name">Double Tilde Right</span><button class="copy-symbol-btn" onclick="event.stopPropagation(); copySymbol('᷽')">📋 Copy</button><button class="copy-symbol-btn" style="margin-top:5px; background:#FFD700; color:#000;" onclick="event.stopPropagation(); attachSymbol('᷽')">🔗 Attach</button></div>
-    <div class="symbol-card" onclick="selectSymbol('᷾')"><span class="attach-badge">✅ Attaches</span><div class="symbol">᷾</div><span class="symbol-name">Double Tilde Below</span><button class="copy-symbol-btn" onclick="event.stopPropagation(); copySymbol('᷾')">📋 Copy</button><button class="copy-symbol-btn" style="margin-top:5px; background:#FFD700; color:#000;" onclick="event.stopPropagation(); attachSymbol('᷾')">🔗 Attach</button></div>
-</div>
-
-<!-- ===== GROUP 2: ACCENT SYMBOLS ===== -->
-<h2 class="section-title">◌ Accent Symbols</h2>
-<div class="symbol-grid">
-    <div class="symbol-card" onclick="selectSymbol('̋')"><span class="attach-badge">✅ Attaches</span><div class="symbol">̋</div><span class="symbol-name">Double Acute</span><button class="copy-symbol-btn" onclick="event.stopPropagation(); copySymbol('̋')">📋 Copy</button><button class="copy-symbol-btn" style="margin-top:5px; background:#FFD700; color:#000;" onclick="event.stopPropagation(); attachSymbol('̋')">🔗 Attach</button></div>
-    <div class="symbol-card" onclick="selectSymbol('̏')"><span class="attach-badge">✅ Attaches</span><div class="symbol">̏</div><span class="symbol-name">Double Grave</span><button class="copy-symbol-btn" onclick="event.stopPropagation(); copySymbol('̏')">📋 Copy</button><button class="copy-symbol-btn" style="margin-top:5px; background:#FFD700; color:#000;" onclick="event.stopPropagation(); attachSymbol('̏')">🔗 Attach</button></div>
-    <div class="symbol-card" onclick="selectSymbol('̑')"><span class="attach-badge">✅ Attaches</span><div class="symbol">̑</div><span class="symbol-name">Inverted Breve</span><button class="copy-symbol-btn" onclick="event.stopPropagation(); copySymbol('̑')">📋 Copy</button><button class="copy-symbol-btn" style="margin-top:5px; background:#FFD700; color:#000;" onclick="event.stopPropagation(); attachSymbol('̑')">🔗 Attach</button></div>
-    <div class="symbol-card" onclick="selectSymbol('̌')"><span class="attach-badge">✅ Attaches</span><div class="symbol">̌</div><span class="symbol-name">Caron</span><button class="copy-symbol-btn" onclick="event.stopPropagation(); copySymbol('̌')">📋 Copy</button><button class="copy-symbol-btn" style="margin-top:5px; background:#FFD700; color:#000;" onclick="event.stopPropagation(); attachSymbol('̌')">🔗 Attach</button></div>
-    <div class="symbol-card" onclick="selectSymbol('̂')"><span class="attach-badge">✅ Attaches</span><div class="symbol">̂</div><span class="symbol-name">Circumflex</span><button class="copy-symbol-btn" onclick="event.stopPropagation(); copySymbol('̂')">📋 Copy</button><button class="copy-symbol-btn" style="margin-top:5px; background:#FFD700; color:#000;" onclick="event.stopPropagation(); attachSymbol('̂')">🔗 Attach</button></div>
-    <div class="symbol-card" onclick="selectSymbol('̄')"><span class="attach-badge">✅ Attaches</span><div class="symbol">̄</div><span class="symbol-name">Macron</span><button class="copy-symbol-btn" onclick="event.stopPropagation(); copySymbol('̄')">📋 Copy</button><button class="copy-symbol-btn" style="margin-top:5px; background:#FFD700; color:#000;" onclick="event.stopPropagation(); attachSymbol('̄')">🔗 Attach</button></div>
-    <div class="symbol-card" onclick="selectSymbol('̅')"><span class="attach-badge">✅ Attaches</span><div class="symbol">̅</div><span class="symbol-name">Overline</span><button class="copy-symbol-btn" onclick="event.stopPropagation(); copySymbol('̅')">📋 Copy</button><button class="copy-symbol-btn" style="margin-top:5px; background:#FFD700; color:#000;" onclick="event.stopPropagation(); attachSymbol('̅')">🔗 Attach</button></div>
-    <div class="symbol-card" onclick="selectSymbol('͂')"><span class="attach-badge">✅ Attaches</span><div class="symbol">͂</div><span class="symbol-name">Perispomeni</span><button class="copy-symbol-btn" onclick="event.stopPropagation(); copySymbol('͂')">📋 Copy</button><button class="copy-symbol-btn" style="margin-top:5px; background:#FFD700; color:#000;" onclick="event.stopPropagation(); attachSymbol('͂')">🔗 Attach</button></div>
-</div>
-
-<!-- ===== GROUP 3: CYRILLIC & COMBINING MARKS ===== -->
-<h2 class="section-title">📿 Cyrillic & Combining Marks</h2>
-<div class="symbol-grid">
-    <div class="symbol-card" onclick="selectSymbol('҃')"><span class="attach-badge">✅ Attaches</span><div class="symbol">҃</div><span class="symbol-name">Titlo</span><button class="copy-symbol-btn" onclick="event.stopPropagation(); copySymbol('҃')">📋 Copy</button><button class="copy-symbol-btn" style="margin-top:5px; background:#FFD700; color:#000;" onclick="event.stopPropagation(); attachSymbol('҃')">🔗 Attach</button></div>
-    <div class="symbol-card" onclick="selectSymbol('҄')"><span class="attach-badge">✅ Attaches</span><div class="symbol">҄</div><span class="symbol-name">Kamora</span><button class="copy-symbol-btn" onclick="event.stopPropagation(); copySymbol('҄')">📋 Copy</button><button class="copy-symbol-btn" style="margin-top:5px; background:#FFD700; color:#000;" onclick="event.stopPropagation(); attachSymbol('҄')">🔗 Attach</button></div>
-    <div class="symbol-card" onclick="selectSymbol('҅')"><span class="attach-badge">✅ Attaches</span><div class="symbol">҅</div><span class="symbol-name">Psili</span><button class="copy-symbol-btn" onclick="event.stopPropagation(); copySymbol('҅')">📋 Copy</button><button class="copy-symbol-btn" style="margin-top:5px; background:#FFD700; color:#000;" onclick="event.stopPropagation(); attachSymbol('҅')">🔗 Attach</button></div>
-    <div class="symbol-card" onclick="selectSymbol('҆')"><span class="attach-badge">✅ Attaches</span><div class="symbol">҆</div><span class="symbol-name">Dasia</span><button class="copy-symbol-btn" onclick="event.stopPropagation(); copySymbol('҆')">📋 Copy</button><button class="copy-symbol-btn" style="margin-top:5px; background:#FFD700; color:#000;" onclick="event.stopPropagation(); attachSymbol('҆')">🔗 Attach</button></div>
-    <div class="symbol-card" onclick="selectSymbol('҇')"><span class="attach-badge">✅ Attaches</span><div class="symbol">҇</div><span class="symbol-name">Perispomeni</span><button class="copy-symbol-btn" onclick="event.stopPropagation(); copySymbol('҇')">📋 Copy</button><button class="copy-symbol-btn" style="margin-top:5px; background:#FFD700; color:#000;" onclick="event.stopPropagation(); attachSymbol('҇')">🔗 Attach</button></div>
-    <div class="symbol-card" onclick="selectSymbol('ᷣ')"><span class="attach-badge">✅ Attaches</span><div class="symbol">ᷣ</div><span class="symbol-name">Vertical Above</span><button class="copy-symbol-btn" onclick="event.stopPropagation(); copySymbol('ᷣ')">📋 Copy</button><button class="copy-symbol-btn" style="margin-top:5px; background:#FFD700; color:#000;" onclick="event.stopPropagation(); attachSymbol('ᷣ')">🔗 Attach</button></div>
-    <div class="symbol-card" onclick="selectSymbol('ᷤ')"><span class="attach-badge">✅ Attaches</span><div class="symbol">ᷤ</div><span class="symbol-name">Double Vertical Above</span><button class="copy-symbol-btn" onclick="event.stopPropagation(); copySymbol('ᷤ')">📋 Copy</button><button class="copy-symbol-btn" style="margin-top:5px; background:#FFD700; color:#000;" onclick="event.stopPropagation(); attachSymbol('ᷤ')">🔗 Attach</button></div>
-    <div class="symbol-card" onclick="selectSymbol('ᷥ')"><span class="attach-badge">✅ Attaches</span><div class="symbol">ᷥ</div><span class="symbol-name">Vertical Below</span><button class="copy-symbol-btn" onclick="event.stopPropagation(); copySymbol('ᷥ')">📋 Copy</button><button class="copy-symbol-btn" style="margin-top:5px; background:#FFD700; color:#000;" onclick="event.stopPropagation(); attachSymbol('ᷥ')">🔗 Attach</button></div>
-</div>
-
-<!-- ===== GROUP 4: MEDIEVAL COMBINING MARKS ===== -->
-<h2 class="section-title">⚡ Medieval Combining Marks</h2>
-<div class="symbol-grid">
-    <div class="symbol-card" onclick="selectSymbol('᷊')"><span class="attach-badge">✅ Attaches</span><div class="symbol">᷊</div><span class="symbol-name">Ring Above</span><button class="copy-symbol-btn" onclick="event.stopPropagation(); copySymbol('᷊')">📋 Copy</button><button class="copy-symbol-btn" style="margin-top:5px; background:#FFD700; color:#000;" onclick="event.stopPropagation(); attachSymbol('᷊')">🔗 Attach</button></div>
-    <div class="symbol-card" onclick="selectSymbol('᷋')"><span class="attach-badge">✅ Attaches</span><div class="symbol">᷋</div><span class="symbol-name">Ring Below</span><button class="copy-symbol-btn" onclick="event.stopPropagation(); copySymbol('᷋')">📋 Copy</button><button class="copy-symbol-btn" style="margin-top:5px; background:#FFD700; color:#000;" onclick="event.stopPropagation(); attachSymbol('᷋')">🔗 Attach</button></div>
-    <div class="symbol-card" onclick="selectSymbol('᷌')"><span class="attach-badge">✅ Attaches</span><div class="symbol">᷌</div><span class="symbol-name">Asterisk Above</span><button class="copy-symbol-btn" onclick="event.stopPropagation(); copySymbol('᷌')">📋 Copy</button><button class="copy-symbol-btn" style="margin-top:5px; background:#FFD700; color:#000;" onclick="event.stopPropagation(); attachSymbol('᷌')">🔗 Attach</button></div>
-    <div class="symbol-card" onclick="selectSymbol('᷍')"><span class="attach-badge">✅ Attaches</span><div class="symbol">᷍</div><span class="symbol-name">Asterisk Below</span><button class="copy-symbol-btn" onclick="event.stopPropagation(); copySymbol('᷍')">📋 Copy</button><button class="copy-symbol-btn" style="margin-top:5px; background:#FFD700; color:#000;" onclick="event.stopPropagation(); attachSymbol('᷍')">🔗 Attach</button></div>
-    <div class="symbol-card" onclick="selectSymbol('᷎')"><span class="attach-badge">✅ Attaches</span><div class="symbol">᷎</div><span class="symbol-name">Arrow Above</span><button class="copy-symbol-btn" onclick="event.stopPropagation(); copySymbol('᷎')">📋 Copy</button><button class="copy-symbol-btn" style="margin-top:5px; background:#FFD700; color:#000;" onclick="event.stopPropagation(); attachSymbol('᷎')">🔗 Attach</button></div>
-    <div class="symbol-card" onclick="selectSymbol('᷏')"><span class="attach-badge">✅ Attaches</span><div class="symbol">᷏</div><span class="symbol-name">Arrow Below</span><button class="copy-symbol-btn" onclick="event.stopPropagation(); copySymbol('᷏')">📋 Copy</button><button class="copy-symbol-btn" style="margin-top:5px; background:#FFD700; color:#000;" onclick="event.stopPropagation(); attachSymbol('᷏')">🔗 Attach</button></div>
-    <div class="symbol-card" onclick="selectSymbol('᷐')"><span class="attach-badge">✅ Attaches</span><div class="symbol">᷐</div><span class="symbol-name">Flower Above</span><button class="copy-symbol-btn" onclick="event.stopPropagation(); copySymbol('᷐')">📋 Copy</button><button class="copy-symbol-btn" style="margin-top:5px; background:#FFD700; color:#000;" onclick="event.stopPropagation(); attachSymbol('᷐')">🔗 Attach</button></div>
-    <div class="symbol-card" onclick="selectSymbol('᷑')"><span class="attach-badge">✅ Attaches</span><div class="symbol">᷑</div><span class="symbol-name">Flower Below</span><button class="copy-symbol-btn" onclick="event.stopPropagation(); copySymbol('᷑')">📋 Copy</button><button class="copy-symbol-btn" style="margin-top:5px; background:#FFD700; color:#000;" onclick="event.stopPropagation(); attachSymbol('᷑')">🔗 Attach</button></div>
-</div>
-
-<!-- ===== GROUP 5: MEDIEVAL MARKS ===== -->
-<h2 class="section-title">💧 Medieval Marks</h2>
-<div class="symbol-grid">
-    <div class="symbol-card" onclick="selectSymbol('᷒')"><span class="attach-badge">✅ Attaches</span><div class="symbol">᷒</div><span class="symbol-name">Dot Above</span><button class="copy-symbol-btn" onclick="event.stopPropagation(); copySymbol('᷒')">📋 Copy</button><button class="copy-symbol-btn" style="margin-top:5px; background:#FFD700; color:#000;" onclick="event.stopPropagation(); attachSymbol('᷒')">🔗 Attach</button></div>
-    <div class="symbol-card" onclick="selectSymbol('ᷓ')"><span class="attach-badge">✅ Attaches</span><div class="symbol">ᷓ</div><span class="symbol-name">Dot Below</span><button class="copy-symbol-btn" onclick="event.stopPropagation(); copySymbol('ᷓ')">📋 Copy</button><button class="copy-symbol-btn" style="margin-top:5px; background:#FFD700; color:#000;" onclick="event.stopPropagation(); attachSymbol('ᷓ')">🔗 Attach</button></div>
-    <div class="symbol-card" onclick="selectSymbol('ᷔ')"><span class="attach-badge">✅ Attaches</span><div class="symbol">ᷔ</div><span class="symbol-name">Heart Above</span><button class="copy-symbol-btn" onclick="event.stopPropagation(); copySymbol('ᷔ')">📋 Copy</button><button class="copy-symbol-btn" style="margin-top:5px; background:#FFD700; color:#000;" onclick="event.stopPropagation(); attachSymbol('ᷔ')">🔗 Attach</button></div>
-    <div class="symbol-card" onclick="selectSymbol('ᷕ')"><span class="attach-badge">✅ Attaches</span><div class="symbol">ᷕ</div><span class="symbol-name">Heart Below</span><button class="copy-symbol-btn" onclick="event.stopPropagation(); copySymbol('ᷕ')">📋 Copy</button><button class="copy-symbol-btn" style="margin-top:5px; background:#FFD700; color:#000;" onclick="event.stopPropagation(); attachSymbol('ᷕ')">🔗 Attach</button></div>
-    <div class="symbol-card" onclick="selectSymbol('ᷖ')"><span class="attach-badge">✅ Attaches</span><div class="symbol">ᷖ</div><span class="symbol-name">Star Above</span><button class="copy-symbol-btn" onclick="event.stopPropagation(); copySymbol('ᷖ')">📋 Copy</button><button class="copy-symbol-btn" style="margin-top:5px; background:#FFD700; color:#000;" onclick="event.stopPropagation(); attachSymbol('ᷖ')">🔗 Attach</button></div>
-    <div class="symbol-card" onclick="selectSymbol('ᷗ')"><span class="attach-badge">✅ Attaches</span><div class="symbol">ᷗ</div><span class="symbol-name">Star Below</span><button class="copy-symbol-btn" onclick="event.stopPropagation(); copySymbol('ᷗ')">📋 Copy</button><button class="copy-symbol-btn" style="margin-top:5px; background:#FFD700; color:#000;" onclick="event.stopPropagation(); attachSymbol('ᷗ')">🔗 Attach</button></div>
-    <div class="symbol-card" onclick="selectSymbol('ᷘ')"><span class="attach-badge">✅ Attaches</span><div class="symbol">ᷘ</div><span class="symbol-name">Crescent Above</span><button class="copy-symbol-btn" onclick="event.stopPropagation(); copySymbol('ᷘ')">📋 Copy</button><button class="copy-symbol-btn" style="margin-top:5px; background:#FFD700; color:#000;" onclick="event.stopPropagation(); attachSymbol('ᷘ')">🔗 Attach</button></div>
-    <div class="symbol-card" onclick="selectSymbol('ᷙ')"><span class="attach-badge">✅ Attaches</span><div class="symbol">ᷙ</div><span class="symbol-name">Crescent Below</span><button class="copy-symbol-btn" onclick="event.stopPropagation(); copySymbol('ᷙ')">📋 Copy</button><button class="copy-symbol-btn" style="margin-top:5px; background:#FFD700; color:#000;" onclick="event.stopPropagation(); attachSymbol('ᷙ')">🔗 Attach</button></div>
-</div>
-
-<!-- ===== GROUP 6: MODIFIER SYMBOLS ===== -->
-<h2 class="section-title">⬆️ Modifier Symbols</h2>
-<div class="symbol-grid">
-    <div class="symbol-card" onclick="selectSymbol('ᷚ')"><span class="attach-badge">✅ Attaches</span><div class="symbol">ᷚ</div><span class="symbol-name">Right Arrow</span><button class="copy-symbol-btn" onclick="event.stopPropagation(); copySymbol('ᷚ')">📋 Copy</button><button class="copy-symbol-btn" style="margin-top:5px; background:#FFD700; color:#000;" onclick="event.stopPropagation(); attachSymbol('ᷚ')">🔗 Attach</button></div>
-    <div class="symbol-card" onclick="selectSymbol('ᷛ')"><span class="attach-badge">✅ Attaches</span><div class="symbol">ᷛ</div><span class="symbol-name">Left Arrow</span><button class="copy-symbol-btn" onclick="event.stopPropagation(); copySymbol('ᷛ')">📋 Copy</button><button class="copy-symbol-btn" style="margin-top:5px; background:#FFD700; color:#000;" onclick="event.stopPropagation(); attachSymbol('ᷛ')">🔗 Attach</button></div>
-    <div class="symbol-card" onclick="selectSymbol('ᷜ')"><span class="attach-badge">✅ Attaches</span><div class="symbol">ᷜ</div><span class="symbol-name">Up Arrow</span><button class="copy-symbol-btn" onclick="event.stopPropagation(); copySymbol('ᷜ')">📋 Copy</button><button class="copy-symbol-btn" style="margin-top:5px; background:#FFD700; color:#000;" onclick="event.stopPropagation(); attachSymbol('ᷜ')">🔗 Attach</button></div>
-    <div class="symbol-card" onclick="selectSymbol('ᷝ')"><span class="attach-badge">✅ Attaches</span><div class="symbol">ᷝ</div><span class="symbol-name">Down Arrow</span><button class="copy-symbol-btn" onclick="event.stopPropagation(); copySymbol('ᷝ')">📋 Copy</button><button class="copy-symbol-btn" style="margin-top:5px; background:#FFD700; color:#000;" onclick="event.stopPropagation(); attachSymbol('ᷝ')">🔗 Attach</button></div>
-    <div class="symbol-card" onclick="selectSymbol('ᷞ')"><span class="attach-badge">✅ Attaches</span><div class="symbol">ᷞ</div><span class="symbol-name">Left Right Arrow</span><button class="copy-symbol-btn" onclick="event.stopPropagation(); copySymbol('ᷞ')">📋 Copy</button><button class="copy-symbol-btn" style="margin-top:5px; background:#FFD700; color:#000;" onclick="event.stopPropagation(); attachSymbol('ᷞ')">🔗 Attach</button></div>
-    <div class="symbol-card" onclick="selectSymbol('ᷟ')"><span class="attach-badge">✅ Attaches</span><div class="symbol">ᷟ</div><span class="symbol-name">Up Down Arrow</span><button class="copy-symbol-btn" onclick="event.stopPropagation(); copySymbol('ᷟ')">📋 Copy</button><button class="copy-symbol-btn" style="margin-top:5px; background:#FFD700; color:#000;" onclick="event.stopPropagation(); attachSymbol('ᷟ')">🔗 Attach</button></div>
-    <div class="symbol-card" onclick="selectSymbol('ᷠ')"><span class="attach-badge">✅ Attaches</span><div class="symbol">ᷠ</div><span class="symbol-name">Circle Above</span><button class="copy-symbol-btn" onclick="event.stopPropagation(); copySymbol('ᷠ')">📋 Copy</button><button class="copy-symbol-btn" style="margin-top:5px; background:#FFD700; color:#000;" onclick="event.stopPropagation(); attachSymbol('ᷠ')">🔗 Attach</button></div>
-    <div class="symbol-card" onclick="selectSymbol('ᷡ')"><span class="attach-badge">✅ Attaches</span><div class="symbol">ᷡ</div><span class="symbol-name">Circle Below</span><button class="copy-symbol-btn" onclick="event.stopPropagation(); copySymbol('ᷡ')">📋 Copy</button><button class="copy-symbol-btn" style="margin-top:5px; background:#FFD700; color:#000;" onclick="event.stopPropagation(); attachSymbol('ᷡ')">🔗 Attach</button></div>
-</div>
-
-<!-- ===== GROUP 7: MEDIEVAL EXTENDED ===== -->
-<h2 class="section-title">◌ Medieval Extended Marks</h2>
-<div class="symbol-grid">
-    <div class="symbol-card" onclick="selectSymbol('ᷢ')"><span class="attach-badge">✅ Attaches</span><div class="symbol">ᷢ</div><span class="symbol-name">Square Above</span><button class="copy-symbol-btn" onclick="event.stopPropagation(); copySymbol('ᷢ')">📋 Copy</button><button class="copy-symbol-btn" style="margin-top:5px; background:#FFD700; color:#000;" onclick="event.stopPropagation(); attachSymbol('ᷢ')">🔗 Attach</button></div>
-    <div class="symbol-card" onclick="selectSymbol('ᷣ')"><span class="attach-badge">✅ Attaches</span><div class="symbol">ᷣ</div><span class="symbol-name">Square Below</span><button class="copy-symbol-btn" onclick="event.stopPropagation(); copySymbol('ᷣ')">📋 Copy</button><button class="copy-symbol-btn" style="margin-top:5px; background:#FFD700; color:#000;" onclick="event.stopPropagation(); attachSymbol('ᷣ')">🔗 Attach</button></div>
-    <div class="symbol-card" onclick="selectSymbol('ᷤ')"><span class="attach-badge">✅ Attaches</span><div class="symbol">ᷤ</div><span class="symbol-name">Diamond Above</span><button class="copy-symbol-btn" onclick="event.stopPropagation(); copySymbol('ᷤ')">📋 Copy</button><button class="copy-symbol-btn" style="margin-top:5px; background:#FFD700; color:#000;" onclick="event.stopPropagation(); attachSymbol('ᷤ')">🔗 Attach</button></div>
-    <div class="symbol-card" onclick="selectSymbol('ᷥ')"><span class="attach-badge">✅ Attaches</span><div class="symbol">ᷥ</div><span class="symbol-name">Diamond Below</span><button class="copy-symbol-btn" onclick="event.stopPropagation(); copySymbol('ᷥ')">📋 Copy</button><button class="copy-symbol-btn" style="margin-top:5px; background:#FFD700; color:#000;" onclick="event.stopPropagation(); attachSymbol('ᷥ')">🔗 Attach</button></div>
-    <div class="symbol-card" onclick="selectSymbol('ᷦ')"><span class="attach-badge">✅ Attaches</span><div class="symbol">ᷦ</div><span class="symbol-name">Triangle Above</span><button class="copy-symbol-btn" onclick="event.stopPropagation(); copySymbol('ᷦ')">📋 Copy</button><button class="copy-symbol-btn" style="margin-top:5px; background:#FFD700; color:#000;" onclick="event.stopPropagation(); attachSymbol('ᷦ')">🔗 Attach</button></div>
-    <div class="symbol-card" onclick="selectSymbol('ᷧ')"><span class="attach-badge">✅ Attaches</span><div class="symbol">ᷧ</div><span class="symbol-name">Triangle Below</span><button class="copy-symbol-btn" onclick="event.stopPropagation(); copySymbol('ᷧ')">📋 Copy</button><button class="copy-symbol-btn" style="margin-top:5px; background:#FFD700; color:#000;" onclick="event.stopPropagation(); attachSymbol('ᷧ')">🔗 Attach</button></div>
-    <div class="symbol-card" onclick="selectSymbol('ᷨ')"><span class="attach-badge">✅ Attaches</span><div class="symbol">ᷨ</div><span class="symbol-name">Cross Above</span><button class="copy-symbol-btn" onclick="event.stopPropagation(); copySymbol('ᷨ')">📋 Copy</button><button class="copy-symbol-btn" style="margin-top:5px; background:#FFD700; color:#000;" onclick="event.stopPropagation(); attachSymbol('ᷨ')">🔗 Attach</button></div>
-    <div class="symbol-card" onclick="selectSymbol('ᷩ')"><span class="attach-badge">✅ Attaches</span><div class="symbol">ᷩ</div><span class="symbol-name">Cross Below</span><button class="copy-symbol-btn" onclick="event.stopPropagation(); copySymbol('ᷩ')">📋 Copy</button><button class="copy-symbol-btn" style="margin-top:5px; background:#FFD700; color:#000;" onclick="event.stopPropagation(); attachSymbol('ᷩ')">🔗 Attach</button></div>
-</div>
-
-<!-- ===== GROUP 8: MEDIEVAL FINAL ===== -->
-<h2 class="section-title">〰️ Medieval Final Marks</h2>
-<div class="symbol-grid">
-    <div class="symbol-card" onclick="selectSymbol('ᷪ')"><span class="attach-badge">✅ Attaches</span><div class="symbol">ᷪ</div><span class="symbol-name">Wave Above</span><button class="copy-symbol-btn" onclick="event.stopPropagation(); copySymbol('ᷪ')">📋 Copy</button><button class="copy-symbol-btn" style="margin-top:5px; background:#FFD700; color:#000;" onclick="event.stopPropagation(); attachSymbol('ᷪ')">🔗 Attach</button></div>
-    <div class="symbol-card" onclick="selectSymbol('ᷫ')"><span class="attach-badge">✅ Attaches</span><div class="symbol">ᷫ</div><span class="symbol-name">Wave Below</span><button class="copy-symbol-btn" onclick="event.stopPropagation(); copySymbol('ᷫ')">📋 Copy</button><button class="copy-symbol-btn" style="margin-top:5px; background:#FFD700; color:#000;" onclick="event.stopPropagation(); attachSymbol('ᷫ')">🔗 Attach</button></div>
-    <div class="symbol-card" onclick="selectSymbol('ᷬ')"><span class="attach-badge">✅ Attaches</span><div class="symbol">ᷬ</div><span class="symbol-name">Double Wave Above</span><button class="copy-symbol-btn" onclick="event.stopPropagation(); copySymbol('ᷬ')">📋 Copy</button><button class="copy-symbol-btn" style="margin-top:5px; background:#FFD700; color:#000;" onclick="event.stopPropagation(); attachSymbol('ᷬ')">🔗 Attach</button></div>
-    <div class="symbol-card" onclick="selectSymbol('ᷭ')"><span class="attach-badge">✅ Attaches</span><div class="symbol">ᷭ</div><span class="symbol-name">Double Wave Below</span><button class="copy-symbol-btn" onclick="event.stopPropagation(); copySymbol('ᷭ')">📋 Copy</button><button class="copy-symbol-btn" style="margin-top:5px; background:#FFD700; color:#000;" onclick="event.stopPropagation(); attachSymbol('ᷭ')">🔗 Attach</button></div>
-    <div class="symbol-card" onclick="selectSymbol('ᷮ')"><span class="attach-badge">✅ Attaches</span><div class="symbol">ᷮ</div><span class="symbol-name">Zigzag Above</span><button class="copy-symbol-btn" onclick="event.stopPropagation(); copySymbol('ᷮ')">📋 Copy</button><button class="copy-symbol-btn" style="margin-top:5px; background:#FFD700; color:#000;" onclick="event.stopPropagation(); attachSymbol('ᷮ')">🔗 Attach</button></div>
-    <div class="symbol-card" onclick="selectSymbol('ᷯ')"><span class="attach-badge">✅ Attaches</span><div class="symbol">ᷯ</div><span class="symbol-name">Zigzag Below</span><button class="copy-symbol-btn" onclick="event.stopPropagation(); copySymbol('ᷯ')">📋 Copy</button><button class="copy-symbol-btn" style="margin-top:5px; background:#FFD700; color:#000;" onclick="event.stopPropagation(); attachSymbol('ᷯ')">🔗 Attach</button></div>
-    <div class="symbol-card" onclick="selectSymbol('ᷰ')"><span class="attach-badge">✅ Attaches</span><div class="symbol">ᷰ</div><span class="symbol-name">Curve Above</span><button class="copy-symbol-btn" onclick="event.stopPropagation(); copySymbol('ᷰ')">📋 Copy</button><button class="copy-symbol-btn" style="margin-top:5px; background:#FFD700; color:#000;" onclick="event.stopPropagation(); attachSymbol('ᷰ')">🔗 Attach</button></div>
-    <div class="symbol-card" onclick="selectSymbol('ᷱ')"><span class="attach-badge">✅ Attaches</span><div class="symbol">ᷱ</div><span class="symbol-name">Curve Below</span><button class="copy-symbol-btn" onclick="event.stopPropagation(); copySymbol('ᷱ')">📋 Copy</button><button class="copy-symbol-btn" style="margin-top:5px; background:#FFD700; color:#000;" onclick="event.stopPropagation(); attachSymbol('ᷱ')">🔗 Attach</button></div>
-</div>
-        
-        <!-- Creative Ideas Section -->
-        <div class="premium-note">
-            <h3>💡 Creative Ideas – 100+ Ways to Use</h3>
-            <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:20px;">
-                <div class="suggestion-item" style="background:#333; border:none;">
-                    <span>Instagram Bio</span>
-                    <span style="color:#FFD700;">J͙a͙c͙k͙</span>
-                </div>
-                <div class="suggestion-item" style="background:#333; border:none;">
-                    <span>WhatsApp Status</span>
-                    <span style="color:#FFD700;">Mꨄoꨄoꨄnꨄ</span>
-                </div>
-                <div class="suggestion-item" style="background:#333; border:none;">
-                    <span>Gamer Tag</span>
-                    <span style="color:#FFD700;">K̶i̶l̶l̶e̶r̶</span>
-                </div>
-                <div class="suggestion-item" style="background:#333; border:none;">
-                    <span>Romantic</span>
-                    <span style="color:#FFD700;">L᪲o᪲v᪲e᪲</span>
-                </div>
-            </div>
-        </div>
-
-        <!-- FAQs (English, Free wala hata diya) -->
-        <h2 class="section-title">❓ Frequently Asked Questions</h2>
-        <div class="faq-item">
-            <h4 onclick="toggleFaq(this)">Where can I use these symbols? <span>▼</span></h4>
-            <p>Everywhere! Instagram, WhatsApp, Facebook, TikTok, gaming profiles, Twitter, bios, comments, and more. Anywhere you can type text, these symbols will attach. They work perfectly on all social media platforms and messaging apps.</p>
-        </div>
-        <div class="faq-item">
-            <h4 onclick="toggleFaq(this)">Do they work on mobile? <span>▼</span></h4>
-            <p>Absolutely! Both Android and iOS support these combining characters. Just copy and paste into any app. They display perfectly on all modern devices.</p>
-        </div>
-        <div class="faq-item">
-            <h4 onclick="toggleFaq(this)">Why does every symbol attach? <span>▼</span></h4>
-            <p>Because these are Unicode "combining characters" designed specifically to merge with the previous character. Each symbol card has a "✅ Attaches" badge to confirm it will attach properly to any letter or emoji you put before it.</p>
-        </div>
-        <div class="faq-item">
-            <h4 onclick="toggleFaq(this)">Can I add my own suggestions? <span>▼</span></h4>
-            <p>Yes! Click the "Add Your Own" button above and share your favorite symbol combinations with the community. Your suggestions will be visible to everyone and saved in your browser.</p>
-        </div>
-        <div class="faq-item">
-            <h4 onclick="toggleFaq(this)">How many symbols can I attach? <span>▼</span></h4>
-            <p>You can attach up to 10 symbols per character using the repeat buttons (1x to 10x). This creates unique layered effects. Feel free to experiment!</p>
+<div id="suggestionModal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.85); align-items:center; justify-content:center; z-index:2000;">
+    <div style="background:#1a1a1f; max-width:400px; width:90%; padding:25px; border-radius:32px; border:2px solid gold;">
+        <h3 style="color:gold">✨ Add Your Creation</h3>
+        <label style="color:white">Your Name *</label>
+        <input type="text" id="suggesterName" style="width:100%; margin:8px 0; padding:10px; background:#2a2a2a; color:white; border-radius:20px;">
+        <label style="color:white">Country *</label>
+        <select id="suggesterCountry" style="width:100%; padding:10px; background:#2a2a2a; color:white; border-radius:20px;">
+            <option>Select country</option><option>🇺🇸 USA</option><option>🇬🇧 UK</option><option>🇮🇳 India</option>
+        </select>
+        <label style="color:white">Stylish Suggestion *</label>
+        <input type="text" id="suggestionText" style="width:100%; margin:8px 0; padding:10px; background:#2a2a2a; color:white; border-radius:20px;">
+        <div style="display:flex; gap:12px; margin-top:18px;">
+            <button onclick="saveSuggestion()" style="background:gold; border:none; padding:10px; flex:1; border-radius:40px;">💾 SAVE</button>
+            <button onclick="closeSuggestionModal()" style="background:#333; color:white; border:none; padding:10px; flex:1; border-radius:40px;">Cancel</button>
         </div>
     </div>
-
-   <!-- VIP Symbol & Name Collection - Horizontal Scroll -->
-<div class="vip-collection-wrapper">
-    <div class="vip-header">
-        <span class="vip-badge">⭐ VIP COLLECTION ⭐</span>
-        <h2 class="vip-title">Exclusive Symbols & Names</h2>
-        <p class="vip-subtitle">Click any item to copy instantly – Premium designs for your profile</p>
-    </div>
-    
-    <div class="vip-scroll">
-        <!-- VIP Names & Symbols (Click to Copy) -->
-        <div class="vip-item" onclick="copyText('ᴅ ɪ ᴍ ⌔ ɴ ᴅ')">ᴅ ɪ ᴍ ⌔ ɴ ᴅ</div>
-        <div class="vip-item" onclick="copyText('𝐶 🂱 𝑅 𝐷')">𝐶 🂱 𝑅 𝐷</div>
-        <div class="vip-item" onclick="copyText('𖣿')">𖣿</div>
-        <div class="vip-item" onclick="copyText('💗᪲')">💗᪲</div>
-        <div class="vip-item" onclick="copyText('🍁᪳')">🍁᪳</div>
-        <div class="vip-item" onclick="copyText('😊᪴')">😊᪴</div>
-        <div class="vip-item" onclick="copyText('K︥I︥N︥G︥')">K︥I︥N︥G︥</div>
-        <div class="vip-item" onclick="copyText('👿͢͢͢͢͢͢͢')">👿͢͢͢͢͢͢͢</div>
-        <div class="vip-item" onclick="copyText('K̶')">K̶</div>
-        <div class="vip-item" onclick="copyText('🦋᪱')">🦋᪱</div>
-        <div class="vip-item" onclick="copyText('M̬̬̬̬ O̬̬̬̬ O̬̬̬̬ D̬̬̬̬')">M̬̬̬̬ O̬̬̬̬ O̬̬̬̬ D̬̬̬̬</div>
-        <div class="vip-item" onclick="copyText('⛰⃞⃞️⃞⃞')">⛰⃞⃞️⃞⃞</div>
-        <div class="vip-item" onclick="copyText('🌾︤')">🌾︤</div>
-        <div class="vip-item" onclick="copyText('🍜ᷳᷳᷳᷳᷳᷳᷳᷳ')">🍜ᷳᷳᷳᷳᷳᷳᷳᷳ</div>
-        <div class="vip-item" onclick="copyText('🧿⃝')">🧿⃝</div>
-        <div class="vip-item" onclick="copyText('✨⃟')">✨⃟</div>
-        <div class="vip-item" onclick="copyText('F l ✿ w e r')">F l ✿ w e r</div>
-        <div class="vip-item" onclick="copyText('💀̸̸̸')">💀̸̸̸</div>
-        <div class="vip-item" onclick="copyText('🔥̲̲̲')">🔥̲̲̲</div>
-        <div class="vip-item" onclick="copyText('🌟͙͙͙')">🌟͙͙͙</div>
-        <div class="vip-item" onclick="copyText('🖤᪲᪲᪲')">🖤᪲᪲᪲</div>
-        <div class="vip-item" onclick="copyText('💙̤̤̤')">💙̤̤̤</div>
-        <div class="vip-item" onclick="copyText('🧡̝̝̝')">🧡̝̝̝</div>
-        <div class="vip-item" onclick="copyText('💚̞̞̞')">💚̞̞̞</div>
-        <div class="vip-item" onclick="copyText('💜̬̬̬')">💜̬̬̬</div>
-        <div class="vip-item" onclick="copyText('🤍̭̭̭')">🤍̭̭̭</div>
-        <div class="vip-item" onclick="copyText('🩵̯̯̯')">🩵̯̯̯</div>
-        <div class="vip-item" onclick="copyText('🩷̺̺̺')">🩷̺̺̺</div>
-        <div class="vip-item" onclick="copyText('❤️̻̻̻')">❤️̻̻̻</div>
-        <div class="vip-item" onclick="copyText('💔̼̼̼')">💔̼̼̼</div>
-        <div class="vip-item" onclick="copyText('🫀⃝')">🫀⃝</div>
-        <div class="vip-item" onclick="copyText('🫁⃞')">🫁⃞</div>
-        <div class="vip-item" onclick="copyText('🧠⃟')">🧠⃟</div>
-        <div class="vip-item" onclick="copyText('🦷̠̠̠')">🦷̠̠̠</div>
-        <div class="vip-item" onclick="copyText('👁️̲̲̲')">👁️̲̲̲</div>
-        <div class="vip-item" onclick="copyText('👄͢͢͢')">👄͢͢͢</div>
-        <div class="vip-item" onclick="copyText('👂̅̅̅')">👂̅̅̅</div>
-        <div class="vip-item" onclick="copyText('👃̐̐̐')">👃̐̐̐</div>
-        <div class="vip-item" onclick="copyText('👣̌̌̌')">👣̌̌̌</div>
-        <div class="vip-item" onclick="copyText('👤̋̋̋')">👤̋̋̋</div>
-        <div class="vip-item" onclick="copyText('👥⃯⃯⃯')">👥⃯⃯⃯</div>
-        <div class="vip-item" onclick="copyText('🫂ꤪꤨꤪ')">🫂ꤪꤨꤪ</div>
-        <div class="vip-item" onclick="copyText('💪̤̮̤̮')">💪̤̮̤̮</div>
-        <div class="vip-item" onclick="copyText('🦾̝̝̝')">🦾̝̝̝</div>
-        <div class="vip-item" onclick="copyText('🦿̞̞̞')">🦿̞̞̞</div>
-        <div class="vip-item" onclick="copyText('🦶̬̬̬')">🦶̬̬̬</div>
-        <div class="vip-item" onclick="copyText('🦵̭̭̭')">🦵̭̭̭</div>
-        <div class="vip-item" onclick="copyText('🦴̯̯̯')">🦴̯̯̯</div>
-        <div class="vip-item" onclick="copyText('🦷̺̺̺')">🦷̺̺̺</div>
-        <div class="vip-item" onclick="copyText('🦻̻̻̻')">🦻̻̻̻</div>
-        <div class="vip-item" onclick="copyText('👓̼̼̼')">👓̼̼̼</div>
-        <div class="vip-item" onclick="copyText('🕶️⃝')">🕶️⃝</div>
-        <div class="vip-item" onclick="copyText('🥽⃞')">🥽⃞</div>
-        <div class="vip-item" onclick="copyText('🥼⃟')">🥼⃟</div>
-        <div class="vip-item" onclick="copyText('👕̠̠̠')">👕̠̠̠</div>
-        <div class="vip-item" onclick="copyText('👖̲̲̲')">👖̲̲̲</div>
-        <div class="vip-item" onclick="copyText('🧣͢͢͢')">🧣͢͢͢</div>
-        <div class="vip-item" onclick="copyText('🧤̅̅̅')">🧤̅̅̅</div>
-        <div class="vip-item" onclick="copyText('🧥̐̐̐')">🧥̐̐̐</div>
-        <div class="vip-item" onclick="copyText('🧦̌̌̌')">🧦̌̌̌</div>
-        <div class="vip-item" onclick="copyText('👗̋̋̋')">👗̋̋̋</div>
-        <div class="vip-item" onclick="copyText('👘⃯⃯⃯')">👘⃯⃯⃯</div>
-        <div class="vip-item" onclick="copyText('👙ꤪꤨꤪ')">👙ꤪꤨꤪ</div>
-        <div class="vip-item" onclick="copyText('👚̤̮̤̮')">👚̤̮̤̮</div>
-        <div class="vip-item" onclick="copyText('👛̝̝̝')">👛̝̝̝</div>
-        <div class="vip-item" onclick="copyText('👜̞̞̞')">👜̞̞̞</div>
-        <div class="vip-item" onclick="copyText('👝̬̬̬')">👝̬̬̬</div>
-        <div class="vip-item" onclick="copyText('🛍️̭̭̭')">🛍️̭̭̭</div>
-        <div class="vip-item" onclick="copyText('🎒̯̯̯')">🎒̯̯̯</div>
-        <div class="vip-item" onclick="copyText('👞̺̺̺')">👞̺̺̺</div>
-        <div class="vip-item" onclick="copyText('👟̻̻̻')">👟̻̻̻</div>
-        <div class="vip-item" onclick="copyText('🥾̼̼̼')">🥾̼̼̼</div>
-        <div class="vip-item" onclick="copyText('🥿⃝')">🥿⃝</div>
-        <div class="vip-item" onclick="copyText('👠⃞')">👠⃞</div>
-        <div class="vip-item" onclick="copyText('👡⃟')">👡⃟</div>
-        <div class="vip-item" onclick="copyText('👢̠̠̠')">👢̠̠̠</div>
-        <div class="vip-item" onclick="copyText('👑̲̲̲')">👑̲̲̲</div>
-        <div class="vip-item" onclick="copyText('👒͢͢͢')">👒͢͢͢</div>
-        <div class="vip-item" onclick="copyText('🎩̅̅̅')">🎩̅̅̅</div>
-        <div class="vip-item" onclick="copyText('🎓̐̐̐')">🎓̐̐̐</div>
-        <div class="vip-item" onclick="copyText('🧢̌̌̌')">🧢̌̌̌</div>
-        <div class="vip-item" onclick="copyText('⛑️̋̋̋')">⛑️̋̋̋</div>
-        <div class="vip-item" onclick="copyText('📿⃯⃯⃯')">📿⃯⃯⃯</div>
-        <div class="vip-item" onclick="copyText('💎ꤪꤨꤪ')">💎ꤪꤨꤪ</div>
-        <div class="vip-item" onclick="copyText('💍̤̮̤̮')">💍̤̮̤̮</div>
-        <div class="vip-item" onclick="copyText('💄̝̝̝')">💄̝̝̝</div>
-        <div class="vip-item" onclick="copyText('💋̞̞̞')">💋̞̞̞</div>
-        <div class="vip-item" onclick="copyText('💌̬̬̬')">💌̬̬̬</div>
-        <div class="vip-item" onclick="copyText('💐̭̭̭')">💐̭̭̭</div>
-        <div class="vip-item" onclick="copyText('🌸̯̯̯')">🌸̯̯̯</div>
-        <div class="vip-item" onclick="copyText('🌼̺̺̺')">🌼̺̺̺</div>
-        <div class="vip-item" onclick="copyText('🌻̻̻̻')">🌻̻̻̻</div>
-        <div class="vip-item" onclick="copyText('🌺̼̼̼')">🌺̼̼̼</div>
-        <div class="vip-item" onclick="copyText('🌷⃝')">🌷⃝</div>
-        <div class="vip-item" onclick="copyText('🌹⃞')">🌹⃞</div>
-        <div class="vip-item" onclick="copyText('🥀⃟')">🥀⃟</div>
-        <div class="vip-item" onclick="copyText('🌿̠̠̠')">🌿̠̠̠</div>
-        <div class="vip-item" onclick="copyText('🍃̲̲̲')">🍃̲̲̲</div>
-        <div class="vip-item" onclick="copyText('🍂͢͢͢')">🍂͢͢͢</div>
-        <div class="vip-item" onclick="copyText('🍁̅̅̅')">🍁̅̅̅</div>
-        <div class="vip-item" onclick="copyText('🍄̐̐̐')">🍄̐̐̐</div>
-        <div class="vip-item" onclick="copyText('🌵̌̌̌')">🌵̌̌̌</div>
-        <div class="vip-item" onclick="copyText('🌲̋̋̋')">🌲̋̋̋</div>
-        <div class="vip-item" onclick="copyText('🌳⃯⃯⃯')">🌳⃯⃯⃯</div>
-        <div class="vip-item" onclick="copyText('🌴ꤪꤨꤪ')">🌴ꤪꤨꤪ</div>
-        <div class="vip-item" onclick="copyText('🌱̤̮̤̮')">🌱̤̮̤̮</div>
-        <div class="vip-item" onclick="copyText('🌾̝̝̝')">🌾̝̝̝</div>
-        <div class="vip-item" onclick="copyText('🌽̞̞̞')">🌽̞̞̞</div>
-        <div class="vip-item" onclick="copyText('🍎̬̬̬')">🍎̬̬̬</div>
-        <div class="vip-item" onclick="copyText('🍐̭̭̭')">🍐̭̭̭</div>
-        <div class="vip-item" onclick="copyText('🍊̯̯̯')">🍊̯̯̯</div>
-        <div class="vip-item" onclick="copyText('🍋̺̺̺')">🍋̺̺̺</div>
-        <div class="vip-item" onclick="copyText('🍌̻̻̻')">🍌̻̻̻</div>
-        <div class="vip-item" onclick="copyText('🍉̼̼̼')">🍉̼̼̼</div>
-        <div class="vip-item" onclick="copyText('🍇⃝')">🍇⃝</div>
-        <div class="vip-item" onclick="copyText('🍓⃞')">🍓⃞</div>
-        <div class="vip-item" onclick="copyText('🫐⃟')">🫐⃟</div>
-        <div class="vip-item" onclick="copyText('🍈̠̠̠')">🍈̠̠̠</div>
-        <div class="vip-item" onclick="copyText('🍒̲̲̲')">🍒̲̲̲</div>
-        <div class="vip-item" onclick="copyText('🍑͢͢͢')">🍑͢͢͢</div>
-        <div class="vip-item" onclick="copyText('🍍̅̅̅')">🍍̅̅̅</div>
-        <div class="vip-item" onclick="copyText('🥭̐̐̐')">🥭̐̐̐</div>
-        <div class="vip-item" onclick="copyText('🥝̌̌̌')">🥝̌̌̌</div>
-        <div class="vip-item" onclick="copyText('🍅̋̋̋')">🍅̋̋̋</div>
-        <div class="vip-item" onclick="copyText('🍆⃯⃯⃯')">🍆⃯⃯⃯</div>
-        <div class="vip-item" onclick="copyText('🥑ꤪꤨꤪ')">🥑ꤪꤨꤪ</div>
-        <div class="vip-item" onclick="copyText('🥦̤̮̤̮')">🥦̤̮̤̮</div>
-        <div class="vip-item" onclick="copyText('🥬̝̝̝')">🥬̝̝̝</div>
-        <div class="vip-item" onclick="copyText('🥒̞̞̞')">🥒̞̞̞</div>
-        <div class="vip-item" onclick="copyText('🌶️̬̬̬')">🌶️̬̬̬</div>
-        <div class="vip-item" onclick="copyText('🫑̭̭̭')">🫑̭̭̭</div>
-        <div class="vip-item" onclick="copyText('🥕̺̺̺')">🥕̺̺̺</div>
-        <div class="vip-item" onclick="copyText('🧄̻̻̻')">🧄̻̻̻</div>
-        <div class="vip-item" onclick="copyText('🧅̼̼̼')">🧅̼̼̼</div>
-        <div class="vip-item" onclick="copyText('🥔⃝')">🥔⃝</div>
-        <div class="vip-item" onclick="copyText('🍠⃞')">🍠⃞</div>
-        <div class="vip-item" onclick="copyText('🥐⃟')">🥐⃟</div>
-        <div class="vip-item" onclick="copyText('🥯̠̠̠')">🥯̠̠̠</div>
-        <div class="vip-item" onclick="copyText('🍞̲̲̲')">🍞̲̲̲</div>
-        <div class="vip-item" onclick="copyText('🥖͢͢͢')">🥖͢͢͢</div>
-        <div class="vip-item" onclick="copyText('🥨̅̅̅')">🥨̅̅̅</div>
-        <div class="vip-item" onclick="copyText('🧀̐̐̐')">🧀̐̐̐</div>
-        <div class="vip-item" onclick="copyText('🥚̌̌̌')">🥚̌̌̌</div>
-        <div class="vip-item" onclick="copyText('🍳̋̋̋')">🍳̋̋̋</div>
-        <div class="vip-item" onclick="copyText('🧈⃯⃯⃯')">🧈⃯⃯⃯</div>
-        <div class="vip-item" onclick="copyText('🥞ꤪꤨꤪ')">🥞ꤪꤨꤪ</div>
-        <div class="vip-item" onclick="copyText('🧇̤̮̤̮')">🧇̤̮̤̮</div>
-        <div class="vip-item" onclick="copyText('🥓̝̝̝')">🥓̝̝̝</div>
-        <div class="vip-item" onclick="copyText('🥩̞̞̞')">🥩̞̞̞</div>
-        <div class="vip-item" onclick="copyText('🍗̬̬̬')">🍗̬̬̬</div>
-        <div class="vip-item" onclick="copyText('🍖̭̭̭')">🍖̭̭̭</div>
-        <div class="vip-item" onclick="copyText('🍔̺̺̺')">🍔̺̺̺</div>
-        <div class="vip-item" onclick="copyText('🍟̻̻̻')">🍟̻̻̻</div>
-        <div class="vip-item" onclick="copyText('🍕̼̼̼')">🍕̼̼̼</div>
-        <div class="vip-item" onclick="copyText('🌭⃝')">🌭⃝</div>
-        <div class="vip-item" onclick="copyText('🥪⃞')">🥪⃞</div>
-        <div class="vip-item" onclick="copyText('🌮⃟')">🌮⃟</div>
-        <div class="vip-item" onclick="copyText('🌯̠̠̠')">🌯̠̠̠</div>
-        <div class="vip-item" onclick="copyText('🫔̲̲̲')">🫔̲̲̲</div>
-        <div class="vip-item" onclick="copyText('🥙͢͢͢')">🥙͢͢͢</div>
-        <div class="vip-item" onclick="copyText('🧆̅̅̅')">🧆̅̅̅</div>
-        <div class="vip-item" onclick="copyText('🥘̐̐̐')">🥘̐̐̐</div>
-        <div class="vip-item" onclick="copyText('🍲̌̌̌')">🍲̌̌̌</div>
-        <div class="vip-item" onclick="copyText('🥣̋̋̋')">🥣̋̋̋</div>
-        <div class="vip-item" onclick="copyText('🥫⃯⃯⃯')">🥫⃯⃯⃯</div>
-        <div class="vip-item" onclick="copyText('🍜ꤪꤨꤪ')">🍜ꤪꤨꤪ</div>
-        <div class="vip-item" onclick="copyText('🍝̤̮̤̮')">🍝̤̮̤̮</div>
-        <div class="vip-item" onclick="copyText('🍛̝̝̝')">🍛̝̝̝</div>
-        <div class="vip-item" onclick="copyText('🍣̞̞̞')">🍣̞̞̞</div>
-        <div class="vip-item" onclick="copyText('🍤̬̬̬')">🍤̬̬̬</div>
-        <div class="vip-item" onclick="copyText('🍥̭̭̭')">🍥̭̭̭</div>
-        <div class="vip-item" onclick="copyText('🥮̯̯̯')">🥮̯̯̯</div>
-        <div class="vip-item" onclick="copyText('🍡̺̺̺')">🍡̺̺̺</div>
-        <div class="vip-item" onclick="copyText('🥟̻̻̻')">🥟̻̻̻</div>
-        <div class="vip-item" onclick="copyText('🥠̼̼̼')">🥠̼̼̼</div>
-        <div class="vip-item" onclick="copyText('🥡⃝')">🥡⃝</div>
-        <div class="vip-item" onclick="copyText('🍦⃞')">🍦⃞</div>
-        <div class="vip-item" onclick="copyText('🍧⃟')">🍧⃟</div>
-        <div class="vip-item" onclick="copyText('🍨̠̠̠')">🍨̠̠̠</div>
-        <div class="vip-item" onclick="copyText('🍩̲̲̲')">🍩̲̲̲</div>
-        <div class="vip-item" onclick="copyText('🍪͢͢͢')">🍪͢͢͢</div>
-        <div class="vip-item" onclick="copyText('🎂̅̅̅')">🎂̅̅̅</div>
-        <div class="vip-item" onclick="copyText('🍰̐̐̐')">🍰̐̐̐</div>
-        <div class="vip-item" onclick="copyText('🧁̌̌̌')">🧁̌̌̌</div>
-        <div class="vip-item" onclick="copyText('🥧̋̋̋')">🥧̋̋̋</div>
-        <div class="vip-item" onclick="copyText('🍫⃯⃯⃯')">🍫⃯⃯⃯</div>
-        <div class="vip-item" onclick="copyText('🍬ꤪꤨꤪ')">🍬ꤪꤨꤪ</div>
-        <div class="vip-item" onclick="copyText('🍭̤̮̤̮')">🍭̤̮̤̮</div>
-        <div class="vip-item" onclick="copyText('🍮̝̝̝')">🍮̝̝̝</div>
-        <div class="vip-item" onclick="copyText('🍯̞̞̞')">🍯̞̞̞</div>
-        <div class="vip-item" onclick="copyText('🥛̬̬̬')">🥛̬̬̬</div>
-        <div class="vip-item" onclick="copyText('☕̭̭̭')">☕̭̭̭</div>
-        <div class="vip-item" onclick="copyText('🍵̯̯̯')">🍵̯̯̯</div>
-        <div class="vip-item" onclick="copyText('🧃̺̺̺')">🧃̺̺̺</div>
-        <div class="vip-item" onclick="copyText('🥤̻̻̻')">🥤̻̻̻</div>
-        <div class="vip-item" onclick="copyText('🧋̼̼̼')">🧋̼̼̼</div>
-        <div class="vip-item" onclick="copyText('🍶⃝')">🍶⃝</div>
-        <div class="vip-item" onclick="copyText('🍺⃞')">🍺⃞</div>
-        <div class="vip-item" onclick="copyText('🍻⃟')">🍻⃟</div>
-        <div class="vip-item" onclick="copyText('🥂̠̠̠')">🥂̠̠̠</div>
-        <div class="vip-item" onclick="copyText('🥃̲̲̲')">🥃̲̲̲</div>
-        <div class="vip-item" onclick="copyText('🧊͢͢͢')">🧊͢͢͢</div>
-        <div class="vip-item" onclick="copyText('🥄̅̅̅')">🥄̅̅̅</div>
-        <div class="vip-item" onclick="copyText('🍴̐̐̐')">🍴̐̐̐</div>
-        <div class="vip-item" onclick="copyText('🍽️̌̌̌')">🍽️̌̌̌</div>
-        <div class="vip-item" onclick="copyText('🥢̋̋̋')">🥢̋̋̋</div>
-        <div class="vip-item" onclick="copyText('⚽⃯⃯⃯')">⚽⃯⃯⃯</div>
-        <div class="vip-item" onclick="copyText('🏀ꤪꤨꤪ')">🏀ꤪꤨꤪ</div>
-        <div class="vip-item" onclick="copyText('🏈̤̮̤̮')">🏈̤̮̤̮</div>
-        <div class="vip-item" onclick="copyText('⚾̝̝̝')">⚾̝̝̝</div>
-        <div class="vip-item" onclick="copyText('🥎̞̞̞')">🥎̞̞̞</div>
-        <div class="vip-item" onclick="copyText('🎾̬̬̬')">🎾̬̬̬</div>
-        <div class="vip-item" onclick="copyText('🏐̭̭̭')">🏐̭̭̭</div>
-        <div class="vip-item" onclick="copyText('🏉̯̯̯')">🏉̯̯̯</div>
-        <div class="vip-item" onclick="copyText('🥏̺̺̺')">🥏̺̺̺</div>
-        <div class="vip-item" onclick="copyText('🎱̻̻̻')">🎱̻̻̻</div>
-        <div class="vip-item" onclick="copyText('🪀̼̼̼')">🪀̼̼̼</div>
-        <div class="vip-item" onclick="copyText('🏓⃝')">🏓⃝</div>
-        <div class="vip-item" onclick="copyText('🏸⃞')">🏸⃞</div>
-        <div class="vip-item" onclick="copyText('🏒⃟')">🏒⃟</div>
-        <div class="vip-item" onclick="copyText('🏑̠̠̠')">🏑̠̠̠</div>
-        <div class="vip-item" onclick="copyText('🥍̲̲̲')">🥍̲̲̲</div>
-        <div class="vip-item" onclick="copyText('🏏͢͢͢')">🏏͢͢͢</div>
-        <div class="vip-item" onclick="copyText('🎿̅̅̅')">🎿̅̅̅</div>
-        <div class="vip-item" onclick="copyText('⛷️̐̐̐')">⛷️̐̐̐</div>
-        <div class="vip-item" onclick="copyText('🏂̌̌̌')">🏂̌̌̌</div>
-        <div class="vip-item" onclick="copyText('🪂̋̋̋')">🪂̋̋̋</div>
-        <div class="vip-item" onclick="copyText('🏋️⃯⃯⃯')">🏋️⃯⃯⃯</div>
-        <div class="vip-item" onclick="copyText('🤼ꤪꤨꤪ')">🤼ꤪꤨꤪ</div>
-        <div class="vip-item" onclick="copyText('🤸̤̮̤̮')">🤸̤̮̤̮</div>
-        <div class="vip-item" onclick="copyText('⛹️̝̝̝')">⛹️̝̝̝</div>
-        <div class="vip-item" onclick="copyText('🤾̞̞̞')">🤾̞̞̞</div>
-        <div class="vip-item" onclick="copyText('🏌️̬̬̬')">🏌️̬̬̬</div>
-        <div class="vip-item" onclick="copyText('🏇̭̭̭')">🏇̭̭̭</div>
-        <div class="vip-item" onclick="copyText('🧘̯̯̯')">🧘̯̯̯</div>
-        <div class="vip-item" onclick="copyText('🏄̺̺̺')">🏄̺̺̺</div>
-        <div class="vip-item" onclick="copyText('🏊̻̻̻')">🏊̻̻̻</div>
-        <div class="vip-item" onclick="copyText('🚣̼̼̼')">🚣̼̼̼</div>
-        <div class="vip-item" onclick="copyText('🧗⃝')">🧗⃝</div>
-        <div class="vip-item" onclick="copyText('🚵⃞')">🚵⃞</div>
-        <div class="vip-item" onclick="copyText('🚴⃟')">🚴⃟</div>
-        <div class="vip-item" onclick="copyText('🏆̠̠̠')">🏆̠̠̠</div>
-        <div class="vip-item" onclick="copyText('🥇̲̲̲')">🥇̲̲̲</div>
-        <div class="vip-item" onclick="copyText('🥈͢͢͢')">🥈͢͢͢</div>
-        <div class="vip-item" onclick="copyText('🥉̅̅̅')">🥉̅̅̅</div>
-        <div class="vip-item" onclick="copyText('🏅̐̐̐')">🏅̐̐̐</div>
-        <div class="vip-item" onclick="copyText('🎖️̌̌̌')">🎖️̌̌̌</div>
-        <div class="vip-item" onclick="copyText('🏵️̋̋̋')">🏵️̋̋̋</div>
-        <div class="vip-item" onclick="copyText('🎗️⃯⃯⃯')">🎗️⃯⃯⃯</div>
-        <div class="vip-item" onclick="copyText('🎟️ꤪꤨꤪ')">🎟️ꤪꤨꤪ</div>
-        <div class="vip-item" onclick="copyText('🎫̤̮̤̮')">🎫̤̮̤̮</div>
-        <div class="vip-item" onclick="copyText('🎭̝̝̝')">🎭̝̝̝</div>
-        <div class="vip-item" onclick="copyText('🎨̞̞̞')">🎨̞̞̞</div>
-        <div class="vip-item" onclick="copyText('🎪̬̬̬')">🎪̬̬̬</div>
-        <div class="vip-item" onclick="copyText('🎬̭̭̭')">🎬̭̭̭</div>
-        <div class="vip-item" onclick="copyText('🎮̯̯̯')">🎮̯̯̯</div>
-        <div class="vip-item" onclick="copyText('🕹️̺̺̺')">🕹️̺̺̺</div>
-        <div class="vip-item" onclick="copyText('🎲̻̻̻')">🎲̻̻̻</div>
-        <div class="vip-item" onclick="copyText('♟️̼̼̼')">♟️̼̼̼</div>
-        <div class="vip-item" onclick="copyText('🎯⃝')">🎯⃝</div>
-        <div class="vip-item" onclick="copyText('🃏⃞')">🃏⃞</div>
-        <div class="vip-item" onclick="copyText('🀄⃟')">🀄⃟</div>
-        <div class="vip-item" onclick="copyText('🎴̠̠̠')">🎴̠̠̠</div>
-        <div class="vip-item" onclick="copyText('🧩̲̲̲')">🧩̲̲̲</div>
-        <div class="vip-item" onclick="copyText('🧸͢͢͢')">🧸͢͢͢</div>
-        <div class="vip-item" onclick="copyText('🪅̅̅̅')">🪅̅̅̅</div>
-        <div class="vip-item" onclick="copyText('🪆̐̐̐')">🪆̐̐̐</div>
-        <div class="vip-item" onclick="copyText('🎁̌̌̌')">🎁̌̌̌</div>
-        <div class="vip-item" onclick="copyText('🎀̋̋̋')">🎀̋̋̋</div>
-        <div class="vip-item" onclick="copyText('🎈⃯⃯⃯')">🎈⃯⃯⃯</div>
-        <div class="vip-item" onclick="copyText('🎉ꤪꤨꤪ')">🎉ꤪꤨꤪ</div>
-        <div class="vip-item" onclick="copyText('🎊̤̮̤̮')">🎊̤̮̤̮</div>
-        <div class="vip-item" onclick="copyText('🎄̝̝̝')">🎄̝̝̝</div>
-        <div class="vip-item" onclick="copyText('🎃̞̞̞')">🎃̞̞̞</div>
-        <div class="vip-item" onclick="copyText('🎍̬̬̬')">🎍̬̬̬</div>
-        <div class="vip-item" onclick="copyText('🎋̭̭̭')">🎋̭̭̭</div>
-        <div class="vip-item" onclick="copyText('🎎̯̯̯')">🎎̯̯̯</div>
-        <div class="vip-item" onclick="copyText('🎏̺̺̺')">🎏̺̺̺</div>
-        <div class="vip-item" onclick="copyText('🎐̻̻̻')">🎐̻̻̻</div>
-        <div class="vip-item" onclick="copyText('🎑̼̼̼')">🎑̼̼̼</div>
-        <div class="vip-item" onclick="copyText('🧧⃝')">🧧⃝</div>
-        <div class="vip-item" onclick="copyText('✨⃞')">✨⃞</div>
-        <div class="vip-item" onclick="copyText('⭐⃟')">⭐⃟</div>
-        <div class="vip-item" onclick="copyText('🌟̠̠̠')">🌟̠̠̠</div>
-        <div class="vip-item" onclick="copyText('🌠̲̲̲')">🌠̲̲̲</div>
-        <div class="vip-item" onclick="copyText('🎇͢͢͢')">🎇͢͢͢</div>
-        <div class="vip-item" onclick="copyText('🎆̅̅̅')">🎆̅̅̅</div>
-        <div class="vip-item" onclick="copyText('🌌̐̐̐')">🌌̐̐̐</div>
-        <div class="vip-item" onclick="copyText('🌠̌̌̌')">🌠̌̌̌</div>
-        <div class="vip-item" onclick="copyText('🌃̋̋̋')">🌃̋̋̋</div>
-        <div class="vip-item" onclick="copyText('🌄⃯⃯⃯')">🌄⃯⃯⃯</div>
-        <div class="vip-item" onclick="copyText('🌅ꤪꤨꤪ')">🌅ꤪꤨꤪ</div>
-        <div class="vip-item" onclick="copyText('🌆̤̮̤̮')">🌆̤̮̤̮</div>
-        <div class="vip-item" onclick="copyText('🌇̝̝̝')">🌇̝̝̝</div>
-        <div class="vip-item" onclick="copyText('🌉̞̞̞')">🌉̞̞̞</div>
-        <div class="vip-item" onclick="copyText('🌊̬̬̬')">🌊̬̬̬</div>
-        <div class="vip-item" onclick="copyText('🌋̭̭̭')">🌋̭̭̭</div>
-        <div class="vip-item" onclick="copyText('🌌̯̯̯')">🌌̯̯̯</div>
-        <div class="vip-item" onclick="copyText('🌍̺̺̺')">🌍̺̺̺</div>
-        <div class="vip-item" onclick="copyText('🌎̻̻̻')">🌎̻̻̻</div>
-        <div class="vip-item" onclick="copyText('🌏̼̼̼')">🌏̼̼̼</div>
-        <div class="vip-item" onclick="copyText('🌑⃝')">🌑⃝</div>
-        <div class="vip-item" onclick="copyText('🌒⃞')">🌒⃞</div>
-        <div class="vip-item" onclick="copyText('🌓⃟')">🌓⃟</div>
-        <div class="vip-item" onclick="copyText('🌔̠̠̠')">🌔̠̠̠</div>
-        <div class="vip-item" onclick="copyText('🌕̲̲̲')">🌕̲̲̲</div>
-        <div class="vip-item" onclick="copyText('🌖͢͢͢')">🌖͢͢͢</div>
-        <div class="vip-item" onclick="copyText('🌗̅̅̅')">🌗̅̅̅</div>
-        <div class="vip-item" onclick="copyText('🌘̐̐̐')">🌘̐̐̐</div>
-        <div class="vip-item" onclick="copyText('🌙̌̌̌')">🌙̌̌̌</div>
-        <div class="vip-item" onclick="copyText('🌚̋̋̋')">🌚̋̋̋</div>
-        <div class="vip-item" onclick="copyText('🌛⃯⃯⃯')">🌛⃯⃯⃯</div>
-        <div class="vip-item" onclick="copyText('🌜ꤪꤨꤪ')">🌜ꤪꤨꤪ</div>
-        <div class="vip-item" onclick="copyText('☀️̤̮̤̮')">☀️̤̮̤̮</div>
-        <div class="vip-item" onclick="copyText('🌤️̝̝̝')">🌤️̝̝̝</div>
-        <div class="vip-item" onclick="copyText('⛅̞̞̞')">⛅̞̞̞</div>
-        <div class="vip-item" onclick="copyText('🌥️̬̬̬')">🌥️̬̬̬</div>
-        <div class="vip-item" onclick="copyText('🌦️̭̭̭')">🌦️̭̭̭</div>
-        <div class="vip-item" onclick="copyText('🌧️̯̯̯')">🌧️̯̯̯</div>
-        <div class="vip-item" onclick="copyText('🌨️̺̺̺')">🌨️̺̺̺</div>
-        <div class="vip-item" onclick="copyText('🌩️̻̻̻')">🌩️̻̻̻</div>
-        <div class="vip-item" onclick="copyText('🌪️̼̼̼')">🌪️̼̼̼</div>
-        <div class="vip-item" onclick="copyText('🌈⃝')">🌈⃝</div>
-        <div class="vip-item" onclick="copyText('☁️⃞')">☁️⃞</div>
-        <div class="vip-item" onclick="copyText('🌫️̠̠̠')">🌫️̠̠̠</div>
-        <div class="vip-item" onclick="copyText('💨̲̲̲')">💨̲̲̲</div>
-        <div class="vip-item" onclick="copyText('🔥͢͢͢')">🔥͢͢͢</div>
-        <div class="vip-item" onclick="copyText('💧̅̅̅')">💧̅̅̅</div>
-        <div class="vip-item" onclick="copyText('💦̐̐̐')">💦̐̐̐</div>
-        <div class="vip-item" onclick="copyText('🌊̌̌̌')">🌊̌̌̌</div>
-        <div class="vip-item" onclick="copyText('☔̋̋̋')">☔̋̋̋</div>
-        <div class="vip-item" onclick="copyText('⛄⃯⃯⃯')">⛄⃯⃯⃯</div>
-        <div class="vip-item" onclick="copyText('☃️ꤪꤨꤪ')">☃️ꤪꤨꤪ</div>
-        <div class="vip-item" onclick="copyText('❄️̤̮̤̮')">❄️̤̮̤̮</div>
-        <div class="vip-item" onclick="copyText('🪐⃝')">🪐⃝</div>
-        <div class="vip-item" onclick="copyText('🚀̲̲̲')">🚀̲̲̲</div>
-        <div class="vip-item" onclick="copyText('🛸͢͢͢')">🛸͢͢͢</div>
-        <div class="vip-item" onclick="copyText('🛰️̅̅̅')">🛰️̅̅̅</div>
-        <div class="vip-item" onclick="copyText('🧑‍🚀̌̌̌')">🧑‍🚀̌̌̌</div>
-    </div>
 </div>
-    
-    <!-- Add Suggestion Modal -->
-    <div id="suggestionModal">
-        <div class="modal-content">
-            <h3>✨ Add Your Own Suggestion</h3>
-            
-            <label>Your Name (optional)</label>
-            <input type="text" id="suggesterName" placeholder="Enter your name">
-            
-            <label>Your Stylish Suggestion *</label>
-            <input type="text" id="suggestionText" placeholder="e.g., J͢a͢c͢k͢ or Lꨄoꨄvꨄeꨄ">
-            
-            <div class="modal-actions">
-                <button class="save-btn" onclick="saveSuggestion()">💾 Save</button>
-                <button class="cancel-btn" onclick="closeSuggestionModal()">❌ Cancel</button>
-            </div>
-        </div>
-    </div>
 
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <p>© 2026 Premium Attach Symbol Generator | <a href="#">Privacy Policy</a> | <a href="#">Terms of Use</a> | <a href="#">Contact</a></p>
-            <p style="margin-top:10px;">Made with 💖 for premium users like you</p>
-        </div>
-    </footer>
-
-    <script>
-        // ===== STATE =====
-        let currentRepeat = 1;
-        let communitySuggestions = [
-            { text: "J͢a͢c͢k͢", addedBy: "System" },
-            { text: "Lꨄoꨄvꨄeꨄ", addedBy: "System" },
-            { text: "S᪲a᪲m᪲", addedBy: "System" },
-            { text: "R̶o̶c̶k̶", addedBy: "System" },
-            { text: "M͙o͙o͙n͙", addedBy: "System" },
-            { text: "💗˚˚˚", addedBy: "System" },
-            { text: "P⃯r⃯o⃯", addedBy: "System" },
-            { text: "K͢i͢n͢g͢", addedBy: "System" },
-            { text: "Qꨄuꨄeꨄeꨄnꨄ", addedBy: "System" },
-            { text: "S̶t̶a̶r̶", addedBy: "System" },
-            { text: "W᪲i᪲n᪲n᪲e᪲r᪲", addedBy: "System" },
-            { text: "L᪴o᪴v᪴e᪴r᪴", addedBy: "System" },
-            { text: "P͙r͙o͙", addedBy: "System" },
-    { text: "A̝n̝n̝a̝", addedBy: "System" },
-    { text: "J̞a̞c̞k̞", addedBy: "System" },
-    { text: "M̬o̬o̬n̬", addedBy: "System" },
-    { text: "S̭ṷṋ", addedBy: "System" },
-    { text: "R̯o̯c̯k̯", addedBy: "System" },
-    { text: "B̺i̺r̺d̺", addedBy: "System" },
-    { text: "B̻o̻x̻", addedBy: "System" },
-    { text: "W̼a̼v̼e̼", addedBy: "System" },
-    { text: "A︠n︠n︠a︠", addedBy: "System" },
-    { text: "J︡a︡c︡k︡", addedBy: "System" },
-    { text: "S︢u︢n︢", addedBy: "System" },
-    { text: "M︣o︣o︣n︣", addedBy: "System" },
-    { text: "R︤o︤c︤k︤", addedBy: "System" },
-    { text: "B︥i︥r︥d︥", addedBy: "System" },
-    { text: "W︦a︦v︦e︦", addedBy: "System" },
-    { text: "H﻿e﻿l﻿l﻿o", addedBy: "System" },
-    { text: "A᪻n᪻n᪻a᪻", addedBy: "System" },
-    { text: "J᪼a᪼c᪼k᪼", addedBy: "System" },
-    { text: "S᪽u᪽n᪽", addedBy: "System" },
-    { text: "M᪾o᪾o᪾n᪾", addedBy: "System" },
-    { text: "R⃨o⃨c⃨k⃨", addedBy: "System" },
-    { text: "B⃩i⃩r⃩d⃩", addedBy: "System" },
-    { text: "L⃪e⃪f⃪t⃪", addedBy: "System" },
-    { text: "R⃫i⃫g⃫h⃫t⃫", addedBy: "System" },
-    { text: "A᪰n᪰n᪰a᪰", addedBy: "System" },
-    { text: "J᪱a᪱c᪱k᪱", addedBy: "System" },
-    { text: "S᪲u᪲n᪲", addedBy: "System" },
-    { text: "M᪳o᪳o᪳n᪳", addedBy: "System" },
-    { text: "R᪴o᪴c᪴k᪴", addedBy: "System" },
-    { text: "B᪵i᪵r᪵d᪵", addedBy: "System" },
-    { text: "W᪶a᪶v᪶e᪶", addedBy: "System" },
-    { text: "F᪷l᪷o᪷w᪷", addedBy: "System" },
-    { text: "Aᷲnᷲnᷲaᷲ", addedBy: "System" },
-    { text: "Jᷳaᷳcᷳkᷳ", addedBy: "System" },
-    { text: "Sᷴuᷴnᷴ", addedBy: "System" },
-    { text: "M᷵o᷵o᷵n᷵", addedBy: "System" },
-            { text: "G̲o̲d̲", addedBy: "System" }
-        ];
-
-        // ===== LOAD SUGGESTIONS FROM LOCALSTORAGE =====
-        function loadSavedSuggestions() {
-            const saved = localStorage.getItem('premiumSuggestions');
-            if (saved) {
-                try {
-                    communitySuggestions = JSON.parse(saved);
-                } catch (e) {
-                    console.log('Error loading suggestions');
-                }
-            }
-        }
-
-        // ===== SAVE SUGGESTIONS TO LOCALSTORAGE =====
-        function saveSuggestionsToStorage() {
-            localStorage.setItem('premiumSuggestions', JSON.stringify(communitySuggestions));
-        }
-
-        // ===== LOAD SUGGESTIONS GRID =====
-        function loadSuggestions() {
-            const grid = document.getElementById('suggestionsGrid');
-            const seeAllContainer = document.getElementById('seeAllBtnContainer');
-            if (!grid) return;
-            
-            loadSavedSuggestions();
-            
-            // Random 10 suggestions
-            const shuffled = [...communitySuggestions].sort(() => Math.random() - 0.5);
-            const selected = shuffled.slice(0, 10);
-            
-            let html = '';
-            selected.forEach(s => {
-                const escapedText = s.text.replace(/'/g, "\\'");
-                html += `
-                    <div class="suggestion-item">
-                        <div>
-                            <div class="suggestion-text">${s.text}</div>
-                            ${s.addedBy !== "System" ? `<div class="suggestion-author">Added by: ${s.addedBy}</div>` : ''}
-                        </div>
-                        <button onclick="copyText('${escapedText}')">Copy</button>
-                    </div>
-                `;
-            });
-            
-            grid.innerHTML = html;
-            
-            // See All button
-            if (communitySuggestions.length > 10) {
-                seeAllContainer.innerHTML = `
-                    <button onclick="showAllSuggestions()">See All (${communitySuggestions.length})</button>
-                `;
-            } else {
-                seeAllContainer.innerHTML = '';
-            }
-        }
-
-        // ===== SHOW ALL SUGGESTIONS =====
-        function showAllSuggestions() {
-            const grid = document.getElementById('suggestionsGrid');
-            const seeAllContainer = document.getElementById('seeAllBtnContainer');
-            
-            let html = '';
-            communitySuggestions.forEach(s => {
-                const escapedText = s.text.replace(/'/g, "\\'");
-                html += `
-                    <div class="suggestion-item">
-                        <div>
-                            <div class="suggestion-text">${s.text}</div>
-                            ${s.addedBy !== "System" ? `<div class="suggestion-author">Added by: ${s.addedBy}</div>` : ''}
-                        </div>
-                        <button onclick="copyText('${escapedText}')">Copy</button>
-                    </div>
-                `;
-            });
-            
-            html += `<div class="see-all-btn"><button onclick="loadSuggestions()">← Show Random</button></div>`;
-            grid.innerHTML = html;
-            seeAllContainer.innerHTML = '';
-        }
-
-        // ===== OPEN MODAL =====
-        function openAddSuggestionModal() {
-            document.getElementById('suggestionModal').style.display = 'flex';
-        }
-
-        // ===== CLOSE MODAL =====
-        function closeSuggestionModal() {
-            document.getElementById('suggestionModal').style.display = 'none';
-            document.getElementById('suggesterName').value = '';
-            document.getElementById('suggestionText').value = '';
-        }
-
-        // ===== SAVE NEW SUGGESTION =====
-        function saveSuggestion() {
-            const name = document.getElementById('suggesterName').value.trim() || 'Anonymous';
-            const text = document.getElementById('suggestionText').value.trim();
-            
-            if (!text) {
-                showAlert('❌ Please enter a suggestion!');
-                return;
-            }
-            
-            communitySuggestions.push({
-                text: text,
-                addedBy: name
-            });
-            
-            saveSuggestionsToStorage();
-            closeSuggestionModal();
-            loadSuggestions();
-            showAlert('✅ Your suggestion added! It appears to everyone.');
-        }
-
-        // ===== SET REPEAT COUNT =====
-        function setRepeat(times) {
-            currentRepeat = times;
-            document.querySelectorAll('.repeat-btn').forEach(btn => {
-                btn.classList.remove('active');
-            });
-            event.target.classList.add('active');
-            updatePreview();
-        }
-
-        // ===== UPDATE PREVIEW =====
-        function updatePreview() {
-            const text = document.getElementById('inputText').value || 'Jack';
-            const symbol = document.getElementById('symbolSelect').value;
-            let result = '';
-            for (let char of text) {
-                result += char + symbol.repeat(currentRepeat);
-            }
-            document.getElementById('preview').textContent = result;
-        }
-
-        // ===== COPY RESULT =====
-        function copyResult() {
-            const text = document.getElementById('preview').textContent;
-            copyToClipboard(text);
-        }
-
-        // ===== COPY SYMBOL =====
-        function copySymbol(symbol) {
-            copyToClipboard(symbol);
-        }
-
-        // ===== ATTACH SYMBOL =====
-        function attachSymbol(symbol) {
-            document.getElementById('symbolSelect').value = symbol;
-            updatePreview();
-            showAlert('✅ Symbol selected: ' + symbol);
-        }
-
-        // ===== SELECT SYMBOL =====
-        function selectSymbol(symbol) {
-            document.getElementById('symbolSelect').value = symbol;
-            updatePreview();
-        }
-
-        // ===== SELECT TEXT =====
-        function selectText(text) {
-            document.getElementById('inputText').value = text;
-            updatePreview();
-        }
-
-        // ===== COPY TEXT =====
-        function copyText(text) {
-            copyToClipboard(text);
-        }
-
-        // ===== COPY TO CLIPBOARD =====
-        function copyToClipboard(text) {
-            navigator.clipboard.writeText(text).then(() => {
-                showAlert('🎉 Congratulations! Copied successfully!');
-            }).catch(() => {
-                // Fallback
-                const textarea = document.createElement('textarea');
-                textarea.value = text;
-                document.body.appendChild(textarea);
-                textarea.select();
-                document.execCommand('copy');
-                document.body.removeChild(textarea);
-                showAlert('🎉 Congratulations! Copied successfully!');
-            });
-        }
-
-        // ===== SHOW ALERT =====
-        function showAlert(msg) {
-            const alert = document.createElement('div');
-            alert.className = 'alert';
-            alert.textContent = msg;
-            document.body.appendChild(alert);
-            setTimeout(() => alert.remove(), 2000);
-        }
-
-        // ===== TOGGLE FAQ =====
-        function toggleFaq(element) {
-            const faqItem = element.closest('.faq-item');
-            faqItem.classList.toggle('active');
-            const span = element.querySelector('span');
-            span.innerHTML = faqItem.classList.contains('active') ? '▲' : '▼';
-        }
-
-        // ===== INITIALIZE =====
-        window.onload = function() {
-            // Event listeners
-            document.getElementById('inputText').addEventListener('input', updatePreview);
-            document.getElementById('symbolSelect').addEventListener('change', updatePreview);
-            
-            // Close modal on outside click
-            document.getElementById('suggestionModal').addEventListener('click', function(e) {
-                if (e.target === this) {
-                    closeSuggestionModal();
-                }
-            });
-            
-            // Load initial data
-            updatePreview();
-            loadSuggestions();
-        };
-        // ===== FONT MAPPINGS (for quick conversion) =====
-const fontMaps = {
-    cursive: {
-        map: {
-            a:'𝓪',b:'𝓫',c:'𝓬',d:'𝓭',e:'𝓮',f:'𝓯',g:'𝓰',h:'𝓱',i:'𝓲',j:'𝓳',k:'𝓴',l:'𝓵',m:'𝓶',n:'𝓷',o:'𝓸',p:'𝓹',q:'𝓺',r:'𝓻',s:'𝓼',t:'𝓽',u:'𝓾',v:'𝓿',w:'𝔀',x:'𝔁',y:'𝔂',z:'𝔃',
-            A:'𝓐',B:'𝓑',C:'𝓒',D:'𝓓',E:'𝓔',F:'𝓕',G:'𝓖',H:'𝓗',I:'𝓘',J:'𝓙',K:'𝓚',L:'𝓛',M:'𝓜',N:'𝓝',O:'𝓞',P:'𝓟',Q:'𝓠',R:'𝓡',S:'𝓢',T:'𝓣',U:'𝓤',V:'𝓥',W:'𝓦',X:'𝓧',Y:'𝓨',Z:'𝓩'
-        }
-    },
-    fraktur: {
-        map: {
-            a:'𝖆',b:'𝖇',c:'𝖈',d:'𝖉',e:'𝖊',f:'𝖋',g:'𝖌',h:'𝖍',i:'𝖎',j:'𝖏',k:'𝖐',l:'𝖑',m:'𝖒',n:'𝖓',o:'𝖔',p:'𝖕',q:'𝖖',r:'𝖗',s:'𝖘',t:'𝖙',u:'𝖚',v:'𝖛',w:'𝖜',x:'𝖝',y:'𝖞',z:'𝖟',
-            A:'𝕬',B:'𝕭',C:'𝕮',D:'𝕯',E:'𝕰',F:'𝕱',G:'𝕲',H:'𝕳',I:'𝕴',J:'𝕵',K:'𝕶',L:'𝕷',M:'𝕸',N:'𝕹',O:'𝕺',P:'𝕻',Q:'𝕼',R:'𝕽',S:'𝕾',T:'𝕿',U:'𝖀',V:'𝖁',W:'𝖂',X:'𝖃',Y:'𝖄',Z:'𝖅'
-        }
-    },
-    doublestruck: {
-        map: {
-            a:'𝕒',b:'𝕓',c:'𝕔',d:'𝕕',e:'𝕖',f:'𝕗',g:'𝕘',h:'𝕙',i:'𝕚',j:'𝕛',k:'𝕜',l:'𝕝',m:'𝕞',n:'𝕟',o:'𝕠',p:'𝕡',q:'𝕢',r:'𝕣',s:'𝕤',t:'𝕥',u:'𝕦',v:'𝕧',w:'𝕨',x:'𝕩',y:'𝕪',z:'𝕫',
-            A:'𝔸',B:'𝔹',C:'ℂ',D:'𝔻',E:'𝔼',F:'𝔽',G:'𝔾',H:'ℍ',I:'𝕀',J:'𝕁',K:'𝕂',L:'𝕃',M:'𝕄',N:'ℕ',O:'𝕆',P:'ℙ',Q:'ℚ',R:'ℝ',S:'𝕊',T:'𝕋',U:'𝕌',V:'𝕍',W:'𝕎',X:'𝕏',Y:'𝕐',Z:'ℤ'
-        }
-    },
-    bold: {
-        map: {
-            a:'𝙖',b:'𝙗',c:'𝙘',d:'𝙙',e:'𝙚',f:'𝙛',g:'𝙜',h:'𝙝',i:'𝙞',j:'𝙟',k:'𝙠',l:'𝙡',m:'𝙢',n:'𝙣',o:'𝙤',p:'𝙥',q:'𝙦',r:'𝙧',s:'𝙨',t:'𝙩',u:'𝙪',v:'𝙫',w:'𝙬',x:'𝙭',y:'𝙮',z:'𝙯',
-            A:'𝗔',B:'𝗕',C:'𝗖',D:'𝗗',E:'𝗘',F:'𝗙',G:'𝗚',H:'𝗛',I:'𝗜',J:'𝗝',K:'𝗞',L:'𝗟',M:'𝗠',N:'𝗡',O:'𝗢',P:'𝗣',Q:'𝗤',R:'𝗥',S:'𝗦',T:'𝗧',U:'𝗨',V:'𝗩',W:'𝗪',X:'𝗫',Y:'𝗬',Z:'𝗭'
-        }
-    },
-    italic: {
-        map: {
-            a:'𝑎',b:'𝑏',c:'𝑐',d:'𝑑',e:'𝑒',f:'𝑓',g:'𝑔',h:'ℎ',i:'𝑖',j:'𝑗',k:'𝑘',l:'𝑙',m:'𝑚',n:'𝑛',o:'𝑜',p:'𝑝',q:'𝑞',r:'𝑟',s:'𝑠',t:'𝑡',u:'𝑢',v:'𝑣',w:'𝑤',x:'𝑥',y:'𝑦',z:'𝑧',
-            A:'𝐴',B:'𝐵',C:'𝐶',D:'𝐷',E:'𝐸',F:'𝐹',G:'𝐺',H:'𝐻',I:'𝐼',J:'𝐽',K:'𝐾',L:'𝐿',M:'𝑀',N:'𝑁',O:'𝑂',P:'𝑃',Q:'𝑄',R:'𝑅',S:'𝑆',T:'𝑇',U:'𝑈',V:'𝑉',W:'𝑊',X:'𝑋',Y:'𝑌',Z:'𝑍'
-        }
-    },
-    square: {
-        map: {
-            A:'🄰',B:'🄱',C:'🄲',D:'🄳',E:'🄴',F:'🄵',G:'🄶',H:'🄷',I:'🄸',J:'🄹',K:'🄺',L:'🄻',M:'🄼',N:'🄽',O:'🄾',P:'🄿',Q:'🅀',R:'🅁',S:'🅂',T:'🅃',U:'🅄',V:'🅅',W:'🅆',X:'🅇',Y:'🅈',Z:'🅉',
-            a:'🄐',b:'🄑',c:'🄒',d:'🄓',e:'🄔',f:'🄕',g:'🄖',h:'🄗',i:'🄘',j:'🄙',k:'🄚',l:'🄛',m:'🄜',n:'🄝',o:'🄞',p:'🄟',q:'🄠',r:'🄡',s:'🄢',t:'🄣',u:'🄤',v:'🄥',w:'🄦',x:'🄧',y:'🄨',z:'🄩'
-        }
-    },
-    sans: {
-        map: {
-            a:'𝘢',b:'𝘣',c:'𝘤',d:'𝘥',e:'𝘦',f:'𝘧',g:'𝘨',h:'𝘩',i:'𝘪',j:'𝘫',k:'𝘬',l:'𝘭',m:'𝘮',n:'𝘯',o:'𝘰',p:'𝘱',q:'𝘲',r:'𝘳',s:'𝘴',t:'𝘵',u:'𝘶',v:'𝘷',w:'𝘸',x:'𝘹',y:'𝘺',z:'𝘻',
-            A:'𝘈',B:'𝘉',C:'𝘊',D:'𝘋',E:'𝘌',F:'𝘍',G:'𝘎',H:'𝘏',I:'𝘐',J:'𝘑',K:'𝘒',L:'𝘓',M:'𝘔',N:'𝘕',O:'𝘖',P:'𝘗',Q:'𝘘',R:'𝘙',S:'𝘚',T:'𝘛',U:'𝘜',V:'𝘝',W:'𝘞',X:'𝘟',Y:'𝘠',Z:'𝘡'
-        }
-    },
-    encircle: {
-        map: {
-            A:'🅐',B:'🅑',C:'🅒',D:'🅓',E:'🅔',F:'🅕',G:'🅖',H:'🅗',I:'🅘',J:'🅙',K:'🅚',L:'🅛',M:'🅜',N:'🅝',O:'🅞',P:'🅟',Q:'🅠',R:'🅡',S:'🅢',T:'🅣',U:'🅤',V:'🅥',W:'🅦',X:'🅧',Y:'🅨',Z:'🅩',
-            a:'🅐',b:'🅑',c:'🅒',d:'🅓',e:'🅔',f:'🅕',g:'🅖',h:'🅗',i:'🅘',j:'🅙',k:'🅚',l:'🅛',m:'🅜',n:'🅝',o:'🅞',p:'🅟',q:'🅠',r:'🅡',s:'🅢',t:'🅣',u:'🅤',v:'🅥',w:'🅦',x:'🅧',y:'🅨',z:'🅩'
-        }
-    },
-    circled: {
-        map: {
-            a:'ⓐ',b:'ⓑ',c:'ⓒ',d:'ⓓ',e:'ⓔ',f:'ⓕ',g:'ⓖ',h:'ⓗ',i:'ⓘ',j:'ⓙ',k:'ⓚ',l:'ⓛ',m:'ⓜ',n:'ⓝ',o:'ⓞ',p:'ⓟ',q:'ⓠ',r:'ⓡ',s:'ⓢ',t:'ⓣ',u:'ⓤ',v:'ⓥ',w:'ⓦ',x:'ⓧ',y:'ⓨ',z:'ⓩ',
-            A:'Ⓐ',B:'Ⓑ',C:'Ⓒ',D:'Ⓓ',E:'Ⓔ',F:'Ⓕ',G:'Ⓖ',H:'Ⓗ',I:'Ⓘ',J:'Ⓙ',K:'Ⓚ',L:'Ⓛ',M:'Ⓜ',N:'Ⓝ',O:'Ⓞ',P:'Ⓟ',Q:'Ⓠ',R:'Ⓡ',S:'Ⓢ',T:'Ⓣ',U:'Ⓤ',V:'Ⓥ',W:'Ⓦ',X:'Ⓧ',Y:'Ⓨ',Z:'Ⓩ'
-        }
-    },
-    script: {
-        map: {
-            a:'𝒂',b:'𝒃',c:'𝒄',d:'𝒅',e:'𝒆',f:'𝒇',g:'𝒈',h:'𝒉',i:'𝒊',j:'𝒋',k:'𝒌',l:'𝒍',m:'𝒎',n:'𝒏',o:'𝒐',p:'𝒑',q:'𝒒',r:'𝒓',s:'𝒔',t:'𝒕',u:'𝒖',v:'𝒗',w:'𝒘',x:'𝒙',y:'𝒚',z:'𝒛',
-            A:'𝑨',B:'𝑩',C:'𝑪',D:'𝑫',E:'𝑬',F:'𝑭',G:'𝑮',H:'𝑯',I:'𝑰',J:'𝑱',K:'𝑲',L:'𝑳',M:'𝑴',N:'𝑵',O:'𝑶',P:'𝑷',Q:'𝑸',R:'𝑹',S:'𝑺',T:'𝑻',U:'𝑼',V:'𝑽',W:'𝑾',X:'𝑿',Y:'𝒀',Z:'𝒁'
-        }
-    },
-    bubble: {
-        map: {
-            A:'🅰',B:'🅱',C:'🅲',D:'🅳',E:'🅴',F:'🅵',G:'🅶',H:'🅷',I:'🅸',J:'🅹',K:'🅺',L:'🅻',M:'🅼',N:'🅽',O:'🅾',P:'🅿',Q:'🆀',R:'🆁',S:'🆂',T:'🆃',U:'🆄',V:'🆅',W:'🆆',X:'🆇',Y:'🆈',Z:'🆉',
-            a:'🅰',b:'🅱',c:'🅲',d:'🅳',e:'🅴',f:'🅵',g:'🅶',h:'🅷',i:'🅸',j:'🅹',k:'🅺',l:'🅻',m:'🅼',n:'🅽',o:'🅾',p:'🅿',q:'🆀',r:'🆁',s:'🆂',t:'🆃',u:'🆄',v:'🆅',w:'🆆',x:'🆇',y:'🆈',z:'🆉'
-        }
-    },
-    canadian: {
-        map: {
-            a:'ᗩ',b:'ᗷ',c:'ᑕ',d:'ᗪ',e:'ᗴ',f:'ᖴ',g:'Ꮐ',h:'ᕼ',i:'Ꭵ',j:'ᒍ',k:'Ꮶ',l:'Ꮮ',m:'ᗰ',n:'ᑎ',o:'ᗝ',p:'ᑭ',q:'ᑫ',r:'ᖇ',s:'ᔕ',t:'ᖶ',u:'ᑌ',v:'ᐯ',w:'ᗯ',x:'᙭',y:'Ꭹ',z:'ᘔ',
-            A:'ᗩ',B:'ᗷ',C:'ᑕ',D:'ᗪ',E:'ᗴ',F:'ᖴ',G:'Ꮐ',H:'ᕼ',I:'Ꭵ',J:'ᒍ',K:'Ꮶ',L:'Ꮮ',M:'ᗰ',N:'ᑎ',O:'ᗝ',P:'ᑭ',Q:'ᑫ',R:'ᖇ',S:'ᔕ',T:'ᖶ',U:'ᑌ',V:'ᐯ',W:'ᗯ',X:'᙭',Y:'Ꭹ',Z:'ᘔ'
-        }
-    },
-    greek: {
-        map: {
-            a:'α',b:'в',c:'¢',d:'ɗ',e:'ε',f:'ƒ',g:'g',h:'н',i:'ι',j:'נ',k:'к',l:'ℓ',m:'м',n:'η',o:'σ',p:'ρ',q:'q',r:'я',s:'ѕ',t:'т',u:'υ',v:'ν',w:'ω',x:'χ',y:'у',z:'z',
-            A:'Δ',B:'β',C:'C',D:'Đ',E:'Σ',F:'Ϝ',G:'Ꮆ',H:'Ħ',I:'I',J:'J',K:'К',L:'Ꮭ',M:'M',N:'П',O:'Ø',P:'Ƥ',Q:'Ǫ',R:'Ŗ',S:'Ѕ',T:'Ͳ',U:'Ц',V:'Ѵ',W:'Ш',X:'X',Y:'Ψ',Z:'Ẕ'
-        }
-    },
-    upside: {
-        map: {
-            a:'ɐ',b:'q',c:'ɔ',d:'p',e:'ǝ',f:'ɟ',g:'ƃ',h:'ɥ',i:'ᴉ',j:'ɾ',k:'ʞ',l:'l',m:'ɯ',n:'u',o:'o',p:'d',q:'b',r:'ɹ',s:'s',t:'ʇ',u:'n',v:'ʌ',w:'ʍ',x:'x',y:'ʎ',z:'z',
-            A:'∀',B:'𐐒',C:'Ɔ',D:'◖',E:'Ǝ',F:'Ⅎ',G:'⅁',H:'H',I:'I',J:'ſ',K:'ꓘ',L:'⅂',M:'W',N:'N',O:'O',P:'Ԁ',Q:'Ò',R:'ᴚ',S:'S',T:'⊥',U:'∩',V:'Λ',W:'M',X:'X',Y:'⅄',Z:'Z'
-        }
-    },
-    fullwidth: {
-        map: {
-            a:'ａ',b:'ｂ',c:'ｃ',d:'ｄ',e:'ｅ',f:'ｆ',g:'ｇ',h:'ｈ',i:'ｉ',j:'ｊ',k:'ｋ',l:'ｌ',m:'ｍ',n:'ｎ',o:'ｏ',p:'ｐ',q:'ｑ',r:'ｒ',s:'ｓ',t:'ｔ',u:'ｕ',v:'ｖ',w:'ｗ',x:'ｘ',y:'ｙ',z:'ｚ',
-            A:'Ａ',B:'Ｂ',C:'Ｃ',D:'Ｄ',E:'Ｅ',F:'Ｆ',G:'Ｇ',H:'Ｈ',I:'Ｉ',J:'Ｊ',K:'Ｋ',L:'Ｌ',M:'Ｍ',N:'Ｎ',O:'Ｏ',P:'Ｐ',Q:'Ｑ',R:'Ｒ',S:'Ｓ',T:'Ｔ',U:'Ｕ',V:'Ｖ',W:'Ｗ',X:'Ｘ',Y:'Ｙ',Z:'Ｚ'
-        }
-    },
-    smallcaps: {
-        map: {
-            a:'ᴀ',b:'ʙ',c:'ᴄ',d:'ᴅ',e:'ᴇ',f:'ғ',g:'ɢ',h:'ʜ',i:'ɪ',j:'ᴊ',k:'ᴋ',l:'ʟ',m:'ᴍ',n:'ɴ',o:'ᴏ',p:'ᴘ',q:'ǫ',r:'ʀ',s:'s',t:'ᴛ',u:'ᴜ',v:'ᴠ',w:'ᴡ',x:'x',y:'ʏ',z:'ᴢ',
-            A:'ᴀ',B:'ʙ',C:'ᴄ',D:'ᴅ',E:'ᴇ',F:'ғ',G:'ɢ',H:'ʜ',I:'ɪ',J:'ᴊ',K:'ᴋ',L:'ʟ',M:'ᴍ',N:'ɴ',O:'ᴏ',P:'ᴘ',Q:'ǫ',R:'ʀ',S:'s',T:'ᴛ',U:'ᴜ',V:'ᴠ',W:'ᴡ',X:'x',Y:'ʏ',Z:'ᴢ'
-        }
-    },
-    monospace: {
-        map: {
-            a:'𝚊',b:'𝚋',c:'𝚌',d:'𝚍',e:'𝚎',f:'𝚏',g:'𝚐',h:'𝚑',i:'𝚒',j:'𝚓',k:'𝚔',l:'𝚕',m:'𝚖',n:'𝚗',o:'𝚘',p:'𝚙',q:'𝚚',r:'𝚛',s:'𝚜',t:'𝚝',u:'𝚞',v:'𝚟',w:'𝚠',x:'𝚡',y:'𝚢',z:'𝚣',
-            A:'𝙰',B:'𝙱',C:'𝙲',D:'𝙳',E:'𝙴',F:'𝙵',G:'𝙶',H:'𝙷',I:'𝙸',J:'𝙹',K:'𝙺',L:'𝙻',M:'𝙼',N:'𝙽',O:'𝙾',P:'𝙿',Q:'𝚀',R:'𝚁',S:'𝚂',T:'𝚃',U:'𝚄',V:'𝚅',W:'𝚆',X:'𝚇',Y:'𝚈',Z:'𝚉'
-        }
-    },
-    viking: {
-        map: {
-            a:'α',b:'в',c:'c',d:'ɗ',e:'ε',f:'ƒ',g:'g',h:'н',i:'ι',j:'נ',k:'к',l:'ℓ',m:'м',n:'η',o:'σ',p:'ρ',q:'q',r:'я',s:'ѕ',t:'т',u:'υ',v:'ν',w:'ω',x:'χ',y:'у',z:'z',
-            A:'Λ',B:'Β',C:'Ͻ',D:'D',E:'Ξ',F:'F',G:'Ɠ',H:'H',I:'Ι',J:'Ј',K:'Κ',L:'ᒪ',M:'Μ',N:'Ν',O:'Ꭷ',P:'Ρ',Q:'Ԛ',R:'Я',S:'Ѕ',T:'Τ',U:'U',V:'V',W:'W',X:'Χ',Y:'Υ',Z:'Ζ'
-        }
-    },
-    thai: {
-        map: {
-            a:'ค',b:'乃',c:'ς',d:'๔',e:'є',f:'Ŧ',g:'ﻮ',h:'ђ',i:'เ',j:'ן',k:'к',l:'ɭ',m:'๓',n:'ภ',o:'๏',p:'ק',q:'๑',r:'г',s:'ร',t:'Շ',u:'ย',v:'ש',w:'ฬ',x:'א',y:'y',z:'z',
-            A:'ค',B:'乃',C:'ς',D:'๔',E:'є',F:'Ŧ',G:'ﻮ',H:'ђ',I:'เ',J:'ן',K:'к',L:'ɭ',M:'๓',N:'ภ',O:'๏',P:'ק',Q:'๑',R:'г',S:'ร',T:'Շ',U:'ย',V:'ש',W:'ฬ',X:'א',Y:'y',Z:'z'
-        }
-    },
-    wide: {
-        map: {
-            a:'ａ',b:'ｂ',c:'ｃ',d:'ｄ',e:'ｅ',f:'ｆ',g:'ｇ',h:'ｈ',i:'ｉ',j:'ｊ',k:'ｋ',l:'ｌ',m:'ｍ',n:'ｎ',o:'ｏ',p:'ｐ',q:'ｑ',r:'ｒ',s:'ｓ',t:'ｔ',u:'ｕ',v:'ｖ',w:'ｗ',x:'ｘ',y:'ｙ',z:'ｚ',
-            A:'Ａ',B:'Ｂ',C:'Ｃ',D:'Ｄ',E:'Ｅ',F:'Ｆ',G:'Ｇ',H:'Ｈ',I:'Ｉ',J:'Ｊ',K:'Ｋ',L:'Ｌ',M:'Ｍ',N:'Ｎ',O:'Ｏ',P:'Ｐ',Q:'Ｑ',R:'Ｒ',S:'Ｓ',T:'Ｔ',U:'Ｕ',V:'Ｖ',W:'Ｗ',X:'Ｘ',Y:'Ｙ',Z:'Ｚ'
-        }
-    },
-    japanese: {
-        map: {
-            a:'卂',b:'乃',c:'匚',d:'刀',e:'乇',f:'千',g:'Ꮆ',h:'卄',i:'丨',j:'ﾌ',k:'Ҝ',l:'ㄥ',m:'爪',n:'几',o:'ㄖ',p:'卩',q:'Ҩ',r:'尺',s:'丂',t:'ㄒ',u:'ㄩ',v:'ᐯ',w:'山',x:'乂',y:'ㄚ',z:'乙',
-            A:'卂',B:'乃',C:'匚',D:'刀',E:'乇',F:'千',G:'Ꮆ',H:'卄',I:'丨',J:'ﾌ',K:'Ҝ',L:'ㄥ',M:'爪',N:'几',O:'ㄖ',P:'卩',Q:'Ҩ',R:'尺',S:'丂',T:'ㄒ',U:'ㄩ',V:'ᐯ',W:'山',X:'乂',Y:'ㄚ',Z:'乙'
-        }
-    }
-};
-
-// ===== APPLY SELECTED FONT TO INPUT =====
-function applyFont(fontKey) {
-    const input = document.getElementById('inputText');
-    let text = input.value;
-    if (!text) return;
-    
-    const font = fontMaps[fontKey];
-    if (!font) return;
-    
-    // Convert using the font map
-    let converted = '';
-    for (let ch of text) {
-        if (font.map[ch]) {
-            converted += font.map[ch];
-        } else if (font.map[ch.toLowerCase()]) {
-            converted += font.map[ch.toLowerCase()];
-        } else if (font.map[ch.toUpperCase()]) {
-            converted += font.map[ch.toUpperCase()];
-        } else {
-            converted += ch;
-        }
-    }
-    input.value = converted;
-    updatePreview(); // trigger preview update
-    showAlert(`✨ Font applied!`);
-}
-
-// Add click handlers to font chips
-document.querySelectorAll('.font-chip').forEach(chip => {
-    chip.addEventListener('click', () => {
-        const font = chip.getAttribute('data-font');
-        if (font && fontMaps[font]) {
-            applyFont(font);
-        } else {
-            console.warn('Font mapping not found:', font);
-        }
-    });
-});
-    </script>
-</body>
-    <!-- Add this before closing </body> tag -->
-<button onclick="window.scrollTo({top: 0, behavior: 'smooth'})" class="scroll-top-btn" title="Go to top">↑</button>
-
-<style>
-.scroll-top-btn {
-    position: fixed;
-    bottom: 25px;
-    right: 25px;
-    width: 45px;
-    height: 45px;
-    background: #FFD700;
-    color: #000;
-    border: none;
-    border-radius: 50%;
-    font-size: 24px;
-    font-weight: bold;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: all 0.3s ease;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-    z-index: 999;
-}
-.scroll-top-btn:hover {
-    background: #FFA500;
-    transform: translateY(-3px);
-    box-shadow: 0 6px 16px rgba(0,0,0,0.3);
-}
-</style>
+<button class="scroll-top-btn" onclick="window.scrollTo({top:0,behavior:'smooth'})">⬆️</button>
 
 <script>
-// Optional: Show only when scrolled down
-window.addEventListener('scroll', function() {
-    const btn = document.querySelector('.scroll-top-btn');
-    if (window.scrollY > 300) {
-        btn.style.display = 'flex';
-    } else {
-        btn.style.display = 'none';
+    // ---------- MASTER SYMBOL DATABASE ----------
+    let masterSymbols = new Map();
+
+    // ========== COMPLETE SYMBOL LIST (from your provided sections) ==========
+    const allSymbolsData = [
+        // Flower Style
+        { sym: "᪲", name: "Flower 1" }, { sym: "᪳", name: "Flower 2" }, { sym: "᪴", name: "Flower 3" },
+        { sym: "ꕤ", name: "Small Flower" }, { sym: "𑁍", name: "Lotus" }, { sym: "︠", name: "Ligature Left" },
+        { sym: "︡", name: "Ligature Right" }, { sym: "︢", name: "Double Tilde Left" }, { sym: "︣", name: "Double Tilde Right" },
+        { sym: "︤", name: "Macron Left" }, { sym: "︥", name: "Macron Right" }, { sym: "︦", name: "Conjoined Macron" },
+        { sym: "﻿", name: "Zero Width Space" }, { sym: "⃝", name: "Circle Enclose" }, { sym: "̊", name: "Ring Above" },
+        { sym: "̥", name: "Ring Below" }, { sym: "̇", name: "Dot Above" }, { sym: "̣", name: "Dot Below" },
+        { sym: "͘", name: "Dot Right Half" }, { sym: "⃜", name: "Four Dots Above" }, { sym: "⃞", name: "Enclosing Square" },
+        { sym: "⃟", name: "Enclosing Diamond" }, { sym: "⃠", name: "Circle Backslash" }, { sym: "⃡", name: "Left Right Arrow Above" },
+        { sym: "⃢", name: "Enclosing Screen" }, { sym: "͙", name: "Asterisk Below" }, { sym: "͚", name: "Double Ring Below" },
+        // Star & Dot
+        { sym: "𖤐", name: "Star" }, { sym: "˚", name: "Ring" }, { sym: "༙", name: "Circle Dot" },
+        // Heart & Nature
+        { sym: "͢", name: "Heart Trail" }, { sym: "ꨄ", name: "Tiny Heart" }, { sym: "༄", name: "Wind" }, { sym: "𓆭", name: "Lotus" },
+        // Line & Dot
+        { sym: "̶", name: "Cut Line" }, { sym: "̲", name: "Underline" }, { sym: "̅", name: "Overline" }, { sym: "̈", name: "Double Dot" },
+        { sym: "̧", name: "Cedilla" }, { sym: "̆", name: "Breve" }, { sym: "̂", name: "Circumflex" }, { sym: "̄", name: "Macron" },
+        { sym: "̐", name: "Curve" }, { sym: "̌", name: "Caron" }, { sym: "̋", name: "Double Acute" }, { sym: "⃯", name: "Triple Dot" },
+        { sym: "̝", name: "Up Tack" }, { sym: "̞", name: "Down Tack" }, { sym: "̬", name: "Caron Below" }, { sym: "̭", name: "Circumflex Below" },
+        { sym: "̯", name: "Inv Breve Below" }, { sym: "̺", name: "Inv Bridge" }, { sym: "̻", name: "Square Below" }, { sym: "̼", name: "Seagull Below" },
+        // Gaming & Decorative
+        { sym: "ꤪꤨꤪ", name: "Rejang Decor" },
+        // Parenthesis & Arrow
+        { sym: "᪻", name: "Double Parenthesis Above" }, { sym: "᪼", name: "Double Parenthesis Below" }, { sym: "᪽", name: "Parenthesis Above" },
+        { sym: "᪾", name: "Parenthesis Below" }, { sym: "⃨", name: "Triple Underdot" }, { sym: "⃩", name: "Wide Bridge Above" },
+        { sym: "⃪", name: "Left Arrow Above" }, { sym: "⃫", name: "Right Arrow Above" },
+        // Double Line & Wavy
+        { sym: "᪰", name: "Double Circumflex Above" }, { sym: "᪱", name: "Double Circumflex Below" }, { sym: "᪲", name: "Double Ring Above" },
+        { sym: "᪳", name: "Double Ring Below" }, { sym: "᪴", name: "Double Overline" }, { sym: "᪵", name: "Double Underline" },
+        { sym: "᪶", name: "Double Wavy Above" }, { sym: "᪷", name: "Double Wavy Below" },
+        // Double Tilde & Macron
+        { sym: "ᷲ", name: "Double Tilde Left" }, { sym: "ᷳ", name: "Double Tilde Right" }, { sym: "ᷴ", name: "Double Macron Left" },
+        { sym: "᷵", name: "Double Macron Right" },
+        // Diatonic & Tie
+        { sym: "͝", name: "Double Breve" }, { sym: "͡", name: "Double Inverted Breve" }, { sym: "͜", name: "Double Breve Below" },
+        { sym: "͞", name: "Double Macron" }, { sym: "͟", name: "Double Macron Below" }, { sym: "᷼", name: "Double Tilde Left (Med)" },
+        { sym: "᷽", name: "Double Tilde Right (Med)" }, { sym: "᷾", name: "Double Tilde Below" },
+        // Accent
+        { sym: "̏", name: "Double Grave" }, { sym: "̑", name: "Inverted Breve" }, { sym: "͂", name: "Perispomeni" },
+        // Cyrillic
+        { sym: "҃", name: "Titlo" }, { sym: "҄", name: "Kamora" }, { sym: "҅", name: "Psili" }, { sym: "҆", name: "Dasia" },
+        { sym: "҇", name: "Perispomeni Cyrillic" }, { sym: "ᷣ", name: "Vertical Above" }, { sym: "ᷤ", name: "Double Vertical Above" },
+        { sym: "ᷥ", name: "Vertical Below" },
+        // Medieval
+        { sym: "᷊", name: "Ring Above (Med)" }, { sym: "᷋", name: "Ring Below (Med)" }, { sym: "᷌", name: "Asterisk Above" },
+        { sym: "᷍", name: "Asterisk Below" }, { sym: "᷎", name: "Arrow Above" }, { sym: "᷏", name: "Arrow Below" },
+        { sym: "᷐", name: "Flower Above" }, { sym: "᷑", name: "Flower Below" }, { sym: "᷒", name: "Dot Above (Med)" },
+        { sym: "ᷓ", name: "Dot Below (Med)" }, { sym: "ᷔ", name: "Heart Above" }, { sym: "ᷕ", name: "Heart Below" },
+        { sym: "ᷖ", name: "Star Above" }, { sym: "ᷗ", name: "Star Below" }, { sym: "ᷘ", name: "Crescent Above" },
+        { sym: "ᷙ", name: "Crescent Below" }, { sym: "ᷚ", name: "Right Arrow" }, { sym: "ᷛ", name: "Left Arrow" },
+        { sym: "ᷜ", name: "Up Arrow" }, { sym: "ᷝ", name: "Down Arrow" }, { sym: "ᷞ", name: "Left Right Arrow" },
+        { sym: "ᷟ", name: "Up Down Arrow" }, { sym: "ᷠ", name: "Circle Above" }, { sym: "ᷡ", name: "Circle Below" },
+        { sym: "ᷢ", name: "Square Above" }, { sym: "ᷣ", name: "Square Below" }, { sym: "ᷤ", name: "Diamond Above" },
+        { sym: "ᷥ", name: "Diamond Below" }, { sym: "ᷦ", name: "Triangle Above" }, { sym: "ᷧ", name: "Triangle Below" },
+        { sym: "ᷨ", name: "Cross Above" }, { sym: "ᷩ", name: "Cross Below" }, { sym: "ᷪ", name: "Wave Above" },
+        { sym: "ᷫ", name: "Wave Below" }, { sym: "ᷬ", name: "Double Wave Above" }, { sym: "ᷭ", name: "Double Wave Below" },
+        { sym: "ᷮ", name: "Zigzag Above" }, { sym: "ᷯ", name: "Zigzag Below" }, { sym: "ᷰ", name: "Curve Above" },
+        { sym: "ᷱ", name: "Curve Below" },
+        // Additional from your select list
+        { sym: "̤̮", name: "Double Breve" }, { sym: "̹", name: "Right Half Ring Below" }, { sym: "̜", name: "Left Half Ring Below" },
+        { sym: "̠", name: "Minus Below" }, { sym: "̤", name: "Diaeresis Below" }, { sym: "︈", name: "Vertical Form 1" },
+        { sym: "︉", name: "Vertical Form 2" }, { sym: "︊", name: "Vertical Form 3" }, { sym: "︋", name: "Vertical Form 4" },
+        { sym: "︌", name: "Vertical Form 5" }, { sym: "︍", name: "Vertical Form 6" }, { sym: "︎", name: "Text Style" },
+        { sym: "️", name: "Emoji Style" }
+    ];
+
+    // Register all symbols
+    allSymbolsData.forEach(item => {
+        if (!masterSymbols.has(item.sym)) {
+            masterSymbols.set(item.sym, { name: item.name, category: "✨ ALL SYMBOLS" });
+        }
+    });
+
+    // Populate dropdown
+    const selectEl = document.getElementById('symbolSelect');
+    function rebuildSelect() {
+        selectEl.innerHTML = '';
+        Array.from(masterSymbols.keys()).sort().forEach(sym => {
+            let opt = document.createElement('option');
+            opt.value = sym;
+            opt.textContent = `${sym} — ${masterSymbols.get(sym).name}`;
+            selectEl.appendChild(opt);
+        });
     }
-});
-document.querySelector('.scroll-top-btn').style.display = 'none';
+    rebuildSelect();
+
+    // Render all symbols in a single category (horizontal scroll)
+    function renderAllSymbols() {
+        const container = document.getElementById('symbolCategoriesContainer');
+        container.innerHTML = '';
+        const catDiv = document.createElement('div');
+        catDiv.className = 'symbol-category';
+        catDiv.innerHTML = `<h2>✨ ALL PREMIUM SYMBOLS (${masterSymbols.size}+)</h2><div class="symbol-grid" id="masterSymbolGrid"></div>`;
+        container.appendChild(catDiv);
+        const gridDiv = catDiv.querySelector('.symbol-grid');
+        const sortedSymbols = Array.from(masterSymbols.keys()).sort();
+        sortedSymbols.forEach(sym => {
+            const card = document.createElement('div');
+            card.className = 'symbol-card';
+            const name = masterSymbols.get(sym).name;
+            card.innerHTML = `
+                <span class="attach-badge">✅ ATTACH</span>
+                <div class="symbol">${sym}</div>
+                <div class="symbol-name">${name}</div>
+                <div class="example-preview">Example: A${sym}</div>
+                <button class="copy-symbol-btn" onclick="copySymbol('${sym.replace(/'/g, "\\'")}')">📋 Copy</button>
+                <button class="copy-symbol-btn" style="background:#FFD700; color:#000;" onclick="attachSymbolSingle('${sym.replace(/'/g, "\\'")}')">🔗 Attach Now</button>
+            `;
+            gridDiv.appendChild(card);
+        });
+    }
+
+    let currentRepeat = 1;
+    function setRepeat(times) {
+        currentRepeat = times;
+        document.querySelectorAll('.repeat-btn').forEach(btn => btn.classList.remove('active'));
+        event.target.classList.add('active');
+        updatePreview();
+    }
+
+    function updatePreview() {
+        let text = document.getElementById('inputText').value || 'A';
+        let symbol = document.getElementById('symbolSelect').value;
+        let result = '';
+        for(let ch of text) {
+            result += ch + symbol.repeat(currentRepeat);
+        }
+        document.getElementById('preview').innerText = result;
+    }
+
+    function attachSymbolSingle(symbol) {
+        currentRepeat = 1;
+        document.querySelectorAll('.repeat-btn').forEach(btn => btn.classList.remove('active'));
+        const btn1 = Array.from(document.querySelectorAll('.repeat-btn')).find(b => b.innerText === '1x');
+        if(btn1) btn1.classList.add('active');
+        document.getElementById('symbolSelect').value = symbol;
+        updatePreview();
+        showAlert(`✨ Attached ${symbol} (single layer)`);
+    }
+
+    function copyResult() { copyToClipboard(document.getElementById('preview').innerText); }
+    function copySymbol(sym) { copyToClipboard(sym); }
+    function copyText(txt) { copyToClipboard(txt); }
+
+    function copyToClipboard(text) {
+        navigator.clipboard.writeText(text).then(() => {
+            showAlert(`🎉 Congratulations! Copied successfully! ✨`);
+        });
+    }
+
+    function showAlert(msg) {
+        let div = document.createElement('div');
+        div.className = 'alert-custom';
+        div.innerText = msg;
+        document.body.appendChild(div);
+        setTimeout(() => div.remove(), 2000);
+    }
+
+    function randomCombo() {
+        const allSym = Array.from(masterSymbols.keys());
+        const randSym = allSym[Math.floor(Math.random() * allSym.length)];
+        document.getElementById('symbolSelect').value = randSym;
+        currentRepeat = Math.floor(Math.random() * 5) + 1;
+        const btns = document.querySelectorAll('.repeat-btn');
+        btns.forEach(btn => btn.classList.remove('active'));
+        let target = Array.from(btns).find(b => parseInt(b.innerText) === currentRepeat);
+        if(target) target.classList.add('active');
+        updatePreview();
+        showAlert(`✨ VIP Random: ${randSym}`);
+    }
+
+    function buildRepeatBtns() {
+        const container = document.getElementById('repeatButtons');
+        container.innerHTML = '';
+        for(let i=1;i<=10;i++) {
+            let btn = document.createElement('button');
+            btn.className = 'repeat-btn' + (i===1 ? ' active' : '');
+            btn.innerText = i+'x';
+            btn.onclick = (function(val){ return function(){ setRepeat(val); }; })(i);
+            container.appendChild(btn);
+        }
+    }
+
+    // Tips
+    const tipsData = ["💗 → 💗᪲", "🍁 → 🍁᪳", "😊 → 😊᪴", "A → A͙͙͙", "A → A˚", "👿 → 👿͢͢͢", "K → K̶"];
+    function renderTips() {
+        const tipsGrid = document.getElementById('tipsGrid');
+        tipsGrid.innerHTML = tipsData.map(tip => `<div class="tip-card" onclick="copyText('${tip.split('→')[1].trim()}')">${tip}</div>`).join('');
+    }
+
+    // VIP
+    function renderVIP() {
+        const vipContainer = document.getElementById('vipScroll');
+        vipContainer.innerHTML = '';
+        const vipPre = ["ᴅ ɪ ᴍ ⌔ ɴ ᴅ", "𝐶 🂱 𝑅 𝐷", "💗᪲", "K̶", "👿͢͢͢", "🔥̲̲̲", "✨⃟", "🌟͙͙"];
+        vipPre.forEach(item => {
+            let vipDiv = document.createElement('div');
+            vipDiv.className = 'vip-item';
+            vipDiv.innerText = item;
+            vipDiv.onclick = () => copyText(item);
+            vipContainer.appendChild(vipDiv);
+        });
+    }
+
+    // Community Suggestions
+    let communitySuggestions = [];
+    function loadSuggestions() {
+        const saved = localStorage.getItem('goldenSuggestions');
+        if(saved) communitySuggestions = JSON.parse(saved);
+        else communitySuggestions = [
+            { text: "J͢a͢c͢k͢", addedBy: "System", country: "Global" },
+            { text: "Lꨄoꨄvꨄeꨄ", addedBy: "System", country: "Global" }
+        ];
+        renderSuggestions();
+    }
+    function renderSuggestions() {
+        const container = document.getElementById('suggestionsContainer');
+        let shuffled = [...communitySuggestions].sort(()=>0.5-Math.random());
+        let show = shuffled.slice(0, 10);
+        container.innerHTML = show.map(s => `
+            <div class="suggestion-item">
+                <div><div class="suggestion-text">${s.text}</div><div class="suggestion-meta">✨ ${s.addedBy} (${s.country})</div></div>
+                <button onclick="copyText('${s.text.replace(/'/g, "\\'")}')" style="background:#333; border:1px solid gold; color:gold; border-radius:30px; padding:5px 12px;">Copy</button>
+            </div>
+        `).join('');
+    }
+    function saveSuggestion() {
+        let name = document.getElementById('suggesterName').value.trim();
+        let country = document.getElementById('suggesterCountry').value;
+        let text = document.getElementById('suggestionText').value.trim();
+        if(!name || !country || !text) { showAlert("Please fill all fields"); return; }
+        communitySuggestions.push({ text, addedBy: name, country });
+        localStorage.setItem('goldenSuggestions', JSON.stringify(communitySuggestions));
+        closeSuggestionModal();
+        renderSuggestions();
+        showAlert(`✅ Thank you ${name}! Suggestion added.`);
+    }
+    function openAddSuggestionModal() { document.getElementById('suggestionModal').style.display = 'flex'; }
+    function closeSuggestionModal() { document.getElementById('suggestionModal').style.display = 'none'; }
+
+    // Scroll-to-top button visibility
+    window.addEventListener('scroll', () => {
+        const btn = document.querySelector('.scroll-top-btn');
+        if (window.scrollY > 300) btn.style.display = 'flex';
+        else btn.style.display = 'none';
+    });
+
+    window.onload = () => {
+        buildRepeatBtns();
+        renderAllSymbols();
+        renderTips();
+        renderVIP();
+        loadSuggestions();
+        updatePreview();
+        document.getElementById('inputText').addEventListener('input', updatePreview);
+        document.getElementById('symbolSelect').addEventListener('change', updatePreview);
+        // Initially hide scroll button
+        document.querySelector('.scroll-top-btn').style.display = 'none';
+    };
+
+    window.copySymbol = copySymbol;
+    window.copyResult = copyResult;
+    window.copyText = copyText;
+    window.attachSymbolSingle = attachSymbolSingle;
+    window.randomCombo = randomCombo;
+    window.saveSuggestion = saveSuggestion;
+    window.openAddSuggestionModal = openAddSuggestionModal;
+    window.closeSuggestionModal = closeSuggestionModal;
 </script>
+</body>
 </html>
