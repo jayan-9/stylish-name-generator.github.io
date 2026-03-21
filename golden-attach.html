@@ -133,106 +133,6 @@
             box-shadow: 0 0 12px gold;
         }
 
-        /* Search bar */
-        .search-symbol {
-            margin: 20px 0 20px 0;
-        }
-        .search-symbol input {
-            width: 100%;
-            padding: 14px 20px;
-            background: #1a1a1f;
-            border: 2px solid #FFD70066;
-            border-radius: 60px;
-            color: white;
-            font-size: 1rem;
-            outline: none;
-            transition: 0.2s;
-        }
-        .search-symbol input:focus {
-            border-color: #FFD700;
-            box-shadow: 0 0 10px gold;
-        }
-
-        /* Horizontal symbol categories */
-        .symbol-category {
-            margin-bottom: 45px;
-        }
-        .symbol-category h2 {
-            color: #FFD700;
-            font-size: 1.8rem;
-            margin: 20px 0 15px;
-            border-left: 6px solid #FFD700;
-            padding-left: 18px;
-            text-shadow: 0 1px 3px black;
-        }
-        .symbol-grid {
-            display: flex;
-            flex-wrap: nowrap;
-            overflow-x: auto;
-            gap: 14px;
-            padding: 12px 6px 20px;
-            scrollbar-width: thin;
-        }
-        .symbol-grid::-webkit-scrollbar {
-            height: 5px;
-        }
-        .symbol-card {
-            background: #252525dd;
-            border-radius: 24px;
-            padding: 12px 10px;
-            text-align: center;
-            border: 1px solid #FFD70077;
-            transition: 0.2s;
-            cursor: pointer;
-            min-width: 115px;
-            flex-shrink: 0;
-            backdrop-filter: blur(4px);
-        }
-        .symbol-card:hover {
-            transform: translateY(-5px);
-            border-color: #FFD700;
-            box-shadow: 0 12px 20px rgba(255,215,0,0.3);
-            background: #2e2e2e;
-        }
-        .attach-badge {
-            background: linear-gradient(135deg, #FFD700, #FFA500);
-            color: #000;
-            font-size: 9px;
-            padding: 3px 8px;
-            border-radius: 30px;
-            display: inline-block;
-            font-weight: bold;
-        }
-        .symbol {
-            font-size: 32px;
-            margin: 6px 0;
-            color: #fff;
-        }
-        .symbol-name {
-            font-size: 10px;
-            background: #333;
-            padding: 3px 8px;
-            border-radius: 30px;
-            display: inline-block;
-            color: #FFD700;
-        }
-        .copy-symbol-btn {
-            background: #333;
-            border: 1px solid #FFD700;
-            color: #FFD700;
-            padding: 5px 8px;
-            border-radius: 40px;
-            cursor: pointer;
-            font-size: 10px;
-            margin-top: 5px;
-            transition: 0.2s;
-            width: 90%;
-        }
-        .copy-symbol-btn:hover {
-            background: #FFD700;
-            color: #000;
-        }
-
         /* Input section */
         .input-section {
             background: #1e1e24cc;
@@ -295,7 +195,96 @@
             border: 1px solid gold;
         }
 
-        /* VIP SCROLL (unchanged but premium) */
+        /* Horizontal symbol categories */
+        .symbol-category {
+            margin-bottom: 45px;
+        }
+        .symbol-category h2 {
+            color: #FFD700;
+            font-size: 1.8rem;
+            margin: 20px 0 15px;
+            border-left: 6px solid #FFD700;
+            padding-left: 18px;
+            text-shadow: 0 1px 3px black;
+        }
+        .symbol-grid {
+            display: flex;
+            flex-wrap: nowrap;
+            overflow-x: auto;
+            gap: 14px;
+            padding: 12px 6px 20px;
+            scrollbar-width: thin;
+        }
+        .symbol-grid::-webkit-scrollbar {
+            height: 5px;
+        }
+        .symbol-card {
+            background: #252525dd;
+            border-radius: 24px;
+            padding: 12px 10px;
+            text-align: center;
+            border: 1px solid #FFD70077;
+            transition: 0.2s;
+            cursor: pointer;
+            min-width: 130px;
+            flex-shrink: 0;
+            backdrop-filter: blur(4px);
+        }
+        .symbol-card:hover {
+            transform: translateY(-5px);
+            border-color: #FFD700;
+            box-shadow: 0 12px 20px rgba(255,215,0,0.3);
+            background: #2e2e2e;
+        }
+        .attach-badge {
+            background: linear-gradient(135deg, #FFD700, #FFA500);
+            color: #000;
+            font-size: 9px;
+            padding: 3px 8px;
+            border-radius: 30px;
+            display: inline-block;
+            font-weight: bold;
+        }
+        .symbol {
+            font-size: 32px;
+            margin: 6px 0;
+            color: #fff;
+        }
+        .symbol-name {
+            font-size: 10px;
+            background: #333;
+            padding: 3px 8px;
+            border-radius: 30px;
+            display: inline-block;
+            color: #FFD700;
+        }
+        .example-preview {
+            font-size: 12px;
+            background: #1a1a1a;
+            margin: 6px 0;
+            padding: 4px;
+            border-radius: 20px;
+            color: #FFD966;
+            word-break: break-word;
+        }
+        .copy-symbol-btn {
+            background: #333;
+            border: 1px solid #FFD700;
+            color: #FFD700;
+            padding: 5px 8px;
+            border-radius: 40px;
+            cursor: pointer;
+            font-size: 10px;
+            margin-top: 5px;
+            transition: 0.2s;
+            width: 90%;
+        }
+        .copy-symbol-btn:hover {
+            background: #FFD700;
+            color: #000;
+        }
+
+        /* VIP Collection */
         .vip-collection-wrapper {
             margin: 40px 0;
             background: linear-gradient(145deg, #0f0f12, #070708);
@@ -326,18 +315,49 @@
             transform: scale(1.02);
         }
 
-        /* Suggestions area */
-        .suggestions-grid {
+        /* Tips section */
+        .tips-section {
+            background: #101015dd;
+            border-radius: 28px;
+            padding: 20px;
+            margin: 30px 0;
+            border: 1px solid #FFD70088;
+        }
+        .tips-grid {
             display: flex;
-            flex-wrap: nowrap;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-top: 15px;
+        }
+        .tip-card {
+            background: #1e1e24;
+            padding: 10px 15px;
+            border-radius: 40px;
+            font-size: 1rem;
+            color: #FFD700;
+            border: 1px solid #FFD70066;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+        .tip-card:hover {
+            background: #FFD700;
+            color: black;
+            transform: translateY(-2px);
+        }
+
+        /* Community Suggestions (horizontal scroll) */
+        .suggestions-scroll {
+            display: flex;
             overflow-x: auto;
             gap: 15px;
             padding: 15px 5px;
+            margin-bottom: 15px;
+            scrollbar-width: thin;
         }
         .suggestion-item {
             background: #252525dd;
-            border-radius: 24px;
-            padding: 12px 18px;
+            border-radius: 28px;
+            padding: 12px 20px;
             min-width: 220px;
             flex-shrink: 0;
             display: flex;
@@ -345,28 +365,19 @@
             align-items: center;
             border: 1px solid #FFD70088;
         }
+        .suggestion-text {
+            color: #FFD700;
+            font-weight: 500;
+        }
+        .suggestion-meta {
+            font-size: 10px;
+            color: #aaa;
+        }
 
         .modal-content {
             background: #121217;
             border-radius: 32px;
             border: 2px solid gold;
-        }
-        .scroll-top-btn {
-            position: fixed;
-            bottom: 25px;
-            right: 25px;
-            width: 55px;
-            height: 55px;
-            background: radial-gradient(circle, #FFD700, #FF8800);
-            color: #000;
-            border: none;
-            border-radius: 30px;
-            font-size: 28px;
-            font-weight: bold;
-            cursor: pointer;
-            box-shadow: 0 0 18px gold;
-            transition: 0.2s;
-            z-index: 1000;
         }
         .footer {
             margin-top: 50px;
@@ -375,9 +386,28 @@
             padding: 30px 10px;
             color: #ccc;
         }
+        /* Alert style */
+        .alert-custom {
+            position: fixed;
+            top: 25px;
+            right: 25px;
+            background: linear-gradient(135deg, #FFD700, #FFA500);
+            color: #1e1e1e;
+            padding: 14px 28px;
+            border-radius: 60px;
+            font-weight: bold;
+            font-size: 1rem;
+            box-shadow: 0 0 20px rgba(255,215,0,0.8);
+            z-index: 9999;
+            animation: slideIn 0.3s ease;
+        }
+        @keyframes slideIn {
+            from { transform: translateX(100%); opacity: 0; }
+            to { transform: translateX(0); opacity: 1; }
+        }
         @media (max-width: 760px) {
             .container { padding: 18px; }
-            .symbol-card { min-width: 100px; }
+            .symbol-card { min-width: 115px; }
         }
     </style>
 </head>
@@ -402,11 +432,6 @@
     <h1>✨ GOLDEN ATTACH STUDIO ✨</h1>
     <p class="subtitle">Unlimited combining symbols • 1‑click attach • VIP scrolls</p>
 
-    <!-- Search Bar for Symbols -->
-    <div class="search-symbol">
-        <input type="text" id="symbolSearch" placeholder="🔍 Search symbol by name or character... (flower, star, heart, line)">
-    </div>
-
     <!-- Live generator -->
     <div class="input-section">
         <div class="input-group">
@@ -414,9 +439,7 @@
             <select id="symbolSelect"></select>
         </div>
         <!-- scrollable repeat buttons -->
-        <div class="repeat-buttons" id="repeatButtons">
-            <!-- filled via JS later but prefill static for speed -->
-        </div>
+        <div class="repeat-buttons" id="repeatButtons"></div>
         <div class="preview-box" id="preview">G̶O̶L̶D̶</div>
         <button class="copy-btn" onclick="copyResult()">📋 COPY GOLDEN RESULT</button>
         <button class="copy-btn" style="margin-top:10px; background:#2a2a2a; color:#FFD700;" onclick="randomCombo()">✨ RANDOM VIP COMBO ✨</button>
@@ -429,8 +452,14 @@
         <div class="stat-item"><span class="stat-number">VIP</span><div>Scroll Ready</div></div>
     </div>
 
-    <!-- DYNAMIC SYMBOL CATEGORIES (horiz scroll) will be injected -->
+    <!-- DYNAMIC SYMBOL CATEGORIES (horiz scroll) -->
     <div id="symbolCategoriesContainer"></div>
+
+    <!-- TIPS SECTION (new) -->
+    <div class="tips-section">
+        <h3 style="color:#FFD700; margin-bottom: 8px;">✨ QUICK TIPS – COPY & USE ✨</h3>
+        <div class="tips-grid" id="tipsGrid"></div>
+    </div>
 
     <!-- VIP Premium Collection -->
     <div class="vip-collection-wrapper">
@@ -438,13 +467,13 @@
         <div class="vip-scroll" id="vipScroll"></div>
     </div>
 
-    <!-- Community Suggestions (improved) -->
+    <!-- Community Suggestions (Horizontal Scroll) -->
     <h2 class="section-title" style="color:#FFD700;">💎 PREMIUM COMMUNITY VAULT</h2>
     <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; margin-bottom:15px;">
         <p style="color:#ddd;">🔥 Real suggestions from global creators</p>
         <button onclick="openAddSuggestionModal()" style="background:linear-gradient(135deg, #FFD700, #FFA500); border:none; padding:8px 24px; border-radius:40px; font-weight:bold; cursor:pointer;">+ ADD YOUR GOLDEN IDEA</button>
     </div>
-    <div id="suggestionsGrid" class="suggestions-grid"></div>
+    <div id="suggestionsContainer" class="suggestions-scroll"></div>
     <div class="see-all-btn" id="seeAllBtnContainer"></div>
 
     <!-- Premium Notes -->
@@ -471,7 +500,7 @@
         <input type="text" id="suggesterName" placeholder="e.g., Jack" style="width:100%; margin:8px 0; padding:10px; background:#2a2a2a; color:white; border-radius:20px;">
         <label style="color:white">Country *</label>
         <select id="suggesterCountry" style="width:100%; padding:10px; background:#2a2a2a; color:white; border-radius:20px;">
-            <option>🌍 Select country</option><option>🇺🇸 USA</option><option>🇬🇧 UK</option><option>🇮🇳 India</option><option>🇨🇦 Canada</option><option>🇦🇺 Australia</option><option>🇩🇪 Germany</option><option>🇫🇷 France</option><option>🇯🇵 Japan</option><option>🇧🇷 Brazil</option><option>🇿🇦 South Africa</option>
+            <option>🌍 Select country</option><option>🇺🇸 USA</option><option>🇬🇧 UK</option><option>🇮🇳 India</option><option>🇨🇦 Canada</option><option>🇦🇺 Australia</option><option>🇩🇪 Germany</option><option>🇫🇷 France</option><option>🇯🇵 Japan</option><option>🇧🇷 Brazil</option>
         </select>
         <label style="color:white">Stylish Suggestion *</label>
         <input type="text" id="suggestionText" placeholder="e.g., 𝔾𝕠𝕝𝕕𝕖𝕟 or J̶a̶c̶k̶" style="width:100%; margin:8px 0; padding:10px; background:#2a2a2a; color:white; border-radius:20px;">
@@ -482,14 +511,11 @@
     </div>
 </div>
 
-<button class="scroll-top-btn" onclick="window.scrollTo({top:0,behavior:'smooth'})">⬆️</button>
-
 <script>
-    // ---------- MASTER SYMBOL DATABASE (all symbols from all grids, ensure dropdown sync) ----------
-    let masterSymbols = new Map(); // key: symbol, value: {name, category}
+    // ---------- MASTER SYMBOL DATABASE ----------
+    let masterSymbols = new Map();
     function registerSymbol(sym, name, category) { if(!masterSymbols.has(sym)) masterSymbols.set(sym, {name, category}); }
 
-    // Categories Data (organized horizontal groups)
     const categoriesData = [
         { name: "🌸 FLOWER & NATURE", symbols: [{sym:"᪲",name:"Flower1"},{sym:"᪳",name:"Flower2"},{sym:"᪴",name:"Flower3"},{sym:"ꕤ",name:"Small Flower"},{sym:"𑁍",name:"Lotus"},{sym:"ꨄ",name:"Tiny Heart"},{sym:"༄",name:"Wind"},{sym:"𓆭",name:"Lotus2"}]},
         { name: "⭐ STARS & DOTS", symbols: [{sym:"͙",name:"Tiny Star"},{sym:"𖤐",name:"Star"},{sym:"˚",name:"Ring"},{sym:"༙",name:"Circle Dot"},{sym:"⃯",name:"Triple Dot"}] },
@@ -501,16 +527,11 @@
         { name: "🏆 GAMING EDGE", symbols: [{sym:"⃞",name:"Enclosing Square"},{sym:"⃟",name:"Diamond"},{sym:"⃠",name:"Circle Slash"},{sym:"⃡",name:"L/R Arrow"},{sym:"̝",name:"Up Tack"},{sym:"̞",name:"Down Tack"},{sym:"̬",name:"Caron Below"},{sym:"̭",name:"Circ Below"},{sym:"̯",name:"Inv Breve"}] }
     ];
     
-    // Flatten all symbols to sync dropdown
-    let allSymbolEntries = [];
-    categoriesData.forEach(cat => {
-        cat.symbols.forEach(s => { allSymbolEntries.push(s); registerSymbol(s.sym, s.name, cat.name); });
-    });
-    // additional unique symbols from original extra groups (ensuring completeness)
+    // extra symbols for completeness
     const extraSymbols = ["︠","︡","︢","︣","︤","︥","︦","﻿","⃝","̥","͘","⃜","⃨","⃩","ᷴ","᷵","̹","̜","̠","̤","̺","̻","̼","᷼","᷽","᷾","͝","͟","̏","̑","͂","҄","҅","҆","҇","ᷣ","ᷤ","ᷥ","ᷦ","ᷧ","ᷨ","ᷩ","ᷪ","ᷫ","ᷬ","ᷭ","ᷮ","ᷯ","ᷰ","ᷱ"];
-    extraSymbols.forEach(sym => { if(!masterSymbols.has(sym)) { masterSymbols.set(sym, {name:"Extra Glyph", category:"PREMIUM"}); allSymbolEntries.push({sym:sym, name:"Extra"}); } });
+    extraSymbols.forEach(sym => { if(!masterSymbols.has(sym)) masterSymbols.set(sym, {name:"Extra Glyph", category:"PREMIUM"}); });
     
-    // populate select dropdown
+    // populate select
     const selectEl = document.getElementById('symbolSelect');
     function rebuildSelect() {
         selectEl.innerHTML = '';
@@ -522,8 +543,8 @@
         });
     }
     rebuildSelect();
-
-    // ========== RENDER HORIZONTAL CATEGORIES ==========
+    
+    // Render categories with preview examples
     function renderCategories() {
         const container = document.getElementById('symbolCategoriesContainer');
         container.innerHTML = '';
@@ -534,24 +555,36 @@
             container.appendChild(catDiv);
             const gridDiv = catDiv.querySelector('.symbol-grid');
             cat.symbols.forEach(s => {
+                const example = "A" + s.sym;  // show A + symbol
                 const card = document.createElement('div');
                 card.className = 'symbol-card';
-                card.setAttribute('data-symbol', s.sym);
-                card.setAttribute('data-name', s.name.toLowerCase());
                 card.innerHTML = `
                     <span class="attach-badge">✅ ATTACH</span>
                     <div class="symbol">${s.sym}</div>
                     <div class="symbol-name">${s.name}</div>
+                    <div class="example-preview">Example: ${example}</div>
                     <button class="copy-symbol-btn" onclick="event.stopPropagation(); copySymbol('${s.sym}')">📋 Copy</button>
                     <button class="copy-symbol-btn" style="background:#FFD700; color:#000;" onclick="event.stopPropagation(); attachSymbolSingle('${s.sym}')">🔗 Attach Now</button>
                 `;
                 gridDiv.appendChild(card);
             });
         });
-        // extra VIP horizontal fill
+    }
+    
+    // Tips data
+    const tipsData = [
+        "💗 → 💗᪲", "🍁 → 🍁᪳", "😊 → 😊᪴", "A → A͙͙͙", "A → A˚", "👿 → 👿͢͢͢͢͢͢͢", "K → K̶"
+    ];
+    function renderTips() {
+        const tipsGrid = document.getElementById('tipsGrid');
+        tipsGrid.innerHTML = tipsData.map(tip => `<div class="tip-card" onclick="copyText('${tip.split('→')[1].trim()}')">${tip}</div>`).join('');
+    }
+    
+    // VIP items
+    function renderVIP() {
         const vipContainer = document.getElementById('vipScroll');
         vipContainer.innerHTML = '';
-        const vipPre = ["ᴅ ɪ ᴍ ⌔ ɴ ᴅ", "𝐶 🂱 𝑅 𝐷", "💗᪲", "K̶", "👿͢͢͢", "M̬ M̬ O̬ O̬ D̬", "🔥̲̲̲", "✨⃟", "🖤᪲᪲", "💀̸̸̸", "🌟͙͙", "🧿⃝", "🌊̬̬", "🎮⃞", "🏆̲̲"];
+        const vipPre = ["ᴅ ɪ ᴍ ⌔ ɴ ᴅ", "𝐶 🂱 𝑅 𝐷", "💗᪲", "K̶", "👿͢͢͢", "M̬ M̬ O̬ O̬ D̬", "🔥̲̲̲", "✨⃟", "🖤᪲᪲", "💀̸̸̸", "🌟͙͙", "🧿⃝"];
         vipPre.forEach(item => {
             let vipDiv = document.createElement('div');
             vipDiv.className = 'vip-item';
@@ -561,18 +594,6 @@
         });
     }
     
-    // Attach single symbol (ignores repeat, sets preview with 1 copy per char)
-    function attachSymbolSingle(symbol) {
-        // set repeat to 1 visually & internally
-        currentRepeat = 1;
-        document.querySelectorAll('.repeat-btn').forEach(btn => btn.classList.remove('active'));
-        const btn1 = Array.from(document.querySelectorAll('.repeat-btn')).find(b => b.innerText === '1x');
-        if(btn1) btn1.classList.add('active');
-        document.getElementById('symbolSelect').value = symbol;
-        updatePreview();
-        showAlert(`✨ Attached ${symbol} (single layer)`, 1500);
-    }
-
     let currentRepeat = 1;
     function setRepeat(times) {
         currentRepeat = times;
@@ -580,7 +601,7 @@
         event.target.classList.add('active');
         updatePreview();
     }
-
+    
     function updatePreview() {
         let text = document.getElementById('inputText').value || '✦';
         let symbol = document.getElementById('symbolSelect').value;
@@ -592,13 +613,34 @@
         document.getElementById('preview').innerText = result;
     }
     
+    function attachSymbolSingle(symbol) {
+        currentRepeat = 1;
+        document.querySelectorAll('.repeat-btn').forEach(btn => btn.classList.remove('active'));
+        const btn1 = Array.from(document.querySelectorAll('.repeat-btn')).find(b => b.innerText === '1x');
+        if(btn1) btn1.classList.add('active');
+        document.getElementById('symbolSelect').value = symbol;
+        updatePreview();
+        showGoldenAlert(`✨ Attached ${symbol} (single layer)`);
+    }
+    
     function copyResult() { copyToClipboard(document.getElementById('preview').innerText); }
     function copySymbol(sym) { copyToClipboard(sym); }
     function copyText(txt) { copyToClipboard(txt); }
-    function copyToClipboard(text) { navigator.clipboard.writeText(text).then(() => showAlert('🎉 Copied to clipboard!', 1500)); }
-    function showAlert(msg, time=1800) { let a=document.createElement('div'); a.className='alert'; a.innerText=msg; a.style.position='fixed'; a.style.top='20px'; a.style.right='20px'; a.style.background='gold'; a.style.color='black'; a.style.padding='12px 24px'; a.style.borderRadius='40px'; a.style.zIndex='9999'; document.body.appendChild(a); setTimeout(()=>a.remove(), time); }
     
-    // Random combo
+    function copyToClipboard(text) {
+        navigator.clipboard.writeText(text).then(() => {
+            showGoldenAlert(`🎉 Congratulations! Copied successfully! ✨`);
+        }).catch(() => showGoldenAlert(`⚠️ Press Ctrl+C to copy`));
+    }
+    
+    function showGoldenAlert(msg) {
+        let div = document.createElement('div');
+        div.className = 'alert-custom';
+        div.innerText = msg;
+        document.body.appendChild(div);
+        setTimeout(() => div.remove(), 2000);
+    }
+    
     function randomCombo() {
         const allSym = Array.from(masterSymbols.keys());
         const randSym = allSym[Math.floor(Math.random() * allSym.length)];
@@ -609,10 +651,9 @@
         let target = Array.from(btns).find(b => parseInt(b.innerText) === currentRepeat);
         if(target) target.classList.add('active');
         updatePreview();
-        showAlert(`✨ VIP Random: ${randSym} x${currentRepeat}`);
+        showGoldenAlert(`✨ VIP Random: ${randSym} x${currentRepeat}`);
     }
     
-    // Build repeat buttons horizontal
     function buildRepeatBtns() {
         const container = document.getElementById('repeatButtons');
         container.innerHTML = '';
@@ -625,22 +666,7 @@
         }
     }
     
-    // Search filter
-    function initSearch() {
-        const searchInput = document.getElementById('symbolSearch');
-        searchInput.addEventListener('input', function(e) {
-            const term = e.target.value.toLowerCase();
-            const allCards = document.querySelectorAll('.symbol-card');
-            allCards.forEach(card => {
-                const name = card.querySelector('.symbol-name')?.innerText.toLowerCase() || '';
-                const sym = card.querySelector('.symbol')?.innerText || '';
-                if(name.includes(term) || sym.includes(term) || term === '') card.style.display = '';
-                else card.style.display = 'none';
-            });
-        });
-    }
-    
-    // ========== SUGGESTIONS with daily limit + country ==========
+    // Community suggestions (horizontal scroll)
     let communitySuggestions = [];
     function loadSuggestionsFromStorage() {
         const saved = localStorage.getItem('goldenSuggestions');
@@ -649,35 +675,41 @@
             { text: "J͢a͢c͢k͢", addedBy: "System", country: "🌍 Global" },
             { text: "Lꨄoꨄvꨄeꨄ", addedBy: "System", country: "🌍 Global" },
             { text: "S᪲a᪲m᪲", addedBy: "System", country: "🌍 Global" },
-            { text: "R̶o̶c̶k̶", addedBy: "System", country: "🇺🇸 USA" }
+            { text: "R̶o̶c̶k̶", addedBy: "System", country: "🇺🇸 USA" },
+            { text: "M͙o͙o͙n͙", addedBy: "System", country: "🌙" }
         ];
     }
     function saveSuggestionsToStorage() { localStorage.setItem('goldenSuggestions', JSON.stringify(communitySuggestions)); }
-    function renderSuggestions() {
-        const grid = document.getElementById('suggestionsGrid');
-        const seeAllBtn = document.getElementById('seeAllBtnContainer');
-        if(!grid) return;
+    function renderSuggestionsHorizontal() {
+        const container = document.getElementById('suggestionsContainer');
+        if(!container) return;
         let shuffled = [...communitySuggestions].sort(()=>0.5-Math.random());
         let show = shuffled.slice(0, 12);
-        grid.innerHTML = show.map(s => `
+        container.innerHTML = show.map(s => `
             <div class="suggestion-item">
-                <div><div style="color:#FFD700;">${s.text}</div><div style="font-size:10px;">✨ ${s.addedBy} (${s.country})</div></div>
-                <button onclick="copyText('${s.text.replace(/'/g, "\\'")}')">Copy</button>
+                <div>
+                    <div class="suggestion-text">${s.text}</div>
+                    <div class="suggestion-meta">✨ ${s.addedBy} (${s.country})</div>
+                </div>
+                <button onclick="copyText('${s.text.replace(/'/g, "\\'")}')" style="background:#333; border:1px solid gold; color:gold; border-radius:30px; padding:5px 12px; cursor:pointer;">Copy</button>
             </div>
         `).join('');
-        if(communitySuggestions.length>12) seeAllBtn.innerHTML = `<button onclick="showAllSuggestions()">📜 See All (${communitySuggestions.length})</button>`;
-        else seeAllBtn.innerHTML='';
+        const seeAll = document.getElementById('seeAllBtnContainer');
+        if(communitySuggestions.length > 12) seeAll.innerHTML = `<button onclick="showAllSuggestionsModal()" style="background:transparent; border:1px solid gold; color:gold; padding:8px 20px; border-radius:40px;">📜 See All (${communitySuggestions.length})</button>`;
+        else seeAll.innerHTML = '';
     }
-    function showAllSuggestions() {
-        const grid = document.getElementById('suggestionsGrid');
-        grid.innerHTML = communitySuggestions.map(s => `
-            <div class="suggestion-item" style="min-width:260px;"><div><div style="color:#FFD700;">${s.text}</div><div style="font-size:10px;">👤 ${s.addedBy} (${s.country})</div></div>
-            <button onclick="copyText('${s.text.replace(/'/g, "\\'")}')">Copy</button></div>
+    function showAllSuggestionsModal() {
+        const container = document.getElementById('suggestionsContainer');
+        container.innerHTML = communitySuggestions.map(s => `
+            <div class="suggestion-item" style="min-width:260px;">
+                <div><div class="suggestion-text">${s.text}</div><div class="suggestion-meta">👤 ${s.addedBy} (${s.country})</div></div>
+                <button onclick="copyText('${s.text.replace(/'/g, "\\'")}')" style="background:#333; border:1px solid gold; color:gold; border-radius:30px; padding:5px 12px;">Copy</button>
+            </div>
         `).join('');
-        document.getElementById('seeAllBtnContainer').innerHTML = `<button onclick="renderSuggestions()">← Show Random</button>`;
+        document.getElementById('seeAllBtnContainer').innerHTML = `<button onclick="location.reload()" style="background:transparent; border:1px solid gold; color:gold; padding:8px 20px; border-radius:40px;">← Show Random</button>`;
     }
     
-    // Daily limit
+    // Daily limit for suggestions
     function canSubmitToday() {
         const today = new Date().toDateString();
         let data = localStorage.getItem('suggestionDaily');
@@ -692,21 +724,20 @@
         parsed.count++;
         localStorage.setItem('suggestionDaily', JSON.stringify(parsed));
     }
-    
     function saveSuggestion() {
-        if(!canSubmitToday()) { alert("❌ Daily limit reached (max 5 suggestions). Come back tomorrow!"); return; }
+        if(!canSubmitToday()) { showGoldenAlert("❌ Daily limit reached (max 5). Come back tomorrow!"); return; }
         let name = document.getElementById('suggesterName').value.trim();
         let country = document.getElementById('suggesterCountry').value;
         let text = document.getElementById('suggestionText').value.trim();
-        if(!name) { alert("Please enter your name"); return; }
-        if(!country || country === "🌍 Select country") { alert("Select your country"); return; }
-        if(!text) { alert("Enter your stylish suggestion"); return; }
+        if(!name) { showGoldenAlert("Please enter your name"); return; }
+        if(!country || country === "🌍 Select country") { showGoldenAlert("Select your country"); return; }
+        if(!text) { showGoldenAlert("Enter your stylish suggestion"); return; }
         communitySuggestions.push({ text, addedBy: name, country });
         saveSuggestionsToStorage();
         incrementDaily();
         closeSuggestionModal();
-        renderSuggestions();
-        showAlert(`✅ Thank you ${name} from ${country}! Suggestion added.`, 2000);
+        renderSuggestionsHorizontal();
+        showGoldenAlert(`✅ Thank you ${name} from ${country}! Suggestion added.`);
     }
     function openAddSuggestionModal() { document.getElementById('suggestionModal').style.display = 'flex'; }
     function closeSuggestionModal() { document.getElementById('suggestionModal').style.display = 'none'; document.getElementById('suggesterName').value=''; document.getElementById('suggestionText').value=''; document.getElementById('suggesterCountry').value='🌍 Select country'; }
@@ -714,23 +745,17 @@
     window.onload = () => {
         buildRepeatBtns();
         renderCategories();
-        initSearch();
+        renderTips();
+        renderVIP();
         loadSuggestionsFromStorage();
-        renderSuggestions();
+        renderSuggestionsHorizontal();
         updatePreview();
         document.getElementById('inputText').addEventListener('input', updatePreview);
         document.getElementById('symbolSelect').addEventListener('change', updatePreview);
         document.getElementById('suggestionModal').addEventListener('click', (e) => { if(e.target === document.getElementById('suggestionModal')) closeSuggestionModal(); });
-        // additional style for alerts
-        const styleAlert = document.createElement('style');
-        styleAlert.textContent = `.alert{ animation: fadeInOut 0.3s; } @keyframes fadeInOut{0%{opacity:0; transform:translateX(50px);} 100%{opacity:1;}}`;
-        document.head.appendChild(styleAlert);
-        // Scroll top button visibility
-        window.addEventListener('scroll', ()=>{
-            const btn = document.querySelector('.scroll-top-btn');
-            if(window.scrollY>300) btn.style.display='flex'; else btn.style.display='none';
-        });
-        document.querySelector('.scroll-top-btn').style.display = 'none';
+        // remove scroll-top button entirely
+        const oldBtn = document.querySelector('.scroll-top-btn');
+        if(oldBtn) oldBtn.remove();
     };
     window.attachSymbolSingle = attachSymbolSingle;
     window.copySymbol = copySymbol;
@@ -740,8 +765,7 @@
     window.saveSuggestion = saveSuggestion;
     window.openAddSuggestionModal = openAddSuggestionModal;
     window.closeSuggestionModal = closeSuggestionModal;
-    window.showAllSuggestions = showAllSuggestions;
-    window.renderSuggestions = renderSuggestions;
+    window.showAllSuggestionsModal = showAllSuggestionsModal;
 </script>
 </body>
 </html>
