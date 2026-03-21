@@ -544,32 +544,30 @@
     }
     rebuildSelect();
     
-    // Render categories with preview examples
-    function renderCategories() {
-        const container = document.getElementById('symbolCategoriesContainer');
-        container.innerHTML = '';
-        categoriesData.forEach(cat => {
-            const catDiv = document.createElement('div');
-            catDiv.className = 'symbol-category';
-            catDiv.innerHTML = `<h2>${cat.name}</h2><div class="symbol-grid" id="grid-${cat.name.replace(/\s/g,'')}"></div>`;
-            container.appendChild(catDiv);
-            const gridDiv = catDiv.querySelector('.symbol-grid');
-            cat.symbols.forEach(s => {
-                const example = "A" + s.sym;  // show A + symbol
-                const card = document.createElement('div');
-                card.className = 'symbol-card';
-                card.innerHTML = `
-                    <span class="attach-badge">✅ ATTACH</span>
-                    <div class="symbol">${s.sym}</div>
-                    <div class="symbol-name">${s.name}</div>
-                    <div class="example-preview">Example: ${example}</div>
-                    <button class="copy-symbol-btn" onclick="event.stopPropagation(); copySymbol('${s.sym}')">📋 Copy</button>
-                    <button class="copy-symbol-btn" style="background:#FFD700; color:#000;" onclick="event.stopPropagation(); attachSymbolSingle('${s.sym}')">🔗 Attach Now</button>
-                `;
-                gridDiv.appendChild(card);
-            });
+function renderCategories() {
+    const container = document.getElementById('symbolCategoriesContainer');
+    container.innerHTML = '';
+    categoriesData.forEach(cat => {
+        const catDiv = document.createElement('div');
+        catDiv.className = 'symbol-category';
+        catDiv.innerHTML = `<h2>${cat.name}</h2><div class="symbol-grid" id="grid-${cat.name.replace(/\s/g,'')}"></div>`;
+        container.appendChild(catDiv);
+        const gridDiv = catDiv.querySelector('.symbol-grid');
+        cat.symbols.forEach(s => {
+            const card = document.createElement('div');
+            card.className = 'symbol-card';
+            card.innerHTML = `
+                <span class="attach-badge">✅ ATTACH</span>
+                <div class="symbol">${s.sym}</div>
+                <div class="symbol-name">${s.name}</div>
+                <div class="example-preview">Example: A${s.sym}</div>
+                <button class="copy-symbol-btn" onclick="event.stopPropagation(); copySymbol('${s.sym}')">📋 Copy</button>
+                <button class="copy-symbol-btn" style="background:#FFD700; color:#000;" onclick="event.stopPropagation(); attachSymbolSingle('${s.sym}')">🔗 Attach Now</button>
+            `;
+            gridDiv.appendChild(card);
         });
-    }
+    });
+}
     
     // Tips data
     const tipsData = [
