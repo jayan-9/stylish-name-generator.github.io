@@ -635,6 +635,84 @@
     background: linear-gradient(to left, transparent, #1e1e1e);
     pointer-events: none;
 }
+
+        /* VIP Collection Styles */
+.vip-collection {
+    margin: 40px 0;
+    padding: 20px;
+    background: linear-gradient(145deg, #1a1a1a, #0f0f0f);
+    border-radius: 24px;
+    border: 2px solid #FFD700;
+    box-shadow: 0 10px 30px rgba(255,215,0,0.2);
+}
+
+.vip-header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.vip-badge {
+    display: inline-block;
+    background: linear-gradient(135deg, #FFD700, #FFA500);
+    color: #000;
+    padding: 5px 15px;
+    border-radius: 50px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.vip-title {
+    font-size: 2rem;
+    color: #FFD700;
+    margin-bottom: 5px;
+}
+
+.vip-subtitle {
+    color: #aaa;
+    font-size: 0.9rem;
+}
+
+.vip-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    gap: 12px;
+}
+
+.vip-item {
+    background: #252525;
+    border: 1px solid #FFD70033;
+    border-radius: 10px;
+    padding: 12px 8px;
+    text-align: center;
+    font-size: 1rem;
+    color: #FFD700;
+    cursor: pointer;
+    transition: all 0.2s;
+    word-break: break-word;
+}
+
+.vip-item:hover {
+    background: #FFD700;
+    color: #000;
+    transform: translateY(-3px);
+    border-color: #FFD700;
+    box-shadow: 0 5px 15px rgba(255,215,0,0.3);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .vip-grid {
+        grid-template-columns: repeat(auto-fill, minmax(110px, 1fr));
+    }
+    .vip-item {
+        font-size: 0.85rem;
+        padding: 8px 5px;
+    }
+    .vip-title {
+        font-size: 1.5rem;
+    }
+}
         
         @media (max-width: 768px) {
             .container { padding: 20px; }
@@ -1915,6 +1993,358 @@
             <p>You can attach up to 10 symbols per character using the repeat buttons (1x to 10x). This creates unique layered effects. Feel free to experiment!</p>
         </div>
     </div>
+
+    <!-- VIP Symbol & Name Collection -->
+<div class="vip-collection">
+    <div class="vip-header">
+        <span class="vip-badge">⭐ VIP COLLECTION ⭐</span>
+        <h2 class="vip-title">Exclusive Symbols & Names</h2>
+        <p class="vip-subtitle">Click any item to copy instantly – Premium designs for your profile</p>
+    </div>
+    
+    <div class="vip-grid">
+        <!-- VIP Names & Symbols (Click to Copy) -->
+        <div class="vip-item" onclick="copyText('ᴅ ɪ ᴍ ⌔ ɴ ᴅ')">ᴅ ɪ ᴍ ⌔ ɴ ᴅ</div>
+        <div class="vip-item" onclick="copyText('𝐶 🂱 𝑅 𝐷')">𝐶 🂱 𝑅 𝐷</div>
+        <div class="vip-item" onclick="copyText('𖣿')">𖣿</div>
+        <div class="vip-item" onclick="copyText('💗᪲')">💗᪲</div>
+        <div class="vip-item" onclick="copyText('🍁᪳')">🍁᪳</div>
+        <div class="vip-item" onclick="copyText('😊᪴')">😊᪴</div>
+        <div class="vip-item" onclick="copyText('K︥I︥N︥G︥')">K︥I︥N︥G︥</div>
+        <div class="vip-item" onclick="copyText('👿͢͢͢͢͢͢͢')">👿͢͢͢͢͢͢͢</div>
+        <div class="vip-item" onclick="copyText('K̶')">K̶</div>
+        <div class="vip-item" onclick="copyText('🦋᪱')">🦋᪱</div>
+        <div class="vip-item" onclick="copyText('M̬̬̬̬ O̬̬̬̬ O̬̬̬̬ D̬̬̬̬')">M̬̬̬̬ O̬̬̬̬ O̬̬̬̬ D̬̬̬̬</div>
+        <div class="vip-item" onclick="copyText('⛰⃞⃞️⃞⃞')">⛰⃞⃞️⃞⃞</div>
+        <div class="vip-item" onclick="copyText('🌾︤')">🌾︤</div>
+        <div class="vip-item" onclick="copyText('🍜ᷳᷳᷳᷳᷳᷳᷳᷳ')">🍜ᷳᷳᷳᷳᷳᷳᷳᷳ</div>
+        <div class="vip-item" onclick="copyText('🧿⃝')">🧿⃝</div>
+        <div class="vip-item" onclick="copyText('✨⃟')">✨⃟</div>
+        <div class="vip-item" onclick="copyText('F l ✿ w e r')">F l ✿ w e r</div>
+        <div class="vip-item" onclick="copyText('💀̸̸̸')">💀̸̸̸</div>
+        <div class="vip-item" onclick="copyText('🔥̲̲̲')">🔥̲̲̲</div>
+        <div class="vip-item" onclick="copyText('🌟͙͙͙')">🌟͙͙͙</div>
+        <div class="vip-item" onclick="copyText('🖤᪲᪲᪲')">🖤᪲᪲᪲</div>
+        <div class="vip-item" onclick="copyText('💙̤̤̤')">💙̤̤̤</div>
+        <div class="vip-item" onclick="copyText('🧡̝̝̝')">🧡̝̝̝</div>
+        <div class="vip-item" onclick="copyText('💚̞̞̞')">💚̞̞̞</div>
+        <div class="vip-item" onclick="copyText('💜̬̬̬')">💜̬̬̬</div>
+        <div class="vip-item" onclick="copyText('🤍̭̭̭')">🤍̭̭̭</div>
+        <div class="vip-item" onclick="copyText('🩵̯̯̯')">🩵̯̯̯</div>
+        <div class="vip-item" onclick="copyText('🩷̺̺̺')">🩷̺̺̺</div>
+        <div class="vip-item" onclick="copyText('❤️̻̻̻')">❤️̻̻̻</div>
+        <div class="vip-item" onclick="copyText('💔̼̼̼')">💔̼̼̼</div>
+        <div class="vip-item" onclick="copyText('🫀⃝')">🫀⃝</div>
+        <div class="vip-item" onclick="copyText('🫁⃞')">🫁⃞</div>
+        <div class="vip-item" onclick="copyText('🧠⃟')">🧠⃟</div>
+        <div class="vip-item" onclick="copyText('🦷̠̠̠')">🦷̠̠̠</div>
+        <div class="vip-item" onclick="copyText('👁️̲̲̲')">👁️̲̲̲</div>
+        <div class="vip-item" onclick="copyText('👄͢͢͢')">👄͢͢͢</div>
+        <div class="vip-item" onclick="copyText('👂̅̅̅')">👂̅̅̅</div>
+        <div class="vip-item" onclick="copyText('👃̐̐̐')">👃̐̐̐</div>
+        <div class="vip-item" onclick="copyText('👣̌̌̌')">👣̌̌̌</div>
+        <div class="vip-item" onclick="copyText('👤̋̋̋')">👤̋̋̋</div>
+        <div class="vip-item" onclick="copyText('👥⃯⃯⃯')">👥⃯⃯⃯</div>
+        <div class="vip-item" onclick="copyText('🫂ꤪꤨꤪ')">🫂ꤪꤨꤪ</div>
+        <div class="vip-item" onclick="copyText('💪̤̮̤̮')">💪̤̮̤̮</div>
+        <div class="vip-item" onclick="copyText('🦾̝̝̝')">🦾̝̝̝</div>
+        <div class="vip-item" onclick="copyText('🦿̞̞̞')">🦿̞̞̞</div>
+        <div class="vip-item" onclick="copyText('🦶̬̬̬')">🦶̬̬̬</div>
+        <div class="vip-item" onclick="copyText('🦵̭̭̭')">🦵̭̭̭</div>
+        <div class="vip-item" onclick="copyText('🦴̯̯̯')">🦴̯̯̯</div>
+        <div class="vip-item" onclick="copyText('🦷̺̺̺')">🦷̺̺̺</div>
+        <div class="vip-item" onclick="copyText('🦻̻̻̻')">🦻̻̻̻</div>
+        <div class="vip-item" onclick="copyText('👓̼̼̼')">👓̼̼̼</div>
+        <div class="vip-item" onclick="copyText('🕶️⃝')">🕶️⃝</div>
+        <div class="vip-item" onclick="copyText('🥽⃞')">🥽⃞</div>
+        <div class="vip-item" onclick="copyText('🥼⃟')">🥼⃟</div>
+        <div class="vip-item" onclick="copyText('👕̠̠̠')">👕̠̠̠</div>
+        <div class="vip-item" onclick="copyText('👖̲̲̲')">👖̲̲̲</div>
+        <div class="vip-item" onclick="copyText('🧣͢͢͢')">🧣͢͢͢</div>
+        <div class="vip-item" onclick="copyText('🧤̅̅̅')">🧤̅̅̅</div>
+        <div class="vip-item" onclick="copyText('🧥̐̐̐')">🧥̐̐̐</div>
+        <div class="vip-item" onclick="copyText('🧦̌̌̌')">🧦̌̌̌</div>
+        <div class="vip-item" onclick="copyText('👗̋̋̋')">👗̋̋̋</div>
+        <div class="vip-item" onclick="copyText('👘⃯⃯⃯')">👘⃯⃯⃯</div>
+        <div class="vip-item" onclick="copyText('👙ꤪꤨꤪ')">👙ꤪꤨꤪ</div>
+        <div class="vip-item" onclick="copyText('👚̤̮̤̮')">👚̤̮̤̮</div>
+        <div class="vip-item" onclick="copyText('👛̝̝̝')">👛̝̝̝</div>
+        <div class="vip-item" onclick="copyText('👜̞̞̞')">👜̞̞̞</div>
+        <div class="vip-item" onclick="copyText('👝̬̬̬')">👝̬̬̬</div>
+        <div class="vip-item" onclick="copyText('🛍️̭̭̭')">🛍️̭̭̭</div>
+        <div class="vip-item" onclick="copyText('🎒̯̯̯')">🎒̯̯̯</div>
+        <div class="vip-item" onclick="copyText('👞̺̺̺')">👞̺̺̺</div>
+        <div class="vip-item" onclick="copyText('👟̻̻̻')">👟̻̻̻</div>
+        <div class="vip-item" onclick="copyText('🥾̼̼̼')">🥾̼̼̼</div>
+        <div class="vip-item" onclick="copyText('🥿⃝')">🥿⃝</div>
+        <div class="vip-item" onclick="copyText('👠⃞')">👠⃞</div>
+        <div class="vip-item" onclick="copyText('👡⃟')">👡⃟</div>
+        <div class="vip-item" onclick="copyText('👢̠̠̠')">👢̠̠̠</div>
+        <div class="vip-item" onclick="copyText('👑̲̲̲')">👑̲̲̲</div>
+        <div class="vip-item" onclick="copyText('👒͢͢͢')">👒͢͢͢</div>
+        <div class="vip-item" onclick="copyText('🎩̅̅̅')">🎩̅̅̅</div>
+        <div class="vip-item" onclick="copyText('🎓̐̐̐')">🎓̐̐̐</div>
+        <div class="vip-item" onclick="copyText('🧢̌̌̌')">🧢̌̌̌</div>
+        <div class="vip-item" onclick="copyText('⛑️̋̋̋')">⛑️̋̋̋</div>
+        <div class="vip-item" onclick="copyText('📿⃯⃯⃯')">📿⃯⃯⃯</div>
+        <div class="vip-item" onclick="copyText('💎ꤪꤨꤪ')">💎ꤪꤨꤪ</div>
+        <div class="vip-item" onclick="copyText('💍̤̮̤̮')">💍̤̮̤̮</div>
+        <div class="vip-item" onclick="copyText('💄̝̝̝')">💄̝̝̝</div>
+        <div class="vip-item" onclick="copyText('💋̞̞̞')">💋̞̞̞</div>
+        <div class="vip-item" onclick="copyText('💌̬̬̬')">💌̬̬̬</div>
+        <div class="vip-item" onclick="copyText('💐̭̭̭')">💐̭̭̭</div>
+        <div class="vip-item" onclick="copyText('🌸̯̯̯')">🌸̯̯̯</div>
+        <div class="vip-item" onclick="copyText('🌼̺̺̺')">🌼̺̺̺</div>
+        <div class="vip-item" onclick="copyText('🌻̻̻̻')">🌻̻̻̻</div>
+        <div class="vip-item" onclick="copyText('🌺̼̼̼')">🌺̼̼̼</div>
+        <div class="vip-item" onclick="copyText('🌷⃝')">🌷⃝</div>
+        <div class="vip-item" onclick="copyText('🌹⃞')">🌹⃞</div>
+        <div class="vip-item" onclick="copyText('🥀⃟')">🥀⃟</div>
+        <div class="vip-item" onclick="copyText('🌿̠̠̠')">🌿̠̠̠</div>
+        <div class="vip-item" onclick="copyText('🍃̲̲̲')">🍃̲̲̲</div>
+        <div class="vip-item" onclick="copyText('🍂͢͢͢')">🍂͢͢͢</div>
+        <div class="vip-item" onclick="copyText('🍁̅̅̅')">🍁̅̅̅</div>
+        <div class="vip-item" onclick="copyText('🍄̐̐̐')">🍄̐̐̐</div>
+        <div class="vip-item" onclick="copyText('🌵̌̌̌')">🌵̌̌̌</div>
+        <div class="vip-item" onclick="copyText('🌲̋̋̋')">🌲̋̋̋</div>
+        <div class="vip-item" onclick="copyText('🌳⃯⃯⃯')">🌳⃯⃯⃯</div>
+        <div class="vip-item" onclick="copyText('🌴ꤪꤨꤪ')">🌴ꤪꤨꤪ</div>
+        <div class="vip-item" onclick="copyText('🌱̤̮̤̮')">🌱̤̮̤̮</div>
+        <div class="vip-item" onclick="copyText('🌾̝̝̝')">🌾̝̝̝</div>
+        <div class="vip-item" onclick="copyText('🌽̞̞̞')">🌽̞̞̞</div>
+        <div class="vip-item" onclick="copyText('🍎̬̬̬')">🍎̬̬̬</div>
+        <div class="vip-item" onclick="copyText('🍐̭̭̭')">🍐̭̭̭</div>
+        <div class="vip-item" onclick="copyText('🍊̯̯̯')">🍊̯̯̯</div>
+        <div class="vip-item" onclick="copyText('🍋̺̺̺')">🍋̺̺̺</div>
+        <div class="vip-item" onclick="copyText('🍌̻̻̻')">🍌̻̻̻</div>
+        <div class="vip-item" onclick="copyText('🍉̼̼̼')">🍉̼̼̼</div>
+        <div class="vip-item" onclick="copyText('🍇⃝')">🍇⃝</div>
+        <div class="vip-item" onclick="copyText('🍓⃞')">🍓⃞</div>
+        <div class="vip-item" onclick="copyText('🫐⃟')">🫐⃟</div>
+        <div class="vip-item" onclick="copyText('🍈̠̠̠')">🍈̠̠̠</div>
+        <div class="vip-item" onclick="copyText('🍒̲̲̲')">🍒̲̲̲</div>
+        <div class="vip-item" onclick="copyText('🍑͢͢͢')">🍑͢͢͢</div>
+        <div class="vip-item" onclick="copyText('🍍̅̅̅')">🍍̅̅̅</div>
+        <div class="vip-item" onclick="copyText('🥭̐̐̐')">🥭̐̐̐</div>
+        <div class="vip-item" onclick="copyText('🥝̌̌̌')">🥝̌̌̌</div>
+        <div class="vip-item" onclick="copyText('🍅̋̋̋')">🍅̋̋̋</div>
+        <div class="vip-item" onclick="copyText('🍆⃯⃯⃯')">🍆⃯⃯⃯</div>
+        <div class="vip-item" onclick="copyText('🥑ꤪꤨꤪ')">🥑ꤪꤨꤪ</div>
+        <div class="vip-item" onclick="copyText('🥦̤̮̤̮')">🥦̤̮̤̮</div>
+        <div class="vip-item" onclick="copyText('🥬̝̝̝')">🥬̝̝̝</div>
+        <div class="vip-item" onclick="copyText('🥒̞̞̞')">🥒̞̞̞</div>
+        <div class="vip-item" onclick="copyText('🌶️̬̬̬')">🌶️̬̬̬</div>
+        <div class="vip-item" onclick="copyText('🫑̭̭̭')">🫑̭̭̭</div>
+        <div class="vip-item" onclick="copyText('🥕̺̺̺')">🥕̺̺̺</div>
+        <div class="vip-item" onclick="copyText('🧄̻̻̻')">🧄̻̻̻</div>
+        <div class="vip-item" onclick="copyText('🧅̼̼̼')">🧅̼̼̼</div>
+        <div class="vip-item" onclick="copyText('🥔⃝')">🥔⃝</div>
+        <div class="vip-item" onclick="copyText('🍠⃞')">🍠⃞</div>
+        <div class="vip-item" onclick="copyText('🥐⃟')">🥐⃟</div>
+        <div class="vip-item" onclick="copyText('🥯̠̠̠')">🥯̠̠̠</div>
+        <div class="vip-item" onclick="copyText('🍞̲̲̲')">🍞̲̲̲</div>
+        <div class="vip-item" onclick="copyText('🥖͢͢͢')">🥖͢͢͢</div>
+        <div class="vip-item" onclick="copyText('🥨̅̅̅')">🥨̅̅̅</div>
+        <div class="vip-item" onclick="copyText('🧀̐̐̐')">🧀̐̐̐</div>
+        <div class="vip-item" onclick="copyText('🥚̌̌̌')">🥚̌̌̌</div>
+        <div class="vip-item" onclick="copyText('🍳̋̋̋')">🍳̋̋̋</div>
+        <div class="vip-item" onclick="copyText('🧈⃯⃯⃯')">🧈⃯⃯⃯</div>
+        <div class="vip-item" onclick="copyText('🥞ꤪꤨꤪ')">🥞ꤪꤨꤪ</div>
+        <div class="vip-item" onclick="copyText('🧇̤̮̤̮')">🧇̤̮̤̮</div>
+        <div class="vip-item" onclick="copyText('🥓̝̝̝')">🥓̝̝̝</div>
+        <div class="vip-item" onclick="copyText('🥩̞̞̞')">🥩̞̞̞</div>
+        <div class="vip-item" onclick="copyText('🍗̬̬̬')">🍗̬̬̬</div>
+        <div class="vip-item" onclick="copyText('🍖̭̭̭')">🍖̭̭̭</div>
+        <div class="vip-item" onclick="copyText('🍔̺̺̺')">🍔̺̺̺</div>
+        <div class="vip-item" onclick="copyText('🍟̻̻̻')">🍟̻̻̻</div>
+        <div class="vip-item" onclick="copyText('🍕̼̼̼')">🍕̼̼̼</div>
+        <div class="vip-item" onclick="copyText('🌭⃝')">🌭⃝</div>
+        <div class="vip-item" onclick="copyText('🥪⃞')">🥪⃞</div>
+        <div class="vip-item" onclick="copyText('🌮⃟')">🌮⃟</div>
+        <div class="vip-item" onclick="copyText('🌯̠̠̠')">🌯̠̠̠</div>
+        <div class="vip-item" onclick="copyText('🫔̲̲̲')">🫔̲̲̲</div>
+        <div class="vip-item" onclick="copyText('🥙͢͢͢')">🥙͢͢͢</div>
+        <div class="vip-item" onclick="copyText('🧆̅̅̅')">🧆̅̅̅</div>
+        <div class="vip-item" onclick="copyText('🥘̐̐̐')">🥘̐̐̐</div>
+        <div class="vip-item" onclick="copyText('🍲̌̌̌')">🍲̌̌̌</div>
+        <div class="vip-item" onclick="copyText('🥣̋̋̋')">🥣̋̋̋</div>
+        <div class="vip-item" onclick="copyText('🥫⃯⃯⃯')">🥫⃯⃯⃯</div>
+        <div class="vip-item" onclick="copyText('🍜ꤪꤨꤪ')">🍜ꤪꤨꤪ</div>
+        <div class="vip-item" onclick="copyText('🍝̤̮̤̮')">🍝̤̮̤̮</div>
+        <div class="vip-item" onclick="copyText('🍛̝̝̝')">🍛̝̝̝</div>
+        <div class="vip-item" onclick="copyText('🍣̞̞̞')">🍣̞̞̞</div>
+        <div class="vip-item" onclick="copyText('🍤̬̬̬')">🍤̬̬̬</div>
+        <div class="vip-item" onclick="copyText('🍥̭̭̭')">🍥̭̭̭</div>
+        <div class="vip-item" onclick="copyText('🥮̯̯̯')">🥮̯̯̯</div>
+        <div class="vip-item" onclick="copyText('🍡̺̺̺')">🍡̺̺̺</div>
+        <div class="vip-item" onclick="copyText('🥟̻̻̻')">🥟̻̻̻</div>
+        <div class="vip-item" onclick="copyText('🥠̼̼̼')">🥠̼̼̼</div>
+        <div class="vip-item" onclick="copyText('🥡⃝')">🥡⃝</div>
+        <div class="vip-item" onclick="copyText('🍦⃞')">🍦⃞</div>
+        <div class="vip-item" onclick="copyText('🍧⃟')">🍧⃟</div>
+        <div class="vip-item" onclick="copyText('🍨̠̠̠')">🍨̠̠̠</div>
+        <div class="vip-item" onclick="copyText('🍩̲̲̲')">🍩̲̲̲</div>
+        <div class="vip-item" onclick="copyText('🍪͢͢͢')">🍪͢͢͢</div>
+        <div class="vip-item" onclick="copyText('🎂̅̅̅')">🎂̅̅̅</div>
+        <div class="vip-item" onclick="copyText('🍰̐̐̐')">🍰̐̐̐</div>
+        <div class="vip-item" onclick="copyText('🧁̌̌̌')">🧁̌̌̌</div>
+        <div class="vip-item" onclick="copyText('🥧̋̋̋')">🥧̋̋̋</div>
+        <div class="vip-item" onclick="copyText('🍫⃯⃯⃯')">🍫⃯⃯⃯</div>
+        <div class="vip-item" onclick="copyText('🍬ꤪꤨꤪ')">🍬ꤪꤨꤪ</div>
+        <div class="vip-item" onclick="copyText('🍭̤̮̤̮')">🍭̤̮̤̮</div>
+        <div class="vip-item" onclick="copyText('🍮̝̝̝')">🍮̝̝̝</div>
+        <div class="vip-item" onclick="copyText('🍯̞̞̞')">🍯̞̞̞</div>
+        <div class="vip-item" onclick="copyText('🥛̬̬̬')">🥛̬̬̬</div>
+        <div class="vip-item" onclick="copyText('☕̭̭̭')">☕̭̭̭</div>
+        <div class="vip-item" onclick="copyText('🍵̯̯̯')">🍵̯̯̯</div>
+        <div class="vip-item" onclick="copyText('🧃̺̺̺')">🧃̺̺̺</div>
+        <div class="vip-item" onclick="copyText('🥤̻̻̻')">🥤̻̻̻</div>
+        <div class="vip-item" onclick="copyText('🧋̼̼̼')">🧋̼̼̼</div>
+        <div class="vip-item" onclick="copyText('🍶⃝')">🍶⃝</div>
+        <div class="vip-item" onclick="copyText('🍺⃞')">🍺⃞</div>
+        <div class="vip-item" onclick="copyText('🍻⃟')">🍻⃟</div>
+        <div class="vip-item" onclick="copyText('🥂̠̠̠')">🥂̠̠̠</div>
+        <div class="vip-item" onclick="copyText('🥃̲̲̲')">🥃̲̲̲</div>
+        <div class="vip-item" onclick="copyText('🧊͢͢͢')">🧊͢͢͢</div>
+        <div class="vip-item" onclick="copyText('🥄̅̅̅')">🥄̅̅̅</div>
+        <div class="vip-item" onclick="copyText('🍴̐̐̐')">🍴̐̐̐</div>
+        <div class="vip-item" onclick="copyText('🍽️̌̌̌')">🍽️̌̌̌</div>
+        <div class="vip-item" onclick="copyText('🥢̋̋̋')">🥢̋̋̋</div>
+        <div class="vip-item" onclick="copyText('⚽⃯⃯⃯')">⚽⃯⃯⃯</div>
+        <div class="vip-item" onclick="copyText('🏀ꤪꤨꤪ')">🏀ꤪꤨꤪ</div>
+        <div class="vip-item" onclick="copyText('🏈̤̮̤̮')">🏈̤̮̤̮</div>
+        <div class="vip-item" onclick="copyText('⚾̝̝̝')">⚾̝̝̝</div>
+        <div class="vip-item" onclick="copyText('🥎̞̞̞')">🥎̞̞̞</div>
+        <div class="vip-item" onclick="copyText('🎾̬̬̬')">🎾̬̬̬</div>
+        <div class="vip-item" onclick="copyText('🏐̭̭̭')">🏐̭̭̭</div>
+        <div class="vip-item" onclick="copyText('🏉̯̯̯')">🏉̯̯̯</div>
+        <div class="vip-item" onclick="copyText('🥏̺̺̺')">🥏̺̺̺</div>
+        <div class="vip-item" onclick="copyText('🎱̻̻̻')">🎱̻̻̻</div>
+        <div class="vip-item" onclick="copyText('🪀̼̼̼')">🪀̼̼̼</div>
+        <div class="vip-item" onclick="copyText('🏓⃝')">🏓⃝</div>
+        <div class="vip-item" onclick="copyText('🏸⃞')">🏸⃞</div>
+        <div class="vip-item" onclick="copyText('🏒⃟')">🏒⃟</div>
+        <div class="vip-item" onclick="copyText('🏑̠̠̠')">🏑̠̠̠</div>
+        <div class="vip-item" onclick="copyText('🥍̲̲̲')">🥍̲̲̲</div>
+        <div class="vip-item" onclick="copyText('🏏͢͢͢')">🏏͢͢͢</div>
+        <div class="vip-item" onclick="copyText('🎿̅̅̅')">🎿̅̅̅</div>
+        <div class="vip-item" onclick="copyText('⛷️̐̐̐')">⛷️̐̐̐</div>
+        <div class="vip-item" onclick="copyText('🏂̌̌̌')">🏂̌̌̌</div>
+        <div class="vip-item" onclick="copyText('🪂̋̋̋')">🪂̋̋̋</div>
+        <div class="vip-item" onclick="copyText('🏋️⃯⃯⃯')">🏋️⃯⃯⃯</div>
+        <div class="vip-item" onclick="copyText('🤼ꤪꤨꤪ')">🤼ꤪꤨꤪ</div>
+        <div class="vip-item" onclick="copyText('🤸̤̮̤̮')">🤸̤̮̤̮</div>
+        <div class="vip-item" onclick="copyText('⛹️̝̝̝')">⛹️̝̝̝</div>
+        <div class="vip-item" onclick="copyText('🤾̞̞̞')">🤾̞̞̞</div>
+        <div class="vip-item" onclick="copyText('🏌️̬̬̬')">🏌️̬̬̬</div>
+        <div class="vip-item" onclick="copyText('🏇̭̭̭')">🏇̭̭̭</div>
+        <div class="vip-item" onclick="copyText('🧘̯̯̯')">🧘̯̯̯</div>
+        <div class="vip-item" onclick="copyText('🏄̺̺̺')">🏄̺̺̺</div>
+        <div class="vip-item" onclick="copyText('🏊̻̻̻')">🏊̻̻̻</div>
+        <div class="vip-item" onclick="copyText('🚣̼̼̼')">🚣̼̼̼</div>
+        <div class="vip-item" onclick="copyText('🧗⃝')">🧗⃝</div>
+        <div class="vip-item" onclick="copyText('🚵⃞')">🚵⃞</div>
+        <div class="vip-item" onclick="copyText('🚴⃟')">🚴⃟</div>
+        <div class="vip-item" onclick="copyText('🏆̠̠̠')">🏆̠̠̠</div>
+        <div class="vip-item" onclick="copyText('🥇̲̲̲')">🥇̲̲̲</div>
+        <div class="vip-item" onclick="copyText('🥈͢͢͢')">🥈͢͢͢</div>
+        <div class="vip-item" onclick="copyText('🥉̅̅̅')">🥉̅̅̅</div>
+        <div class="vip-item" onclick="copyText('🏅̐̐̐')">🏅̐̐̐</div>
+        <div class="vip-item" onclick="copyText('🎖️̌̌̌')">🎖️̌̌̌</div>
+        <div class="vip-item" onclick="copyText('🏵️̋̋̋')">🏵️̋̋̋</div>
+        <div class="vip-item" onclick="copyText('🎗️⃯⃯⃯')">🎗️⃯⃯⃯</div>
+        <div class="vip-item" onclick="copyText('🎟️ꤪꤨꤪ')">🎟️ꤪꤨꤪ</div>
+        <div class="vip-item" onclick="copyText('🎫̤̮̤̮')">🎫̤̮̤̮</div>
+        <div class="vip-item" onclick="copyText('🎭̝̝̝')">🎭̝̝̝</div>
+        <div class="vip-item" onclick="copyText('🎨̞̞̞')">🎨̞̞̞</div>
+        <div class="vip-item" onclick="copyText('🎪̬̬̬')">🎪̬̬̬</div>
+        <div class="vip-item" onclick="copyText('🎬̭̭̭')">🎬̭̭̭</div>
+        <div class="vip-item" onclick="copyText('🎮̯̯̯')">🎮̯̯̯</div>
+        <div class="vip-item" onclick="copyText('🕹️̺̺̺')">🕹️̺̺̺</div>
+        <div class="vip-item" onclick="copyText('🎲̻̻̻')">🎲̻̻̻</div>
+        <div class="vip-item" onclick="copyText('♟️̼̼̼')">♟️̼̼̼</div>
+        <div class="vip-item" onclick="copyText('🎯⃝')">🎯⃝</div>
+        <div class="vip-item" onclick="copyText('🃏⃞')">🃏⃞</div>
+        <div class="vip-item" onclick="copyText('🀄⃟')">🀄⃟</div>
+        <div class="vip-item" onclick="copyText('🎴̠̠̠')">🎴̠̠̠</div>
+        <div class="vip-item" onclick="copyText('🧩̲̲̲')">🧩̲̲̲</div>
+        <div class="vip-item" onclick="copyText('🧸͢͢͢')">🧸͢͢͢</div>
+        <div class="vip-item" onclick="copyText('🪅̅̅̅')">🪅̅̅̅</div>
+        <div class="vip-item" onclick="copyText('🪆̐̐̐')">🪆̐̐̐</div>
+        <div class="vip-item" onclick="copyText('🎁̌̌̌')">🎁̌̌̌</div>
+        <div class="vip-item" onclick="copyText('🎀̋̋̋')">🎀̋̋̋</div>
+        <div class="vip-item" onclick="copyText('🎈⃯⃯⃯')">🎈⃯⃯⃯</div>
+        <div class="vip-item" onclick="copyText('🎉ꤪꤨꤪ')">🎉ꤪꤨꤪ</div>
+        <div class="vip-item" onclick="copyText('🎊̤̮̤̮')">🎊̤̮̤̮</div>
+        <div class="vip-item" onclick="copyText('🎄̝̝̝')">🎄̝̝̝</div>
+        <div class="vip-item" onclick="copyText('🎃̞̞̞')">🎃̞̞̞</div>
+        <div class="vip-item" onclick="copyText('🎍̬̬̬')">🎍̬̬̬</div>
+        <div class="vip-item" onclick="copyText('🎋̭̭̭')">🎋̭̭̭</div>
+        <div class="vip-item" onclick="copyText('🎎̯̯̯')">🎎̯̯̯</div>
+        <div class="vip-item" onclick="copyText('🎏̺̺̺')">🎏̺̺̺</div>
+        <div class="vip-item" onclick="copyText('🎐̻̻̻')">🎐̻̻̻</div>
+        <div class="vip-item" onclick="copyText('🎑̼̼̼')">🎑̼̼̼</div>
+        <div class="vip-item" onclick="copyText('🧧⃝')">🧧⃝</div>
+        <div class="vip-item" onclick="copyText('✨⃞')">✨⃞</div>
+        <div class="vip-item" onclick="copyText('⭐⃟')">⭐⃟</div>
+        <div class="vip-item" onclick="copyText('🌟̠̠̠')">🌟̠̠̠</div>
+        <div class="vip-item" onclick="copyText('🌠̲̲̲')">🌠̲̲̲</div>
+        <div class="vip-item" onclick="copyText('🎇͢͢͢')">🎇͢͢͢</div>
+        <div class="vip-item" onclick="copyText('🎆̅̅̅')">🎆̅̅̅</div>
+        <div class="vip-item" onclick="copyText('🌌̐̐̐')">🌌̐̐̐</div>
+        <div class="vip-item" onclick="copyText('🌠̌̌̌')">🌠̌̌̌</div>
+        <div class="vip-item" onclick="copyText('🌃̋̋̋')">🌃̋̋̋</div>
+        <div class="vip-item" onclick="copyText('🌄⃯⃯⃯')">🌄⃯⃯⃯</div>
+        <div class="vip-item" onclick="copyText('🌅ꤪꤨꤪ')">🌅ꤪꤨꤪ</div>
+        <div class="vip-item" onclick="copyText('🌆̤̮̤̮')">🌆̤̮̤̮</div>
+        <div class="vip-item" onclick="copyText('🌇̝̝̝')">🌇̝̝̝</div>
+        <div class="vip-item" onclick="copyText('🌉̞̞̞')">🌉̞̞̞</div>
+        <div class="vip-item" onclick="copyText('🌊̬̬̬')">🌊̬̬̬</div>
+        <div class="vip-item" onclick="copyText('🌋̭̭̭')">🌋̭̭̭</div>
+        <div class="vip-item" onclick="copyText('🌌̯̯̯')">🌌̯̯̯</div>
+        <div class="vip-item" onclick="copyText('🌍̺̺̺')">🌍̺̺̺</div>
+        <div class="vip-item" onclick="copyText('🌎̻̻̻')">🌎̻̻̻</div>
+        <div class="vip-item" onclick="copyText('🌏̼̼̼')">🌏̼̼̼</div>
+        <div class="vip-item" onclick="copyText('🌑⃝')">🌑⃝</div>
+        <div class="vip-item" onclick="copyText('🌒⃞')">🌒⃞</div>
+        <div class="vip-item" onclick="copyText('🌓⃟')">🌓⃟</div>
+        <div class="vip-item" onclick="copyText('🌔̠̠̠')">🌔̠̠̠</div>
+        <div class="vip-item" onclick="copyText('🌕̲̲̲')">🌕̲̲̲</div>
+        <div class="vip-item" onclick="copyText('🌖͢͢͢')">🌖͢͢͢</div>
+        <div class="vip-item" onclick="copyText('🌗̅̅̅')">🌗̅̅̅</div>
+        <div class="vip-item" onclick="copyText('🌘̐̐̐')">🌘̐̐̐</div>
+        <div class="vip-item" onclick="copyText('🌙̌̌̌')">🌙̌̌̌</div>
+        <div class="vip-item" onclick="copyText('🌚̋̋̋')">🌚̋̋̋</div>
+        <div class="vip-item" onclick="copyText('🌛⃯⃯⃯')">🌛⃯⃯⃯</div>
+        <div class="vip-item" onclick="copyText('🌜ꤪꤨꤪ')">🌜ꤪꤨꤪ</div>
+        <div class="vip-item" onclick="copyText('☀️̤̮̤̮')">☀️̤̮̤̮</div>
+        <div class="vip-item" onclick="copyText('🌤️̝̝̝')">🌤️̝̝̝</div>
+        <div class="vip-item" onclick="copyText('⛅̞̞̞')">⛅̞̞̞</div>
+        <div class="vip-item" onclick="copyText('🌥️̬̬̬')">🌥️̬̬̬</div>
+        <div class="vip-item" onclick="copyText('🌦️̭̭̭')">🌦️̭̭̭</div>
+        <div class="vip-item" onclick="copyText('🌧️̯̯̯')">🌧️̯̯̯</div>
+        <div class="vip-item" onclick="copyText('🌨️̺̺̺')">🌨️̺̺̺</div>
+        <div class="vip-item" onclick="copyText('🌩️̻̻̻')">🌩️̻̻̻</div>
+        <div class="vip-item" onclick="copyText('🌪️̼̼̼')">🌪️̼̼̼</div>
+        <div class="vip-item" onclick="copyText('🌈⃝')">🌈⃝</div>
+        <div class="vip-item" onclick="copyText('☁️⃞')">☁️⃞</div>
+        <div class="vip-item" onclick="copyText('🌫️̠̠̠')">🌫️̠̠̠</div>
+        <div class="vip-item" onclick="copyText('💨̲̲̲')">💨̲̲̲</div>
+        <div class="vip-item" onclick="copyText('🔥͢͢͢')">🔥͢͢͢</div>
+        <div class="vip-item" onclick="copyText('💧̅̅̅')">💧̅̅̅</div>
+        <div class="vip-item" onclick="copyText('💦̐̐̐')">💦̐̐̐</div>
+        <div class="vip-item" onclick="copyText('🌊̌̌̌')">🌊̌̌̌</div>
+        <div class="vip-item" onclick="copyText('☔̋̋̋')">☔̋̋̋</div>
+        <div class="vip-item" onclick="copyText('⛄⃯⃯⃯')">⛄⃯⃯⃯</div>
+        <div class="vip-item" onclick="copyText('☃️ꤪꤨꤪ')">☃️ꤪꤨꤪ</div>
+        <div class="vip-item" onclick="copyText('❄️̤̮̤̮')">❄️̤̮̤̮</div>
+        <div class="vip-item" onclick="copyText('🪐⃝')">🪐⃝</div>
+        <div class="vip-item" onclick="copyText('🚀̲̲̲')">🚀̲̲̲</div>
+        <div class="vip-item" onclick="copyText('🛸͢͢͢')">🛸͢͢͢</div>
+        <div class="vip-item" onclick="copyText('🛰️̅̅̅')">🛰️̅̅̅</div>
+        <div class="vip-item" onclick="copyText('🧑‍🚀̌̌̌')">🧑‍🚀̌̌̌</div>
+    </div>
+</div>
 
     <!-- Add Suggestion Modal -->
     <div id="suggestionModal">
