@@ -1149,3 +1149,297 @@ input::placeholder {
     display: inline-block;
     margin-bottom: 20px;
 }
+
+/* Premium Preview Section */
+.premium-preview {
+    margin: 50px 0;
+    padding: 25px;
+    background: linear-gradient(145deg, #1a1a1a, #0f0f0f);
+    border-radius: 28px;
+    border: 2px solid #FFD700;
+    box-shadow: 0 15px 35px rgba(255,215,0,0.2);
+    position: relative;
+}
+
+.premium-header {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.premium-badge {
+    display: inline-block;
+    background: linear-gradient(135deg, #FFD700, #FFA500);
+    color: #000;
+    padding: 6px 20px;
+    border-radius: 50px;
+    font-size: 0.9rem;
+    font-weight: bold;
+    letter-spacing: 1px;
+    margin-bottom: 12px;
+}
+
+.premium-title {
+    font-size: 2rem;
+    color: #FFD700;
+    margin-bottom: 5px;
+}
+
+.premium-subtitle {
+    color: #aaa;
+    font-size: 0.9rem;
+}
+
+.premium-link {
+    color: #FFD700;
+    cursor: pointer;
+    text-decoration: underline;
+    font-weight: bold;
+}
+
+.premium-link:hover {
+    color: #FFA500;
+}
+
+/* Premium Scroll - Horizontal */
+.premium-scroll {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    gap: 12px;
+    padding: 15px 5px 20px 5px;
+    scrollbar-width: thin;
+    -webkit-overflow-scrolling: touch;
+}
+
+.premium-scroll::-webkit-scrollbar {
+    height: 6px;
+}
+
+.premium-scroll::-webkit-scrollbar-track {
+    background: #333;
+    border-radius: 10px;
+}
+
+.premium-scroll::-webkit-scrollbar-thumb {
+    background: #FFD700;
+    border-radius: 10px;
+}
+
+.premium-item {
+    background: #252525;
+    border: 2px solid #FFD70044;
+    border-radius: 40px;
+    padding: 12px 20px;
+    text-align: center;
+    font-size: 1.2rem;
+    color: #FFD700;
+    cursor: pointer;
+    transition: all 0.2s;
+    white-space: nowrap;
+    flex-shrink: 0;
+    font-family: monospace;
+}
+
+.premium-item:hover {
+    background: #FFD700;
+    color: #000;
+    transform: translateY(-3px);
+    border-color: #FFD700;
+    box-shadow: 0 5px 15px rgba(255,215,0,0.4);
+}
+
+.premium-footer {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.premium-subscribe-btn {
+    background: linear-gradient(135deg, #FFD700, #FFA500);
+    color: #000;
+    border: none;
+    padding: 12px 30px;
+    border-radius: 50px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s;
+    margin-bottom: 12px;
+}
+
+.premium-subscribe-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(255,215,0,0.4);
+}
+
+.premium-note {
+    color: #888;
+    font-size: 0.8rem;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+/* Subscription Modal */
+.subscription-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.85);
+    backdrop-filter: blur(5px);
+    z-index: 2000;
+    align-items: center;
+    justify-content: center;
+}
+
+.subscription-modal-content {
+    background: linear-gradient(145deg, #1e1e1e, #121212);
+    border-radius: 28px;
+    max-width: 450px;
+    width: 90%;
+    border: 2px solid #FFD700;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+    position: relative;
+    animation: modalSlideUp 0.3s ease;
+}
+
+@keyframes modalSlideUp {
+    from { transform: translateY(50px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+.subscription-close {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 28px;
+    color: #FFD700;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.subscription-close:hover {
+    color: #FFA500;
+    transform: rotate(90deg);
+}
+
+.subscription-modal-header {
+    text-align: center;
+    padding: 30px 20px 15px;
+    border-bottom: 1px solid #333;
+}
+
+.subscription-modal-header .premium-badge {
+    margin-bottom: 15px;
+}
+
+.subscription-modal-header h2 {
+    color: #FFD700;
+    font-size: 1.8rem;
+    margin: 0;
+}
+
+.subscription-modal-body {
+    padding: 25px;
+}
+
+.subscription-features h3 {
+    color: #FFD700;
+    margin-bottom: 15px;
+    font-size: 1.3rem;
+}
+
+.subscription-features ul {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 25px;
+}
+
+.subscription-features li {
+    color: #ccc;
+    padding: 8px 0;
+    border-bottom: 1px solid #333;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.subscription-features li::before {
+    content: "✨";
+    color: #FFD700;
+}
+
+.subscription-price {
+    background: #2a2a2a;
+    padding: 15px;
+    border-radius: 15px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.price {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #FFD700;
+}
+
+.price-old {
+    font-size: 1rem;
+    color: #888;
+    text-decoration: line-through;
+    margin-left: 10px;
+}
+
+.price-badge {
+    display: inline-block;
+    background: #FFD700;
+    color: #000;
+    padding: 3px 10px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    margin-left: 10px;
+}
+
+.subscribe-now-btn {
+    width: 100%;
+    background: linear-gradient(135deg, #FFD700, #FFA500);
+    color: #000;
+    border: none;
+    padding: 14px;
+    border-radius: 50px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s;
+    margin-bottom: 10px;
+}
+
+.subscribe-now-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(255,215,0,0.4);
+}
+
+.subscription-note {
+    text-align: center;
+    color: #888;
+    font-size: 0.8rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .premium-title {
+        font-size: 1.5rem;
+    }
+    .premium-item {
+        font-size: 1rem;
+        padding: 8px 14px;
+    }
+    .subscription-modal-header h2 {
+        font-size: 1.4rem;
+    }
+    .price {
+        font-size: 1.5rem;
+    }
+}
