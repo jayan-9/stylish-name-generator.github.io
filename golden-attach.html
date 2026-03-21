@@ -301,18 +301,20 @@
             color: black;
         }
 
-        .suggestions-scroll {
+        /* Community suggestions - vertical layout */
+        .suggestions-vertical {
             display: flex;
-            overflow-x: auto;
-            gap: 15px;
-            padding: 15px 5px;
+            flex-direction: column;
+            gap: 12px;
+            margin-top: 15px;
+            max-height: 500px;
+            overflow-y: auto;
+            padding-right: 8px;
         }
         .suggestion-item {
             background: #252525dd;
             border-radius: 28px;
             padding: 12px 20px;
-            min-width: 220px;
-            flex-shrink: 0;
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -342,6 +344,35 @@
         @keyframes slideIn {
             from { transform: translateX(100%); opacity: 0; }
             to { transform: translateX(0); opacity: 1; }
+        }
+
+        /* Improved scroll-to-top button */
+        .scroll-top-btn {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 55px;
+            height: 55px;
+            background: linear-gradient(145deg, #FFD700, #FFA500);
+            color: #1e1e1e;
+            border: none;
+            border-radius: 50%;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3), 0 0 0 2px rgba(255,215,0,0.6);
+            transition: all 0.3s ease;
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0.9;
+        }
+        .scroll-top-btn:hover {
+            transform: translateY(-5px);
+            background: linear-gradient(145deg, #FFE55C, #FFB347);
+            box-shadow: 0 8px 20px rgba(255,215,0,0.5);
+            opacity: 1;
         }
 
         .footer {
@@ -387,11 +418,12 @@
     </div>
 
     <div class="stats-box">
-        <div class="stat-item"><span class="stat-number">200+</span><div>Attach Symbols</div></div>
+        <div class="stat-item"><span class="stat-number">350+</span><div>Attach Symbols</div></div>
         <div class="stat-item"><span class="stat-number">∞</span><div>Combinations</div></div>
         <div class="stat-item"><span class="stat-number">VIP</span><div>Scroll Ready</div></div>
     </div>
 
+    <!-- Categories will be dynamically injected here -->
     <div id="symbolCategoriesContainer"></div>
 
     <div class="tips-section">
@@ -409,8 +441,8 @@
         <p style="color:#ddd;">🔥 Real suggestions from global creators</p>
         <button onclick="openAddSuggestionModal()" style="background:linear-gradient(135deg,#FFD700,#FFA500); border:none; padding:8px 24px; border-radius:40px; font-weight:bold; cursor:pointer;">+ ADD YOUR IDEA</button>
     </div>
-    <div id="suggestionsContainer" class="suggestions-scroll"></div>
-    <div id="seeAllBtnContainer"></div>
+    <div id="suggestionsContainer" class="suggestions-vertical"></div>
+    <div id="seeAllBtnContainer" style="margin-top:15px; text-align:center;"></div>
 
     <div style="background:#101015; border:2px dashed gold; border-radius:28px; padding:20px; margin:30px 0;">
         <h3 style="color:gold">📝 PREMIUM VAULT NOTES</h3>
@@ -429,7 +461,7 @@
         <input type="text" id="suggesterName" style="width:100%; margin:8px 0; padding:10px; background:#2a2a2a; color:white; border-radius:20px;">
         <label style="color:white">Country *</label>
         <select id="suggesterCountry" style="width:100%; padding:10px; background:#2a2a2a; color:white; border-radius:20px;">
-            <option>Select country</option><option>🇺🇸 USA</option><option>🇬🇧 UK</option><option>🇮🇳 India</option>
+            <option>Select country</option><option>🇺🇸 USA</option><option>🇬🇧 UK</option><option>🇮🇳 India</option><option>🇨🇦 Canada</option><option>🇦🇺 Australia</option>
         </select>
         <label style="color:white">Stylish Suggestion *</label>
         <input type="text" id="suggestionText" style="width:100%; margin:8px 0; padding:10px; background:#2a2a2a; color:white; border-radius:20px;">
@@ -440,50 +472,61 @@
     </div>
 </div>
 
-<script>
-    // MASTER SYMBOL DATABASE
-    let masterSymbols = new Map();
+<button class="scroll-top-btn" onclick="window.scrollTo({top:0,behavior:'smooth'})">⬆️</button>
 
-    // CATEGORIES with PROPER EXAMPLES (A + symbol)
+<script>
+    // ========== SYMBOL DATABASE WITH CATEGORIES ==========
     const categoriesData = [
         { name: "🌸 FLOWER & NATURE", symbols: [
-            {sym:"᪲",name:"Flower 1"},{sym:"᪳",name:"Flower 2"},{sym:"᪴",name:"Flower 3"},{sym:"ꕤ",name:"Small Flower"},{sym:"𑁍",name:"Lotus"},{sym:"ꨄ",name:"Tiny Heart"},{sym:"༄",name:"Wind"},{sym:"𓆭",name:"Lotus2"}
+            "᪲","᪳","᪴","ꕤ","𑁍","ꨄ","༄","𓆭","ꤪꤨꤪ"
         ]},
         { name: "⭐ STARS & DOTS", symbols: [
-            {sym:"͙",name:"Tiny Star"},{sym:"𖤐",name:"Star"},{sym:"˚",name:"Ring"},{sym:"༙",name:"Circle Dot"},{sym:"⃯",name:"Triple Dot"}
+            "͙","𖤐","˚","༙","⃯"
         ]},
         { name: "❤️ HEART & DECO", symbols: [
-            {sym:"͢",name:"Heart Trail"},{sym:"̤̮",name:"Double Breve"},{sym:"ꤪꤨꤪ",name:"Rejang Decor"}
+            "͢","ꨄ","̤̮","ꤪꤨꤪ"
         ]},
         { name: "➖ LINE & STRIKE", symbols: [
-            {sym:"̶",name:"Cut Line"},{sym:"̲",name:"Underline"},{sym:"̅",name:"Overline"},{sym:"̈",name:"Double Dot"},{sym:"̇",name:"Dot Above"},{sym:"̣",name:"Dot Below"},{sym:"̧",name:"Cedilla"},{sym:"̆",name:"Breve"},{sym:"̊",name:"Circle Top"},{sym:"̂",name:"Circumflex"},{sym:"̄",name:"Macron"},{sym:"̌",name:"Caron"},{sym:"̋",name:"Double Acute"}
+            "̶","̲","̅","̈","̇","̣","̧","̆","̊","̂","̄","̐","̌","̋","̝","̞","̬","̭","̯","̺","̻","̼","̠","̤"
         ]},
         { name: "⧼ PARENTHESIS & ARROWS", symbols: [
-            {sym:"᪻",name:"Dbl Par Above"},{sym:"᪼",name:"Dbl Par Below"},{sym:"᪽",name:"Par Above"},{sym:"᪾",name:"Par Below"},{sym:"⃪",name:"Left Arrow"},{sym:"⃫",name:"Right Arrow"}
+            "᪻","᪼","᪽","᪾","⃨","⃩","⃪","⃫"
         ]},
         { name: "〰️ DOUBLE LINE/WAVY", symbols: [
-            {sym:"᪰",name:"Dbl Circ Above"},{sym:"᪱",name:"Dbl Circ Below"},{sym:"᪴",name:"Dbl Overline"},{sym:"᪵",name:"Dbl Underline"},{sym:"᪶",name:"Dbl Wavy Above"},{sym:"᪷",name:"Dbl Wavy Below"}
+            "᪰","᪱","᪲","᪳","᪴","᪵","᪶","᪷"
+        ]},
+        { name: "🔗 TIE & DIATONIC", symbols: [
+            "͝","͡","͜","͞","͟","᷼","᷽","᷾","̏","̑","͂"
+        ]},
+        { name: "📿 CYRILLIC & MEDIEVAL", symbols: [
+            "҃","҄","҅","҆","҇","ᷣ","ᷤ","ᷥ","᷊","᷋","᷌","᷍","᷎","᷏","᷐","᷑","᷒","ᷓ","ᷔ","ᷕ","ᷖ","ᷗ","ᷘ","ᷙ","ᷚ","ᷛ","ᷜ","ᷝ","ᷞ","ᷟ","ᷠ","ᷡ","ᷢ","ᷣ","ᷤ","ᷥ","ᷦ","ᷧ","ᷨ","ᷩ","ᷪ","ᷫ","ᷬ","ᷭ","ᷮ","ᷯ","ᷰ","ᷱ"
+        ]},
+        { name: "✨ EXTRA GLYPHS", symbols: [
+            "︠","︡","︢","︣","︤","︥","︦","﻿","⃝","̥","͘","⃜","⃞","⃟","⃠","⃡","⃢","̹","̜","︈","︉","︊","︋","︌","︍","︎","️","ᷲ","ᷳ","ᷴ","᷵"
         ]}
     ];
 
-    // EXTRA GLYPHS with PROPER EXAMPLES (A + symbol)
-    const extraGlyphs = [
-        {sym:"︠",name:"Ligature Left"},{sym:"︡",name:"Ligature Right"},{sym:"︢",name:"Double Tilde Left"},{sym:"︣",name:"Double Tilde Right"},
-        {sym:"︤",name:"Macron Left"},{sym:"︥",name:"Macron Right"},{sym:"︦",name:"Conjoined Macron"},{sym:"﻿",name:"Zero Width Space"},
-        {sym:"⃝",name:"Circle Enclose"},{sym:"̥",name:"Ring Below"},{sym:"͘",name:"Dot Right Half"},{sym:"⃜",name:"Four Dots Above"},
-        {sym:"̏",name:"Double Grave"},{sym:"̑",name:"Inverted Breve"},{sym:"͂",name:"Perispomeni"},{sym:"̹",name:"Right Half Ring"},{sym:"̜",name:"Left Half Ring"},
-        {sym:"̠",name:"Minus Below"},{sym:"̤",name:"Diaeresis Below"},{sym:"̺",name:"Inverted Bridge"},{sym:"̻",name:"Square Below"},{sym:"̼",name:"Seagull Below"}
-    ];
-
+    // Build master map for dropdown
+    let masterSymbols = new Map();
+    const allSymbolNames = {
+        "᪲":"Flower 1","᪳":"Flower 2","᪴":"Flower 3","ꕤ":"Small Flower","𑁍":"Lotus","ꨄ":"Tiny Heart","༄":"Wind","𓆭":"Lotus","ꤪꤨꤪ":"Rejang Decor",
+        "͙":"Tiny Star","𖤐":"Star","˚":"Ring","༙":"Circle Dot","⃯":"Triple Dot",
+        "͢":"Heart Trail","̤̮":"Double Breve",
+        "̶":"Cut Line","̲":"Underline","̅":"Overline","̈":"Double Dot","̇":"Dot Above","̣":"Dot Below","̧":"Cedilla","̆":"Breve","̊":"Ring Above","̂":"Circumflex","̄":"Macron","̐":"Curve","̌":"Caron","̋":"Double Acute","̝":"Up Tack","̞":"Down Tack","̬":"Caron Below","̭":"Circ Below","̯":"Inv Breve","̺":"Inv Bridge","̻":"Square Below","̼":"Seagull Below","̠":"Minus Below","̤":"Diaeresis Below",
+        "᪻":"Dbl Par Above","᪼":"Dbl Par Below","᪽":"Par Above","᪾":"Par Below","⃨":"Triple Underdot","⃩":"Wide Bridge Above","⃪":"Left Arrow Above","⃫":"Right Arrow Above",
+        "᪰":"Dbl Circ Above","᪱":"Dbl Circ Below","᪲":"Dbl Ring Above","᪳":"Dbl Ring Below","᪴":"Dbl Overline","᪵":"Dbl Underline","᪶":"Dbl Wavy Above","᪷":"Dbl Wavy Below",
+        "͝":"Double Breve","͡":"Double Inverted","͜":"Double Breve Below","͞":"Double Macron","͟":"Double Macron Below","᷼":"Dbl Tilde Left","᷽":"Dbl Tilde Right","᷾":"Dbl Tilde Below","̏":"Double Grave","̑":"Inverted Breve","͂":"Perispomeni",
+        "҃":"Titlo","҄":"Kamora","҅":"Psili","҆":"Dasia","҇":"Perispomeni","ᷣ":"Vertical Above","ᷤ":"Dbl Vertical Above","ᷥ":"Vertical Below","᷊":"Ring Above","᷋":"Ring Below","᷌":"Asterisk Above","᷍":"Asterisk Below","᷎":"Arrow Above","᷏":"Arrow Below","᷐":"Flower Above","᷑":"Flower Below","᷒":"Dot Above","ᷓ":"Dot Below","ᷔ":"Heart Above","ᷕ":"Heart Below","ᷖ":"Star Above","ᷗ":"Star Below","ᷘ":"Crescent Above","ᷙ":"Crescent Below","ᷚ":"Right Arrow","ᷛ":"Left Arrow","ᷜ":"Up Arrow","ᷝ":"Down Arrow","ᷞ":"Left Right Arrow","ᷟ":"Up Down Arrow","ᷠ":"Circle Above","ᷡ":"Circle Below","ᷢ":"Square Above","ᷣ":"Square Below","ᷤ":"Diamond Above","ᷥ":"Diamond Below","ᷦ":"Triangle Above","ᷧ":"Triangle Below","ᷨ":"Cross Above","ᷩ":"Cross Below","ᷪ":"Wave Above","ᷫ":"Wave Below","ᷬ":"Dbl Wave Above","ᷭ":"Dbl Wave Below","ᷮ":"Zigzag Above","ᷯ":"Zigzag Below","ᷰ":"Curve Above","ᷱ":"Curve Below",
+        "︠":"Ligature Left","︡":"Ligature Right","︢":"Dbl Tilde Left","︣":"Dbl Tilde Right","︤":"Macron Left","︥":"Macron Right","︦":"Conjoined Macron","﻿":"Zero Width Space","⃝":"Circle Enclose","̥":"Ring Below","͘":"Dot Right Half","⃜":"Four Dots Above","⃞":"Enclosing Square","⃟":"Enclosing Diamond","⃠":"Circle Backslash","⃡":"L/R Arrow Above","⃢":"Enclosing Screen","̹":"Right Half Ring","̜":"Left Half Ring","︈":"Vertical Form 1","︉":"Vertical Form 2","︊":"Vertical Form 3","︋":"Vertical Form 4","︌":"Vertical Form 5","︍":"Vertical Form 6","︎":"Text Style","️":"Emoji Style","ᷲ":"Dbl Tilde Left","ᷳ":"Dbl Tilde Right","ᷴ":"Dbl Macron Left","᷵":"Dbl Macron Right"
+    };
     // Register all symbols
-    categoriesData.forEach(cat => {
-        cat.symbols.forEach(s => {
-            masterSymbols.set(s.sym, { name: s.name, category: cat.name });
-        });
-    });
-    extraGlyphs.forEach(g => {
-        masterSymbols.set(g.sym, { name: g.name, category: "✨ EXTRA GLYPHS" });
-    });
+    for (let cat of categoriesData) {
+        for (let sym of cat.symbols) {
+            if (!masterSymbols.has(sym)) {
+                masterSymbols.set(sym, { name: allSymbolNames[sym] || sym, category: cat.name });
+            }
+        }
+    }
 
     // Populate dropdown
     const selectEl = document.getElementById('symbolSelect');
@@ -498,50 +541,31 @@
     }
     rebuildSelect();
 
-    // RENDER CATEGORIES with EXAMPLE: A{symbol}
+    // Render categories with horizontal scroll
     function renderCategories() {
         const container = document.getElementById('symbolCategoriesContainer');
         container.innerHTML = '';
-        categoriesData.forEach(cat => {
+        for (let cat of categoriesData) {
             const catDiv = document.createElement('div');
             catDiv.className = 'symbol-category';
-            catDiv.innerHTML = `<h2>${cat.name}</h2><div class="symbol-grid"></div>`;
+            catDiv.innerHTML = `<h2>${cat.name}</h2><div class="symbol-grid" id="grid-${cat.name.replace(/\s/g,'')}"></div>`;
             container.appendChild(catDiv);
             const gridDiv = catDiv.querySelector('.symbol-grid');
-            cat.symbols.forEach(s => {
+            for (let sym of cat.symbols) {
+                const name = masterSymbols.get(sym)?.name || sym;
                 const card = document.createElement('div');
                 card.className = 'symbol-card';
                 card.innerHTML = `
                     <span class="attach-badge">✅ ATTACH</span>
-                    <div class="symbol">${s.sym}</div>
-                    <div class="symbol-name">${s.name}</div>
-                    <div class="example-preview">Example: A${s.sym}</div>
-                    <button class="copy-symbol-btn" onclick="copySymbol('${s.sym}')">📋 Copy</button>
-                    <button class="copy-symbol-btn" style="background:#FFD700; color:#000;" onclick="attachSymbolSingle('${s.sym}')">🔗 Attach Now</button>
+                    <div class="symbol">${sym}</div>
+                    <div class="symbol-name">${name}</div>
+                    <div class="example-preview">Example: A${sym}</div>
+                    <button class="copy-symbol-btn" onclick="copySymbol('${sym.replace(/'/g, "\\'")}')">📋 Copy</button>
+                    <button class="copy-symbol-btn" style="background:#FFD700; color:#000;" onclick="attachSymbolSingle('${sym.replace(/'/g, "\\'")}')">🔗 Attach Now</button>
                 `;
                 gridDiv.appendChild(card);
-            });
-        });
-
-        // Extra Glyphs Category
-        const extraDiv = document.createElement('div');
-        extraDiv.className = 'symbol-category';
-        extraDiv.innerHTML = `<h2>✨ EXTRA GLYPHS</h2><div class="symbol-grid"></div>`;
-        container.appendChild(extraDiv);
-        const extraGrid = extraDiv.querySelector('.symbol-grid');
-        extraGlyphs.forEach(g => {
-            const card = document.createElement('div');
-            card.className = 'symbol-card';
-            card.innerHTML = `
-                <span class="attach-badge">✅ ATTACH</span>
-                <div class="symbol">${g.sym}</div>
-                <div class="symbol-name">${g.name}</div>
-                <div class="example-preview">Example: A${g.sym}</div>
-                <button class="copy-symbol-btn" onclick="copySymbol('${g.sym}')">📋 Copy</button>
-                <button class="copy-symbol-btn" style="background:#FFD700; color:#000;" onclick="attachSymbolSingle('${g.sym}')">🔗 Attach Now</button>
-            `;
-            extraGrid.appendChild(card);
-        });
+            }
+        }
     }
 
     let currentRepeat = 1;
@@ -569,7 +593,7 @@
         if(btn1) btn1.classList.add('active');
         document.getElementById('symbolSelect').value = symbol;
         updatePreview();
-        showAlert(`✨ Attached ${symbol}`);
+        showAlert(`✨ Attached ${symbol} (single layer)`);
     }
 
     function copyResult() { copyToClipboard(document.getElementById('preview').innerText); }
@@ -636,27 +660,42 @@
         });
     }
 
-    // Community Suggestions
+    // Community Suggestions - vertical layout
     let communitySuggestions = [];
     function loadSuggestions() {
         const saved = localStorage.getItem('goldenSuggestions');
         if(saved) communitySuggestions = JSON.parse(saved);
         else communitySuggestions = [
             { text: "J͢a͢c͢k͢", addedBy: "System", country: "Global" },
-            { text: "Lꨄoꨄvꨄeꨄ", addedBy: "System", country: "Global" }
+            { text: "Lꨄoꨄvꨄeꨄ", addedBy: "System", country: "Global" },
+            { text: "S᪲a᪲m᪲", addedBy: "System", country: "Global" },
+            { text: "R̶o̶c̶k̶", addedBy: "System", country: "USA" }
         ];
         renderSuggestions();
     }
     function renderSuggestions() {
         const container = document.getElementById('suggestionsContainer');
         let shuffled = [...communitySuggestions].sort(()=>0.5-Math.random());
-        let show = shuffled.slice(0, 10);
+        let show = shuffled.slice(0, 8);
         container.innerHTML = show.map(s => `
             <div class="suggestion-item">
                 <div><div class="suggestion-text">${s.text}</div><div class="suggestion-meta">✨ ${s.addedBy} (${s.country})</div></div>
                 <button onclick="copyText('${s.text.replace(/'/g, "\\'")}')" style="background:#333; border:1px solid gold; color:gold; border-radius:30px; padding:5px 12px;">Copy</button>
             </div>
         `).join('');
+        const seeAll = document.getElementById('seeAllBtnContainer');
+        if(communitySuggestions.length > 8) seeAll.innerHTML = `<button onclick="showAllSuggestions()" style="background:transparent; border:1px solid gold; color:gold; padding:8px 20px; border-radius:40px;">📜 See All (${communitySuggestions.length})</button>`;
+        else seeAll.innerHTML = '';
+    }
+    function showAllSuggestions() {
+        const container = document.getElementById('suggestionsContainer');
+        container.innerHTML = communitySuggestions.map(s => `
+            <div class="suggestion-item">
+                <div><div class="suggestion-text">${s.text}</div><div class="suggestion-meta">✨ ${s.addedBy} (${s.country})</div></div>
+                <button onclick="copyText('${s.text.replace(/'/g, "\\'")}')" style="background:#333; border:1px solid gold; color:gold; border-radius:30px; padding:5px 12px;">Copy</button>
+            </div>
+        `).join('');
+        document.getElementById('seeAllBtnContainer').innerHTML = `<button onclick="renderSuggestions()" style="background:transparent; border:1px solid gold; color:gold; padding:8px 20px; border-radius:40px;">← Show Random</button>`;
     }
     function saveSuggestion() {
         let name = document.getElementById('suggesterName').value.trim();
@@ -672,6 +711,13 @@
     function openAddSuggestionModal() { document.getElementById('suggestionModal').style.display = 'flex'; }
     function closeSuggestionModal() { document.getElementById('suggestionModal').style.display = 'none'; }
 
+    // Scroll-to-top button visibility
+    window.addEventListener('scroll', () => {
+        const btn = document.querySelector('.scroll-top-btn');
+        if (window.scrollY > 300) btn.style.display = 'flex';
+        else btn.style.display = 'none';
+    });
+
     window.onload = () => {
         buildRepeatBtns();
         renderCategories();
@@ -681,6 +727,7 @@
         updatePreview();
         document.getElementById('inputText').addEventListener('input', updatePreview);
         document.getElementById('symbolSelect').addEventListener('change', updatePreview);
+        document.querySelector('.scroll-top-btn').style.display = 'none';
     };
 
     window.copySymbol = copySymbol;
@@ -691,6 +738,7 @@
     window.saveSuggestion = saveSuggestion;
     window.openAddSuggestionModal = openAddSuggestionModal;
     window.closeSuggestionModal = closeSuggestionModal;
+    window.showAllSuggestions = showAllSuggestions;
 </script>
 </body>
 </html>
