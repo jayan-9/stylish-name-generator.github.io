@@ -636,19 +636,47 @@
     pointer-events: none;
 }
 
-        /* VIP Collection Styles */
-.vip-collection {
+      /* VIP Collection - Horizontal Scroll (Like Font Chips) */
+.vip-collection-wrapper {
     margin: 40px 0;
     padding: 20px;
     background: linear-gradient(145deg, #1a1a1a, #0f0f0f);
     border-radius: 24px;
     border: 2px solid #FFD700;
     box-shadow: 0 10px 30px rgba(255,215,0,0.2);
+    position: relative;
+}
+
+/* Optional: Gradient fade on edges to hint scroll (same as font chips) */
+.vip-collection-wrapper::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 50px;
+    height: 100%;
+    background: linear-gradient(to right, transparent, #1a1a1a);
+    pointer-events: none;
+    border-radius: 0 24px 24px 0;
+}
+
+.vip-collection-wrapper::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50px;
+    height: 100%;
+    background: linear-gradient(to left, transparent, #1a1a1a);
+    pointer-events: none;
+    border-radius: 24px 0 0 24px;
 }
 
 .vip-header {
     text-align: center;
-    margin-bottom: 30px;
+    margin-bottom: 25px;
+    position: relative;
+    z-index: 2;
 }
 
 .vip-badge {
@@ -663,54 +691,93 @@
 }
 
 .vip-title {
-    font-size: 2rem;
+    font-size: 1.8rem;
     color: #FFD700;
     margin-bottom: 5px;
 }
 
 .vip-subtitle {
     color: #aaa;
-    font-size: 0.9rem;
+    font-size: 0.85rem;
 }
 
-.vip-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
-    gap: 12px;
+.vip-scroll {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    gap: 10px;
+    padding: 8px 4px 15px 4px;
+    scrollbar-width: thin;
+    -webkit-overflow-scrolling: touch;
+    position: relative;
+    z-index: 2;
+}
+
+/* Custom Scrollbar */
+.vip-scroll::-webkit-scrollbar {
+    height: 5px;
+}
+
+.vip-scroll::-webkit-scrollbar-track {
+    background: #333;
+    border-radius: 10px;
+}
+
+.vip-scroll::-webkit-scrollbar-thumb {
+    background: #FFD700;
+    border-radius: 10px;
+}
+
+.vip-scroll::-webkit-scrollbar-thumb:hover {
+    background: #FFA500;
 }
 
 .vip-item {
     background: #252525;
     border: 1px solid #FFD70033;
-    border-radius: 10px;
-    padding: 12px 8px;
+    border-radius: 30px;
+    padding: 8px 18px;
     text-align: center;
-    font-size: 1rem;
+    font-size: 0.9rem;
     color: #FFD700;
     cursor: pointer;
     transition: all 0.2s;
-    word-break: break-word;
+    white-space: nowrap;
+    flex-shrink: 0;
 }
 
 .vip-item:hover {
     background: #FFD700;
     color: #000;
-    transform: translateY(-3px);
+    transform: translateY(-2px);
     border-color: #FFD700;
-    box-shadow: 0 5px 15px rgba(255,215,0,0.3);
+    box-shadow: 0 3px 10px rgba(255,215,0,0.3);
 }
 
-/* Responsive */
+/* Dark theme adjustment */
+.dark-theme .vip-collection-wrapper::before,
+.dark-theme .vip-collection-wrapper::after {
+    background: linear-gradient(to left, #1a1a1a, transparent);
+}
+
+.dark-theme .vip-collection-wrapper::after {
+    background: linear-gradient(to right, transparent, #1a1a1a);
+}
+
+/* Optional: Remove gradient fade on mobile (cleaner look) */
 @media (max-width: 768px) {
-    .vip-grid {
-        grid-template-columns: repeat(auto-fill, minmax(110px, 1fr));
+    .vip-collection-wrapper::before,
+    .vip-collection-wrapper::after {
+        display: none;
     }
-    .vip-item {
-        font-size: 0.85rem;
-        padding: 8px 5px;
-    }
+    
     .vip-title {
-        font-size: 1.5rem;
+        font-size: 1.4rem;
+    }
+    
+    .vip-item {
+        font-size: 0.8rem;
+        padding: 6px 12px;
     }
 }
         
@@ -1994,15 +2061,15 @@
         </div>
     </div>
 
-    <!-- VIP Symbol & Name Collection -->
-<div class="vip-collection">
+   <!-- VIP Symbol & Name Collection - Horizontal Scroll -->
+<div class="vip-collection-wrapper">
     <div class="vip-header">
         <span class="vip-badge">⭐ VIP COLLECTION ⭐</span>
         <h2 class="vip-title">Exclusive Symbols & Names</h2>
         <p class="vip-subtitle">Click any item to copy instantly – Premium designs for your profile</p>
     </div>
     
-    <div class="vip-grid">
+    <div class="vip-scroll">
         <!-- VIP Names & Symbols (Click to Copy) -->
         <div class="vip-item" onclick="copyText('ᴅ ɪ ᴍ ⌔ ɴ ᴅ')">ᴅ ɪ ᴍ ⌔ ɴ ᴅ</div>
         <div class="vip-item" onclick="copyText('𝐶 🂱 𝑅 𝐷')">𝐶 🂱 𝑅 𝐷</div>
@@ -2345,7 +2412,7 @@
         <div class="vip-item" onclick="copyText('🧑‍🚀̌̌̌')">🧑‍🚀̌̌̌</div>
     </div>
 </div>
-
+    
     <!-- Add Suggestion Modal -->
     <div id="suggestionModal">
         <div class="modal-content">
