@@ -891,69 +891,45 @@ input::placeholder {
   }
 
 /* PREMIUM SECTION - Horizontal Scroll (Like VIP & Font Chips) */
-.premium-section-wrapper {
-    margin: 30px 0;
-    padding: 15px;
-    background: linear-gradient(145deg, #1a1a1a, #0f0f0f);
-    border-radius: 20px;
-    border: 1px solid #FFD70055;
-    box-shadow: 0 5px 20px rgba(255,215,0,0.15);
+.premium-section {
+    margin: 20px 0;
+    padding: 5px 0;
     position: relative;
 }
 
 /* Optional: Gradient fade on edges (same as font chips) */
-.premium-section-wrapper::after {
+.premium-section::after {
     content: '';
     position: absolute;
     top: 0;
     right: 0;
     width: 50px;
     height: 100%;
-    background: linear-gradient(to right, transparent, #1a1a1a);
+    background: linear-gradient(to right, transparent, var(--light));
     pointer-events: none;
-    border-radius: 0 20px 20px 0;
+    z-index: 1;
 }
 
-.premium-section-wrapper::before {
+.premium-section::before {
     content: '';
     position: absolute;
     top: 0;
     left: 0;
     width: 50px;
     height: 100%;
-    background: linear-gradient(to left, transparent, #1a1a1a);
+    background: linear-gradient(to left, transparent, var(--light));
     pointer-events: none;
-    border-radius: 20px 0 0 20px;
+    z-index: 1;
 }
 
-.premium-header {
-    text-align: center;
-    margin-bottom: 15px;
-    position: relative;
-    z-index: 2;
-}
-
-.premium-badge {
-    display: inline-block;
-    background: linear-gradient(135deg, #FFD700, #FFA500);
-    color: #000;
-    padding: 4px 12px;
-    border-radius: 50px;
+.premium-label {
     font-size: 0.7rem;
-    font-weight: bold;
-    margin-bottom: 6px;
-    letter-spacing: 1px;
-}
-
-.premium-title {
-    font-size: 1.2rem;
+    letter-spacing: 2px;
     color: #FFD700;
-    margin-bottom: 3px;
-}
-
-.premium-subtitle {
-    color: #aaa;
-    font-size: 0.7rem;
+    text-align: center;
+    margin-bottom: 8px;
+    font-weight: 500;
+    opacity: 0.8;
 }
 
 .premium-scroll {
@@ -961,7 +937,7 @@ input::placeholder {
     flex-wrap: nowrap;
     overflow-x: auto;
     gap: 8px;
-    padding: 8px 4px 12px 4px;
+    padding: 8px 0 12px 0;
     scrollbar-width: thin;
     -webkit-overflow-scrolling: touch;
     position: relative;
@@ -970,11 +946,11 @@ input::placeholder {
 
 /* Custom Scrollbar */
 .premium-scroll::-webkit-scrollbar {
-    height: 4px;
+    height: 3px;
 }
 
 .premium-scroll::-webkit-scrollbar-track {
-    background: #333;
+    background: #2a2a2a;
     border-radius: 10px;
 }
 
@@ -983,13 +959,12 @@ input::placeholder {
     border-radius: 10px;
 }
 
-.premium-item {
+.premium-symbol {
     background: #252525;
-    border: 1px solid #FFD70033;
+    border: 1px solid #FFD70055;
     border-radius: 30px;
-    padding: 6px 14px;
-    text-align: center;
-    font-size: 0.85rem;
+    padding: 6px 12px;
+    font-size: 0.9rem;
     color: #FFD700;
     cursor: pointer;
     transition: all 0.2s;
@@ -997,27 +972,42 @@ input::placeholder {
     flex-shrink: 0;
 }
 
-.premium-item:hover {
+.premium-symbol:hover {
     background: #FFD700;
     color: #000;
     transform: translateY(-2px);
-    border-color: #FFD700;
-    box-shadow: 0 3px 8px rgba(255,215,0,0.3);
+}
+
+.premium-note {
+    font-size: 0.6rem;
+    color: #666;
+    text-align: center;
+    margin-top: 6px;
+    letter-spacing: 0.3px;
+}
+
+/* Dark theme support for gradient fade */
+.dark-theme .premium-section::before {
+    background: linear-gradient(to left, transparent, #1a1a1a);
+}
+
+.dark-theme .premium-section::after {
+    background: linear-gradient(to right, transparent, #1a1a1a);
 }
 
 /* Remove gradient fade on mobile */
 @media (max-width: 768px) {
-    .premium-section-wrapper::before,
-    .premium-section-wrapper::after {
+    .premium-section::before,
+    .premium-section::after {
         display: none;
     }
     
-    .premium-title {
-        font-size: 1rem;
+    .premium-symbol {
+        font-size: 0.8rem;
+        padding: 5px 10px;
     }
     
-    .premium-item {
-        font-size: 0.75rem;
-        padding: 5px 10px;
+    .premium-note {
+        font-size: 0.55rem;
     }
 }
