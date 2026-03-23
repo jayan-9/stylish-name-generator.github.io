@@ -479,28 +479,31 @@
         }
 
         .scroll-top-btn {
-            position: fixed;
-            bottom: 30px;
-            right: 30px;
-            width: 55px;
-            height: 55px;
-            background: var(--gold-grad);
-            color: #1e1e1e;
-            border: none;
-            border-radius: 50%;
-            font-size: 28px;
-            font-weight: bold;
-            cursor: pointer;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
-            transition: all 0.3s ease;
-            z-index: 1000;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        .scroll-top-btn:hover {
-            transform: translateY(-5px);
-        }
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 55px;
+    height: 55px;
+    background: linear-gradient(145deg, #FFD700, #FFA500);
+    color: #1e1e1e;
+    border: none;
+    border-radius: 50%;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+    transition: all 0.3s ease;
+}
+
+.scroll-top-btn:hover {
+    transform: translateY(-5px);
+    background: linear-gradient(145deg, #FFE55C, #FFB347);
+    box-shadow: 0 8px 20px rgba(255,215,0,0.5);
+}
 
         .footer {
             margin-top: 50px;
