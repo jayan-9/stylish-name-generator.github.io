@@ -203,15 +203,30 @@
             line-height: 1.4;
             cursor: pointer;
         }
+        .preview-box {
+    max-height: 150px;  /* Fixed height */
+    overflow-y: auto;   /* Andar scroll */
+    overflow-x: hidden;
+    word-wrap: break-word;
+    word-break: break-all;
+        }
         .preview-box::-webkit-scrollbar { width: 5px; }
         .preview-box::-webkit-scrollbar-track { background: #333; border-radius: 10px; }
         .preview-box::-webkit-scrollbar-thumb { background: #FFD700; border-radius: 10px; }
 
         .action-buttons {
-            display: flex;
-            gap: 10px;
-            margin-top: 10px;
-        }
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;  /* Wrap on small screens */
+}
+.action-buttons button {
+    flex: 1;
+    min-width: 100px;  /* Buttons chhote rahenge */
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+        
         .copy-btn, .export-btn, .share-btn {
             background: var(--gold-grad);
             border: none;
@@ -416,6 +431,16 @@
             background: #FFD700;
             color: black;
         }
+        
+.container {
+    max-width: 1400px;
+    overflow-x: hidden;  /* Page stretch nahi hoga */
+}
+
+.symbol-grid, .vip-scroll, .repeat-buttons {
+    overflow-x: auto;    /* Andar scroll rahega */
+    overflow-y: hidden;
+}
 
         .suggestions-vertical {
             display: flex;
@@ -901,14 +926,6 @@ function addTooltips() {
     });
 }
 
-// 9. Copy as Markdown (via context menu or extra button)
-function copyAsMarkdown() {
-    const text = document.getElementById('preview').innerText;
-    const md = `**${text}** ✨\n\n[Created with Golden Attach Studio]`;
-    copyToClipboard(md);
-    showAlert('📝 Copied as Markdown!');
-}
-
 // 10. Mobile Gestures (swipe on preview)
 let touchStartX = 0;
 const preview = document.getElementById('preview');
@@ -1022,14 +1039,6 @@ window.onload = () => {
     document.getElementById('symbolSelect').addEventListener('change', updatePreview);
     document.querySelector('.scroll-top-btn').style.display = 'none';
     addTooltips();
-    // Extra: Add "Copy as Markdown" button in action area
-    const actionDiv = document.querySelector('.action-buttons');
-    const mdBtn = document.createElement('button');
-    mdBtn.className = 'copy-btn';
-    mdBtn.innerText = '📝 Markdown';
-    mdBtn.style.background = '#4a4a4a';
-    mdBtn.onclick = copyAsMarkdown;
-    actionDiv.appendChild(mdBtn);
 };
 
 window.copySymbol = copySymbol;
