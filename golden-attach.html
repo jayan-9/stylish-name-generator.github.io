@@ -657,7 +657,10 @@ function rebuildSelect() {
     Array.from(masterSymbols.keys()).sort().forEach(sym => {
         let opt = document.createElement('option');
         opt.value = sym;
-        opt.textContent = `${sym} — ${masterSymbols.get(sym).name}`;
+        let example = "A" + sym;
+        let name = masterSymbols.get(sym).name;
+        // Ab A᪲ — Flower 1 dikhega
+        opt.textContent = `${example} — ${name} (${example})`;
         selectEl.appendChild(opt);
     });
 }
