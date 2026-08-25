@@ -105,56 +105,43 @@ a:hover {
 }
 .category-scroll {
   display: none;
-  overflow-x: auto;
   padding-bottom: 0.8rem;
-  scrollbar-width: thin;
-}
-.category-scroll::-webkit-scrollbar {
-  height: 6px;
-}
-.category-scroll::-webkit-scrollbar-thumb {
-  background: #ced4da;
-  border-radius: 4px;
 }
 .category-scroll.active {
   display: block;
 }
 .scroll-inner {
   display: flex;
-  gap: 1rem;
+  flex-direction: column;
+  gap: 0.6rem;
   padding: 0.2rem 0;
 }
 
 /* Example cards */
 .example-card {
-  flex: 0 0 auto;
-  background: #ffffff;
-  border: 1px solid #e9ecef;
-  border-radius: 12px;
-  padding: 0.8rem 1.2rem;
   display: flex;
   align-items: center;
-  gap: 0.8rem;
+  justify-content: space-between;
+  background: #ffffff;
+  border: 1px solid #e9ecef;
+  border-radius: 10px;
+  padding: 0.7rem 1.2rem;
   cursor: pointer;
   transition: box-shadow 0.2s, transform 0.1s;
   box-shadow: 0 1px 3px rgba(0,0,0,0.04);
-  min-width: 160px;
+  width: 100%;
+  max-width: 500px;
 }
 .example-card:hover {
   box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-  transform: translateY(-2px);
+  transform: translateY(-1px);
 }
 .example-text {
   font-size: 0.95rem;
   word-break: keep-all;
-  white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  max-width: 200px;
-}
-.example-text .name-highlight {
-  font-weight: 600;
-  color: #000;
+  flex: 1;
 }
 .copy-example {
   background: none;
