@@ -8,7 +8,7 @@
 const DATA = {
   /* ---------- SITE SETTINGS ---------- */
 site: {
-  brand: 'stylename.online',
+  brand: 'stylenm.com',
   tagline: 'Stylish Name Generator',
 
   about:
@@ -20,7 +20,7 @@ site: {
 
   faq: [
     {
-      q: 'What is Stylename and how does it work?',
+      q: 'What is Stylenm and how does it work?',
       a: 'Stylenamr is a free online stylish name generator. You type your name, ' +
          'and we convert it into 500+ Unicode fonts. Pick the one you like, ' +
          'copy it with one tap, and paste it into any app.'
@@ -54,7 +54,7 @@ site: {
   ],
 
   why: [
-    { title: '500+ Stylish Fonts', desc: 'Instagram, Free Fire, Gaming, Love, Cute — 50+ styles in every category.' },
+    { title: '100+ Stylish Fonts', desc: 'Instagram, Free Fire, Gaming, Love, Cute — 50+ styles in every category.' },
     { title: '100% Free Forever', desc: 'No signup, no payment, no watermark.' },
     { title: 'One Tap Copy', desc: 'A copy button with every style — straight to your clipboard.' },
     { title: 'Favorites Save', desc: 'Heart the styles you like, and they appear at the top.' },
@@ -73,7 +73,7 @@ site: {
   ],
 
   share: {
-    url: 'https://stylename.online/',
+    url: 'https://stylenm.com/',
     text: 'Check out Stylename — free stylish name generator for Instagram, Free Fire, love, cool, nickname, fancy, fonts, boys, girls, stylish & more!'
   }
 },
